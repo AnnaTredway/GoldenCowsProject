@@ -1,4 +1,19 @@
-﻿namespace InformationAgeProject
+﻿///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//	Solution/Project:  InformationAgeProject/InformationAgeProject
+//	File Name:         MainForm.Designer.cs
+//	Description:       Main Form window gui designer file for Information Age Project
+//	Course:            CSCI-4250-002 - Software Engineering I
+//	Authors:           Anna Treadway, harwellab@etsu.edu
+//                     Bobby Mullins, mullinsbd@etsu.edu
+//                     Brandon Rhyno, rhynob@etsu.edu
+//                     Magnus Allen, allenmv@etsu.edu
+//	Created:           Wednesday, September 15, 2021
+//	Copyright:         Golden Cows Team, 2021
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace InformationAgeProject
 {
     partial class MainForm
     {
