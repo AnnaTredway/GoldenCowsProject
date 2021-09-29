@@ -43,6 +43,7 @@ namespace InformationAgeProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.backlogLabel = new System.Windows.Forms.Label();
             this.lowLabel = new System.Windows.Forms.Label();
             this.mediumLabel = new System.Windows.Forms.Label();
@@ -64,6 +65,9 @@ namespace InformationAgeProject
             this.medTextBox = new System.Windows.Forms.TextBox();
             this.highTextBox = new System.Windows.Forms.TextBox();
             this.devTextBox = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.inventoryTextBox = new System.Windows.Forms.TextBox();
+            this.inventoryLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // backlogLabel
@@ -289,11 +293,36 @@ namespace InformationAgeProject
             this.devTextBox.Text = "0";
             this.devTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // inventoryTextBox
+            // 
+            this.inventoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventoryTextBox.Location = new System.Drawing.Point(12, 512);
+            this.inventoryTextBox.Name = "inventoryTextBox";
+            this.inventoryTextBox.Size = new System.Drawing.Size(400, 23);
+            this.inventoryTextBox.TabIndex = 34;
+            // 
+            // inventoryLabel
+            // 
+            this.inventoryLabel.AutoSize = true;
+            this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventoryLabel.Location = new System.Drawing.Point(13, 483);
+            this.inventoryLabel.Name = "inventoryLabel";
+            this.inventoryLabel.Size = new System.Drawing.Size(110, 26);
+            this.inventoryLabel.TabIndex = 35;
+            this.inventoryLabel.Text = "Inventory";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 547);
+            this.Controls.Add(this.inventoryLabel);
+            this.Controls.Add(this.inventoryTextBox);
             this.Controls.Add(this.devTextBox);
             this.Controls.Add(this.highTextBox);
             this.Controls.Add(this.medTextBox);
@@ -346,6 +375,9 @@ namespace InformationAgeProject
         private System.Windows.Forms.TextBox medTextBox;
         private System.Windows.Forms.TextBox highTextBox;
         private System.Windows.Forms.TextBox devTextBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox inventoryTextBox;
+        private System.Windows.Forms.Label inventoryLabel;
     }
 }
 

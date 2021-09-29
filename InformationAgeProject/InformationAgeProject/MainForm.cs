@@ -38,41 +38,81 @@ namespace InformationAgeProject
         }
 
         #region Task/Resource Buttons
+        /// <summary>
+        /// Event Handler for button to add developer to backlog task/resource category if any are available
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void backlogAddButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Event Handler for button to remove developer from backlog task/resource category if any are there
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void backlogSubtButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Event Handler for button to add developer to low-priority task/resource category if any are available
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void lowAddButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Event Handler for button to remove developer from low-priority task/resource category if any there
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void lowSubtButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Event Handler for button to add developer to medium-priority task/resource category if any are available
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void medAddButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Event Handler for button to remove developer from medium-priority task/resource category if any there
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void medSubtButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Event Handler for button to add developer to high-priority task/resource category if any are available
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void highAddButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Event Handler for button to remove developer from high-priority task/resource category if any there
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void highSubtButton_Click(object sender, EventArgs e)
         {
 
