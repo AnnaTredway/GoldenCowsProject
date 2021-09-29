@@ -4,7 +4,7 @@
 //	File Name:         ResourceManager.cs
 //	Description:       Manages the resources used in Information Age
 //	Course:            CSCI-4250-002 - Software Engineering I
-//	Authors:           Anna Treadway, harwellab@etsu.edu
+//	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
 //                     Brandon Rhyno, rhynob@etsu.edu
 //                     Magnus Allen, allenmv@etsu.edu
