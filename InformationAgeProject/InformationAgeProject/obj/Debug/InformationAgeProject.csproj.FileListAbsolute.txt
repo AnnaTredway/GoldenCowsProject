@@ -7,3 +7,4 @@ C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAge
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.CoreCompileInputs.cache
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.exe
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.pdb
+C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.MainForm.resources

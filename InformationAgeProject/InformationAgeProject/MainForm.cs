@@ -37,9 +37,51 @@ namespace InformationAgeProject
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        #region Task/Resource Buttons
+        private void backlogAddButton_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void backlogSubtButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lowAddButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lowSubtButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void medAddButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void medSubtButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void highAddButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void highSubtButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void doTasksButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
