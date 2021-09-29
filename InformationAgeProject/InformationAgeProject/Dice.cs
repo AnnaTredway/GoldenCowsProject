@@ -4,7 +4,7 @@
 //	File Name:         Dice.cs
 //	Description:       Dice class for random number generation when used
 //	Course:            CSCI-4250-002 - Software Engineering I
-//	Authors:           Anna Treadway, harwellab@etsu.edu
+//	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
 //                     Brandon Rhyno, rhynob@etsu.edu
 //                     Magnus Allen, allenmv@etsu.edu

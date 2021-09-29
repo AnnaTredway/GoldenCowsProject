@@ -7,4 +7,13 @@ C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAge
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.CoreCompileInputs.cache
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.exe
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.pdb
-C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.MainForm.resources
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\bin\Debug\InformationAgeProject.exe.config
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\bin\Debug\InformationAgeProject.exe
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\bin\Debug\InformationAgeProject.pdb
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csprojAssemblyReference.cache
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.Properties.Resources.resources
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.GenerateResource.cache
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.CoreCompileInputs.cache
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.exe
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.pdb
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.MainForm.resources

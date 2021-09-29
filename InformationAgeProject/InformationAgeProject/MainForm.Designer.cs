@@ -315,12 +315,25 @@ namespace InformationAgeProject
             this.inventoryLabel.Size = new System.Drawing.Size(110, 26);
             this.inventoryLabel.TabIndex = 35;
             this.inventoryLabel.Text = "Inventory";
+            this.btnInstructions = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnInstructions
+            // 
+            this.btnInstructions.Location = new System.Drawing.Point(12, 415);
+            this.btnInstructions.Name = "btnInstructions";
+            this.btnInstructions.Size = new System.Drawing.Size(138, 23);
+            this.btnInstructions.TabIndex = 0;
+            this.btnInstructions.Text = "View Game Instructions";
+            this.btnInstructions.UseVisualStyleBackColor = true;
+            this.btnInstructions.Click += new System.EventHandler(this.btnInstructions_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 547);
+			this.Controls.Add(this.btnInstructions);
             this.Controls.Add(this.inventoryLabel);
             this.Controls.Add(this.inventoryTextBox);
             this.Controls.Add(this.devTextBox);
@@ -378,6 +391,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox inventoryTextBox;
         private System.Windows.Forms.Label inventoryLabel;
+        private System.Windows.Forms.Button btnInstructions;
     }
 }
 

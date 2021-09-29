@@ -4,7 +4,7 @@
 //	File Name:         Driver.cs
 //	Description:       Main Driver for Information Age Project (Based on Stone Age board game)
 //	Course:            CSCI-4250-002 - Software Engineering I
-//	Authors:           Anna Treadway, harwellab@etsu.edu
+//	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
 //                     Brandon Rhyno, rhynob@etsu.edu
 //                     Magnus Allen, allenmv@etsu.edu
