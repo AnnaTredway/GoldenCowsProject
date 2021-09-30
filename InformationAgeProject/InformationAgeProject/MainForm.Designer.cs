@@ -44,283 +44,262 @@ namespace InformationAgeProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.backlogLabel = new System.Windows.Forms.Label();
-            this.lowLabel = new System.Windows.Forms.Label();
-            this.mediumLabel = new System.Windows.Forms.Label();
-            this.highLabel = new System.Windows.Forms.Label();
-            this.backlogAddButton = new System.Windows.Forms.Button();
-            this.backlogSubtButton = new System.Windows.Forms.Button();
-            this.lowAddButton = new System.Windows.Forms.Button();
-            this.lowSubtButton = new System.Windows.Forms.Button();
-            this.medAddButton = new System.Windows.Forms.Button();
-            this.medSubtButton = new System.Windows.Forms.Button();
-            this.highAddButton = new System.Windows.Forms.Button();
-            this.highSubtButton = new System.Windows.Forms.Button();
-            this.taskLabel = new System.Windows.Forms.Label();
-            this.devLabel = new System.Windows.Forms.Label();
-            this.doTasksButton = new System.Windows.Forms.Button();
-            this.notFinalLabel = new System.Windows.Forms.Label();
-            this.backlogTextBox = new System.Windows.Forms.TextBox();
-            this.lowTextBox = new System.Windows.Forms.TextBox();
-            this.medTextBox = new System.Windows.Forms.TextBox();
-            this.highTextBox = new System.Windows.Forms.TextBox();
-            this.devTextBox = new System.Windows.Forms.TextBox();
+            this.lblBacklog = new System.Windows.Forms.Label();
+            this.lblLow = new System.Windows.Forms.Label();
+            this.lblMedium = new System.Windows.Forms.Label();
+            this.lblHigh = new System.Windows.Forms.Label();
+            this.btnAddBacklog = new System.Windows.Forms.Button();
+            this.btnSubtBacklog = new System.Windows.Forms.Button();
+            this.btnAddLow = new System.Windows.Forms.Button();
+            this.btnSubtLow = new System.Windows.Forms.Button();
+            this.btnAddMed = new System.Windows.Forms.Button();
+            this.btnSubtMed = new System.Windows.Forms.Button();
+            this.btnAddHigh = new System.Windows.Forms.Button();
+            this.btnSubtHigh = new System.Windows.Forms.Button();
+            this.lblTasks = new System.Windows.Forms.Label();
+            this.lblDevelopers = new System.Windows.Forms.Label();
+            this.btnDoTasks = new System.Windows.Forms.Button();
+            this.lblNotFinal = new System.Windows.Forms.Label();
+            this.txtBacklog = new System.Windows.Forms.TextBox();
+            this.txtLow = new System.Windows.Forms.TextBox();
+            this.txtMed = new System.Windows.Forms.TextBox();
+            this.txtHigh = new System.Windows.Forms.TextBox();
+            this.txtDevelopers = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.inventoryTextBox = new System.Windows.Forms.TextBox();
-            this.inventoryLabel = new System.Windows.Forms.Label();
+            this.btnInstructions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // backlogLabel
+            // lblBacklog
             // 
-            this.backlogLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backlogLabel.ForeColor = System.Drawing.Color.Blue;
-            this.backlogLabel.Location = new System.Drawing.Point(564, 7);
-            this.backlogLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.backlogLabel.Name = "backlogLabel";
-            this.backlogLabel.Size = new System.Drawing.Size(80, 28);
-            this.backlogLabel.TabIndex = 8;
-            this.backlogLabel.Text = "Backlog Tasks";
+            this.lblBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBacklog.ForeColor = System.Drawing.Color.Blue;
+            this.lblBacklog.Location = new System.Drawing.Point(869, 42);
+            this.lblBacklog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBacklog.Name = "lblBacklog";
+            this.lblBacklog.Size = new System.Drawing.Size(80, 28);
+            this.lblBacklog.TabIndex = 8;
+            this.lblBacklog.Text = "Backlog Tasks";
             // 
-            // lowLabel
+            // lblLow
             // 
-            this.lowLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lowLabel.ForeColor = System.Drawing.Color.Green;
-            this.lowLabel.Location = new System.Drawing.Point(658, 7);
-            this.lowLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lowLabel.Name = "lowLabel";
-            this.lowLabel.Size = new System.Drawing.Size(100, 28);
-            this.lowLabel.TabIndex = 9;
-            this.lowLabel.Text = "Low-Priority Tasks";
+            this.lblLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLow.ForeColor = System.Drawing.Color.Green;
+            this.lblLow.Location = new System.Drawing.Point(963, 42);
+            this.lblLow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLow.Name = "lblLow";
+            this.lblLow.Size = new System.Drawing.Size(100, 28);
+            this.lblLow.TabIndex = 9;
+            this.lblLow.Text = "Low-Priority Tasks";
             // 
-            // mediumLabel
+            // lblMedium
             // 
-            this.mediumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mediumLabel.ForeColor = System.Drawing.Color.Gold;
-            this.mediumLabel.Location = new System.Drawing.Point(753, 7);
-            this.mediumLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.mediumLabel.Name = "mediumLabel";
-            this.mediumLabel.Size = new System.Drawing.Size(100, 28);
-            this.mediumLabel.TabIndex = 10;
-            this.mediumLabel.Text = "Medium-Priority Tasks";
+            this.lblMedium.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedium.ForeColor = System.Drawing.Color.Gold;
+            this.lblMedium.Location = new System.Drawing.Point(1058, 42);
+            this.lblMedium.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMedium.Name = "lblMedium";
+            this.lblMedium.Size = new System.Drawing.Size(100, 28);
+            this.lblMedium.TabIndex = 10;
+            this.lblMedium.Text = "Medium-Priority Tasks";
             // 
-            // highLabel
+            // lblHigh
             // 
-            this.highLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highLabel.ForeColor = System.Drawing.Color.Red;
-            this.highLabel.Location = new System.Drawing.Point(848, 7);
-            this.highLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.highLabel.Name = "highLabel";
-            this.highLabel.Size = new System.Drawing.Size(100, 28);
-            this.highLabel.TabIndex = 11;
-            this.highLabel.Text = "High-Priority Tasks";
+            this.lblHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHigh.ForeColor = System.Drawing.Color.Red;
+            this.lblHigh.Location = new System.Drawing.Point(1153, 42);
+            this.lblHigh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHigh.Name = "lblHigh";
+            this.lblHigh.Size = new System.Drawing.Size(100, 28);
+            this.lblHigh.TabIndex = 11;
+            this.lblHigh.Text = "High-Priority Tasks";
             // 
-            // backlogAddButton
+            // btnAddBacklog
             // 
-            this.backlogAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backlogAddButton.Location = new System.Drawing.Point(567, 67);
-            this.backlogAddButton.Name = "backlogAddButton";
-            this.backlogAddButton.Size = new System.Drawing.Size(25, 25);
-            this.backlogAddButton.TabIndex = 12;
-            this.backlogAddButton.Text = "+";
-            this.backlogAddButton.UseVisualStyleBackColor = true;
-            this.backlogAddButton.Click += new System.EventHandler(this.backlogAddButton_Click);
+            this.btnAddBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBacklog.Location = new System.Drawing.Point(903, 73);
+            this.btnAddBacklog.Name = "btnAddBacklog";
+            this.btnAddBacklog.Size = new System.Drawing.Size(25, 25);
+            this.btnAddBacklog.TabIndex = 12;
+            this.btnAddBacklog.Text = "+";
+            this.btnAddBacklog.UseVisualStyleBackColor = true;
+            this.btnAddBacklog.Click += new System.EventHandler(this.btnAddBacklog_Click);
             // 
-            // backlogSubtButton
+            // btnSubtBacklog
             // 
-            this.backlogSubtButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backlogSubtButton.Location = new System.Drawing.Point(598, 67);
-            this.backlogSubtButton.Name = "backlogSubtButton";
-            this.backlogSubtButton.Size = new System.Drawing.Size(25, 25);
-            this.backlogSubtButton.TabIndex = 13;
-            this.backlogSubtButton.Text = "-";
-            this.backlogSubtButton.UseVisualStyleBackColor = true;
-            this.backlogSubtButton.Click += new System.EventHandler(this.backlogSubtButton_Click);
+            this.btnSubtBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtBacklog.Location = new System.Drawing.Point(903, 102);
+            this.btnSubtBacklog.Name = "btnSubtBacklog";
+            this.btnSubtBacklog.Size = new System.Drawing.Size(25, 25);
+            this.btnSubtBacklog.TabIndex = 13;
+            this.btnSubtBacklog.Text = "-";
+            this.btnSubtBacklog.UseVisualStyleBackColor = true;
+            this.btnSubtBacklog.Click += new System.EventHandler(this.btnSubtBacklog_Click);
             // 
-            // lowAddButton
+            // btnAddLow
             // 
-            this.lowAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lowAddButton.Location = new System.Drawing.Point(661, 67);
-            this.lowAddButton.Name = "lowAddButton";
-            this.lowAddButton.Size = new System.Drawing.Size(25, 25);
-            this.lowAddButton.TabIndex = 14;
-            this.lowAddButton.Text = "+";
-            this.lowAddButton.UseVisualStyleBackColor = true;
-            this.lowAddButton.Click += new System.EventHandler(this.lowAddButton_Click);
+            this.btnAddLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddLow.Location = new System.Drawing.Point(997, 73);
+            this.btnAddLow.Name = "btnAddLow";
+            this.btnAddLow.Size = new System.Drawing.Size(25, 25);
+            this.btnAddLow.TabIndex = 14;
+            this.btnAddLow.Text = "+";
+            this.btnAddLow.UseVisualStyleBackColor = true;
+            this.btnAddLow.Click += new System.EventHandler(this.btnAddLow_Click);
             // 
-            // lowSubtButton
+            // btnSubtLow
             // 
-            this.lowSubtButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lowSubtButton.Location = new System.Drawing.Point(692, 67);
-            this.lowSubtButton.Name = "lowSubtButton";
-            this.lowSubtButton.Size = new System.Drawing.Size(25, 25);
-            this.lowSubtButton.TabIndex = 15;
-            this.lowSubtButton.Text = "-";
-            this.lowSubtButton.UseVisualStyleBackColor = true;
-            this.lowSubtButton.Click += new System.EventHandler(this.lowSubtButton_Click);
+            this.btnSubtLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtLow.Location = new System.Drawing.Point(997, 102);
+            this.btnSubtLow.Name = "btnSubtLow";
+            this.btnSubtLow.Size = new System.Drawing.Size(25, 25);
+            this.btnSubtLow.TabIndex = 15;
+            this.btnSubtLow.Text = "-";
+            this.btnSubtLow.UseVisualStyleBackColor = true;
+            this.btnSubtLow.Click += new System.EventHandler(this.btnSubtLow_Click);
             // 
-            // medAddButton
+            // btnAddMed
             // 
-            this.medAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.medAddButton.Location = new System.Drawing.Point(756, 66);
-            this.medAddButton.Name = "medAddButton";
-            this.medAddButton.Size = new System.Drawing.Size(25, 25);
-            this.medAddButton.TabIndex = 16;
-            this.medAddButton.Text = "+";
-            this.medAddButton.UseVisualStyleBackColor = true;
-            this.medAddButton.Click += new System.EventHandler(this.medAddButton_Click);
+            this.btnAddMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMed.Location = new System.Drawing.Point(1092, 70);
+            this.btnAddMed.Name = "btnAddMed";
+            this.btnAddMed.Size = new System.Drawing.Size(25, 25);
+            this.btnAddMed.TabIndex = 16;
+            this.btnAddMed.Text = "+";
+            this.btnAddMed.UseVisualStyleBackColor = true;
+            this.btnAddMed.Click += new System.EventHandler(this.btnAddMed_Click);
             // 
-            // medSubtButton
+            // btnSubtMed
             // 
-            this.medSubtButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.medSubtButton.Location = new System.Drawing.Point(787, 66);
-            this.medSubtButton.Name = "medSubtButton";
-            this.medSubtButton.Size = new System.Drawing.Size(25, 25);
-            this.medSubtButton.TabIndex = 17;
-            this.medSubtButton.Text = "-";
-            this.medSubtButton.UseVisualStyleBackColor = true;
-            this.medSubtButton.Click += new System.EventHandler(this.medSubtButton_Click);
+            this.btnSubtMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtMed.Location = new System.Drawing.Point(1092, 101);
+            this.btnSubtMed.Name = "btnSubtMed";
+            this.btnSubtMed.Size = new System.Drawing.Size(25, 25);
+            this.btnSubtMed.TabIndex = 17;
+            this.btnSubtMed.Text = "-";
+            this.btnSubtMed.UseVisualStyleBackColor = true;
+            this.btnSubtMed.Click += new System.EventHandler(this.btnSubtMed_Click);
             // 
-            // highAddButton
+            // btnAddHigh
             // 
-            this.highAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highAddButton.Location = new System.Drawing.Point(851, 67);
-            this.highAddButton.Name = "highAddButton";
-            this.highAddButton.Size = new System.Drawing.Size(25, 25);
-            this.highAddButton.TabIndex = 18;
-            this.highAddButton.Text = "+";
-            this.highAddButton.UseVisualStyleBackColor = true;
-            this.highAddButton.Click += new System.EventHandler(this.highAddButton_Click);
+            this.btnAddHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddHigh.Location = new System.Drawing.Point(1187, 73);
+            this.btnAddHigh.Name = "btnAddHigh";
+            this.btnAddHigh.Size = new System.Drawing.Size(25, 25);
+            this.btnAddHigh.TabIndex = 18;
+            this.btnAddHigh.Text = "+";
+            this.btnAddHigh.UseVisualStyleBackColor = true;
+            this.btnAddHigh.Click += new System.EventHandler(this.btnAddHigh_Click);
             // 
-            // highSubtButton
+            // btnSubtHigh
             // 
-            this.highSubtButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highSubtButton.Location = new System.Drawing.Point(882, 67);
-            this.highSubtButton.Name = "highSubtButton";
-            this.highSubtButton.Size = new System.Drawing.Size(25, 25);
-            this.highSubtButton.TabIndex = 19;
-            this.highSubtButton.Text = "-";
-            this.highSubtButton.UseVisualStyleBackColor = true;
-            this.highSubtButton.Click += new System.EventHandler(this.highSubtButton_Click);
+            this.btnSubtHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtHigh.Location = new System.Drawing.Point(1187, 102);
+            this.btnSubtHigh.Name = "btnSubtHigh";
+            this.btnSubtHigh.Size = new System.Drawing.Size(25, 25);
+            this.btnSubtHigh.TabIndex = 19;
+            this.btnSubtHigh.Text = "-";
+            this.btnSubtHigh.UseVisualStyleBackColor = true;
+            this.btnSubtHigh.Click += new System.EventHandler(this.btnSubtHigh_Click);
             // 
-            // taskLabel
+            // lblTasks
             // 
-            this.taskLabel.AutoSize = true;
-            this.taskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taskLabel.Location = new System.Drawing.Point(478, 7);
-            this.taskLabel.Name = "taskLabel";
-            this.taskLabel.Size = new System.Drawing.Size(81, 26);
-            this.taskLabel.TabIndex = 24;
-            this.taskLabel.Text = "Tasks:";
+            this.lblTasks.AutoSize = true;
+            this.lblTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTasks.Location = new System.Drawing.Point(783, 42);
+            this.lblTasks.Name = "lblTasks";
+            this.lblTasks.Size = new System.Drawing.Size(81, 26);
+            this.lblTasks.TabIndex = 24;
+            this.lblTasks.Text = "Tasks:";
             // 
-            // devLabel
+            // lblDevelopers
             // 
-            this.devLabel.AutoSize = true;
-            this.devLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.devLabel.Location = new System.Drawing.Point(757, 503);
-            this.devLabel.Name = "devLabel";
-            this.devLabel.Size = new System.Drawing.Size(139, 26);
-            this.devLabel.TabIndex = 25;
-            this.devLabel.Text = "Developers:";
+            this.lblDevelopers.AutoSize = true;
+            this.lblDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDevelopers.Location = new System.Drawing.Point(1075, 640);
+            this.lblDevelopers.Name = "lblDevelopers";
+            this.lblDevelopers.Size = new System.Drawing.Size(139, 26);
+            this.lblDevelopers.TabIndex = 25;
+            this.lblDevelopers.Text = "Developers:";
             // 
-            // doTasksButton
+            // btnDoTasks
             // 
-            this.doTasksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doTasksButton.Location = new System.Drawing.Point(618, 112);
-            this.doTasksButton.Name = "doTasksButton";
-            this.doTasksButton.Size = new System.Drawing.Size(246, 33);
-            this.doTasksButton.TabIndex = 26;
-            this.doTasksButton.Text = "Do Tasks";
-            this.doTasksButton.UseVisualStyleBackColor = true;
-            this.doTasksButton.Click += new System.EventHandler(this.doTasksButton_Click);
+            this.btnDoTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoTasks.Location = new System.Drawing.Point(923, 147);
+            this.btnDoTasks.Name = "btnDoTasks";
+            this.btnDoTasks.Size = new System.Drawing.Size(246, 33);
+            this.btnDoTasks.TabIndex = 26;
+            this.btnDoTasks.Text = "Do Tasks";
+            this.btnDoTasks.UseVisualStyleBackColor = true;
+            this.btnDoTasks.Click += new System.EventHandler(this.btnDoTasks_Click);
             // 
-            // notFinalLabel
+            // lblNotFinal
             // 
-            this.notFinalLabel.AutoSize = true;
-            this.notFinalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notFinalLabel.Location = new System.Drawing.Point(12, 9);
-            this.notFinalLabel.Name = "notFinalLabel";
-            this.notFinalLabel.Size = new System.Drawing.Size(376, 31);
-            this.notFinalLabel.TabIndex = 27;
-            this.notFinalLabel.Text = "GUI INTERFACE NOT FINAL";
+            this.lblNotFinal.AutoSize = true;
+            this.lblNotFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotFinal.Location = new System.Drawing.Point(12, 39);
+            this.lblNotFinal.Name = "lblNotFinal";
+            this.lblNotFinal.Size = new System.Drawing.Size(376, 31);
+            this.lblNotFinal.TabIndex = 27;
+            this.lblNotFinal.Text = "GUI INTERFACE NOT FINAL";
             // 
-            // backlogTextBox
+            // txtBacklog
             // 
-            this.backlogTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backlogTextBox.Location = new System.Drawing.Point(567, 38);
-            this.backlogTextBox.Name = "backlogTextBox";
-            this.backlogTextBox.Size = new System.Drawing.Size(25, 23);
-            this.backlogTextBox.TabIndex = 28;
-            this.backlogTextBox.Text = "0";
-            this.backlogTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBacklog.Location = new System.Drawing.Point(872, 73);
+            this.txtBacklog.Name = "txtBacklog";
+            this.txtBacklog.Size = new System.Drawing.Size(25, 23);
+            this.txtBacklog.TabIndex = 28;
+            this.txtBacklog.Text = "0";
+            this.txtBacklog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lowTextBox
+            // txtLow
             // 
-            this.lowTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lowTextBox.Location = new System.Drawing.Point(661, 38);
-            this.lowTextBox.Name = "lowTextBox";
-            this.lowTextBox.Size = new System.Drawing.Size(25, 23);
-            this.lowTextBox.TabIndex = 29;
-            this.lowTextBox.Text = "0";
-            this.lowTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLow.Location = new System.Drawing.Point(966, 73);
+            this.txtLow.Name = "txtLow";
+            this.txtLow.Size = new System.Drawing.Size(25, 23);
+            this.txtLow.TabIndex = 29;
+            this.txtLow.Text = "0";
+            this.txtLow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // medTextBox
+            // txtMed
             // 
-            this.medTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.medTextBox.Location = new System.Drawing.Point(756, 37);
-            this.medTextBox.Name = "medTextBox";
-            this.medTextBox.Size = new System.Drawing.Size(25, 23);
-            this.medTextBox.TabIndex = 30;
-            this.medTextBox.Text = "0";
-            this.medTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMed.Location = new System.Drawing.Point(1061, 72);
+            this.txtMed.Name = "txtMed";
+            this.txtMed.Size = new System.Drawing.Size(25, 23);
+            this.txtMed.TabIndex = 30;
+            this.txtMed.Text = "0";
+            this.txtMed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // highTextBox
+            // txtHigh
             // 
-            this.highTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highTextBox.Location = new System.Drawing.Point(851, 38);
-            this.highTextBox.Name = "highTextBox";
-            this.highTextBox.Size = new System.Drawing.Size(25, 23);
-            this.highTextBox.TabIndex = 31;
-            this.highTextBox.Text = "0";
-            this.highTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHigh.Location = new System.Drawing.Point(1156, 73);
+            this.txtHigh.Name = "txtHigh";
+            this.txtHigh.Size = new System.Drawing.Size(25, 23);
+            this.txtHigh.TabIndex = 31;
+            this.txtHigh.Text = "0";
+            this.txtHigh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // devTextBox
+            // txtDevelopers
             // 
-            this.devTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.devTextBox.Location = new System.Drawing.Point(902, 503);
-            this.devTextBox.Name = "devTextBox";
-            this.devTextBox.Size = new System.Drawing.Size(32, 32);
-            this.devTextBox.TabIndex = 32;
-            this.devTextBox.Text = "0";
-            this.devTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDevelopers.Location = new System.Drawing.Point(1220, 637);
+            this.txtDevelopers.Name = "txtDevelopers";
+            this.txtDevelopers.Size = new System.Drawing.Size(32, 32);
+            this.txtDevelopers.TabIndex = 32;
+            this.txtDevelopers.Text = "20";
+            this.txtDevelopers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // inventoryTextBox
-            // 
-            this.inventoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryTextBox.Location = new System.Drawing.Point(12, 512);
-            this.inventoryTextBox.Name = "inventoryTextBox";
-            this.inventoryTextBox.Size = new System.Drawing.Size(400, 23);
-            this.inventoryTextBox.TabIndex = 34;
-            // 
-            // inventoryLabel
-            // 
-            this.inventoryLabel.AutoSize = true;
-            this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryLabel.Location = new System.Drawing.Point(13, 483);
-            this.inventoryLabel.Name = "inventoryLabel";
-            this.inventoryLabel.Size = new System.Drawing.Size(110, 26);
-            this.inventoryLabel.TabIndex = 35;
-            this.inventoryLabel.Text = "Inventory";
-            this.btnInstructions = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
             // btnInstructions
             // 
-            this.btnInstructions.Location = new System.Drawing.Point(12, 415);
+            this.btnInstructions.Location = new System.Drawing.Point(12, 644);
             this.btnInstructions.Name = "btnInstructions";
             this.btnInstructions.Size = new System.Drawing.Size(138, 23);
             this.btnInstructions.TabIndex = 0;
@@ -332,33 +311,32 @@ namespace InformationAgeProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 547);
-			this.Controls.Add(this.btnInstructions);
-            this.Controls.Add(this.inventoryLabel);
-            this.Controls.Add(this.inventoryTextBox);
-            this.Controls.Add(this.devTextBox);
-            this.Controls.Add(this.highTextBox);
-            this.Controls.Add(this.medTextBox);
-            this.Controls.Add(this.lowTextBox);
-            this.Controls.Add(this.backlogTextBox);
-            this.Controls.Add(this.notFinalLabel);
-            this.Controls.Add(this.doTasksButton);
-            this.Controls.Add(this.devLabel);
-            this.Controls.Add(this.taskLabel);
-            this.Controls.Add(this.highSubtButton);
-            this.Controls.Add(this.highAddButton);
-            this.Controls.Add(this.medSubtButton);
-            this.Controls.Add(this.medAddButton);
-            this.Controls.Add(this.lowSubtButton);
-            this.Controls.Add(this.lowAddButton);
-            this.Controls.Add(this.backlogSubtButton);
-            this.Controls.Add(this.backlogAddButton);
-            this.Controls.Add(this.highLabel);
-            this.Controls.Add(this.mediumLabel);
-            this.Controls.Add(this.lowLabel);
-            this.Controls.Add(this.backlogLabel);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnInstructions);
+            this.Controls.Add(this.txtDevelopers);
+            this.Controls.Add(this.txtHigh);
+            this.Controls.Add(this.txtMed);
+            this.Controls.Add(this.txtLow);
+            this.Controls.Add(this.txtBacklog);
+            this.Controls.Add(this.lblNotFinal);
+            this.Controls.Add(this.btnDoTasks);
+            this.Controls.Add(this.lblDevelopers);
+            this.Controls.Add(this.lblTasks);
+            this.Controls.Add(this.btnSubtHigh);
+            this.Controls.Add(this.btnAddHigh);
+            this.Controls.Add(this.btnSubtMed);
+            this.Controls.Add(this.btnAddMed);
+            this.Controls.Add(this.btnSubtLow);
+            this.Controls.Add(this.btnAddLow);
+            this.Controls.Add(this.btnSubtBacklog);
+            this.Controls.Add(this.btnAddBacklog);
+            this.Controls.Add(this.lblHigh);
+            this.Controls.Add(this.lblMedium);
+            this.Controls.Add(this.lblLow);
+            this.Controls.Add(this.lblBacklog);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Information Age";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
@@ -367,30 +345,28 @@ namespace InformationAgeProject
         }
 
         #endregion
-        private System.Windows.Forms.Label backlogLabel;
-        private System.Windows.Forms.Label lowLabel;
-        private System.Windows.Forms.Label mediumLabel;
-        private System.Windows.Forms.Label highLabel;
-        private System.Windows.Forms.Button backlogAddButton;
-        private System.Windows.Forms.Button backlogSubtButton;
-        private System.Windows.Forms.Button lowAddButton;
-        private System.Windows.Forms.Button lowSubtButton;
-        private System.Windows.Forms.Button medAddButton;
-        private System.Windows.Forms.Button medSubtButton;
-        private System.Windows.Forms.Button highAddButton;
-        private System.Windows.Forms.Button highSubtButton;
-        private System.Windows.Forms.Label taskLabel;
-        private System.Windows.Forms.Label devLabel;
-        private System.Windows.Forms.Button doTasksButton;
-        private System.Windows.Forms.Label notFinalLabel;
-        private System.Windows.Forms.TextBox backlogTextBox;
-        private System.Windows.Forms.TextBox lowTextBox;
-        private System.Windows.Forms.TextBox medTextBox;
-        private System.Windows.Forms.TextBox highTextBox;
-        private System.Windows.Forms.TextBox devTextBox;
+        private System.Windows.Forms.Label lblBacklog;
+        private System.Windows.Forms.Label lblLow;
+        private System.Windows.Forms.Label lblMedium;
+        private System.Windows.Forms.Label lblHigh;
+        private System.Windows.Forms.Button btnAddBacklog;
+        private System.Windows.Forms.Button btnSubtBacklog;
+        private System.Windows.Forms.Button btnAddLow;
+        private System.Windows.Forms.Button btnSubtLow;
+        private System.Windows.Forms.Button btnAddMed;
+        private System.Windows.Forms.Button btnSubtMed;
+        private System.Windows.Forms.Button btnAddHigh;
+        private System.Windows.Forms.Button btnSubtHigh;
+        private System.Windows.Forms.Label lblTasks;
+        private System.Windows.Forms.Label lblDevelopers;
+        private System.Windows.Forms.Button btnDoTasks;
+        private System.Windows.Forms.Label lblNotFinal;
+        private System.Windows.Forms.TextBox txtBacklog;
+        private System.Windows.Forms.TextBox txtLow;
+        private System.Windows.Forms.TextBox txtMed;
+        private System.Windows.Forms.TextBox txtHigh;
+        private System.Windows.Forms.TextBox txtDevelopers;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox inventoryTextBox;
-        private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.Button btnInstructions;
     }
 }

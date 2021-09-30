@@ -17,3 +17,4 @@ C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeP
 C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.exe
 C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.pdb
 C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.MainForm.resources
+C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.MainForm.resources
