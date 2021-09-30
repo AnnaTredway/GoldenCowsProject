@@ -30,8 +30,8 @@ namespace InformationAgeProject
 	public partial class MainForm : Form
 	{
 		//ResourceManager and Dice classes to be used throughout program
-		ResourceManager manager = new ResourceManager();
-		Dice dice = new Dice();
+		ResourceManager Manager = new ResourceManager();
+		Dice Die = new Dice();
 
 		public MainForm()
 		{
@@ -252,13 +252,13 @@ namespace InformationAgeProject
 			//Add calculated resources to ResourceManager for current player
 			//(Number of dice rolled is equal to number of developers on specific resource)
 			//(Dice result is then divided by 3,4,5, or 6 to get final resource count acquired)
-			manager.addToBacklog(dice.RollDice(backlogNum)/3);      //Lowest-tier resource divided by 3
-			manager.addToLowPriority(dice.RollDice(lowNum)/4);      //Low-tier resource divided by 4
-			manager.addToMediumPriority(dice.RollDice(medNum)/5);   //Mid-tier resource divided by 5
-			manager.addToHighPriority(dice.RollDice(highNum)/6);    //Highest-tier resource divided by 6
+			Manager.addToBacklog(Die.RollDice(backlogNum) / 3);      //Lowest-tier resource divided by 3
+			Manager.addToLowPriority(Die.RollDice(lowNum) / 4);      //Low-tier resource divided by 4
+			Manager.addToMediumPriority(Die.RollDice(medNum) / 5);   //Mid-tier resource divided by 5
+			Manager.addToHighPriority(Die.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
 
 			//Print out current inventory text to inventoryBox
-			inventoryBox.Text = manager.printManager();
+			inventoryBox.Text = Manager.printManager();
 
 			//Resets developer counts on each task/resource
 			txtBacklog.Text = "0";
@@ -269,7 +269,6 @@ namespace InformationAgeProject
 			//Adds developers back to player's free developer pool
 			int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
 			txtDevelopers.Text = Convert.ToString(leftoverDevelopers + backlogNum + lowNum + medNum + highNum);
-
 		}
 		#endregion
 		
