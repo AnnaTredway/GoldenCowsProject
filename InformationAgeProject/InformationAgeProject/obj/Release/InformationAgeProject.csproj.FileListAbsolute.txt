@@ -1,0 +1,10 @@
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\bin\Release\InformationAgeProject.exe.config
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\bin\Release\InformationAgeProject.exe
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\bin\Release\InformationAgeProject.pdb
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Release\InformationAgeProject.csprojAssemblyReference.cache
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Release\InformationAgeProject.MainForm.resources
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Release\InformationAgeProject.Properties.Resources.resources
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Release\InformationAgeProject.csproj.GenerateResource.cache
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Release\InformationAgeProject.csproj.CoreCompileInputs.cache
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Release\InformationAgeProject.exe
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Release\InformationAgeProject.pdb

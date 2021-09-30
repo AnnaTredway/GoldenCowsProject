@@ -4,7 +4,7 @@
 //	File Name:         ResourceManager.cs
 //	Description:       Manages the resources used in Information Age
 //	Course:            CSCI-4250-002 - Software Engineering I
-//	Authors:           Anna Treadway, harwellab@etsu.edu
+//	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
 //                     Brandon Rhyno, rhynob@etsu.edu
 //                     Magnus Allen, allenmv@etsu.edu
@@ -164,7 +164,7 @@ namespace InformationAgeProject
         /// <param name="amountInBacklog">the amount to remove</param>
         public void removeFromBacklog(int amountInBacklog)
         {
-            this.gameResources[0].resourceAmount += amountInBacklog;
+            this.gameResources[0].resourceAmount -= amountInBacklog;
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace InformationAgeProject
         /// <param name="amountInBacklog">the amount to remove</param>
         public void removeFromLowPriority(int amountInPriority)
         {
-            this.gameResources[1].resourceAmount += amountInPriority;
+            this.gameResources[1].resourceAmount -= amountInPriority;
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace InformationAgeProject
         /// <param name="amountInBacklog">the amount to remove</param>
         public void removeFromMediumPriority(int amountInPriority)
         {
-            this.gameResources[2].resourceAmount += amountInPriority;
+            this.gameResources[2].resourceAmount -= amountInPriority;
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace InformationAgeProject
         /// <param name="amountInBacklog">the amount to remove</param>
         public void removeFromHighPriority(int amountInPriority)
         {
-            this.gameResources[3].resourceAmount += amountInPriority;
+            this.gameResources[3].resourceAmount -= amountInPriority;
         }
         #endregion
 
@@ -203,9 +203,9 @@ namespace InformationAgeProject
         {
             string strResult ="---------------------------------\n" +
                               this.gameResources[0].resourceName + ": " + this.gameResources[0].resourceAmount + "\n" +
-                              this.gameResources[0].resourceName + ": " + this.gameResources[0].resourceAmount + "\n" +
-                              this.gameResources[0].resourceName + ": " + this.gameResources[0].resourceAmount + "\n" +
-                              this.gameResources[0].resourceName + ": " + this.gameResources[0].resourceAmount + "\n" +
+                              this.gameResources[1].resourceName + ": " + this.gameResources[1].resourceAmount + "\n" +
+                              this.gameResources[2].resourceName + ": " + this.gameResources[2].resourceAmount + "\n" +
+                              this.gameResources[3].resourceName + ": " + this.gameResources[3].resourceAmount + "\n" +
                               "---------------------------------\n";
             return strResult;
         }
