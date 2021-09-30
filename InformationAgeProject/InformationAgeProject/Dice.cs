@@ -2,7 +2,7 @@
 //
 //	Solution/Project:  InformationAgeProject/InformationAgeProject
 //	File Name:         Dice.cs
-//	Description:       Dice class for random number generation when used
+//	Description:       Dice class for random number generation
 //	Course:            CSCI-4250-002 - Software Engineering I
 //	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
@@ -21,6 +21,9 @@ using System.Threading.Tasks;
 
 namespace InformationAgeProject
 {
+	/// <summary>
+	/// Dice class for random number generation
+	/// </summary>
 	class Dice
 	{
 		private readonly Random RNG;    //Random Number Generator for use in RollDice() method

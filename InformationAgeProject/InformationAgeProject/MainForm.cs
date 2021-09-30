@@ -239,6 +239,35 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnDoTasks_Click(object sender, EventArgs e)
 		{
+			//Disables all task-related buttons for current player's turn within round
+			btnDoTasks.Enabled = false;
+			btnAddBacklog.Enabled = false;
+			btnSubtBacklog.Enabled = false;
+			btnAddLow.Enabled = false;
+			btnSubtLow.Enabled = false;
+			btnAddMed.Enabled = false;
+			btnSubtMed.Enabled = false;
+			btnAddHigh.Enabled = false;
+			btnSubtHigh.Enabled = false;
+
+			//Stores current counts of developers on each task/resource for calculation
+			int backlogNum = Int32.Parse(txtBacklog.Text);
+			int lowNum = Int32.Parse(txtLow.Text);
+			int medNum = Int32.Parse(txtMed.Text);
+			int highNum = Int32.Parse(txtHigh.Text);
+
+
+			//Add code for resource calculation here
+
+
+			//Resets developer counts on each task/resource
+			txtBacklog.Text = "0";
+			txtLow.Text = "0";
+			txtMed.Text = "0";
+			txtHigh.Text = "0";
+
+			//Adds developers back to player's free developer pool
+			txtDevelopers.Text += backlogNum + lowNum + medNum + highNum;
 
 		}
 		#endregion

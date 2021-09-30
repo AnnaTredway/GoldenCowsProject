@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 namespace InformationAgeProject
 {
     /// <summary>
-    /// 
+    /// Creates a resource
     /// </summary>
     class Resource
     {

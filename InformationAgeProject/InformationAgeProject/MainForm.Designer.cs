@@ -244,6 +244,7 @@ namespace InformationAgeProject
             // 
             // txtBacklog
             // 
+            this.txtBacklog.Enabled = false;
             this.txtBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBacklog.Location = new System.Drawing.Point(872, 73);
             this.txtBacklog.Name = "txtBacklog";
@@ -251,9 +252,11 @@ namespace InformationAgeProject
             this.txtBacklog.TabIndex = 28;
             this.txtBacklog.Text = "0";
             this.txtBacklog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBacklog.WordWrap = false;
             // 
             // txtLow
             // 
+            this.txtLow.Enabled = false;
             this.txtLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLow.Location = new System.Drawing.Point(966, 73);
             this.txtLow.Name = "txtLow";
@@ -261,9 +264,11 @@ namespace InformationAgeProject
             this.txtLow.TabIndex = 29;
             this.txtLow.Text = "0";
             this.txtLow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLow.WordWrap = false;
             // 
             // txtMed
             // 
+            this.txtMed.Enabled = false;
             this.txtMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMed.Location = new System.Drawing.Point(1061, 72);
             this.txtMed.Name = "txtMed";
@@ -271,9 +276,11 @@ namespace InformationAgeProject
             this.txtMed.TabIndex = 30;
             this.txtMed.Text = "0";
             this.txtMed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMed.WordWrap = false;
             // 
             // txtHigh
             // 
+            this.txtHigh.Enabled = false;
             this.txtHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHigh.Location = new System.Drawing.Point(1156, 73);
             this.txtHigh.Name = "txtHigh";
@@ -281,9 +288,11 @@ namespace InformationAgeProject
             this.txtHigh.TabIndex = 31;
             this.txtHigh.Text = "0";
             this.txtHigh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHigh.WordWrap = false;
             // 
             // txtDevelopers
             // 
+            this.txtDevelopers.Enabled = false;
             this.txtDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDevelopers.Location = new System.Drawing.Point(1220, 637);
             this.txtDevelopers.Name = "txtDevelopers";
@@ -291,6 +300,7 @@ namespace InformationAgeProject
             this.txtDevelopers.TabIndex = 32;
             this.txtDevelopers.Text = "20";
             this.txtDevelopers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDevelopers.WordWrap = false;
             // 
             // contextMenuStrip1
             // 
