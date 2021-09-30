@@ -203,9 +203,9 @@ namespace InformationAgeProject
         {
             string strResult ="---------------------------------\n" +
                               this.gameResources[0].resourceName + ": " + this.gameResources[0].resourceAmount + "\n" +
-                              this.gameResources[0].resourceName + ": " + this.gameResources[0].resourceAmount + "\n" +
-                              this.gameResources[0].resourceName + ": " + this.gameResources[0].resourceAmount + "\n" +
-                              this.gameResources[0].resourceName + ": " + this.gameResources[0].resourceAmount + "\n" +
+                              this.gameResources[1].resourceName + ": " + this.gameResources[1].resourceAmount + "\n" +
+                              this.gameResources[2].resourceName + ": " + this.gameResources[2].resourceAmount + "\n" +
+                              this.gameResources[3].resourceName + ": " + this.gameResources[3].resourceAmount + "\n" +
                               "---------------------------------\n";
             return strResult;
         }

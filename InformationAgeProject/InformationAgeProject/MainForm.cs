@@ -29,6 +29,10 @@ namespace InformationAgeProject
 {
 	public partial class MainForm : Form
 	{
+		//ResourceManager and Dice classes to be used throughout program
+		ResourceManager manager = new ResourceManager();
+		Dice dice = new Dice();
+
 		public MainForm()
 		{
 			InitializeComponent();
@@ -239,26 +243,22 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnDoTasks_Click(object sender, EventArgs e)
 		{
-			//Disables all task-related buttons for current player's turn within round
-			btnDoTasks.Enabled = false;
-			btnAddBacklog.Enabled = false;
-			btnSubtBacklog.Enabled = false;
-			btnAddLow.Enabled = false;
-			btnSubtLow.Enabled = false;
-			btnAddMed.Enabled = false;
-			btnSubtMed.Enabled = false;
-			btnAddHigh.Enabled = false;
-			btnSubtHigh.Enabled = false;
-
 			//Stores current counts of developers on each task/resource for calculation
 			int backlogNum = Int32.Parse(txtBacklog.Text);
 			int lowNum = Int32.Parse(txtLow.Text);
 			int medNum = Int32.Parse(txtMed.Text);
 			int highNum = Int32.Parse(txtHigh.Text);
 
+			//Add calculated resources to ResourceManager for current player
+			//(Number of dice rolled is equal to number of developers on specific resource)
+			//(Dice result is then divided by 3,4,5, or 6 to get final resource count acquired)
+			manager.addToBacklog(dice.RollDice(backlogNum)/3);      //Lowest-tier resource divided by 3
+			manager.addToLowPriority(dice.RollDice(lowNum)/4);      //Low-tier resource divided by 4
+			manager.addToMediumPriority(dice.RollDice(medNum)/5);   //Mid-tier resource divided by 5
+			manager.addToHighPriority(dice.RollDice(highNum)/6);    //Highest-tier resource divided by 6
 
-			//Add code for resource calculation here
-
+			//Print out current inventory text to inventoryBox
+			inventoryBox.Text = manager.printManager();
 
 			//Resets developer counts on each task/resource
 			txtBacklog.Text = "0";
@@ -267,7 +267,8 @@ namespace InformationAgeProject
 			txtHigh.Text = "0";
 
 			//Adds developers back to player's free developer pool
-			txtDevelopers.Text += backlogNum + lowNum + medNum + highNum;
+			int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
+			txtDevelopers.Text = Convert.ToString(leftoverDevelopers + backlogNum + lowNum + medNum + highNum);
 
 		}
 		#endregion

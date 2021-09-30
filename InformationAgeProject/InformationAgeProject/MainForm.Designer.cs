@@ -67,6 +67,7 @@ namespace InformationAgeProject
             this.txtDevelopers = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnInstructions = new System.Windows.Forms.Button();
+            this.inventoryBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // lblBacklog
@@ -215,7 +216,7 @@ namespace InformationAgeProject
             // 
             this.lblDevelopers.AutoSize = true;
             this.lblDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDevelopers.Location = new System.Drawing.Point(1075, 640);
+            this.lblDevelopers.Location = new System.Drawing.Point(1057, 640);
             this.lblDevelopers.Name = "lblDevelopers";
             this.lblDevelopers.Size = new System.Drawing.Size(139, 26);
             this.lblDevelopers.TabIndex = 25;
@@ -224,9 +225,9 @@ namespace InformationAgeProject
             // btnDoTasks
             // 
             this.btnDoTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoTasks.Location = new System.Drawing.Point(923, 147);
+            this.btnDoTasks.Location = new System.Drawing.Point(872, 147);
             this.btnDoTasks.Name = "btnDoTasks";
-            this.btnDoTasks.Size = new System.Drawing.Size(246, 33);
+            this.btnDoTasks.Size = new System.Drawing.Size(381, 33);
             this.btnDoTasks.TabIndex = 26;
             this.btnDoTasks.Text = "Do Tasks";
             this.btnDoTasks.UseVisualStyleBackColor = true;
@@ -294,9 +295,9 @@ namespace InformationAgeProject
             // 
             this.txtDevelopers.Enabled = false;
             this.txtDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDevelopers.Location = new System.Drawing.Point(1220, 637);
+            this.txtDevelopers.Location = new System.Drawing.Point(1202, 637);
             this.txtDevelopers.Name = "txtDevelopers";
-            this.txtDevelopers.Size = new System.Drawing.Size(32, 32);
+            this.txtDevelopers.Size = new System.Drawing.Size(51, 32);
             this.txtDevelopers.TabIndex = 32;
             this.txtDevelopers.Text = "20";
             this.txtDevelopers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -317,11 +318,20 @@ namespace InformationAgeProject
             this.btnInstructions.UseVisualStyleBackColor = true;
             this.btnInstructions.Click += new System.EventHandler(this.btnInstructions_Click);
             // 
+            // inventoryBox
+            // 
+            this.inventoryBox.Location = new System.Drawing.Point(872, 186);
+            this.inventoryBox.Name = "inventoryBox";
+            this.inventoryBox.Size = new System.Drawing.Size(381, 96);
+            this.inventoryBox.TabIndex = 33;
+            this.inventoryBox.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.inventoryBox);
             this.Controls.Add(this.btnInstructions);
             this.Controls.Add(this.txtDevelopers);
             this.Controls.Add(this.txtHigh);
@@ -378,6 +388,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.TextBox txtDevelopers;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnInstructions;
+        private System.Windows.Forms.RichTextBox inventoryBox;
     }
 }
 
