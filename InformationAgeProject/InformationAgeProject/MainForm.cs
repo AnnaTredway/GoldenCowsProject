@@ -29,13 +29,13 @@ namespace InformationAgeProject
 {
 	public partial class MainForm : Form
 	{
-		//ResourceManager and Dice classes to be used throughout program
-		ResourceManager Manager = new ResourceManager();
-		Dice Die = new Dice();
+		//Inventory and Dice instances to be used throughout program
+		Inventory inventory = new Inventory( );
+		Dice dice = new Dice( );
 
-		public MainForm()
+		public MainForm( )
 		{
-			InitializeComponent();
+			InitializeComponent( );
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace InformationAgeProject
 		{
 			//If the number of developers is larger than 0 and backlog count is less than 7, then subtract 1 from developer count and add 1 to backlog count
 			//Else, do nothing
-			if(Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtBacklog.Text) < 7)
+			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtBacklog.Text) < 7)
 			{
 				//Subtract 1 developer from developer count
 				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
@@ -252,13 +252,13 @@ namespace InformationAgeProject
 			//Add calculated resources to ResourceManager for current player
 			//(Number of dice rolled is equal to number of developers on specific resource)
 			//(Dice result is then divided by 3,4,5, or 6 to get final resource count acquired)
-			Manager.addToBacklog(Die.RollDice(backlogNum) / 3);      //Lowest-tier resource divided by 3
-			Manager.addToLowPriority(Die.RollDice(lowNum) / 4);      //Low-tier resource divided by 4
-			Manager.addToMediumPriority(Die.RollDice(medNum) / 5);   //Mid-tier resource divided by 5
-			Manager.addToHighPriority(Die.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
+			inventory.addToBacklog(dice.RollDice(backlogNum) / 3);      //Lowest-tier resource divided by 3
+			inventory.addToLowPriority(dice.RollDice(lowNum) / 4);      //Low-tier resource divided by 4
+			inventory.addToMediumPriority(dice.RollDice(medNum) / 5);   //Mid-tier resource divided by 5
+			inventory.addToHighPriority(dice.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
 
 			//Print out current inventory text to inventoryBox
-			inventoryBox.Text = Manager.printManager();
+			inventoryBox.Text = inventory.printInventory( );
 
 			//Resets developer counts on each task/resource
 			txtBacklog.Text = "0";
@@ -271,7 +271,7 @@ namespace InformationAgeProject
 			txtDevelopers.Text = Convert.ToString(leftoverDevelopers + backlogNum + lowNum + medNum + highNum);
 		}
 		#endregion
-		
+
 		/// <summary>
 		/// Method: btnInstructions_Click opens the Instructionset.txt file upon clicking
 		/// the btnInstructions button on the main form
@@ -281,7 +281,7 @@ namespace InformationAgeProject
 		private void btnInstructions_Click(object sender, EventArgs e)
 		{
 			//Get the current directory
-			string filePath = Directory.GetCurrentDirectory();
+			string filePath = Directory.GetCurrentDirectory( );
 
 			//Move up two parent directories
 			filePath = Directory.GetParent(filePath).FullName;

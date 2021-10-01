@@ -46,19 +46,19 @@ namespace InformationAgeProject
             {
                 for (int i = 0; i < this.ResourceCost.Count; i++)
                 {
-                    if (this.ResourceCost[i].resourceName.Equals("Backlog") && iPlayer[0] > 0)
+                    if (this.ResourceCost[i].type == ResourceType.BACKLOG && iPlayer[0] > 0)
                     {
                         iPlayer[0]--;
                     }
-                    else if (this.ResourceCost[i].resourceName.Equals("LowPriority") && iPlayer[1] > 0)
+                    else if (this.ResourceCost[i].type == ResourceType.LOWPRIORITY && iPlayer[1] > 0)
                     {
                         iPlayer[1]--;
                     }
-                    else if (this.ResourceCost[i].resourceName.Equals("MediumPriority") && iPlayer[2] > 0)
+                    else if (this.ResourceCost[i].type == ResourceType.MEDPRIORITY && iPlayer[2] > 0)
                     {
                         iPlayer[2]--;
                     }
-                    else if (this.ResourceCost[i].resourceName.Equals("HighPriority") && iPlayer[3] > 0)
+                    else if (this.ResourceCost[i].type == ResourceType.HIGHPRIORITY && iPlayer[3] > 0)
                     {
                         iPlayer[3]--;
                     }
