@@ -29,7 +29,6 @@ namespace InformationAgeProject
     class ResourceManager
     {
         // Maybe it would be better to make this "Inventory Manager" and handle resources, tools, cards, and points.
-
         private Resource[] gameResources = new Resource[4];
 
         /// <summary>
@@ -37,10 +36,10 @@ namespace InformationAgeProject
         /// </summary>
         public ResourceManager( )
         {
-            this.gameResources[0] = new Resource("Backlog");
-            this.gameResources[1] = new Resource("Low Priority");
-            this.gameResources[2] = new Resource("Medium Priority");
-            this.gameResources[3] = new Resource("High Priority");
+            this.gameResources[0] = new Resource("Backlog", ResourceType.BACKLOG);
+            this.gameResources[1] = new Resource("Low Priority", ResourceType.LOWPRIORITY);
+            this.gameResources[2] = new Resource("Medium Priority", ResourceType.MEDPRIORITY);
+            this.gameResources[3] = new Resource("High Priority", ResourceType.HIGHPRIORITY);
         }
 
         #region Setters
@@ -83,6 +82,16 @@ namespace InformationAgeProject
 
         #region Getters
         /// <summary>
+        /// Gets the resource name for the input resource
+        /// </summary>
+        /// <param name="resourceIndex">Index of the resource in array to get the name of</param>
+        /// <returns>The amount in Backlog</returns>
+        public string getResourceName(int resourceIndex)
+        {
+            return this.gameResources[resourceIndex].resourceName;
+        }
+
+        /// <summary>
         /// Gets the resource amount for the current resource.
         /// </summary>
         /// <returns>The amount in Backlog</returns>
@@ -118,97 +127,6 @@ namespace InformationAgeProject
             return this.gameResources[3].resourceAmount;
         }
         #endregion
-
-        #region add to resource
-        /// <summary>
-        /// Adds an amount to the Backlog
-        /// </summary>
-        /// <param name="amountInBacklog">the amount to add</param>
-        public void addToBacklog(int amountInBacklog)
-        {
-            this.gameResources[0].resourceAmount += amountInBacklog;
-        }
-
-        /// <summary>
-        /// Adds an amount to the low priority
-        /// </summary>
-        /// <param name="amountInBacklog">the amount to add</param>
-        public void addToLowPriority(int amountInPriority)
-        {
-            this.gameResources[1].resourceAmount += amountInPriority;
-        }
-
-        /// <summary>
-        /// Adds an amount to the medium priority
-        /// </summary>
-        /// <param name="amountInBacklog">the amount to add</param>
-        public void addToMediumPriority(int amountInPriority)
-        {
-            this.gameResources[2].resourceAmount += amountInPriority;
-        }
-
-        /// <summary>
-        /// Adds an amount to the high priority
-        /// </summary>
-        /// <param name="amountInBacklog">the amount to add</param>
-        public void addToHighPriority(int amountInPriority)
-        {
-            this.gameResources[3].resourceAmount += amountInPriority;
-        }
-        #endregion
-
-        #region remove from resource
-        /// <summary>
-        /// Removes an amount to the backlog
-        /// </summary>
-        /// <param name="amountInBacklog">the amount to remove</param>
-        public void removeFromBacklog(int amountInBacklog)
-        {
-            this.gameResources[0].resourceAmount -= amountInBacklog;
-        }
-
-        /// <summary>
-        /// Removes an amount to the low priority
-        /// </summary>
-        /// <param name="amountInBacklog">the amount to remove</param>
-        public void removeFromLowPriority(int amountInPriority)
-        {
-            this.gameResources[1].resourceAmount -= amountInPriority;
-        }
-
-        /// <summary>
-        /// Removes an amount to the medium priority
-        /// </summary>
-        /// <param name="amountInBacklog">the amount to remove</param>
-        public void removeFromMediumPriority(int amountInPriority)
-        {
-            this.gameResources[2].resourceAmount -= amountInPriority;
-        }
-
-        /// <summary>
-        /// Removes an amount to the high priority
-        /// </summary>
-        /// <param name="amountInBacklog">the amount to remove</param>
-        public void removeFromHighPriority(int amountInPriority)
-        {
-            this.gameResources[3].resourceAmount -= amountInPriority;
-        }
-        #endregion
-
-        /// <summary>
-        /// Prints the current players resources.
-        /// </summary>
-        /// <returns>Returns a string to printout the current players resource count.</returns>
-        public string printManager( )
-        {
-            string strResult ="---------------------------------\n" +
-                              this.gameResources[0].resourceName + ": " + this.gameResources[0].resourceAmount + "\n" +
-                              this.gameResources[1].resourceName + ": " + this.gameResources[1].resourceAmount + "\n" +
-                              this.gameResources[2].resourceName + ": " + this.gameResources[2].resourceAmount + "\n" +
-                              this.gameResources[3].resourceName + ": " + this.gameResources[3].resourceAmount + "\n" +
-                              "---------------------------------\n";
-            return strResult;
-        }
 
     }
 }

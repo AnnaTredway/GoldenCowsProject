@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inventory.cs" />
+    <Compile Include="ResourceType.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
