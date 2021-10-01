@@ -34,11 +34,27 @@ namespace InformationAgeProject
         /// <summary>
         /// Initializes a new instance of the <see cref="Resource"/> class.
         /// </summary>
-        /// <param name="resourceName">Name of the resource.</param>
-        public Resource(string resourceName)
+        public Resource( )
         {
-            this.resourceName = resourceName;
+            var temp = ResourceType.ANY;
+            this.resourceName = temp.ToString( );
+            this.resourceAmount = 0;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Resource"/> class.
+        /// </summary>
+        /// <param name="resourceName">Name of the resource.</param>
+        public Resource(int iResourceEnumIndex)
+        {
+            var temp = (ResourceType)iResourceEnumIndex;
+            this.resourceName = temp.ToString();
             this.resourceAmount = 0;
         }// end Resource(string resourceName)
+
+        public bool EqualTo(Resource otherResource)
+        {
+            return this.resourceName.Equals(otherResource.resourceName);
+        }
     }// end class Resource
 }// end namespace InformationAgeProject

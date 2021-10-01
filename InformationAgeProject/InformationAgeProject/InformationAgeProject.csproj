@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProjectProgressDeck.cs" />
+    <Compile Include="ResourceType.cs" />
+    <Compile Include="ProjectProgress.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

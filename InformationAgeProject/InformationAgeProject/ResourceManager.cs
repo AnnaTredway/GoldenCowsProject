@@ -37,10 +37,10 @@ namespace InformationAgeProject
         /// </summary>
         public ResourceManager( )
         {
-            this.gameResources[0] = new Resource("Backlog");
-            this.gameResources[1] = new Resource("Low Priority");
-            this.gameResources[2] = new Resource("Medium Priority");
-            this.gameResources[3] = new Resource("High Priority");
+            this.gameResources[0] = new Resource(0);
+            this.gameResources[1] = new Resource(1);
+            this.gameResources[2] = new Resource(2);
+            this.gameResources[3] = new Resource(3);
         }
 
         #region Setters
