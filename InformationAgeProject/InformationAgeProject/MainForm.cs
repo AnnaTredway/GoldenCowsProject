@@ -269,6 +269,10 @@ namespace InformationAgeProject
 			//Adds developers back to player's free developer pool
 			int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
 			txtDevelopers.Text = Convert.ToString(leftoverDevelopers + backlogNum + lowNum + medNum + highNum);
+
+			//Recalculate the score and update the score text box
+			Scoring score = new Scoring(inventory);
+			scoreBox.Text = score.calculateScore();
 		}
 		#endregion
 
@@ -293,5 +297,5 @@ namespace InformationAgeProject
 			//Open the file located at filePath (which is InstructionSet.txt
 			Process.Start(filePath);
 		}
-	}
+    }
 }

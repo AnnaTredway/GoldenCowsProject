@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //	Solution/Project:  InformationAgeProject/InformationAgeProject
-//	File Name:         Dice.cs
+//	File Name:         Inventory.cs
 //	Description:       Inventory class for managing resources, tools, cards, buildings, and tools
 //	Course:            CSCI-4250-002 - Software Engineering I
 //	Authors:           Anna Tredway, harwellab@etsu.edu
@@ -117,7 +117,7 @@ namespace InformationAgeProject
 		/// Prints the current players resources.
 		/// </summary>
 		/// <returns>Returns a string to printout the current players resource count.</returns>
-		public string printInventory( )
+		public string printInventory()
 		{
 			string strResult = "---------------------------------\n" +
 							  manager.getResourceName(0) + ": " + manager.getBacklogAmount( ) + "\n" +
@@ -127,5 +127,14 @@ namespace InformationAgeProject
 							  "---------------------------------\n";
 			return strResult;
 		}
+
+		/// <summary>
+		/// Returns the current state of the resource manager for use in other classes.
+		/// </summary>
+		/// <returns></returns>
+		public ResourceManager ReturnManager()
+        {
+			return manager;
+        }
 	}
 }

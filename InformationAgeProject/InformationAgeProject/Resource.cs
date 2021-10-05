@@ -45,7 +45,8 @@ namespace InformationAgeProject
         /// <summary>
         /// Initializes a new instance of the <see cref="Resource"/> class.
         /// </summary>
-        /// <param name="resourceName">Name of the resource.</param>
+        /// <param name="resourceName">Name of the resource</param>
+        /// <param name="type">Type of the resource</param>
         public Resource(string resourceName, ResourceType type)
         {
             this.resourceName = resourceName;
