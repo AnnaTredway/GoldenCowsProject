@@ -30,12 +30,12 @@ namespace InformationAgeProject
 	public partial class MainForm : Form
 	{
 		//Inventory and Dice instances to be used throughout program
-		Inventory inventory = new Inventory();
-		Dice dice = new Dice();
+		Inventory inventory = new Inventory( );
+		Dice dice = new Dice( );
 
-		public MainForm()
+		public MainForm( )
 		{
-			InitializeComponent();
+			InitializeComponent( );
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace InformationAgeProject
 		{
 			//If the number of developers is larger than 0 and backlog count is less than 7, then subtract 1 from developer count and add 1 to backlog count
 			//Else, do nothing
-			if(Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtBacklog.Text) < 7)
+			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtBacklog.Text) < 7)
 			{
 				//Subtract 1 developer from developer count
 				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
@@ -258,7 +258,7 @@ namespace InformationAgeProject
 			inventory.addToHighPriority(dice.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
 
 			//Print out current inventory text to inventoryBox
-			inventoryBox.Text = inventory.printInventory();
+			inventoryBox.Text = inventory.printInventory( );
 
 			//Resets developer counts on each task/resource
 			txtBacklog.Text = "0";
@@ -275,7 +275,7 @@ namespace InformationAgeProject
 			scoreBox.Text = score.calculateScore();
 		}
 		#endregion
-		
+
 		/// <summary>
 		/// Method: btnInstructions_Click opens the Instructionset.txt file upon clicking
 		/// the btnInstructions button on the main form
@@ -285,7 +285,7 @@ namespace InformationAgeProject
 		private void btnInstructions_Click(object sender, EventArgs e)
 		{
 			//Get the current directory
-			string filePath = Directory.GetCurrentDirectory();
+			string filePath = Directory.GetCurrentDirectory( );
 
 			//Move up two parent directories
 			filePath = Directory.GetParent(filePath).FullName;

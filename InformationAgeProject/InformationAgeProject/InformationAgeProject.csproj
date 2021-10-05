@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Inventory.cs" />
+    <Compile Include="ProjectProgressDeck.cs" />
     <Compile Include="ResourceType.cs" />
+    <Compile Include="ProjectProgress.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
