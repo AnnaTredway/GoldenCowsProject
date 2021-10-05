@@ -29,9 +29,9 @@ namespace InformationAgeProject
 {
 	public partial class MainForm : Form
 	{
-		//ResourceManager and Dice classes to be used throughout program
-		ResourceManager Manager = new ResourceManager();
-		Dice Die = new Dice();
+		//Inventory and Dice instances to be used throughout program
+		Inventory inventory = new Inventory();
+		Dice dice = new Dice();
 
 		public MainForm()
 		{
@@ -252,13 +252,13 @@ namespace InformationAgeProject
 			//Add calculated resources to ResourceManager for current player
 			//(Number of dice rolled is equal to number of developers on specific resource)
 			//(Dice result is then divided by 3,4,5, or 6 to get final resource count acquired)
-			Manager.addToBacklog(Die.RollDice(backlogNum) / 3);      //Lowest-tier resource divided by 3
-			Manager.addToLowPriority(Die.RollDice(lowNum) / 4);      //Low-tier resource divided by 4
-			Manager.addToMediumPriority(Die.RollDice(medNum) / 5);   //Mid-tier resource divided by 5
-			Manager.addToHighPriority(Die.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
+			inventory.addToBacklog(dice.RollDice(backlogNum) / 3);      //Lowest-tier resource divided by 3
+			inventory.addToLowPriority(dice.RollDice(lowNum) / 4);      //Low-tier resource divided by 4
+			inventory.addToMediumPriority(dice.RollDice(medNum) / 5);   //Mid-tier resource divided by 5
+			inventory.addToHighPriority(dice.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
 
 			//Print out current inventory text to inventoryBox
-			inventoryBox.Text = Manager.printManager();
+			inventoryBox.Text = inventory.printInventory();
 
 			//Resets developer counts on each task/resource
 			txtBacklog.Text = "0";
@@ -269,6 +269,10 @@ namespace InformationAgeProject
 			//Adds developers back to player's free developer pool
 			int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
 			txtDevelopers.Text = Convert.ToString(leftoverDevelopers + backlogNum + lowNum + medNum + highNum);
+
+			//Recalculate the score and update the score text box
+			Scoring score = new Scoring(inventory);
+			scoreBox.Text = score.calculateScore();
 		}
 		#endregion
 		
@@ -293,5 +297,5 @@ namespace InformationAgeProject
 			//Open the file located at filePath (which is InstructionSet.txt
 			Process.Start(filePath);
 		}
-	}
+    }
 }

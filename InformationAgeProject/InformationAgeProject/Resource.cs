@@ -30,15 +30,18 @@ namespace InformationAgeProject
     {
         public string resourceName; // Stores the name of the resource
         public int resourceAmount;  // Stores the amount of this resource a player has.
+        public ResourceType type;   // Stores the type of the resource/task
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Resource"/> class.
         /// </summary>
-        /// <param name="resourceName">Name of the resource.</param>
-        public Resource(string resourceName)
+        /// <param name="resourceName">Name of the resource</param>
+        /// <param name="type">Type of the resource</param>
+        public Resource(string resourceName, ResourceType type)
         {
             this.resourceName = resourceName;
             this.resourceAmount = 0;
+            this.type = type;
         }// end Resource(string resourceName)
     }// end class Resource
 }// end namespace InformationAgeProject
