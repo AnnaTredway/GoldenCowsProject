@@ -68,6 +68,7 @@ namespace InformationAgeProject
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnInstructions = new System.Windows.Forms.Button();
             this.inventoryBox = new System.Windows.Forms.RichTextBox();
+            this.scoreBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // lblBacklog
@@ -320,17 +321,26 @@ namespace InformationAgeProject
             // 
             // inventoryBox
             // 
-            this.inventoryBox.Location = new System.Drawing.Point(872, 186);
+            this.inventoryBox.Location = new System.Drawing.Point(871, 186);
             this.inventoryBox.Name = "inventoryBox";
             this.inventoryBox.Size = new System.Drawing.Size(381, 96);
             this.inventoryBox.TabIndex = 33;
             this.inventoryBox.Text = "";
+            // 
+            // scoreBox
+            // 
+            this.scoreBox.Location = new System.Drawing.Point(871, 288);
+            this.scoreBox.Name = "scoreBox";
+            this.scoreBox.Size = new System.Drawing.Size(381, 96);
+            this.scoreBox.TabIndex = 34;
+            this.scoreBox.Text = "";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.scoreBox);
             this.Controls.Add(this.inventoryBox);
             this.Controls.Add(this.btnInstructions);
             this.Controls.Add(this.txtDevelopers);
@@ -389,6 +399,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnInstructions;
         private System.Windows.Forms.RichTextBox inventoryBox;
+        private System.Windows.Forms.RichTextBox scoreBox;
     }
 }
 

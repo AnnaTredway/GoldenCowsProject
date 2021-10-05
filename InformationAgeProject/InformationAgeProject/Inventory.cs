@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //	Solution/Project:  InformationAgeProject/InformationAgeProject
-//	File Name:         Dice.cs
+//	File Name:         Inventory.cs
 //	Description:       Inventory class for managing resources, tools, cards, buildings, and tools
 //	Course:            CSCI-4250-002 - Software Engineering I
 //	Authors:           Anna Tredway, harwellab@etsu.edu
@@ -24,7 +24,7 @@ namespace InformationAgeProject
 	/// <summary>
 	/// Inventory class for interacting with ResourceManger
 	/// </summary>
-	class Inventory
+	public class Inventory
 	{
 		//ResourceManager classes to be used in Inventory
 		private ResourceManager manager;
@@ -127,5 +127,14 @@ namespace InformationAgeProject
 							  "---------------------------------\n";
 			return strResult;
 		}
+
+		/// <summary>
+		/// Returns the current state of the resource manager for use in other classes.
+		/// </summary>
+		/// <returns></returns>
+		public ResourceManager ReturnManager()
+        {
+			return manager;
+        }
 	}
 }
