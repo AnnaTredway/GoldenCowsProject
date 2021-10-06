@@ -43,7 +43,7 @@ namespace InformationAgeProject
 
 		}
 
-		#region Task/Resource Buttons
+		#region Task/Resource/Scoring Buttons and Textboxes
 		/// <summary>
 		/// Event Handler for button to add developer to backlog task/resource category if any are available
 		/// </summary>
@@ -276,16 +276,17 @@ namespace InformationAgeProject
 		}
 		#endregion
 
+		#region Toolbar Dropdown Menu Buttons
 		/// <summary>
 		/// Method: btnInstructions_Click opens the Instructionset.txt file upon clicking
 		/// the btnInstructions button on the main form
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void btnInstructions_Click(object sender, EventArgs e)
+		private void btnInstructionsMenuItem_Click(object sender, EventArgs e)
 		{
 			//Get the current directory
-			string filePath = Directory.GetCurrentDirectory( );
+			string filePath = Directory.GetCurrentDirectory();
 
 			//Move up two parent directories
 			filePath = Directory.GetParent(filePath).FullName;
@@ -297,5 +298,30 @@ namespace InformationAgeProject
 			//Open the file located at filePath (which is InstructionSet.txt
 			Process.Start(filePath);
 		}
-    }
+
+		/// <summary>
+		/// Event Handler for dropdown menu button to open "about" windows form
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnAboutMenuItem_Click(object sender, EventArgs e)
+		{
+			//Opens new AboutBox window for About information
+			AboutBox aboutBox = new AboutBox();
+			aboutBox.Show();
+		}
+
+		/// <summary>
+		/// Event Handler for dropdown menu button to open "are you sure you want to quit?" windows form
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnQuitMenuItem_Click(object sender, EventArgs e)
+		{
+			//Opens new QuitForm window for prompting user if they want to exit application
+			QuitForm quitForm = new QuitForm();
+			quitForm.Show();
+		}
+		#endregion
+	}
 }
