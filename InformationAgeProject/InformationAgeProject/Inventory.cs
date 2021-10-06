@@ -24,7 +24,7 @@ namespace InformationAgeProject
 	/// <summary>
 	/// Inventory class for interacting with ResourceManger
 	/// </summary>
-	class Inventory
+	public class Inventory
 	{
 		//ResourceManager classes to be used in Inventory
 		private ResourceManager manager;
@@ -133,8 +133,8 @@ namespace InformationAgeProject
 		/// </summary>
 		/// <returns></returns>
 		public ResourceManager ReturnManager()
-        {
+		{
 			return manager;
-        }
+		}
 	}
 }
