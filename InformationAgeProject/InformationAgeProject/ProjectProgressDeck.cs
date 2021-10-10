@@ -28,16 +28,16 @@ namespace InformationAgeProject
     /// </summary>
     class ProjectProgressDeck
     {
-        ProjectProgress[] Deck = new ProjectProgress[28]; // Creates a deck of 28 Project Progress cards
+        public List<ProjectProgress> Deck = new List<ProjectProgress>(); // Creates a deck of 28 Project Progress cards
 
         /// <summary>
         /// Creates a new deck of cards and shuffles them.
         /// </summary>
         public ProjectProgressDeck( )
         {
-            for (int i = 0; i < Deck.Length; i++)
+            for (int i = 0; i < 28; i++)
             {
-                Deck[i] = new ProjectProgress( );
+                Deck.Add(new ProjectProgress());
             }// end for (int i = 0; i < Deck.Length; i++)
 
             Shuffle( );
@@ -51,9 +51,9 @@ namespace InformationAgeProject
             Random rNum = new Random( ); // Used to shuffle the deck
             int iRandom;                 // Stores a number generated from rNum
             ProjectProgress swap;        // Temporary stores a card so it can be swapped
-            for (int i = 0; i < Deck.Length; i++)
+            for (int i = 0; i < Deck.Count; i++)
             {
-                iRandom = rNum.Next(Deck.Length);
+                iRandom = rNum.Next(Deck.Count);
                 swap = Deck[i];
                 Deck[i] = Deck[iRandom];
                 Deck[iRandom] = swap;

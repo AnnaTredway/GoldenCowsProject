@@ -32,6 +32,7 @@ namespace InformationAgeProject
 		//Inventory and Dice instances to be used throughout program
 		Inventory inventory = new Inventory( );
 		Dice dice = new Dice( );
+		ProjectProgressDeck ProjProgDeck = new ProjectProgressDeck( );
 
 		public MainForm( )
 		{
@@ -40,7 +41,10 @@ namespace InformationAgeProject
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-
+            ProjectProgressCard1.Text = ProjProgDeck.Deck[0].DisplayCard( );
+			ProjectProgressCard2.Text = ProjProgDeck.Deck[1].DisplayCard( );
+			ProjectProgressCard3.Text = ProjProgDeck.Deck[2].DisplayCard( );
+			ProjectProgressCard4.Text = ProjProgDeck.Deck[3].DisplayCard( );
 		}
 
 		#region Task/Resource/Scoring Buttons and Textboxes
@@ -322,6 +326,93 @@ namespace InformationAgeProject
 			QuitForm quitForm = new QuitForm();
 			quitForm.Show();
 		}
-		#endregion
-	}
+        #endregion
+
+        #region Project Progress Cards
+        /// <summary>
+        /// Claims the first project progress card
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void ClaimCard1_Click(object sender, EventArgs e)
+        {
+			int points = ProjProgDeck.Deck[0].awardPoints(inventory.ReturnManager( )) ;
+			Scoring score = new Scoring(inventory);
+
+			if (points > 0)
+            {
+				// TODO: award points to player
+				ProjProgDeck.Deck.RemoveAt(0);
+                ClaimCard1.Enabled = false;
+                ProjectProgressCard1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
+				inventoryBox.Text = inventory.printInventory( );
+				scoreBox.Text = score.calculateScore( );
+			}
+		}
+
+		/// <summary>
+		/// Claims the second project progress card
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void ClaimCard2_Click(object sender, EventArgs e)
+        {
+			int points = ProjProgDeck.Deck[0].awardPoints(inventory.ReturnManager( ));
+			Scoring score = new Scoring(inventory);
+
+			if (points > 0)
+			{
+				// TODO: award points to player
+				ProjProgDeck.Deck.RemoveAt(1);
+                ClaimCard2.Enabled = false;
+                ProjectProgressCard2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
+                inventoryBox.Text = inventory.printInventory( );
+				scoreBox.Text = score.calculateScore( );
+			}
+		}
+
+		/// <summary>
+		/// Claims the third project progress card
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void ClaimCard3_Click(object sender, EventArgs e)
+        {
+			int points = ProjProgDeck.Deck[0].awardPoints(inventory.ReturnManager( ));
+			Scoring score = new Scoring(inventory);
+
+			if (points > 0)
+			{
+				// TODO: award points to player
+				ProjProgDeck.Deck.RemoveAt(2);
+                ClaimCard3.Enabled = false;
+                ProjectProgressCard3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
+                inventoryBox.Text = inventory.printInventory( );
+				scoreBox.Text = score.calculateScore( );
+			}
+		}
+
+		/// <summary>
+		/// Claims the fourth project progress card
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void ClaimCard4_Click(object sender, EventArgs e)
+        {
+			int points = ProjProgDeck.Deck[0].awardPoints(inventory.ReturnManager( ));
+			Scoring score = new Scoring(inventory);
+
+			if (points > 0)
+			{
+				// TODO: award points to player
+				ProjProgDeck.Deck.RemoveAt(3);
+                ClaimCard4.Enabled = false;
+                ProjectProgressCard4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
+                inventoryBox.Text = inventory.printInventory( );
+				scoreBox.Text = score.calculateScore( );
+			}
+		}
+        #endregion
+
+    }
 }
