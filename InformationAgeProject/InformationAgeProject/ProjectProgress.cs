@@ -29,9 +29,9 @@ namespace InformationAgeProject
     /// </summary>
     class ProjectProgress
     {
-        private Random rNum = new Random();     // Used to select a random resource to use
-        private int iPointValue;                // Stores the amount of points this card is worth
-        private int iDifferentTypesNeeded;      // Stores the number of different resources types needed to purchase this card (used for advance cards)
+        private static Random rNum = new Random( ); // Used to select a random resource to use
+        private int iPointValue;                    // Stores the amount of points this card is worth
+        private int iDifferentTypesNeeded;          // Stores the number of different resources types needed to purchase this card (used for advance cards)
         private List<Resource> ResourceCost = new List<Resource>( ); // Stores the resources need to purchase this card
 
         /// <summary>
@@ -39,10 +39,11 @@ namespace InformationAgeProject
         /// </summary>
         public ProjectProgress( )
         {
+            
             this.iPointValue = rNum.Next(6) + 10;
-            this.ResourceCost.Add(new Resource(rNum.Next(3)));
-            this.ResourceCost.Add(new Resource(rNum.Next(3)));
-            this.ResourceCost.Add(new Resource(rNum.Next(3)));
+            this.ResourceCost.Add(new Resource(rNum.Next(4)));
+            this.ResourceCost.Add(new Resource(rNum.Next(4)));
+            this.ResourceCost.Add(new Resource(rNum.Next(4)));
         }// end ProjectProgress( )
 
         /// <summary>
@@ -58,6 +59,21 @@ namespace InformationAgeProject
             }
             this.iDifferentTypesNeeded = reseouceTypeNeeded;
         }// end ProjectProgress(int reseouceAmountNeeded, int reseouceTypeNeeded)
+
+        public string DisplayCard( )
+        {
+            StringBuilder card = new StringBuilder( );
+            card.Append("----------------\r\n");
+            card.Append("- Value:       -\r\n");
+            card.Append("- " + this.iPointValue.ToString( ).PadLeft(12) + " -\r\n");
+            card.Append("- Cost:        -\r\n");
+            for (int i = 0; i < ResourceCost.Count; i++)
+            {
+                card.Append("- " + this.ResourceCost[i].resourceName.PadLeft(12) + " -\r\n");
+            }
+            card.Append("----------------");
+            return card.ToString( );
+        }
 
         /// <summary>
         /// Awards the player with points if they have the necessary resources to purchase the card.
