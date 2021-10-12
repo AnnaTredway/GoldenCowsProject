@@ -76,6 +76,14 @@ namespace InformationAgeProject
             this.btnQuitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblInventory = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
+            this.ProjectProgressCard1 = new System.Windows.Forms.TextBox();
+            this.ProjectProgressCard2 = new System.Windows.Forms.TextBox();
+            this.ProjectProgressCard3 = new System.Windows.Forms.TextBox();
+            this.ProjectProgressCard4 = new System.Windows.Forms.TextBox();
+            this.ClaimCard1 = new System.Windows.Forms.Button();
+            this.ClaimCard2 = new System.Windows.Forms.Button();
+            this.ClaimCard3 = new System.Windows.Forms.Button();
+            this.ClaimCard4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -344,6 +352,7 @@ namespace InformationAgeProject
             this.inventoryBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inventoryBox.Location = new System.Drawing.Point(871, 186);
             this.inventoryBox.Name = "inventoryBox";
+            this.inventoryBox.ReadOnly = true;
             this.inventoryBox.Size = new System.Drawing.Size(381, 96);
             this.inventoryBox.TabIndex = 33;
             this.inventoryBox.Text = "";
@@ -354,6 +363,7 @@ namespace InformationAgeProject
             this.scoreBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.scoreBox.Location = new System.Drawing.Point(871, 288);
             this.scoreBox.Name = "scoreBox";
+            this.scoreBox.ReadOnly = true;
             this.scoreBox.Size = new System.Drawing.Size(381, 96);
             this.scoreBox.TabIndex = 34;
             this.scoreBox.Text = "";
@@ -383,21 +393,21 @@ namespace InformationAgeProject
             // btnInstructionsMenuItem
             // 
             this.btnInstructionsMenuItem.Name = "btnInstructionsMenuItem";
-            this.btnInstructionsMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnInstructionsMenuItem.Size = new System.Drawing.Size(136, 22);
             this.btnInstructionsMenuItem.Text = "Instructions";
             this.btnInstructionsMenuItem.Click += new System.EventHandler(this.btnInstructionsMenuItem_Click);
             // 
             // btnAboutMenuItem
             // 
             this.btnAboutMenuItem.Name = "btnAboutMenuItem";
-            this.btnAboutMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnAboutMenuItem.Size = new System.Drawing.Size(136, 22);
             this.btnAboutMenuItem.Text = "About";
             this.btnAboutMenuItem.Click += new System.EventHandler(this.btnAboutMenuItem_Click);
             // 
             // btnQuitMenuItem
             // 
             this.btnQuitMenuItem.Name = "btnQuitMenuItem";
-            this.btnQuitMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnQuitMenuItem.Size = new System.Drawing.Size(136, 22);
             this.btnQuitMenuItem.Text = "Quit";
             this.btnQuitMenuItem.Click += new System.EventHandler(this.btnQuitMenuItem_Click);
             // 
@@ -423,12 +433,100 @@ namespace InformationAgeProject
             this.lblScore.TabIndex = 38;
             this.lblScore.Text = "Score:";
             // 
+            // ProjectProgressCard1
+            // 
+            this.ProjectProgressCard1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectProgressCard1.Location = new System.Drawing.Point(18, 438);
+            this.ProjectProgressCard1.Multiline = true;
+            this.ProjectProgressCard1.Name = "ProjectProgressCard1";
+            this.ProjectProgressCard1.ReadOnly = true;
+            this.ProjectProgressCard1.Size = new System.Drawing.Size(130, 129);
+            this.ProjectProgressCard1.TabIndex = 39;
+            // 
+            // ProjectProgressCard2
+            // 
+            this.ProjectProgressCard2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectProgressCard2.Location = new System.Drawing.Point(154, 438);
+            this.ProjectProgressCard2.Multiline = true;
+            this.ProjectProgressCard2.Name = "ProjectProgressCard2";
+            this.ProjectProgressCard2.ReadOnly = true;
+            this.ProjectProgressCard2.Size = new System.Drawing.Size(130, 129);
+            this.ProjectProgressCard2.TabIndex = 40;
+            // 
+            // ProjectProgressCard3
+            // 
+            this.ProjectProgressCard3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectProgressCard3.Location = new System.Drawing.Point(290, 438);
+            this.ProjectProgressCard3.Multiline = true;
+            this.ProjectProgressCard3.Name = "ProjectProgressCard3";
+            this.ProjectProgressCard3.ReadOnly = true;
+            this.ProjectProgressCard3.Size = new System.Drawing.Size(130, 129);
+            this.ProjectProgressCard3.TabIndex = 41;
+            // 
+            // ProjectProgressCard4
+            // 
+            this.ProjectProgressCard4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectProgressCard4.Location = new System.Drawing.Point(426, 438);
+            this.ProjectProgressCard4.Multiline = true;
+            this.ProjectProgressCard4.Name = "ProjectProgressCard4";
+            this.ProjectProgressCard4.ReadOnly = true;
+            this.ProjectProgressCard4.Size = new System.Drawing.Size(130, 129);
+            this.ProjectProgressCard4.TabIndex = 42;
+            // 
+            // ClaimCard1
+            // 
+            this.ClaimCard1.Location = new System.Drawing.Point(45, 573);
+            this.ClaimCard1.Name = "ClaimCard1";
+            this.ClaimCard1.Size = new System.Drawing.Size(75, 23);
+            this.ClaimCard1.TabIndex = 43;
+            this.ClaimCard1.Text = "Claim Card";
+            this.ClaimCard1.UseVisualStyleBackColor = true;
+            this.ClaimCard1.Click += new System.EventHandler(this.ClaimCard1_Click);
+            // 
+            // ClaimCard2
+            // 
+            this.ClaimCard2.Location = new System.Drawing.Point(185, 573);
+            this.ClaimCard2.Name = "ClaimCard2";
+            this.ClaimCard2.Size = new System.Drawing.Size(75, 23);
+            this.ClaimCard2.TabIndex = 44;
+            this.ClaimCard2.Text = "Claim Card";
+            this.ClaimCard2.UseVisualStyleBackColor = true;
+            this.ClaimCard2.Click += new System.EventHandler(this.ClaimCard2_Click);
+            // 
+            // ClaimCard3
+            // 
+            this.ClaimCard3.Location = new System.Drawing.Point(319, 573);
+            this.ClaimCard3.Name = "ClaimCard3";
+            this.ClaimCard3.Size = new System.Drawing.Size(75, 23);
+            this.ClaimCard3.TabIndex = 45;
+            this.ClaimCard3.Text = "Claim Card";
+            this.ClaimCard3.UseVisualStyleBackColor = true;
+            this.ClaimCard3.Click += new System.EventHandler(this.ClaimCard3_Click);
+            // 
+            // ClaimCard4
+            // 
+            this.ClaimCard4.Location = new System.Drawing.Point(454, 573);
+            this.ClaimCard4.Name = "ClaimCard4";
+            this.ClaimCard4.Size = new System.Drawing.Size(75, 23);
+            this.ClaimCard4.TabIndex = 46;
+            this.ClaimCard4.Text = "Claim Card";
+            this.ClaimCard4.UseVisualStyleBackColor = true;
+            this.ClaimCard4.Click += new System.EventHandler(this.ClaimCard4_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.ClaimCard4);
+            this.Controls.Add(this.ClaimCard3);
+            this.Controls.Add(this.ClaimCard2);
+            this.Controls.Add(this.ClaimCard1);
+            this.Controls.Add(this.ProjectProgressCard4);
+            this.Controls.Add(this.ProjectProgressCard3);
+            this.Controls.Add(this.ProjectProgressCard2);
+            this.Controls.Add(this.ProjectProgressCard1);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblInventory);
             this.Controls.Add(this.menuStrip1);
@@ -501,6 +599,14 @@ namespace InformationAgeProject
         private System.Windows.Forms.ToolStripMenuItem btnQuitMenuItem;
         private System.Windows.Forms.Label lblInventory;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.TextBox ProjectProgressCard1;
+        private System.Windows.Forms.TextBox ProjectProgressCard2;
+        private System.Windows.Forms.TextBox ProjectProgressCard3;
+        private System.Windows.Forms.TextBox ProjectProgressCard4;
+        private System.Windows.Forms.Button ClaimCard1;
+        private System.Windows.Forms.Button ClaimCard2;
+        private System.Windows.Forms.Button ClaimCard3;
+        private System.Windows.Forms.Button ClaimCard4;
     }
 }
 

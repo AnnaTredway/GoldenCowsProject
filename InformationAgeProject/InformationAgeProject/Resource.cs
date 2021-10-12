@@ -54,6 +54,10 @@ namespace InformationAgeProject
             this.type = type; 
         }// end Resource(string resourceName)
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Resource"/> class.
+        /// </summary>
+        /// <param name="randomType">A random number.</param>
         public Resource (int randomType)
         {
             var temp = (ResourceType)randomType;
@@ -62,9 +66,14 @@ namespace InformationAgeProject
             this.type = temp;
         }
 
+        /// <summary>
+        /// Checks to see if two resources are equal to each other
+        /// </summary>
+        /// <param name="otherResource">The other resource.</param>
+        /// <returns></returns>
         public bool EqualTo(Resource otherResource)
         {
-            return this.resourceName.Equals(otherResource.resourceName);
+            return this.type.Equals(otherResource.type);
         }
     }// end class Resource
 }// end namespace InformationAgeProject
