@@ -41,6 +41,7 @@ namespace InformationAgeProject
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
+			this.txtDevelopers.Text = player1.Developers.ToString( );
 			ProjectProgressCard1.Text = ProjProgDeck.Deck[0].DisplayCard( );
 			ProjectProgressCard2.Text = ProjProgDeck.Deck[1].DisplayCard( );
 			ProjectProgressCard3.Text = ProjProgDeck.Deck[2].DisplayCard( );
