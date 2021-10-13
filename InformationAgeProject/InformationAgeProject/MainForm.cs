@@ -41,7 +41,8 @@ namespace InformationAgeProject
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-            ProjectProgressCard1.Text = ProjProgDeck.Deck[0].DisplayCard( );
+			this.txtDevelopers.Text = player1.Developers.ToString( );
+			ProjectProgressCard1.Text = ProjProgDeck.Deck[0].DisplayCard( );
 			ProjectProgressCard2.Text = ProjProgDeck.Deck[1].DisplayCard( );
 			ProjectProgressCard3.Text = ProjProgDeck.Deck[2].DisplayCard( );
 			ProjectProgressCard4.Text = ProjProgDeck.Deck[3].DisplayCard( );
@@ -326,26 +327,26 @@ namespace InformationAgeProject
 			QuitForm quitForm = new QuitForm();
 			quitForm.Show();
 		}
-        #endregion
+		#endregion
 
-        #region Project Progress Cards
-        /// <summary>
-        /// Claims the first project progress card
-        /// </summary>
-        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
-        /// <param name="e">arguments for event (auto-generated, unused here)</param>
-        private void ClaimCard1_Click(object sender, EventArgs e)
-        {
-			int points = ProjProgDeck.Deck[0].awardPoints(inventory.ReturnManager( )) ;
-			Scoring score = new Scoring(inventory);
+		#region Project Progress Cards
+		/// <summary>
+		/// Claims the first project progress card
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void ClaimCard1_Click(object sender, EventArgs e)
+		{
+			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnManager( )) ;
+			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
-            {
+			{
 				// TODO: award points to player
 				ProjProgDeck.Deck.RemoveAt(0);
-                ClaimCard1.Enabled = false;
-                ProjectProgressCard1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = inventory.printInventory( );
+				ClaimCard1.Enabled = false;
+				ProjectProgressCard1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
+				inventoryBox.Text = player1.Inventory.printInventory( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -356,17 +357,17 @@ namespace InformationAgeProject
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard2_Click(object sender, EventArgs e)
-        {
-			int points = ProjProgDeck.Deck[0].awardPoints(inventory.ReturnManager( ));
-			Scoring score = new Scoring(inventory);
+		{
+			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnManager( ));
+			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
 			{
 				// TODO: award points to player
 				ProjProgDeck.Deck.RemoveAt(1);
-                ClaimCard2.Enabled = false;
-                ProjectProgressCard2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-                inventoryBox.Text = inventory.printInventory( );
+				ClaimCard2.Enabled = false;
+				ProjectProgressCard2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
+				inventoryBox.Text = player1.Inventory.printInventory( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -377,17 +378,17 @@ namespace InformationAgeProject
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard3_Click(object sender, EventArgs e)
-        {
-			int points = ProjProgDeck.Deck[0].awardPoints(inventory.ReturnManager( ));
-			Scoring score = new Scoring(inventory);
+		{
+			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnManager( ));
+			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
 			{
 				// TODO: award points to player
 				ProjProgDeck.Deck.RemoveAt(2);
-                ClaimCard3.Enabled = false;
-                ProjectProgressCard3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-                inventoryBox.Text = inventory.printInventory( );
+				ClaimCard3.Enabled = false;
+				ProjectProgressCard3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
+				inventoryBox.Text = player1.Inventory.printInventory( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -398,21 +399,21 @@ namespace InformationAgeProject
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard4_Click(object sender, EventArgs e)
-        {
-			int points = ProjProgDeck.Deck[0].awardPoints(inventory.ReturnManager( ));
-			Scoring score = new Scoring(inventory);
+		{
+			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnManager( ));
+			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
 			{
 				// TODO: award points to player
 				ProjProgDeck.Deck.RemoveAt(3);
-                ClaimCard4.Enabled = false;
-                ProjectProgressCard4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-                inventoryBox.Text = inventory.printInventory( );
+				ClaimCard4.Enabled = false;
+				ProjectProgressCard4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
+				inventoryBox.Text = player1.Inventory.printInventory( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
-        #endregion
+		#endregion
 
-    }
+	}
 }
