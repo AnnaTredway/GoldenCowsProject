@@ -29,8 +29,8 @@ namespace InformationAgeProject
 {
 	public partial class MainForm : Form
 	{
-		//Inventory and Dice instances to be used throughout program
-		Inventory inventory = new Inventory();
+		//Player and Dice instances to be used throughout program
+		Player player1 = new Player();
 		Dice dice = new Dice();
 
 		public MainForm()
@@ -252,13 +252,13 @@ namespace InformationAgeProject
 			//Add calculated resources to ResourceManager for current player
 			//(Number of dice rolled is equal to number of developers on specific resource)
 			//(Dice result is then divided by 3,4,5, or 6 to get final resource count acquired)
-			inventory.addToBacklog(dice.RollDice(backlogNum) / 3);      //Lowest-tier resource divided by 3
-			inventory.addToLowPriority(dice.RollDice(lowNum) / 4);      //Low-tier resource divided by 4
-			inventory.addToMediumPriority(dice.RollDice(medNum) / 5);   //Mid-tier resource divided by 5
-			inventory.addToHighPriority(dice.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
+			player1.Inventory.addToBacklog(dice.RollDice(backlogNum) / 3);      //Lowest-tier resource divided by 3
+			player1.Inventory.addToLowPriority(dice.RollDice(lowNum) / 4);      //Low-tier resource divided by 4
+			player1.Inventory.addToMediumPriority(dice.RollDice(medNum) / 5);   //Mid-tier resource divided by 5
+			player1.Inventory.addToHighPriority(dice.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
 
 			//Print out current inventory text to inventoryBox
-			inventoryBox.Text = inventory.printInventory();
+			inventoryBox.Text = player1.Inventory.printInventory();
 
 			//Resets developer counts on each task/resource
 			txtBacklog.Text = "0";
@@ -271,7 +271,7 @@ namespace InformationAgeProject
 			txtDevelopers.Text = Convert.ToString(leftoverDevelopers + backlogNum + lowNum + medNum + highNum);
 
 			//Recalculate the score and update the score text box
-			Scoring score = new Scoring(inventory);
+			Scoring score = new Scoring(player1.Inventory);
 			scoreBox.Text = score.calculateScore();
 		}
 		#endregion

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Player.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="ResourceType.cs" />
     <Compile Include="Dice.cs" />

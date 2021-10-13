@@ -300,7 +300,7 @@ namespace InformationAgeProject
             this.txtDevelopers.Name = "txtDevelopers";
             this.txtDevelopers.Size = new System.Drawing.Size(51, 32);
             this.txtDevelopers.TabIndex = 32;
-            this.txtDevelopers.Text = "20";
+            this.txtDevelopers.Text = player1.Developers.ToString();
             this.txtDevelopers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDevelopers.WordWrap = false;
             // 
