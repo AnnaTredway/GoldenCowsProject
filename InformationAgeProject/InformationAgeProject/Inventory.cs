@@ -32,9 +32,9 @@ namespace InformationAgeProject
 		/// <summary>
 		/// Constructor for Inventory 
 		/// </summary>
-		public Inventory()
+		public Inventory( )
 		{
-			manager = new ResourceManager();
+			manager = new ResourceManager( );
 		}
 
 		#region Add to resource count methods
@@ -44,7 +44,7 @@ namespace InformationAgeProject
 		/// <param name="amountToAdd">the amount to add</param>
 		public void addToBacklog(int amountToAdd)
 		{
-			manager.setBacklog(manager.getBacklogAmount() + amountToAdd);
+			manager.setBacklog(manager.getBacklogAmount( ) + amountToAdd);
 		}
 
 		/// <summary>
@@ -53,7 +53,7 @@ namespace InformationAgeProject
 		/// <param name="amountToAdd">the amount to add</param>
 		public void addToLowPriority(int amountToAdd)
 		{
-			manager.setLowPriority(manager.getLowPriorityAmount() + amountToAdd);
+			manager.setLowPriority(manager.getLowPriorityAmount( ) + amountToAdd);
 		}
 
 		/// <summary>
@@ -62,7 +62,7 @@ namespace InformationAgeProject
 		/// <param name="amountToAdd">the amount to add</param>
 		public void addToMediumPriority(int amountToAdd)
 		{
-			manager.setMediumPriority(manager.getMediumPriorityAmount() + amountToAdd);
+			manager.setMediumPriority(manager.getMediumPriorityAmount( ) + amountToAdd);
 		}
 
 		/// <summary>
@@ -71,7 +71,7 @@ namespace InformationAgeProject
 		/// <param name="amountToAdd">the amount to add</param>
 		public void addToHighPriority(int amountToAdd)
 		{
-			manager.setHighPriority(manager.getHighPriorityAmount() + amountToAdd);
+			manager.setHighPriority(manager.getHighPriorityAmount( ) + amountToAdd);
 		}
 		#endregion
 
@@ -82,7 +82,7 @@ namespace InformationAgeProject
 		/// <param name="amountToRemove">the amount to remove</param>
 		public void removeFromBacklog(int amountToRemove)
 		{
-			manager.setBacklog(manager.getBacklogAmount() - amountToRemove);
+			manager.setBacklog(manager.getBacklogAmount( ) - amountToRemove);
 		}
 
 		/// <summary>
@@ -91,7 +91,7 @@ namespace InformationAgeProject
 		/// <param name="amountToRemove">the amount to remove</param>
 		public void removeFromLowPriority(int amountToRemove)
 		{
-			manager.setLowPriority(manager.getLowPriorityAmount() - amountToRemove);
+			manager.setLowPriority(manager.getLowPriorityAmount( ) - amountToRemove);
 		}
 
 		/// <summary>
@@ -100,7 +100,7 @@ namespace InformationAgeProject
 		/// <param name="amountToRemove">the amount to remove</param>
 		public void removeFromMediumPriority(int amountToRemove)
 		{
-			manager.setMediumPriority(manager.getMediumPriorityAmount() - amountToRemove);
+			manager.setMediumPriority(manager.getMediumPriorityAmount( ) - amountToRemove);
 		}
 
 		/// <summary>
@@ -109,7 +109,7 @@ namespace InformationAgeProject
 		/// <param name="amountToRemove">the amount to remove</param>
 		public void removeFromHighPriority(int amountToRemove)
 		{
-			manager.setHighPriority(manager.getHighPriorityAmount() - amountToRemove);
+			manager.setHighPriority(manager.getHighPriorityAmount( ) - amountToRemove);
 		}
 		#endregion
 
@@ -120,10 +120,10 @@ namespace InformationAgeProject
 		public string printInventory()
 		{
 			string strResult = "---------------------------------\n" +
-							  manager.getResourceName(0) + ": " + manager.getBacklogAmount() + "\n" +
-							  manager.getResourceName(1) + ": " + manager.getLowPriorityAmount() + "\n" +
-							  manager.getResourceName(2) + ": " + manager.getMediumPriorityAmount() + "\n" +
-							  manager.getResourceName(3) + ": " + manager.getHighPriorityAmount() + "\n" +
+							  manager.getResourceName(0) + ": " + manager.getBacklogAmount( ) + "\n" +
+							  manager.getResourceName(1) + ": " + manager.getLowPriorityAmount( ) + "\n" +
+							  manager.getResourceName(2) + ": " + manager.getMediumPriorityAmount( ) + "\n" +
+							  manager.getResourceName(3) + ": " + manager.getHighPriorityAmount( ) + "\n" +
 							  "---------------------------------\n";
 			return strResult;
 		}
@@ -133,8 +133,8 @@ namespace InformationAgeProject
 		/// </summary>
 		/// <returns></returns>
 		public ResourceManager ReturnManager()
-        {
+		{
 			return manager;
-        }
+		}
 	}
 }

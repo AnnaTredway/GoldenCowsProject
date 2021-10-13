@@ -29,8 +29,18 @@ namespace InformationAgeProject
     class Resource
     {
         public string resourceName; // Stores the name of the resource
-        public int resourceAmount;  // Stores the amount of this resource a player has.
+        public int resourceAmount;  // Stores the amount of this resource a player has
         public ResourceType type;   // Stores the type of the resource/task
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Resource"/> class.
+        /// </summary>
+        public Resource( )
+        {
+            this.resourceName = "Any";
+            this.resourceAmount = 0;
+            this.type = ResourceType.ANY;
+        }// end Resource( )
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Resource"/> class.
@@ -41,7 +51,29 @@ namespace InformationAgeProject
         {
             this.resourceName = resourceName;
             this.resourceAmount = 0;
-            this.type = type;
+            this.type = type; 
         }// end Resource(string resourceName)
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Resource"/> class.
+        /// </summary>
+        /// <param name="randomType">A random number.</param>
+        public Resource (int randomType)
+        {
+            var temp = (ResourceType)randomType;
+            this.resourceName = temp.ToString();
+            this.resourceAmount = 0;
+            this.type = temp;
+        }
+
+        /// <summary>
+        /// Checks to see if two resources are equal to each other
+        /// </summary>
+        /// <param name="otherResource">The other resource.</param>
+        /// <returns></returns>
+        public bool EqualTo(Resource otherResource)
+        {
+            return this.type.Equals(otherResource.type);
+        }
     }// end class Resource
 }// end namespace InformationAgeProject

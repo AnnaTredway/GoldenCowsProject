@@ -29,6 +29,7 @@ namespace InformationAgeProject
         BACKLOG,
         LOWPRIORITY,
         MEDPRIORITY,
-        HIGHPRIORITY
+        HIGHPRIORITY,
+        ANY = BACKLOG | LOWPRIORITY | MEDPRIORITY | HIGHPRIORITY
     }
 }
