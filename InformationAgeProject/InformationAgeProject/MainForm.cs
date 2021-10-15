@@ -263,7 +263,7 @@ namespace InformationAgeProject
 			player1.Inventory.addToHighPriority(dice.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
 
 			//Print out current inventory text to inventoryBox
-			inventoryBox.Text = player1.Inventory.printInventory();
+			inventoryBox.Text = player1.Inventory.printResources();
 
 			//Resets developer counts on each task/resource
 			txtBacklog.Text = "0";
@@ -337,7 +337,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard1_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnManager( )) ;
+			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnResourceManager( )) ;
 			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
@@ -346,7 +346,7 @@ namespace InformationAgeProject
 				ProjProgDeck.Deck.RemoveAt(0);
 				ClaimCard1.Enabled = false;
 				ProjectProgressCard1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printInventory( );
+				inventoryBox.Text = player1.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -358,7 +358,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard2_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnManager( ));
+			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnResourceManager( ));
 			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
@@ -367,7 +367,7 @@ namespace InformationAgeProject
 				ProjProgDeck.Deck.RemoveAt(1);
 				ClaimCard2.Enabled = false;
 				ProjectProgressCard2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printInventory( );
+				inventoryBox.Text = player1.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -379,7 +379,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard3_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnManager( ));
+			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnResourceManager( ));
 			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
@@ -388,7 +388,7 @@ namespace InformationAgeProject
 				ProjProgDeck.Deck.RemoveAt(2);
 				ClaimCard3.Enabled = false;
 				ProjectProgressCard3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printInventory( );
+				inventoryBox.Text = player1.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -400,7 +400,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard4_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnManager( ));
+			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnResourceManager( ));
 			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
@@ -409,11 +409,60 @@ namespace InformationAgeProject
 				ProjProgDeck.Deck.RemoveAt(3);
 				ClaimCard4.Enabled = false;
 				ProjectProgressCard4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printInventory( );
+				inventoryBox.Text = player1.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
 		#endregion
 
+		#region Tool Buttons and Textboxes
+		/// <summary>
+		/// Event Handler for button to add developer to tool maker if any are available and if there isnt a developer there already
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnAddToolMaker_Click(object sender, EventArgs e)
+		{
+			//If the number of developers is larger than 0 and any player has not put a developer at the tool maker, add 1 to tool maker
+			//Else, do nothing
+			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtToolMaker.Text) < 1)
+			{
+				//Subtract 1 developer from developer count
+				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
+
+				//Add 1 developer to tool maker count
+				txtToolMaker.Text = Convert.ToString(Int32.Parse(txtToolMaker.Text) + 1);
+
+			}
+			else
+			{
+				//Do nothing
+			}
+		}
+
+		/// <summary>
+		/// Event Handler for button to remove developer from tool maker i a developer is already there and is the current player's developer
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnSubtToolMaker_Click(object sender, EventArgs e)
+		{
+			//If there is a developer from the current player at the tool maker, then subtract 1 from tool maker count and add 1 to developer count
+			//Else, do nothing
+			if (Int32.Parse(txtToolMaker.Text) > 0)
+			{
+				//Subtract 1 developer from tool maker count
+				txtToolMaker.Text = Convert.ToString(Int32.Parse(txtToolMaker.Text) - 1);
+
+				//Add 1 developer to developer count
+				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 1);
+
+			}
+			else
+			{
+				//Do nothing
+			}
+		}
+		#endregion
 	}
 }

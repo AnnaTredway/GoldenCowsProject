@@ -2,7 +2,7 @@
 //
 //	Solution/Project:  InformationAgeProject/InformationAgeProject
 //	File Name:         Inventory.cs
-//	Description:       Inventory class for managing resources, tools, cards, buildings, and tools
+//	Description:       Inventory class for managing resources, cards, buildings, and tools
 //	Course:            CSCI-4250-002 - Software Engineering I
 //	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
@@ -26,16 +26,18 @@ namespace InformationAgeProject
 	/// </summary>
 	public class Inventory
 	{
-		//ResourceManager classes to be used in Inventory
-		private ResourceManager manager;
+		//Manager classes to be used in Inventory
+		private ResourceManager resourceManager;
+		private ToolManager toolManager;
 
 		/// <summary>
 		/// Constructor for Inventory 
 		/// </summary>
 		public Inventory( )
 		{
-			manager = new ResourceManager( );
-		}
+			resourceManager = new ResourceManager();
+			toolManager = new ToolManager();
+	}
 
 		#region Add to resource count methods
 		/// <summary>
@@ -44,7 +46,7 @@ namespace InformationAgeProject
 		/// <param name="amountToAdd">the amount to add</param>
 		public void addToBacklog(int amountToAdd)
 		{
-			manager.setBacklog(manager.getBacklogAmount( ) + amountToAdd);
+			resourceManager.setBacklog(resourceManager.getBacklogAmount( ) + amountToAdd);
 		}
 
 		/// <summary>
@@ -53,7 +55,7 @@ namespace InformationAgeProject
 		/// <param name="amountToAdd">the amount to add</param>
 		public void addToLowPriority(int amountToAdd)
 		{
-			manager.setLowPriority(manager.getLowPriorityAmount( ) + amountToAdd);
+			resourceManager.setLowPriority(resourceManager.getLowPriorityAmount( ) + amountToAdd);
 		}
 
 		/// <summary>
@@ -62,7 +64,7 @@ namespace InformationAgeProject
 		/// <param name="amountToAdd">the amount to add</param>
 		public void addToMediumPriority(int amountToAdd)
 		{
-			manager.setMediumPriority(manager.getMediumPriorityAmount( ) + amountToAdd);
+			resourceManager.setMediumPriority(resourceManager.getMediumPriorityAmount( ) + amountToAdd);
 		}
 
 		/// <summary>
@@ -71,7 +73,7 @@ namespace InformationAgeProject
 		/// <param name="amountToAdd">the amount to add</param>
 		public void addToHighPriority(int amountToAdd)
 		{
-			manager.setHighPriority(manager.getHighPriorityAmount( ) + amountToAdd);
+			resourceManager.setHighPriority(resourceManager.getHighPriorityAmount( ) + amountToAdd);
 		}
 		#endregion
 
@@ -82,7 +84,7 @@ namespace InformationAgeProject
 		/// <param name="amountToRemove">the amount to remove</param>
 		public void removeFromBacklog(int amountToRemove)
 		{
-			manager.setBacklog(manager.getBacklogAmount( ) - amountToRemove);
+			resourceManager.setBacklog(resourceManager.getBacklogAmount( ) - amountToRemove);
 		}
 
 		/// <summary>
@@ -91,7 +93,7 @@ namespace InformationAgeProject
 		/// <param name="amountToRemove">the amount to remove</param>
 		public void removeFromLowPriority(int amountToRemove)
 		{
-			manager.setLowPriority(manager.getLowPriorityAmount( ) - amountToRemove);
+			resourceManager.setLowPriority(resourceManager.getLowPriorityAmount( ) - amountToRemove);
 		}
 
 		/// <summary>
@@ -100,7 +102,7 @@ namespace InformationAgeProject
 		/// <param name="amountToRemove">the amount to remove</param>
 		public void removeFromMediumPriority(int amountToRemove)
 		{
-			manager.setMediumPriority(manager.getMediumPriorityAmount( ) - amountToRemove);
+			resourceManager.setMediumPriority(resourceManager.getMediumPriorityAmount( ) - amountToRemove);
 		}
 
 		/// <summary>
@@ -109,7 +111,7 @@ namespace InformationAgeProject
 		/// <param name="amountToRemove">the amount to remove</param>
 		public void removeFromHighPriority(int amountToRemove)
 		{
-			manager.setHighPriority(manager.getHighPriorityAmount( ) - amountToRemove);
+			resourceManager.setHighPriority(resourceManager.getHighPriorityAmount( ) - amountToRemove);
 		}
 		#endregion
 
@@ -117,24 +119,33 @@ namespace InformationAgeProject
 		/// Prints the current players resources.
 		/// </summary>
 		/// <returns>Returns a string to printout the current players resource count.</returns>
-		public string printInventory()
+		public string printResources()
 		{
 			string strResult = "---------------------------------\n" +
-							  manager.getResourceName(0) + ": " + manager.getBacklogAmount( ) + "\n" +
-							  manager.getResourceName(1) + ": " + manager.getLowPriorityAmount( ) + "\n" +
-							  manager.getResourceName(2) + ": " + manager.getMediumPriorityAmount( ) + "\n" +
-							  manager.getResourceName(3) + ": " + manager.getHighPriorityAmount( ) + "\n" +
+							  resourceManager.getResourceName(0) + ": " + resourceManager.getBacklogAmount( ) + "\n" +
+							  resourceManager.getResourceName(1) + ": " + resourceManager.getLowPriorityAmount( ) + "\n" +
+							  resourceManager.getResourceName(2) + ": " + resourceManager.getMediumPriorityAmount( ) + "\n" +
+							  resourceManager.getResourceName(3) + ": " + resourceManager.getHighPriorityAmount( ) + "\n" +
 							  "---------------------------------\n";
 			return strResult;
 		}
 
 		/// <summary>
-		/// Returns the current state of the resource manager for use in other classes.
+		/// Returns the current state of the resourceManager for use in other classes.
 		/// </summary>
 		/// <returns></returns>
-		public ResourceManager ReturnManager()
+		public ResourceManager ReturnResourceManager()
 		{
-			return manager;
+			return resourceManager;
+		}
+
+		/// <summary>
+		/// Returns the current state of the toolManager for use in other classes.
+		/// </summary>
+		/// <returns></returns>
+		public ToolManager ReturnToolManager()
+		{
+			return toolManager;
 		}
 	}
 }

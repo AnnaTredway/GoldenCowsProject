@@ -37,7 +37,7 @@ namespace InformationAgeProject
         public Scoring(Inventory inventory)
         {
             this.inventory = inventory;
-            manager = inventory.ReturnManager();
+            manager = inventory.ReturnResourceManager();
         }
 
         /// <summary>
