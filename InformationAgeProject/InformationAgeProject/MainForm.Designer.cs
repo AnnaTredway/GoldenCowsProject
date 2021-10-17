@@ -84,6 +84,14 @@ namespace InformationAgeProject
             this.ClaimCard2 = new System.Windows.Forms.Button();
             this.ClaimCard3 = new System.Windows.Forms.Button();
             this.ClaimCard4 = new System.Windows.Forms.Button();
+            this.toolSlot1 = new System.Windows.Forms.TextBox();
+            this.toolSlot2 = new System.Windows.Forms.TextBox();
+            this.toolSlot3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtToolMaker = new System.Windows.Forms.TextBox();
+            this.btnAddToolMaker = new System.Windows.Forms.Button();
+            this.btnSubtToolMaker = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -279,10 +287,10 @@ namespace InformationAgeProject
             // txtBacklog
             // 
             this.txtBacklog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBacklog.Enabled = false;
             this.txtBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBacklog.Location = new System.Drawing.Point(872, 73);
             this.txtBacklog.Name = "txtBacklog";
+            this.txtBacklog.ReadOnly = true;
             this.txtBacklog.Size = new System.Drawing.Size(25, 23);
             this.txtBacklog.TabIndex = 28;
             this.txtBacklog.Text = "0";
@@ -292,10 +300,10 @@ namespace InformationAgeProject
             // txtLow
             // 
             this.txtLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLow.Enabled = false;
             this.txtLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLow.Location = new System.Drawing.Point(966, 73);
             this.txtLow.Name = "txtLow";
+            this.txtLow.ReadOnly = true;
             this.txtLow.Size = new System.Drawing.Size(25, 23);
             this.txtLow.TabIndex = 29;
             this.txtLow.Text = "0";
@@ -305,10 +313,10 @@ namespace InformationAgeProject
             // txtMed
             // 
             this.txtMed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMed.Enabled = false;
             this.txtMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMed.Location = new System.Drawing.Point(1061, 72);
             this.txtMed.Name = "txtMed";
+            this.txtMed.ReadOnly = true;
             this.txtMed.Size = new System.Drawing.Size(25, 23);
             this.txtMed.TabIndex = 30;
             this.txtMed.Text = "0";
@@ -318,10 +326,10 @@ namespace InformationAgeProject
             // txtHigh
             // 
             this.txtHigh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHigh.Enabled = false;
             this.txtHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHigh.Location = new System.Drawing.Point(1156, 73);
             this.txtHigh.Name = "txtHigh";
+            this.txtHigh.ReadOnly = true;
             this.txtHigh.Size = new System.Drawing.Size(25, 23);
             this.txtHigh.TabIndex = 31;
             this.txtHigh.Text = "0";
@@ -331,10 +339,10 @@ namespace InformationAgeProject
             // txtDevelopers
             // 
             this.txtDevelopers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDevelopers.Enabled = false;
             this.txtDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDevelopers.Location = new System.Drawing.Point(1202, 637);
             this.txtDevelopers.Name = "txtDevelopers";
+            this.txtDevelopers.ReadOnly = true;
             this.txtDevelopers.Size = new System.Drawing.Size(51, 32);
             this.txtDevelopers.TabIndex = 32;
             this.txtDevelopers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -434,6 +442,7 @@ namespace InformationAgeProject
             // 
             // ProjectProgressCard1
             // 
+            this.ProjectProgressCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCard1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectProgressCard1.Location = new System.Drawing.Point(18, 438);
             this.ProjectProgressCard1.Multiline = true;
@@ -444,6 +453,7 @@ namespace InformationAgeProject
             // 
             // ProjectProgressCard2
             // 
+            this.ProjectProgressCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCard2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectProgressCard2.Location = new System.Drawing.Point(154, 438);
             this.ProjectProgressCard2.Multiline = true;
@@ -454,6 +464,7 @@ namespace InformationAgeProject
             // 
             // ProjectProgressCard3
             // 
+            this.ProjectProgressCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCard3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectProgressCard3.Location = new System.Drawing.Point(290, 438);
             this.ProjectProgressCard3.Multiline = true;
@@ -464,6 +475,7 @@ namespace InformationAgeProject
             // 
             // ProjectProgressCard4
             // 
+            this.ProjectProgressCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCard4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectProgressCard4.Location = new System.Drawing.Point(426, 438);
             this.ProjectProgressCard4.Multiline = true;
@@ -474,6 +486,7 @@ namespace InformationAgeProject
             // 
             // ClaimCard1
             // 
+            this.ClaimCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ClaimCard1.Location = new System.Drawing.Point(45, 573);
             this.ClaimCard1.Name = "ClaimCard1";
             this.ClaimCard1.Size = new System.Drawing.Size(75, 23);
@@ -484,6 +497,7 @@ namespace InformationAgeProject
             // 
             // ClaimCard2
             // 
+            this.ClaimCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ClaimCard2.Location = new System.Drawing.Point(185, 573);
             this.ClaimCard2.Name = "ClaimCard2";
             this.ClaimCard2.Size = new System.Drawing.Size(75, 23);
@@ -494,6 +508,7 @@ namespace InformationAgeProject
             // 
             // ClaimCard3
             // 
+            this.ClaimCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ClaimCard3.Location = new System.Drawing.Point(319, 573);
             this.ClaimCard3.Name = "ClaimCard3";
             this.ClaimCard3.Size = new System.Drawing.Size(75, 23);
@@ -504,6 +519,7 @@ namespace InformationAgeProject
             // 
             // ClaimCard4
             // 
+            this.ClaimCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ClaimCard4.Location = new System.Drawing.Point(454, 573);
             this.ClaimCard4.Name = "ClaimCard4";
             this.ClaimCard4.Size = new System.Drawing.Size(75, 23);
@@ -512,12 +528,115 @@ namespace InformationAgeProject
             this.ClaimCard4.UseVisualStyleBackColor = true;
             this.ClaimCard4.Click += new System.EventHandler(this.ClaimCard4_Click);
             // 
+            // toolSlot1
+            // 
+            this.toolSlot1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolSlot1.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolSlot1.Location = new System.Drawing.Point(1202, 469);
+            this.toolSlot1.Multiline = true;
+            this.toolSlot1.Name = "toolSlot1";
+            this.toolSlot1.ReadOnly = true;
+            this.toolSlot1.Size = new System.Drawing.Size(50, 50);
+            this.toolSlot1.TabIndex = 47;
+            this.toolSlot1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolSlot2
+            // 
+            this.toolSlot2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolSlot2.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolSlot2.Location = new System.Drawing.Point(1203, 525);
+            this.toolSlot2.Multiline = true;
+            this.toolSlot2.Name = "toolSlot2";
+            this.toolSlot2.ReadOnly = true;
+            this.toolSlot2.Size = new System.Drawing.Size(50, 50);
+            this.toolSlot2.TabIndex = 48;
+            this.toolSlot2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolSlot3
+            // 
+            this.toolSlot3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolSlot3.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolSlot3.Location = new System.Drawing.Point(1203, 581);
+            this.toolSlot3.Multiline = true;
+            this.toolSlot3.Name = "toolSlot3";
+            this.toolSlot3.ReadOnly = true;
+            this.toolSlot3.Size = new System.Drawing.Size(50, 50);
+            this.toolSlot3.TabIndex = 49;
+            this.toolSlot3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(589, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 66);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Tool Maker Placeholder";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtToolMaker
+            // 
+            this.txtToolMaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtToolMaker.Location = new System.Drawing.Point(654, 111);
+            this.txtToolMaker.Name = "txtToolMaker";
+            this.txtToolMaker.ReadOnly = true;
+            this.txtToolMaker.Size = new System.Drawing.Size(25, 23);
+            this.txtToolMaker.TabIndex = 53;
+            this.txtToolMaker.Text = "0";
+            this.txtToolMaker.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtToolMaker.WordWrap = false;
+            // 
+            // btnAddToolMaker
+            // 
+            this.btnAddToolMaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddToolMaker.Location = new System.Drawing.Point(623, 110);
+            this.btnAddToolMaker.Name = "btnAddToolMaker";
+            this.btnAddToolMaker.Size = new System.Drawing.Size(25, 25);
+            this.btnAddToolMaker.TabIndex = 54;
+            this.btnAddToolMaker.Text = "+";
+            this.btnAddToolMaker.UseVisualStyleBackColor = true;
+            this.btnAddToolMaker.Click += new System.EventHandler(this.btnAddToolMaker_Click);
+            // 
+            // btnSubtToolMaker
+            // 
+            this.btnSubtToolMaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubtToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtToolMaker.Location = new System.Drawing.Point(685, 111);
+            this.btnSubtToolMaker.Name = "btnSubtToolMaker";
+            this.btnSubtToolMaker.Size = new System.Drawing.Size(25, 25);
+            this.btnSubtToolMaker.TabIndex = 55;
+            this.btnSubtToolMaker.Text = "-";
+            this.btnSubtToolMaker.UseVisualStyleBackColor = true;
+            this.btnSubtToolMaker.Click += new System.EventHandler(this.btnSubtToolMaker_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1183, 433);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 33);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "Tools";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnSubtToolMaker);
+            this.Controls.Add(this.btnAddToolMaker);
+            this.Controls.Add(this.txtToolMaker);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.toolSlot3);
+            this.Controls.Add(this.toolSlot2);
+            this.Controls.Add(this.toolSlot1);
             this.Controls.Add(this.ClaimCard4);
             this.Controls.Add(this.ClaimCard3);
             this.Controls.Add(this.ClaimCard2);
@@ -606,6 +725,14 @@ namespace InformationAgeProject
         private System.Windows.Forms.Button ClaimCard2;
         private System.Windows.Forms.Button ClaimCard3;
         private System.Windows.Forms.Button ClaimCard4;
+        private System.Windows.Forms.TextBox toolSlot1;
+        private System.Windows.Forms.TextBox toolSlot2;
+        private System.Windows.Forms.TextBox toolSlot3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtToolMaker;
+        private System.Windows.Forms.Button btnAddToolMaker;
+        private System.Windows.Forms.Button btnSubtToolMaker;
+        private System.Windows.Forms.Label label2;
     }
 }
 

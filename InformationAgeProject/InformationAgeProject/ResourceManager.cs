@@ -28,7 +28,7 @@ namespace InformationAgeProject
     /// </summary>
     public class ResourceManager
     {
-        // Maybe it would be better to make this "Inventory Manager" and handle resources, tools, cards, and points.
+        //Holds the 4 different types of resources
         private Resource[] gameResources = new Resource[4];
 
         /// <summary>
