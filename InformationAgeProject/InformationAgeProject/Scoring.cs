@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 namespace InformationAgeProject
 {
     /// <summary>
-    /// The Scoring cass hosts methods needing for calculating and managing a player's score
+    /// The Scoring class hosts methods needing for calculating and managing a player's score
     /// </summary>
     public class Scoring
     {
@@ -61,6 +61,16 @@ namespace InformationAgeProject
             medium += manager.getMediumPriorityAmount() * 3;
             high += manager.getHighPriorityAmount() * 4;
 
+            //Iterate through the player's list of project progress cards,
+            //and add each card's point value to the total
+            if (inventory.ProjectProgressCards.Count != 0)
+            {
+                foreach (ProjectProgress p in inventory.ProjectProgressCards)
+                {
+                    total =  total + p.awardPoints(manager);
+                }
+            }
+            
             total += backLog + low + medium + high;
 
             //Return a formatted string that accounts for all scoring components

@@ -84,5 +84,10 @@ namespace InformationAgeProject
             // Set the value for Inventory
             set { _inventory = value; }
         }
+
+        /// <summary>
+        /// TeamName property for accessing and setting a player's team name
+        /// </summary>
+        public string TeamName { get; set; }
     }
 }
