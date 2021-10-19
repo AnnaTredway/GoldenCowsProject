@@ -79,6 +79,9 @@
     <Compile Include="Resource.cs" />
     <Compile Include="ResourceManager.cs" />
     <Compile Include="Scoring.cs" />
+    <Compile Include="Tool.cs" />
+    <Compile Include="ToolType.cs" />
+    <Compile Include="ToolManager.cs" />
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>

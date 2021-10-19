@@ -64,16 +64,18 @@ namespace InformationAgeProject
             this.resourceName = temp.ToString();
             this.resourceAmount = 0;
             this.type = temp;
-        }
+        }// end Resource(int randomType)
 
         /// <summary>
         /// Checks to see if two resources are equal to each other
         /// </summary>
         /// <param name="otherResource">The other resource.</param>
-        /// <returns></returns>
+        /// <returns>True or False</returns>
         public bool EqualTo(Resource otherResource)
         {
             return this.type.Equals(otherResource.type);
-        }
+
+        }//end EqualTo(Resource otherResource)
+
     }// end class Resource
 }// end namespace InformationAgeProject
