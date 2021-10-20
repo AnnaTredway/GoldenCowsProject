@@ -115,8 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\InstructionSet.txt" />
+    <Content Include="GameIcons\anvil.png" />
+    <Content Include="GameIcons\diamondpickaxe.png" />
+    <Content Include="GameIcons\minecraftsteve.png" />
     <Content Include="GameIcons\moobloom.ico" />
     <Content Include="GameIcons\moobloom.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
