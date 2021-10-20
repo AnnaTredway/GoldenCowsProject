@@ -27,7 +27,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Information Age's building cards
     /// </summary>
-    class ProjectProgress
+    public class ProjectProgress
     {
         private static Random rNum = new Random( ); // Used to select a random resource to use
         private int iPointValue;                    // Stores the amount of points this card is worth
