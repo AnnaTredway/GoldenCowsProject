@@ -58,7 +58,6 @@ namespace InformationAgeProject
             this.btnAddHigh = new System.Windows.Forms.Button();
             this.btnSubtHigh = new System.Windows.Forms.Button();
             this.lblTasks = new System.Windows.Forms.Label();
-            this.lblDevelopers = new System.Windows.Forms.Label();
             this.btnDoTasks = new System.Windows.Forms.Button();
             this.lblNotFinal = new System.Windows.Forms.Label();
             this.txtBacklog = new System.Windows.Forms.TextBox();
@@ -87,12 +86,17 @@ namespace InformationAgeProject
             this.toolSlot1 = new System.Windows.Forms.TextBox();
             this.toolSlot2 = new System.Windows.Forms.TextBox();
             this.toolSlot3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtToolMaker = new System.Windows.Forms.TextBox();
             this.btnAddToolMaker = new System.Windows.Forms.Button();
             this.btnSubtToolMaker = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnAcquireTool = new System.Windows.Forms.Button();
+            this.toolsPictureBox = new System.Windows.Forms.PictureBox();
+            this.toolMakerPictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBacklog
@@ -146,97 +150,121 @@ namespace InformationAgeProject
             // btnAddBacklog
             // 
             this.btnAddBacklog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddBacklog.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAddBacklog.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAddBacklog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBacklog.Location = new System.Drawing.Point(903, 73);
             this.btnAddBacklog.Name = "btnAddBacklog";
             this.btnAddBacklog.Size = new System.Drawing.Size(25, 25);
             this.btnAddBacklog.TabIndex = 12;
             this.btnAddBacklog.Text = "+";
-            this.btnAddBacklog.UseVisualStyleBackColor = true;
+            this.btnAddBacklog.UseVisualStyleBackColor = false;
             this.btnAddBacklog.Click += new System.EventHandler(this.btnAddBacklog_Click);
             // 
             // btnSubtBacklog
             // 
             this.btnSubtBacklog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubtBacklog.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubtBacklog.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSubtBacklog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubtBacklog.Location = new System.Drawing.Point(903, 102);
             this.btnSubtBacklog.Name = "btnSubtBacklog";
             this.btnSubtBacklog.Size = new System.Drawing.Size(25, 25);
             this.btnSubtBacklog.TabIndex = 13;
             this.btnSubtBacklog.Text = "-";
-            this.btnSubtBacklog.UseVisualStyleBackColor = true;
+            this.btnSubtBacklog.UseVisualStyleBackColor = false;
             this.btnSubtBacklog.Click += new System.EventHandler(this.btnSubtBacklog_Click);
             // 
             // btnAddLow
             // 
             this.btnAddLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddLow.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAddLow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAddLow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLow.Location = new System.Drawing.Point(997, 73);
             this.btnAddLow.Name = "btnAddLow";
             this.btnAddLow.Size = new System.Drawing.Size(25, 25);
             this.btnAddLow.TabIndex = 14;
             this.btnAddLow.Text = "+";
-            this.btnAddLow.UseVisualStyleBackColor = true;
+            this.btnAddLow.UseVisualStyleBackColor = false;
             this.btnAddLow.Click += new System.EventHandler(this.btnAddLow_Click);
             // 
             // btnSubtLow
             // 
             this.btnSubtLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubtLow.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubtLow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSubtLow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubtLow.Location = new System.Drawing.Point(997, 102);
             this.btnSubtLow.Name = "btnSubtLow";
             this.btnSubtLow.Size = new System.Drawing.Size(25, 25);
             this.btnSubtLow.TabIndex = 15;
             this.btnSubtLow.Text = "-";
-            this.btnSubtLow.UseVisualStyleBackColor = true;
+            this.btnSubtLow.UseVisualStyleBackColor = false;
             this.btnSubtLow.Click += new System.EventHandler(this.btnSubtLow_Click);
             // 
             // btnAddMed
             // 
             this.btnAddMed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddMed.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAddMed.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAddMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMed.Location = new System.Drawing.Point(1092, 70);
             this.btnAddMed.Name = "btnAddMed";
             this.btnAddMed.Size = new System.Drawing.Size(25, 25);
             this.btnAddMed.TabIndex = 16;
             this.btnAddMed.Text = "+";
-            this.btnAddMed.UseVisualStyleBackColor = true;
+            this.btnAddMed.UseVisualStyleBackColor = false;
             this.btnAddMed.Click += new System.EventHandler(this.btnAddMed_Click);
             // 
             // btnSubtMed
             // 
             this.btnSubtMed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubtMed.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubtMed.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSubtMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubtMed.Location = new System.Drawing.Point(1092, 101);
             this.btnSubtMed.Name = "btnSubtMed";
             this.btnSubtMed.Size = new System.Drawing.Size(25, 25);
             this.btnSubtMed.TabIndex = 17;
             this.btnSubtMed.Text = "-";
-            this.btnSubtMed.UseVisualStyleBackColor = true;
+            this.btnSubtMed.UseVisualStyleBackColor = false;
             this.btnSubtMed.Click += new System.EventHandler(this.btnSubtMed_Click);
             // 
             // btnAddHigh
             // 
             this.btnAddHigh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddHigh.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAddHigh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAddHigh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddHigh.Location = new System.Drawing.Point(1187, 73);
             this.btnAddHigh.Name = "btnAddHigh";
             this.btnAddHigh.Size = new System.Drawing.Size(25, 25);
             this.btnAddHigh.TabIndex = 18;
             this.btnAddHigh.Text = "+";
-            this.btnAddHigh.UseVisualStyleBackColor = true;
+            this.btnAddHigh.UseVisualStyleBackColor = false;
             this.btnAddHigh.Click += new System.EventHandler(this.btnAddHigh_Click);
             // 
             // btnSubtHigh
             // 
             this.btnSubtHigh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubtHigh.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubtHigh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSubtHigh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubtHigh.Location = new System.Drawing.Point(1187, 102);
             this.btnSubtHigh.Name = "btnSubtHigh";
             this.btnSubtHigh.Size = new System.Drawing.Size(25, 25);
             this.btnSubtHigh.TabIndex = 19;
             this.btnSubtHigh.Text = "-";
-            this.btnSubtHigh.UseVisualStyleBackColor = true;
+            this.btnSubtHigh.UseVisualStyleBackColor = false;
             this.btnSubtHigh.Click += new System.EventHandler(this.btnSubtHigh_Click);
             // 
             // lblTasks
@@ -250,27 +278,19 @@ namespace InformationAgeProject
             this.lblTasks.TabIndex = 24;
             this.lblTasks.Text = "Tasks:";
             // 
-            // lblDevelopers
-            // 
-            this.lblDevelopers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDevelopers.AutoSize = true;
-            this.lblDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDevelopers.Location = new System.Drawing.Point(1057, 640);
-            this.lblDevelopers.Name = "lblDevelopers";
-            this.lblDevelopers.Size = new System.Drawing.Size(139, 26);
-            this.lblDevelopers.TabIndex = 25;
-            this.lblDevelopers.Text = "Developers:";
-            // 
             // btnDoTasks
             // 
             this.btnDoTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDoTasks.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDoTasks.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDoTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoTasks.Location = new System.Drawing.Point(871, 147);
             this.btnDoTasks.Name = "btnDoTasks";
             this.btnDoTasks.Size = new System.Drawing.Size(381, 33);
             this.btnDoTasks.TabIndex = 26;
             this.btnDoTasks.Text = "Do Tasks";
-            this.btnDoTasks.UseVisualStyleBackColor = true;
+            this.btnDoTasks.UseVisualStyleBackColor = false;
             this.btnDoTasks.Click += new System.EventHandler(this.btnDoTasks_Click);
             // 
             // lblNotFinal
@@ -340,7 +360,7 @@ namespace InformationAgeProject
             // 
             this.txtDevelopers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDevelopers.Location = new System.Drawing.Point(1202, 637);
+            this.txtDevelopers.Location = new System.Drawing.Point(1145, 637);
             this.txtDevelopers.Name = "txtDevelopers";
             this.txtDevelopers.ReadOnly = true;
             this.txtDevelopers.Size = new System.Drawing.Size(51, 32);
@@ -377,7 +397,7 @@ namespace InformationAgeProject
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Salmon;
+            this.menuStrip1.BackColor = System.Drawing.Color.Firebrick;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -392,29 +412,30 @@ namespace InformationAgeProject
             this.btnInstructionsMenuItem,
             this.btnAboutMenuItem,
             this.btnQuitMenuItem});
+            this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // btnInstructionsMenuItem
             // 
             this.btnInstructionsMenuItem.Name = "btnInstructionsMenuItem";
-            this.btnInstructionsMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.btnInstructionsMenuItem.Size = new System.Drawing.Size(140, 22);
             this.btnInstructionsMenuItem.Text = "Instructions";
             this.btnInstructionsMenuItem.Click += new System.EventHandler(this.btnInstructionsMenuItem_Click);
             // 
             // btnAboutMenuItem
             // 
             this.btnAboutMenuItem.Name = "btnAboutMenuItem";
-            this.btnAboutMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.btnAboutMenuItem.Size = new System.Drawing.Size(140, 22);
             this.btnAboutMenuItem.Text = "About";
             this.btnAboutMenuItem.Click += new System.EventHandler(this.btnAboutMenuItem_Click);
             // 
             // btnQuitMenuItem
             // 
             this.btnQuitMenuItem.Name = "btnQuitMenuItem";
-            this.btnQuitMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.btnQuitMenuItem.Size = new System.Drawing.Size(140, 22);
             this.btnQuitMenuItem.Text = "Quit";
             this.btnQuitMenuItem.Click += new System.EventHandler(this.btnQuitMenuItem_Click);
             // 
@@ -532,7 +553,7 @@ namespace InformationAgeProject
             // 
             this.toolSlot1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.toolSlot1.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolSlot1.Location = new System.Drawing.Point(1202, 469);
+            this.toolSlot1.Location = new System.Drawing.Point(1201, 507);
             this.toolSlot1.Multiline = true;
             this.toolSlot1.Name = "toolSlot1";
             this.toolSlot1.ReadOnly = true;
@@ -544,7 +565,7 @@ namespace InformationAgeProject
             // 
             this.toolSlot2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.toolSlot2.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolSlot2.Location = new System.Drawing.Point(1203, 525);
+            this.toolSlot2.Location = new System.Drawing.Point(1202, 563);
             this.toolSlot2.Multiline = true;
             this.toolSlot2.Name = "toolSlot2";
             this.toolSlot2.ReadOnly = true;
@@ -556,7 +577,7 @@ namespace InformationAgeProject
             // 
             this.toolSlot3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.toolSlot3.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolSlot3.Location = new System.Drawing.Point(1203, 581);
+            this.toolSlot3.Location = new System.Drawing.Point(1202, 619);
             this.toolSlot3.Multiline = true;
             this.toolSlot3.Name = "toolSlot3";
             this.toolSlot3.ReadOnly = true;
@@ -564,20 +585,9 @@ namespace InformationAgeProject
             this.toolSlot3.TabIndex = 49;
             this.toolSlot3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(589, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 66);
-            this.label1.TabIndex = 52;
-            this.label1.Text = "Tool Maker Placeholder";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // txtToolMaker
             // 
-            this.txtToolMaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtToolMaker.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtToolMaker.Location = new System.Drawing.Point(654, 111);
             this.txtToolMaker.Name = "txtToolMaker";
@@ -590,50 +600,98 @@ namespace InformationAgeProject
             // 
             // btnAddToolMaker
             // 
-            this.btnAddToolMaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddToolMaker.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddToolMaker.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnAddToolMaker.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAddToolMaker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToolMaker.Location = new System.Drawing.Point(623, 110);
+            this.btnAddToolMaker.Location = new System.Drawing.Point(685, 111);
             this.btnAddToolMaker.Name = "btnAddToolMaker";
             this.btnAddToolMaker.Size = new System.Drawing.Size(25, 25);
             this.btnAddToolMaker.TabIndex = 54;
             this.btnAddToolMaker.Text = "+";
-            this.btnAddToolMaker.UseVisualStyleBackColor = true;
+            this.btnAddToolMaker.UseVisualStyleBackColor = false;
             this.btnAddToolMaker.Click += new System.EventHandler(this.btnAddToolMaker_Click);
             // 
             // btnSubtToolMaker
             // 
-            this.btnSubtToolMaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubtToolMaker.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSubtToolMaker.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnSubtToolMaker.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSubtToolMaker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubtToolMaker.Location = new System.Drawing.Point(685, 111);
+            this.btnSubtToolMaker.Location = new System.Drawing.Point(623, 111);
             this.btnSubtToolMaker.Name = "btnSubtToolMaker";
             this.btnSubtToolMaker.Size = new System.Drawing.Size(25, 25);
             this.btnSubtToolMaker.TabIndex = 55;
             this.btnSubtToolMaker.Text = "-";
-            this.btnSubtToolMaker.UseVisualStyleBackColor = true;
+            this.btnSubtToolMaker.UseVisualStyleBackColor = false;
             this.btnSubtToolMaker.Click += new System.EventHandler(this.btnSubtToolMaker_Click);
             // 
-            // label2
+            // btnAcquireTool
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1183, 433);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 33);
-            this.label2.TabIndex = 56;
-            this.label2.Text = "Tools";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAcquireTool.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAcquireTool.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnAcquireTool.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAcquireTool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcquireTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcquireTool.Location = new System.Drawing.Point(623, 140);
+            this.btnAcquireTool.Name = "btnAcquireTool";
+            this.btnAcquireTool.Size = new System.Drawing.Size(87, 33);
+            this.btnAcquireTool.TabIndex = 57;
+            this.btnAcquireTool.Text = "Acquire Tool";
+            this.btnAcquireTool.UseVisualStyleBackColor = false;
+            this.btnAcquireTool.Click += new System.EventHandler(this.btnAcquireTool_Click);
+            // 
+            // toolsPictureBox
+            // 
+            this.toolsPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolsPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("toolsPictureBox.Image")));
+            this.toolsPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("toolsPictureBox.InitialImage")));
+            this.toolsPictureBox.Location = new System.Drawing.Point(1201, 453);
+            this.toolsPictureBox.Name = "toolsPictureBox";
+            this.toolsPictureBox.Size = new System.Drawing.Size(51, 48);
+            this.toolsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.toolsPictureBox.TabIndex = 58;
+            this.toolsPictureBox.TabStop = false;
+            // 
+            // toolMakerPictureBox
+            // 
+            this.toolMakerPictureBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.toolMakerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("toolMakerPictureBox.Image")));
+            this.toolMakerPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("toolMakerPictureBox.InitialImage")));
+            this.toolMakerPictureBox.Location = new System.Drawing.Point(623, 27);
+            this.toolMakerPictureBox.Name = "toolMakerPictureBox";
+            this.toolMakerPictureBox.Size = new System.Drawing.Size(87, 78);
+            this.toolMakerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.toolMakerPictureBox.TabIndex = 59;
+            this.toolMakerPictureBox.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(1145, 583);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 60;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.toolMakerPictureBox);
+            this.Controls.Add(this.toolsPictureBox);
+            this.Controls.Add(this.btnAcquireTool);
             this.Controls.Add(this.btnSubtToolMaker);
             this.Controls.Add(this.btnAddToolMaker);
             this.Controls.Add(this.txtToolMaker);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.toolSlot3);
             this.Controls.Add(this.toolSlot2);
             this.Controls.Add(this.toolSlot1);
@@ -657,7 +715,6 @@ namespace InformationAgeProject
             this.Controls.Add(this.txtBacklog);
             this.Controls.Add(this.lblNotFinal);
             this.Controls.Add(this.btnDoTasks);
-            this.Controls.Add(this.lblDevelopers);
             this.Controls.Add(this.lblTasks);
             this.Controls.Add(this.btnSubtHigh);
             this.Controls.Add(this.btnAddHigh);
@@ -680,6 +737,9 @@ namespace InformationAgeProject
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,7 +759,6 @@ namespace InformationAgeProject
         private System.Windows.Forms.Button btnAddHigh;
         private System.Windows.Forms.Button btnSubtHigh;
         private System.Windows.Forms.Label lblTasks;
-        private System.Windows.Forms.Label lblDevelopers;
         private System.Windows.Forms.Button btnDoTasks;
         private System.Windows.Forms.Label lblNotFinal;
         private System.Windows.Forms.TextBox txtBacklog;
@@ -728,11 +787,13 @@ namespace InformationAgeProject
         private System.Windows.Forms.TextBox toolSlot1;
         private System.Windows.Forms.TextBox toolSlot2;
         private System.Windows.Forms.TextBox toolSlot3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtToolMaker;
         private System.Windows.Forms.Button btnAddToolMaker;
         private System.Windows.Forms.Button btnSubtToolMaker;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAcquireTool;
+        private System.Windows.Forms.PictureBox toolsPictureBox;
+        private System.Windows.Forms.PictureBox toolMakerPictureBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

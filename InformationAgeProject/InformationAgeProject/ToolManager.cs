@@ -29,6 +29,9 @@ namespace InformationAgeProject
         //Tool array for current player, one slot in array for each slot on board for current player
         private Tool[] toolList = new Tool[3];
 
+        //Counter for adding level to each tool in correct order when new tool is acquired
+        int levelCounter;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolManager"/> class.
         /// </summary>
@@ -38,6 +41,8 @@ namespace InformationAgeProject
             this.toolList[0] = new Tool(ToolType.LEVEL0);
             this.toolList[1] = new Tool(ToolType.LEVEL0);
             this.toolList[2] = new Tool(ToolType.LEVEL0);
+
+            levelCounter = 0;
         }
 
         #region Setters
@@ -103,6 +108,25 @@ namespace InformationAgeProject
 
         }//end getThirdSlotLevel()
         #endregion
+
+        /// <summary>
+        /// Increases tool levels in correct order
+        /// </summary>
+        public void increaseToolLevel()
+        {
+            //Resets levelCounter if it goes higher than 2 (the max index level in tool inventory)
+            if(levelCounter >= 3)
+            {
+                levelCounter = 0;
+            }
+
+            //Increases tool level of tool in current counter index
+            toolList[levelCounter].toolLevel++;
+
+            //Increases counter index for next run
+            levelCounter++;
+
+        }//end setFirstSlotLevel()
 
     }//end class ToolManager
 }//end namespace InformationAgeProject

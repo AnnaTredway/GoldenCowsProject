@@ -41,11 +41,20 @@ namespace InformationAgeProject
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
+			//Loads initial developer count into txtDevelopers
 			this.txtDevelopers.Text = player1.Developers.ToString( );
+
+			//Loads initial progress cards into ProjectProgressCard textboxes
 			ProjectProgressCard1.Text = ProjProgDeck.Deck[0].DisplayCard( );
 			ProjectProgressCard2.Text = ProjProgDeck.Deck[1].DisplayCard( );
 			ProjectProgressCard3.Text = ProjProgDeck.Deck[2].DisplayCard( );
 			ProjectProgressCard4.Text = ProjProgDeck.Deck[3].DisplayCard( );
+
+			//Loads initial tool levels into toolSlot textboxes
+			int[] toolLevelList = player1.Inventory.getToolLevelList();
+			toolSlot1.Text = Convert.ToString(toolLevelList[0]);
+			toolSlot2.Text = Convert.ToString(toolLevelList[1]);
+			toolSlot3.Text = Convert.ToString(toolLevelList[2]);
 		}
 
 		#region Task/Resource/Scoring Buttons and Textboxes
@@ -456,6 +465,44 @@ namespace InformationAgeProject
 
 				//Add 1 developer to developer count
 				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 1);
+
+			}
+			else
+			{
+				//Do nothing
+			}
+		}
+
+		/// <summary>
+		/// PLACEHOLDER Event Handler for button to acquire tool for current player 
+		/// (In the finished game, tools are only acquired after a round ends and a player has a developer at the tool maker, not when a button is pressed)
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnAcquireTool_Click(object sender, EventArgs e)
+		{
+			//If there is atleast one developer at the tool maker for the current player, add one tool to inventory if able to
+			//Else, do nothing
+			if (Int32.Parse(txtToolMaker.Text) == 1)
+			{
+				//Adds a tool to the players inventory if there are not 3 tools that equal 
+				player1.Inventory.addTool();
+
+				//Stores developer that is currently in tool maker
+				int toolMakerNum = Int32.Parse(txtToolMaker.Text);
+
+				//Resets developer count at tool maker
+				txtToolMaker.Text = "0";
+
+				//Returns developer that was at the tool maker back to developer pool
+				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
+				txtDevelopers.Text = Convert.ToString(leftoverDevelopers + toolMakerNum);
+
+				//Reloads current tool levels after acquiring new tool
+				int[] toolLevelList = player1.Inventory.getToolLevelList();
+				toolSlot1.Text = Convert.ToString(toolLevelList[0]);
+				toolSlot2.Text = Convert.ToString(toolLevelList[1]);
+				toolSlot3.Text = Convert.ToString(toolLevelList[2]);
 
 			}
 			else

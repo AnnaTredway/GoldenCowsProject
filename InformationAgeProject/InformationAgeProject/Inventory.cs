@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace InformationAgeProject
 {
@@ -40,8 +41,6 @@ namespace InformationAgeProject
 			toolManager = new ToolManager();
 			ProjectProgressCards = new List<ProjectProgress>();
 		}
-
-
 
 		/// <summary>
 		/// Property for accessing and altering the
@@ -125,6 +124,7 @@ namespace InformationAgeProject
 		}
 		#endregion
 
+		#region printResources() Method
 		/// <summary>
 		/// Prints the current players resources.
 		/// </summary>
@@ -140,7 +140,57 @@ namespace InformationAgeProject
 							  "---------------------------------\n";
 			return strResult;
 		}
+		#endregion
 
+		#region Tool Related Method
+		/// <summary>
+		/// Method for adding a tool to the current player's inventory
+		/// If there are already 3 tools of the current level, one tool is instead upgraded to the next level to a maximum of 4 levels
+		/// (No "removeTool()" method because tools can be continuously re-used once for each round by each player)
+		/// </summary>
+		public void addTool()
+		{
+			//If third tool slot level is less than 4, then add tool or tool level to inventory
+			//(4 is the highest level that a tool can be at and toolSlot3 is the last tool slot that would get a level 4 tool)
+			//Else, show error message
+			if (toolManager.getThirdSlotLevel() < 4)
+			{
+				toolManager.increaseToolLevel();
+			}
+			else
+			{
+				MessageBox.Show("You cannot acquire anymore tools because all three tools in your inventory are at max level.", "Cannot Acquire More Tools");
+			}
+		}
+
+		/// <summary>
+		/// Method for returning an array of the levels of the tools in the inventory
+		/// </summary>
+		/// <returns>An array </returns>
+		public int[] getToolLevelList()
+		{
+			int[] levelList = new int[3];
+
+			levelList[0] = toolManager.getFirstSlotLevel();
+			levelList[1] = toolManager.getSecondSlotLevel();
+			levelList[2] = toolManager.getThirdSlotLevel();
+
+			return levelList;
+		}
+
+		/// <summary>
+		/// Method for setting the levels of the tools in the inventory
+		/// </summary>
+		/// <param name="setList">Array of levels to set the tools to</param>
+		public void setToolLevelList(int[] setList)
+		{
+			toolManager.setFirstSlotLevel(setList[0]);
+			toolManager.setSecondSlotLevel(setList[1]);
+			toolManager.setThirdSlotLevel(setList[2]);
+		}
+		#endregion
+
+		#region ReturnResourceManager() & ReturnToolManager()
 		/// <summary>
 		/// Returns the current state of the resourceManager for use in other classes.
 		/// </summary>
@@ -158,5 +208,6 @@ namespace InformationAgeProject
 		{
 			return toolManager;
 		}
+		#endregion
 	}
 }
