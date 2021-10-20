@@ -26,7 +26,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Creates a deck of Project Progress cards
     /// </summary>
-    class ProjectProgressDeck
+    public class ProjectProgressDeck
     {
         public List<ProjectProgress> Deck = new List<ProjectProgress>(); // Creates a deck of 28 Project Progress cards
 

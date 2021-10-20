@@ -342,7 +342,7 @@ namespace InformationAgeProject
 
 			if (points > 0)
 			{
-				// TODO: award points to player
+				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[0]);
 				ProjProgDeck.Deck.RemoveAt(0);
 				ClaimCard1.Enabled = false;
 				ProjectProgressCard1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
@@ -363,7 +363,7 @@ namespace InformationAgeProject
 
 			if (points > 0)
 			{
-				// TODO: award points to player
+				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[1]);
 				ProjProgDeck.Deck.RemoveAt(1);
 				ClaimCard2.Enabled = false;
 				ProjectProgressCard2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
@@ -384,7 +384,7 @@ namespace InformationAgeProject
 
 			if (points > 0)
 			{
-				// TODO: award points to player
+				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[2]);
 				ProjProgDeck.Deck.RemoveAt(2);
 				ClaimCard3.Enabled = false;
 				ProjectProgressCard3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
@@ -405,7 +405,7 @@ namespace InformationAgeProject
 
 			if (points > 0)
 			{
-				// TODO: award points to player
+				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[3]);
 				ProjProgDeck.Deck.RemoveAt(3);
 				ClaimCard4.Enabled = false;
 				ProjectProgressCard4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";

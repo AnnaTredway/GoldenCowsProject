@@ -35,9 +35,19 @@ namespace InformationAgeProject
 		/// </summary>
 		public Inventory( )
 		{
+
 			resourceManager = new ResourceManager();
 			toolManager = new ToolManager();
-	}
+			ProjectProgressCards = new List<ProjectProgress>();
+		}
+
+
+
+		/// <summary>
+		/// Property for accessing and altering the
+		/// player's project progress cards
+		/// </summary>
+		public List<ProjectProgress> ProjectProgressCards { get; set; }
 
 		#region Add to resource count methods
 		/// <summary>
@@ -126,6 +136,7 @@ namespace InformationAgeProject
 							  resourceManager.getResourceName(1) + ": " + resourceManager.getLowPriorityAmount( ) + "\n" +
 							  resourceManager.getResourceName(2) + ": " + resourceManager.getMediumPriorityAmount( ) + "\n" +
 							  resourceManager.getResourceName(3) + ": " + resourceManager.getHighPriorityAmount( ) + "\n" +
+							  "ProjectProgressCards" + ": " + ProjectProgressCards.Count + "\n" +
 							  "---------------------------------\n";
 			return strResult;
 		}
