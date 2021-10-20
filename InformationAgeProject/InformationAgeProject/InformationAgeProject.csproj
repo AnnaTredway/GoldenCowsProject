@@ -50,6 +50,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdditionalProjectFeatures.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="AboutBox.cs">
       <SubType>Form</SubType>
@@ -65,6 +66,7 @@
     <Compile Include="QuitForm.Designer.cs">
       <DependentUpon>QuitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdditionalProjectFeaturesType.cs" />
     <Compile Include="ResourceType.cs" />
     <Compile Include="ProjectProgress.cs" />
     <Compile Include="Dice.cs" />
