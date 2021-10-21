@@ -67,7 +67,7 @@ namespace InformationAgeProject
             {
                 foreach (ProjectProgress p in inventory.ProjectProgressCards)
                 {
-                    total =  total + p.awardPoints(manager);
+                    total =  total + p.iPointValue;
                 }
             }
             

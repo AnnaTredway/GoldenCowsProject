@@ -352,7 +352,7 @@ namespace InformationAgeProject
 			if (points > 0)
 			{
 				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[0]);
-				ProjProgDeck.Deck.RemoveAt(0);
+				ProjProgDeck.Deck[0].blnSold = true;
 				ClaimCard1.Enabled = false;
 				ProjectProgressCard1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player1.Inventory.printResources( );
@@ -367,13 +367,13 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard2_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnResourceManager( ));
+			int points = ProjProgDeck.Deck[1].awardPoints(player1.Inventory.ReturnResourceManager( ));
 			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
 			{
 				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[1]);
-				ProjProgDeck.Deck.RemoveAt(1);
+				ProjProgDeck.Deck[1].blnSold = true;
 				ClaimCard2.Enabled = false;
 				ProjectProgressCard2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player1.Inventory.printResources( );
@@ -388,13 +388,13 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard3_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnResourceManager( ));
+			int points = ProjProgDeck.Deck[2].awardPoints(player1.Inventory.ReturnResourceManager( ));
 			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
 			{
 				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[2]);
-				ProjProgDeck.Deck.RemoveAt(2);
+				ProjProgDeck.Deck[2].blnSold = true;
 				ClaimCard3.Enabled = false;
 				ProjectProgressCard3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player1.Inventory.printResources( );
@@ -409,13 +409,13 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimCard4_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[0].awardPoints(player1.Inventory.ReturnResourceManager( ));
+			int points = ProjProgDeck.Deck[3].awardPoints(player1.Inventory.ReturnResourceManager( ));
 			Scoring score = new Scoring(player1.Inventory);
 
 			if (points > 0)
 			{
 				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[3]);
-				ProjProgDeck.Deck.RemoveAt(3);
+				ProjProgDeck.Deck[3].blnSold = true;
 				ClaimCard4.Enabled = false;
 				ProjectProgressCard4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player1.Inventory.printResources( );
