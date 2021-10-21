@@ -30,7 +30,8 @@ namespace InformationAgeProject
     public class ProjectProgress
     {
         private static Random rNum = new Random( ); // Used to select a random resource to use
-        private int iPointValue;                    // Stores the amount of points this card is worth
+        public int iPointValue;                    // Stores the amount of points this card is worth
+        public Boolean blnSold = false;
         private int iDifferentTypesNeeded;          // Stores the number of different resources types needed to purchase this card (used for advance cards)
         private List<Resource> ResourceCost = new List<Resource>( ); // Stores the resources need to purchase this card
 
