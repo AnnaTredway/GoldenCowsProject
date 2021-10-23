@@ -59,7 +59,6 @@ namespace InformationAgeProject
             this.btnSubtHigh = new System.Windows.Forms.Button();
             this.lblTasks = new System.Windows.Forms.Label();
             this.btnDoTasks = new System.Windows.Forms.Button();
-            this.lblNotFinal = new System.Windows.Forms.Label();
             this.txtBacklog = new System.Windows.Forms.TextBox();
             this.txtLow = new System.Windows.Forms.TextBox();
             this.txtMed = new System.Windows.Forms.TextBox();
@@ -301,17 +300,6 @@ namespace InformationAgeProject
             this.btnDoTasks.UseVisualStyleBackColor = false;
             this.btnDoTasks.Click += new System.EventHandler(this.btnDoTasks_Click);
             // 
-            // lblNotFinal
-            // 
-            this.lblNotFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblNotFinal.AutoSize = true;
-            this.lblNotFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotFinal.Location = new System.Drawing.Point(12, 634);
-            this.lblNotFinal.Name = "lblNotFinal";
-            this.lblNotFinal.Size = new System.Drawing.Size(376, 31);
-            this.lblNotFinal.TabIndex = 27;
-            this.lblNotFinal.Text = "GUI INTERFACE NOT FINAL";
-            // 
             // txtBacklog
             // 
             this.txtBacklog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -473,7 +461,7 @@ namespace InformationAgeProject
             // 
             this.ProjectProgressCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCard1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectProgressCard1.Location = new System.Drawing.Point(18, 438);
+            this.ProjectProgressCard1.Location = new System.Drawing.Point(12, 516);
             this.ProjectProgressCard1.Multiline = true;
             this.ProjectProgressCard1.Name = "ProjectProgressCard1";
             this.ProjectProgressCard1.ReadOnly = true;
@@ -484,7 +472,7 @@ namespace InformationAgeProject
             // 
             this.ProjectProgressCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCard2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectProgressCard2.Location = new System.Drawing.Point(154, 438);
+            this.ProjectProgressCard2.Location = new System.Drawing.Point(148, 516);
             this.ProjectProgressCard2.Multiline = true;
             this.ProjectProgressCard2.Name = "ProjectProgressCard2";
             this.ProjectProgressCard2.ReadOnly = true;
@@ -495,7 +483,7 @@ namespace InformationAgeProject
             // 
             this.ProjectProgressCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCard3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectProgressCard3.Location = new System.Drawing.Point(290, 438);
+            this.ProjectProgressCard3.Location = new System.Drawing.Point(284, 516);
             this.ProjectProgressCard3.Multiline = true;
             this.ProjectProgressCard3.Name = "ProjectProgressCard3";
             this.ProjectProgressCard3.ReadOnly = true;
@@ -506,7 +494,7 @@ namespace InformationAgeProject
             // 
             this.ProjectProgressCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCard4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectProgressCard4.Location = new System.Drawing.Point(426, 438);
+            this.ProjectProgressCard4.Location = new System.Drawing.Point(420, 516);
             this.ProjectProgressCard4.Multiline = true;
             this.ProjectProgressCard4.Name = "ProjectProgressCard4";
             this.ProjectProgressCard4.ReadOnly = true;
@@ -516,7 +504,7 @@ namespace InformationAgeProject
             // ClaimProgressCard1
             // 
             this.ClaimProgressCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimProgressCard1.Location = new System.Drawing.Point(45, 573);
+            this.ClaimProgressCard1.Location = new System.Drawing.Point(39, 651);
             this.ClaimProgressCard1.Name = "ClaimProgressCard1";
             this.ClaimProgressCard1.Size = new System.Drawing.Size(75, 23);
             this.ClaimProgressCard1.TabIndex = 43;
@@ -527,7 +515,7 @@ namespace InformationAgeProject
             // ClaimProgressCard2
             // 
             this.ClaimProgressCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimProgressCard2.Location = new System.Drawing.Point(185, 573);
+            this.ClaimProgressCard2.Location = new System.Drawing.Point(179, 651);
             this.ClaimProgressCard2.Name = "ClaimProgressCard2";
             this.ClaimProgressCard2.Size = new System.Drawing.Size(75, 23);
             this.ClaimProgressCard2.TabIndex = 44;
@@ -538,7 +526,7 @@ namespace InformationAgeProject
             // ClaimProgressCard3
             // 
             this.ClaimProgressCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimProgressCard3.Location = new System.Drawing.Point(319, 573);
+            this.ClaimProgressCard3.Location = new System.Drawing.Point(313, 651);
             this.ClaimProgressCard3.Name = "ClaimProgressCard3";
             this.ClaimProgressCard3.Size = new System.Drawing.Size(75, 23);
             this.ClaimProgressCard3.TabIndex = 45;
@@ -549,7 +537,7 @@ namespace InformationAgeProject
             // ClaimProgressCard4
             // 
             this.ClaimProgressCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimProgressCard4.Location = new System.Drawing.Point(454, 573);
+            this.ClaimProgressCard4.Location = new System.Drawing.Point(448, 651);
             this.ClaimProgressCard4.Name = "ClaimProgressCard4";
             this.ClaimProgressCard4.Size = new System.Drawing.Size(75, 23);
             this.ClaimProgressCard4.TabIndex = 46;
@@ -685,7 +673,7 @@ namespace InformationAgeProject
             // ClaimFeaturesCard4
             // 
             this.ClaimFeaturesCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimFeaturesCard4.Location = new System.Drawing.Point(454, 399);
+            this.ClaimFeaturesCard4.Location = new System.Drawing.Point(448, 477);
             this.ClaimFeaturesCard4.Name = "ClaimFeaturesCard4";
             this.ClaimFeaturesCard4.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard4.TabIndex = 68;
@@ -696,7 +684,7 @@ namespace InformationAgeProject
             // ClaimFeaturesCard3
             // 
             this.ClaimFeaturesCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimFeaturesCard3.Location = new System.Drawing.Point(319, 399);
+            this.ClaimFeaturesCard3.Location = new System.Drawing.Point(313, 477);
             this.ClaimFeaturesCard3.Name = "ClaimFeaturesCard3";
             this.ClaimFeaturesCard3.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard3.TabIndex = 67;
@@ -707,7 +695,7 @@ namespace InformationAgeProject
             // ClaimFeaturesCard2
             // 
             this.ClaimFeaturesCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimFeaturesCard2.Location = new System.Drawing.Point(185, 399);
+            this.ClaimFeaturesCard2.Location = new System.Drawing.Point(179, 477);
             this.ClaimFeaturesCard2.Name = "ClaimFeaturesCard2";
             this.ClaimFeaturesCard2.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard2.TabIndex = 66;
@@ -718,7 +706,7 @@ namespace InformationAgeProject
             // ClaimFeaturesCard1
             // 
             this.ClaimFeaturesCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimFeaturesCard1.Location = new System.Drawing.Point(45, 399);
+            this.ClaimFeaturesCard1.Location = new System.Drawing.Point(39, 477);
             this.ClaimFeaturesCard1.Name = "ClaimFeaturesCard1";
             this.ClaimFeaturesCard1.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard1.TabIndex = 65;
@@ -730,7 +718,7 @@ namespace InformationAgeProject
             // 
             this.AdditionalFeaturesTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AdditionalFeaturesTextBox4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdditionalFeaturesTextBox4.Location = new System.Drawing.Point(426, 264);
+            this.AdditionalFeaturesTextBox4.Location = new System.Drawing.Point(420, 342);
             this.AdditionalFeaturesTextBox4.Multiline = true;
             this.AdditionalFeaturesTextBox4.Name = "AdditionalFeaturesTextBox4";
             this.AdditionalFeaturesTextBox4.ReadOnly = true;
@@ -741,7 +729,7 @@ namespace InformationAgeProject
             // 
             this.AdditionalFeaturesTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AdditionalFeaturesTextBox3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdditionalFeaturesTextBox3.Location = new System.Drawing.Point(290, 264);
+            this.AdditionalFeaturesTextBox3.Location = new System.Drawing.Point(284, 342);
             this.AdditionalFeaturesTextBox3.Multiline = true;
             this.AdditionalFeaturesTextBox3.Name = "AdditionalFeaturesTextBox3";
             this.AdditionalFeaturesTextBox3.ReadOnly = true;
@@ -752,7 +740,7 @@ namespace InformationAgeProject
             // 
             this.AdditionalFeaturesTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AdditionalFeaturesTextBox2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdditionalFeaturesTextBox2.Location = new System.Drawing.Point(154, 264);
+            this.AdditionalFeaturesTextBox2.Location = new System.Drawing.Point(148, 342);
             this.AdditionalFeaturesTextBox2.Multiline = true;
             this.AdditionalFeaturesTextBox2.Name = "AdditionalFeaturesTextBox2";
             this.AdditionalFeaturesTextBox2.ReadOnly = true;
@@ -763,7 +751,7 @@ namespace InformationAgeProject
             // 
             this.AdditionalFeaturesTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AdditionalFeaturesTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdditionalFeaturesTextBox1.Location = new System.Drawing.Point(18, 264);
+            this.AdditionalFeaturesTextBox1.Location = new System.Drawing.Point(12, 342);
             this.AdditionalFeaturesTextBox1.Multiline = true;
             this.AdditionalFeaturesTextBox1.Name = "AdditionalFeaturesTextBox1";
             this.AdditionalFeaturesTextBox1.ReadOnly = true;
@@ -812,7 +800,6 @@ namespace InformationAgeProject
             this.Controls.Add(this.txtMed);
             this.Controls.Add(this.txtLow);
             this.Controls.Add(this.txtBacklog);
-            this.Controls.Add(this.lblNotFinal);
             this.Controls.Add(this.btnDoTasks);
             this.Controls.Add(this.lblTasks);
             this.Controls.Add(this.btnSubtHigh);
@@ -859,7 +846,6 @@ namespace InformationAgeProject
         private System.Windows.Forms.Button btnSubtHigh;
         private System.Windows.Forms.Label lblTasks;
         private System.Windows.Forms.Button btnDoTasks;
-        private System.Windows.Forms.Label lblNotFinal;
         private System.Windows.Forms.TextBox txtBacklog;
         private System.Windows.Forms.TextBox txtLow;
         private System.Windows.Forms.TextBox txtMed;
