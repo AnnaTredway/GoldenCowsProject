@@ -273,7 +273,7 @@ namespace InformationAgeProject
 			 && txtMed.Text == "0" 
 			 && txtHigh.Text == "0")
 			{
-				MessageBox.Show("You cannot acquire any tasks because there are no developers at any of the 4 tas.", "Cannot Acquire Tasks");
+				MessageBox.Show("You cannot acquire any tasks because there are no developers at any of the 4 tasks.", "Cannot Acquire Tasks");
 			}
 			else
 			{
@@ -510,8 +510,8 @@ namespace InformationAgeProject
 			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[0].claimCard(4, player1.Inventory);
 			Scoring score = new Scoring(player1.Inventory);
 
-            if (cards != null)
-            {
+			if (cards != null)
+			{
 				player1.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[0]);
 				ProjFeatDeck.Deck[0].blnSold = true;
 				ClaimFeaturesCard1.Enabled = false;
@@ -632,7 +632,7 @@ namespace InformationAgeProject
 			QuitForm quitForm = new QuitForm();
 			quitForm.Show();
 		}
-        #endregion
+		#endregion
 
-    }
+	}
 }
