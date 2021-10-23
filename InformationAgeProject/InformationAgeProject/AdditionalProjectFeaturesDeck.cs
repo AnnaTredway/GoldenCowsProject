@@ -1,14 +1,14 @@
 ﻿///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //	Solution/Project:  InformationAgeProject/InformationAgeProject
-//	File Name:         ProjectProgressDeck.cs
-//	Description:       Class for handling a deck of project progress cards
+//	File Name:         AdditionalProjectFeaturesDeck.cs
+//	Description:       Class for managing a deck of additional project feature cards
 //	Course:            CSCI-4250-002 - Software Engineering I
 //	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
 //                     Brandon Rhyno, rhynob@etsu.edu
 //                     Magnus Allen, allenmv@etsu.edu
-//	Created:           Friday, October 1, 2021
+//	Created:           Friday, October 20, 2021
 //	Copyright:         Golden Cows Team, 2021
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -18,39 +18,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/// <summary>
-/// Contains the classes within the Information Age project
-/// </summary>
 namespace InformationAgeProject
 {
     /// <summary>
-    /// Creates a deck of Project Progress cards
+    /// Creates a deck of Additional Project Features
     /// </summary>
-    public class ProjectProgressDeck
+    public class AdditionalProjectFeaturesDeck
     {
-        public List<ProjectProgress> Deck = new List<ProjectProgress>(); // Creates a deck of 28 Project Progress cards
+        private static Random rNum = new Random( );                                           // Used to shuffle the deck
+        public List<AdditionalProjectFeatures> Deck = new List<AdditionalProjectFeatures>( ); // Creates a deck of 36 Project Features cards
 
         /// <summary>
-        /// Creates a new deck of cards and shuffles them.
+        /// Initializes a new instance of the <see cref="AdditionalProjectFeaturesDeck"/> class.
         /// </summary>
-        public ProjectProgressDeck( )
+        public AdditionalProjectFeaturesDeck( )
         {
-            for (int i = 0; i < 28; i++)
+            for (int i = 0; i < 22; i++)
             {
-                Deck.Add(new ProjectProgress());
-            }// end for (int i = 0; i < Deck.Length; i++)
+                Deck.Add(new AdditionalProjectFeatures( ));
+            }// end for (int i = 0; i < 22; i++)
+            for (int i = 0; i < 14; i++)
+            {
+                Deck.Add(new AdditionalProjectFeatures(rNum.Next(2) + 1));
+            }// end for (int i = 0; i < 14; i++)
 
             Shuffle( );
-        }// end ProjectProgressDeck( )
+        }// end AdditionalProjectFeaturesDeck( )
 
         /// <summary>
         /// Shuffles a deck of project progress cards
         /// </summary>
         public void Shuffle( )
         {
-            Random rNum = new Random( ); // Used to shuffle the deck
             int iRandom;                 // Stores a number generated from rNum
-            ProjectProgress swap;        // Temporary stores a card so it can be swapped
+            AdditionalProjectFeatures swap;        // Temporary stores a card so it can be swapped
             for (int i = 0; i < Deck.Count; i++)
             {
                 iRandom = rNum.Next(Deck.Count);
@@ -59,5 +60,5 @@ namespace InformationAgeProject
                 Deck[iRandom] = swap;
             }// end for (int i = 0; i < Deck.Length; i++)
         }// end Shuffle( )
-    }// end class ProjectProgressDeck
+    }// end class AdditionalProjectFeaturesDeck
 }// end namespace InformationAgeProject
