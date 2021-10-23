@@ -58,6 +58,7 @@
       <DependentUpon>AdditionalProjectFeaturesSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="AdditionalProjectFeaturesDeck.cs" />
+    <Compile Include="GameController.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="AboutBox.cs">
       <SubType>Form</SubType>
@@ -89,6 +90,12 @@
     <Compile Include="ResourceManager.cs" />
     <Compile Include="Scoring.cs" />
     <Compile Include="Tool.cs" />
+    <Compile Include="ToolTaskPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolTaskPrompt.Designer.cs">
+      <DependentUpon>ToolTaskPrompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolType.cs" />
     <Compile Include="ToolManager.cs" />
     <EmbeddedResource Include="AboutBox.resx">
@@ -112,6 +119,9 @@
     <EmbeddedResource Include="QuitForm.resx">
       <DependentUpon>QuitForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolTaskPrompt.resx">
+      <DependentUpon>ToolTaskPrompt.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,6 +139,7 @@
     <Content Include="Files\InstructionSet.txt" />
     <Content Include="GameIcons\anvil.png" />
     <Content Include="GameIcons\diamondpickaxe.png" />
+    <Content Include="GameIcons\dice.png" />
     <Content Include="GameIcons\minecraftsteve.png" />
     <Content Include="GameIcons\moobloom.ico" />
     <Content Include="GameIcons\moobloom.png" />

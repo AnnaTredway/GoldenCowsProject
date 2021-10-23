@@ -59,12 +59,12 @@ namespace InformationAgeProject
 
 			//Loads initial tool levels into toolSlot textboxes
 			int[] toolLevelList = player1.Inventory.getToolLevelList();
-			toolSlot1.Text = Convert.ToString(toolLevelList[0]);
-			toolSlot2.Text = Convert.ToString(toolLevelList[1]);
-			toolSlot3.Text = Convert.ToString(toolLevelList[2]);
+			toolSlot1.Text = toolLevelList[0].ToString();
+			toolSlot2.Text = toolLevelList[1].ToString();
+			toolSlot3.Text = toolLevelList[2].ToString();
 		}
 
-		#region Task/Resource/Scoring Buttons and Textboxes
+		#region Task Adding/Subtracting Buttons
 		/// <summary>
 		/// Event Handler for button to add developer to backlog task/resource category if any are available
 		/// </summary>
@@ -256,7 +256,9 @@ namespace InformationAgeProject
 				//Do nothing
 			}
 		}
+		#endregion
 
+		#region DoTasks Button
 		/// <summary>
 		/// Event Handler for button to tell developers to do tasks and then roll dice to calculate how many tasks/resources are completed/acquired
 		/// </summary>
@@ -264,84 +266,155 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnDoTasks_Click(object sender, EventArgs e)
 		{
-			//Stores current counts of developers on each task/resource for calculation
-			int backlogNum = Int32.Parse(txtBacklog.Text);
-			int lowNum = Int32.Parse(txtLow.Text);
-			int medNum = Int32.Parse(txtMed.Text);
-			int highNum = Int32.Parse(txtHigh.Text);
+			//If there are no developers on the resources, give error message to player that they need to put devlopers on them before acquiring them
+			//Else, go through with normal task calculation with added tool functionality
+			if (txtBacklog.Text == "0" 
+			 && txtLow.Text == "0"
+			 && txtMed.Text == "0" 
+			 && txtHigh.Text == "0")
+			{
+				MessageBox.Show("You cannot acquire any tasks because there are no developers at any of the 4 tas.", "Cannot Acquire Tasks");
+			}
+			else
+			{
+				//Dice is rolled for current player on resources/tasks
+				//(Number of dice rolled is equal to number of developers on specific resource)
+				int[] diceVals = new int[4];
+				diceVals[0] = dice.RollDice(int.Parse(txtBacklog.Text));
+				diceVals[1] = dice.RollDice(int.Parse(txtLow.Text));
+				diceVals[2] = dice.RollDice(int.Parse(txtMed.Text));
+				diceVals[3] = dice.RollDice(int.Parse(txtHigh.Text));
 
-			//Add calculated resources to ResourceManager for current player
-			//(Number of dice rolled is equal to number of developers on specific resource)
-			//(Dice result is then divided by 3,4,5, or 6 to get final resource count acquired)
-			player1.Inventory.addToBacklog(dice.RollDice(backlogNum) / 3);      //Lowest-tier resource divided by 3
-			player1.Inventory.addToLowPriority(dice.RollDice(lowNum) / 4);      //Low-tier resource divided by 4
-			player1.Inventory.addToMediumPriority(dice.RollDice(medNum) / 5);   //Mid-tier resource divided by 5
-			player1.Inventory.addToHighPriority(dice.RollDice(highNum) / 6);    //Highest-tier resource divided by 6
+				//Before divide calculation, a prompt window for using tools is shown if the player wants to use one or more tools
+				//These array values may not change if the player decides to not use any tools or has no tool levels to begin with
+				int[] finalToolVals = new int[4] { 0, 0, 0, 0 };
 
-			//Print out current inventory text to inventoryBox
-			inventoryBox.Text = player1.Inventory.printResources();
+				//Prompts user for possibility of using tools if first tool is not level 0 
+				if (player1.Inventory.getToolLevelList()[0] != 0)
+				{
+					//Shows new toolPrompt for possibility of player using tools
+					//Uses list of tool levels and dice values for player to help decide if they want to use tools on tasks/resources
+					ToolTaskPrompt toolPrompt = new ToolTaskPrompt(player1.Inventory.getToolLevelList(), diceVals);
+					toolPrompt.ShowDialog();
 
-			//Resets developer counts on each task/resource
-			txtBacklog.Text = "0";
-			txtLow.Text = "0";
-			txtMed.Text = "0";
-			txtHigh.Text = "0";
+					finalToolVals = toolPrompt.finalToolValues;
+				}
 
-			//Adds developers back to player's free developer pool
-			int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
-			txtDevelopers.Text = Convert.ToString(leftoverDevelopers + backlogNum + lowNum + medNum + highNum);
+				//Final dice and tool result is then divided by 3, 4, 5, or 6 to get final resource/task count acquired
+				player1.Inventory.addToBacklog((diceVals[0] + finalToolVals[0]) / 3);           //Lowest-tier backlog resource final result divided by 3
+				player1.Inventory.addToLowPriority((diceVals[1] + finalToolVals[1]) / 4);       //Low-tier resource divided by 4
+				player1.Inventory.addToMediumPriority((diceVals[2] + finalToolVals[2]) / 5);    //Mid-tier resource divided by 5
+				player1.Inventory.addToHighPriority((diceVals[3] + finalToolVals[3]) / 6);      //Highest-tier resource divided by 6
 
-			//Recalculate the score and update the score text box
-			Scoring score = new Scoring(player1.Inventory);
-			scoreBox.Text = score.calculateScore();
+				//Adds developers back to player's free developer pool
+				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
+				txtDevelopers.Text = Convert.ToString(leftoverDevelopers
+													+ int.Parse(txtBacklog.Text)
+													+ int.Parse(txtLow.Text)
+													+ int.Parse(txtMed.Text)
+													+ int.Parse(txtHigh.Text));
+
+				//Resets developer counts on each task/resource
+				txtBacklog.Text = "0";
+				txtLow.Text = "0";
+				txtMed.Text = "0";
+				txtHigh.Text = "0";
+
+				//Print out current inventory text to inventoryBox
+				inventoryBox.Text = player1.Inventory.printResources();
+
+				//Recalculate the score and update the score text box
+				Scoring score = new Scoring(player1.Inventory);
+				scoreBox.Text = score.calculateScore();
+			}
 		}
 		#endregion
 
-		#region Toolbar Dropdown Menu Buttons
+		#region Tool Buttons and Textboxes
 		/// <summary>
-		/// Method: btnInstructions_Click opens the Instructionset.txt file upon clicking
-		/// the btnInstructions button on the main form
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void btnInstructionsMenuItem_Click(object sender, EventArgs e)
-		{
-			//Get the current directory
-			string filePath = Directory.GetCurrentDirectory();
-
-			//Move up two parent directories
-			filePath = Directory.GetParent(filePath).FullName;
-			filePath = Directory.GetParent(filePath).FullName;
-
-			//Append the location of InstructionSet.txt to filePath
-			filePath += "/Files/InstructionSet.txt";
-
-			//Open the file located at filePath (which is InstructionSet.txt
-			Process.Start(filePath);
-		}
-
-		/// <summary>
-		/// Event Handler for dropdown menu button to open "about" windows form
+		/// Event Handler for button to add developer to tool maker if any are available and if there isnt a developer there already
 		/// </summary>
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnAboutMenuItem_Click(object sender, EventArgs e)
+		private void btnAddToolMaker_Click(object sender, EventArgs e)
 		{
-			//Opens new AboutBox window for About information
-			AboutBox aboutBox = new AboutBox();
-			aboutBox.Show();
+			//If the number of developers is larger than 0 and any player has not put a developer at the tool maker, add 1 to tool maker
+			//Else, do nothing
+			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtToolMaker.Text) < 1)
+			{
+				//Subtract 1 developer from developer count
+				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
+
+				//Add 1 developer to tool maker count
+				txtToolMaker.Text = Convert.ToString(Int32.Parse(txtToolMaker.Text) + 1);
+
+			}
+			else
+			{
+				//Do nothing
+			}
 		}
 
 		/// <summary>
-		/// Event Handler for dropdown menu button to open "are you sure you want to quit?" windows form
+		/// Event Handler for button to remove developer from tool maker i a developer is already there and is the current player's developer
 		/// </summary>
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnQuitMenuItem_Click(object sender, EventArgs e)
+		private void btnSubtToolMaker_Click(object sender, EventArgs e)
 		{
-			//Opens new QuitForm window for prompting user if they want to exit application
-			QuitForm quitForm = new QuitForm();
-			quitForm.Show();
+			//If there is a developer from the current player at the tool maker, then subtract 1 from tool maker count and add 1 to developer count
+			//Else, do nothing
+			if (Int32.Parse(txtToolMaker.Text) > 0)
+			{
+				//Subtract 1 developer from tool maker count
+				txtToolMaker.Text = Convert.ToString(Int32.Parse(txtToolMaker.Text) - 1);
+
+				//Add 1 developer to developer count
+				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 1);
+
+			}
+			else
+			{
+				//Do nothing
+			}
+		}
+
+		/// <summary>
+		/// PLACEHOLDER Event Handler for button to acquire tool for current player 
+		/// (In the finished game, tools are only acquired after a round ends and a player has a developer at the tool maker, not when a button is pressed)
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnAcquireTool_Click(object sender, EventArgs e)
+		{
+			//If there is atleast one developer at the tool maker for the current player, add one tool to inventory if able to
+			//Else, do nothing
+			if (Int32.Parse(txtToolMaker.Text) == 1)
+			{
+				//Adds a tool to the players inventory if there are not 3 tools that equal 
+				player1.Inventory.addTool();
+
+				//Stores developer that is currently in tool maker
+				int toolMakerNum = Int32.Parse(txtToolMaker.Text);
+
+				//Resets developer count at tool maker
+				txtToolMaker.Text = "0";
+
+				//Returns developer that was at the tool maker back to developer pool
+				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
+				txtDevelopers.Text = Convert.ToString(leftoverDevelopers + toolMakerNum);
+
+				//Reloads current tool levels after acquiring new tool
+				int[] toolLevelList = player1.Inventory.getToolLevelList();
+				toolSlot1.Text = Convert.ToString(toolLevelList[0]);
+				toolSlot2.Text = Convert.ToString(toolLevelList[1]);
+				toolSlot3.Text = Convert.ToString(toolLevelList[2]);
+
+			}
+			else
+			{
+				//Do nothing
+			}
 		}
 		#endregion
 
@@ -513,91 +586,51 @@ namespace InformationAgeProject
 		}
 		#endregion
 
-		#region Tool Buttons and Textboxes
+		#region Menubar Dropdown Menu Buttons
 		/// <summary>
-		/// Event Handler for button to add developer to tool maker if any are available and if there isnt a developer there already
+		/// Method: btnInstructions_Click opens the Instructionset.txt file upon clicking
+		/// the btnInstructions button on the main form
 		/// </summary>
-		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
-		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnAddToolMaker_Click(object sender, EventArgs e)
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnInstructionsMenuItem_Click(object sender, EventArgs e)
 		{
-			//If the number of developers is larger than 0 and any player has not put a developer at the tool maker, add 1 to tool maker
-			//Else, do nothing
-			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtToolMaker.Text) < 1)
-			{
-				//Subtract 1 developer from developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
+			//Get the current directory
+			string filePath = Directory.GetCurrentDirectory();
 
-				//Add 1 developer to tool maker count
-				txtToolMaker.Text = Convert.ToString(Int32.Parse(txtToolMaker.Text) + 1);
+			//Move up two parent directories
+			filePath = Directory.GetParent(filePath).FullName;
+			filePath = Directory.GetParent(filePath).FullName;
 
-			}
-			else
-			{
-				//Do nothing
-			}
+			//Append the location of InstructionSet.txt to filePath
+			filePath += "/Files/InstructionSet.txt";
+
+			//Open the file located at filePath (which is InstructionSet.txt
+			Process.Start(filePath);
 		}
 
 		/// <summary>
-		/// Event Handler for button to remove developer from tool maker i a developer is already there and is the current player's developer
+		/// Event Handler for dropdown menu button to open "about" windows form
 		/// </summary>
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnSubtToolMaker_Click(object sender, EventArgs e)
+		private void btnAboutMenuItem_Click(object sender, EventArgs e)
 		{
-			//If there is a developer from the current player at the tool maker, then subtract 1 from tool maker count and add 1 to developer count
-			//Else, do nothing
-			if (Int32.Parse(txtToolMaker.Text) > 0)
-			{
-				//Subtract 1 developer from tool maker count
-				txtToolMaker.Text = Convert.ToString(Int32.Parse(txtToolMaker.Text) - 1);
-
-				//Add 1 developer to developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 1);
-
-			}
-			else
-			{
-				//Do nothing
-			}
+			//Opens new AboutBox window for About information
+			AboutBox aboutBox = new AboutBox();
+			aboutBox.Show();
 		}
 
 		/// <summary>
-		/// PLACEHOLDER Event Handler for button to acquire tool for current player 
-		/// (In the finished game, tools are only acquired after a round ends and a player has a developer at the tool maker, not when a button is pressed)
+		/// Event Handler for dropdown menu button to open "are you sure you want to quit?" windows form
 		/// </summary>
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnAcquireTool_Click(object sender, EventArgs e)
+		private void btnQuitMenuItem_Click(object sender, EventArgs e)
 		{
-			//If there is atleast one developer at the tool maker for the current player, add one tool to inventory if able to
-			//Else, do nothing
-			if (Int32.Parse(txtToolMaker.Text) == 1)
-			{
-				//Adds a tool to the players inventory if there are not 3 tools that equal 
-				player1.Inventory.addTool();
-
-				//Stores developer that is currently in tool maker
-				int toolMakerNum = Int32.Parse(txtToolMaker.Text);
-
-				//Resets developer count at tool maker
-				txtToolMaker.Text = "0";
-
-				//Returns developer that was at the tool maker back to developer pool
-				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
-				txtDevelopers.Text = Convert.ToString(leftoverDevelopers + toolMakerNum);
-
-				//Reloads current tool levels after acquiring new tool
-				int[] toolLevelList = player1.Inventory.getToolLevelList();
-				toolSlot1.Text = Convert.ToString(toolLevelList[0]);
-				toolSlot2.Text = Convert.ToString(toolLevelList[1]);
-				toolSlot3.Text = Convert.ToString(toolLevelList[2]);
-
-			}
-			else
-			{
-				//Do nothing
-			}
+			//Opens new QuitForm window for prompting user if they want to exit application
+			QuitForm quitForm = new QuitForm();
+			quitForm.Show();
 		}
         #endregion
 
