@@ -1,18 +1,17 @@
-﻿/////////////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //	Solution/Project:  InformationAgeProject/InformationAgeProject
-//	File Name:         ResourceType.cs
-//	Description:       ResourceType enum class for the different resource/task types
+//	File Name:         AdditionalProjectFeaturesType.cs
+//	Description:       AdditionalProjectFeaturesType enum class for the different items a card can be awarded.
 //	Course:            CSCI-4250-002 - Software Engineering I
 //	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
 //                     Brandon Rhyno, rhynob@etsu.edu
 //                     Magnus Allen, allenmv@etsu.edu
-//	Created:           Friday, October 1, 2021
+//	Created:           Friday, October 20, 2021
 //	Copyright:         Golden Cows Team, 2021
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +23,7 @@ namespace InformationAgeProject
     /// <summary>
     /// AdditionalProjectFeaturesType enum for different types of additional project features
     /// </summary>
-    enum AdditionalProjectFeaturesType
+    public enum AdditionalProjectFeaturesType
     {
         medicine,
         art,

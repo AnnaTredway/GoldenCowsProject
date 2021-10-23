@@ -51,6 +51,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdditionalProjectFeatures.cs" />
+    <Compile Include="AdditionalProjectFeaturesSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdditionalProjectFeaturesSelector.Designer.cs">
+      <DependentUpon>AdditionalProjectFeaturesSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdditionalProjectFeaturesDeck.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="AboutBox.cs">
       <SubType>Form</SubType>
@@ -86,6 +93,9 @@
     <Compile Include="ToolManager.cs" />
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdditionalProjectFeaturesSelector.resx">
+      <DependentUpon>AdditionalProjectFeaturesSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

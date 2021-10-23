@@ -79,10 +79,10 @@ namespace InformationAgeProject
             this.ProjectProgressCard2 = new System.Windows.Forms.TextBox();
             this.ProjectProgressCard3 = new System.Windows.Forms.TextBox();
             this.ProjectProgressCard4 = new System.Windows.Forms.TextBox();
-            this.ClaimCard1 = new System.Windows.Forms.Button();
-            this.ClaimCard2 = new System.Windows.Forms.Button();
-            this.ClaimCard3 = new System.Windows.Forms.Button();
-            this.ClaimCard4 = new System.Windows.Forms.Button();
+            this.ClaimProgressCard1 = new System.Windows.Forms.Button();
+            this.ClaimProgressCard2 = new System.Windows.Forms.Button();
+            this.ClaimProgressCard3 = new System.Windows.Forms.Button();
+            this.ClaimProgressCard4 = new System.Windows.Forms.Button();
             this.toolSlot1 = new System.Windows.Forms.TextBox();
             this.toolSlot2 = new System.Windows.Forms.TextBox();
             this.toolSlot3 = new System.Windows.Forms.TextBox();
@@ -93,6 +93,14 @@ namespace InformationAgeProject
             this.toolsPictureBox = new System.Windows.Forms.PictureBox();
             this.toolMakerPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ClaimFeaturesCard4 = new System.Windows.Forms.Button();
+            this.ClaimFeaturesCard3 = new System.Windows.Forms.Button();
+            this.ClaimFeaturesCard2 = new System.Windows.Forms.Button();
+            this.ClaimFeaturesCard1 = new System.Windows.Forms.Button();
+            this.AdditionalFeaturesTextBox4 = new System.Windows.Forms.TextBox();
+            this.AdditionalFeaturesTextBox3 = new System.Windows.Forms.TextBox();
+            this.AdditionalFeaturesTextBox2 = new System.Windows.Forms.TextBox();
+            this.AdditionalFeaturesTextBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
@@ -505,49 +513,49 @@ namespace InformationAgeProject
             this.ProjectProgressCard4.Size = new System.Drawing.Size(130, 129);
             this.ProjectProgressCard4.TabIndex = 42;
             // 
-            // ClaimCard1
+            // ClaimProgressCard1
             // 
-            this.ClaimCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimCard1.Location = new System.Drawing.Point(45, 573);
-            this.ClaimCard1.Name = "ClaimCard1";
-            this.ClaimCard1.Size = new System.Drawing.Size(75, 23);
-            this.ClaimCard1.TabIndex = 43;
-            this.ClaimCard1.Text = "Claim Card";
-            this.ClaimCard1.UseVisualStyleBackColor = true;
-            this.ClaimCard1.Click += new System.EventHandler(this.ClaimCard1_Click);
+            this.ClaimProgressCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimProgressCard1.Location = new System.Drawing.Point(45, 573);
+            this.ClaimProgressCard1.Name = "ClaimProgressCard1";
+            this.ClaimProgressCard1.Size = new System.Drawing.Size(75, 23);
+            this.ClaimProgressCard1.TabIndex = 43;
+            this.ClaimProgressCard1.Text = "Claim Card";
+            this.ClaimProgressCard1.UseVisualStyleBackColor = true;
+            this.ClaimProgressCard1.Click += new System.EventHandler(this.ClaimProgressCard1_Click);
             // 
-            // ClaimCard2
+            // ClaimProgressCard2
             // 
-            this.ClaimCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimCard2.Location = new System.Drawing.Point(185, 573);
-            this.ClaimCard2.Name = "ClaimCard2";
-            this.ClaimCard2.Size = new System.Drawing.Size(75, 23);
-            this.ClaimCard2.TabIndex = 44;
-            this.ClaimCard2.Text = "Claim Card";
-            this.ClaimCard2.UseVisualStyleBackColor = true;
-            this.ClaimCard2.Click += new System.EventHandler(this.ClaimCard2_Click);
+            this.ClaimProgressCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimProgressCard2.Location = new System.Drawing.Point(185, 573);
+            this.ClaimProgressCard2.Name = "ClaimProgressCard2";
+            this.ClaimProgressCard2.Size = new System.Drawing.Size(75, 23);
+            this.ClaimProgressCard2.TabIndex = 44;
+            this.ClaimProgressCard2.Text = "Claim Card";
+            this.ClaimProgressCard2.UseVisualStyleBackColor = true;
+            this.ClaimProgressCard2.Click += new System.EventHandler(this.ClaimProgressCard2_Click);
             // 
-            // ClaimCard3
+            // ClaimProgressCard3
             // 
-            this.ClaimCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimCard3.Location = new System.Drawing.Point(319, 573);
-            this.ClaimCard3.Name = "ClaimCard3";
-            this.ClaimCard3.Size = new System.Drawing.Size(75, 23);
-            this.ClaimCard3.TabIndex = 45;
-            this.ClaimCard3.Text = "Claim Card";
-            this.ClaimCard3.UseVisualStyleBackColor = true;
-            this.ClaimCard3.Click += new System.EventHandler(this.ClaimCard3_Click);
+            this.ClaimProgressCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimProgressCard3.Location = new System.Drawing.Point(319, 573);
+            this.ClaimProgressCard3.Name = "ClaimProgressCard3";
+            this.ClaimProgressCard3.Size = new System.Drawing.Size(75, 23);
+            this.ClaimProgressCard3.TabIndex = 45;
+            this.ClaimProgressCard3.Text = "Claim Card";
+            this.ClaimProgressCard3.UseVisualStyleBackColor = true;
+            this.ClaimProgressCard3.Click += new System.EventHandler(this.ClaimProgressCard3_Click);
             // 
-            // ClaimCard4
+            // ClaimProgressCard4
             // 
-            this.ClaimCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimCard4.Location = new System.Drawing.Point(454, 573);
-            this.ClaimCard4.Name = "ClaimCard4";
-            this.ClaimCard4.Size = new System.Drawing.Size(75, 23);
-            this.ClaimCard4.TabIndex = 46;
-            this.ClaimCard4.Text = "Claim Card";
-            this.ClaimCard4.UseVisualStyleBackColor = true;
-            this.ClaimCard4.Click += new System.EventHandler(this.ClaimCard4_Click);
+            this.ClaimProgressCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimProgressCard4.Location = new System.Drawing.Point(454, 573);
+            this.ClaimProgressCard4.Name = "ClaimProgressCard4";
+            this.ClaimProgressCard4.Size = new System.Drawing.Size(75, 23);
+            this.ClaimProgressCard4.TabIndex = 46;
+            this.ClaimProgressCard4.Text = "Claim Card";
+            this.ClaimProgressCard4.UseVisualStyleBackColor = true;
+            this.ClaimProgressCard4.Click += new System.EventHandler(this.ClaimProgressCard4_Click);
             // 
             // toolSlot1
             // 
@@ -679,12 +687,108 @@ namespace InformationAgeProject
             this.pictureBox1.TabIndex = 60;
             this.pictureBox1.TabStop = false;
             // 
+            // ClaimFeaturesCard4
+            // 
+            this.ClaimFeaturesCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimFeaturesCard4.Location = new System.Drawing.Point(454, 399);
+            this.ClaimFeaturesCard4.Name = "ClaimFeaturesCard4";
+            this.ClaimFeaturesCard4.Size = new System.Drawing.Size(75, 23);
+            this.ClaimFeaturesCard4.TabIndex = 68;
+            this.ClaimFeaturesCard4.Text = "Claim Card";
+            this.ClaimFeaturesCard4.UseVisualStyleBackColor = true;
+            this.ClaimFeaturesCard4.Click += new System.EventHandler(this.ClaimFeaturesCard4_Click);
+            // 
+            // ClaimFeaturesCard3
+            // 
+            this.ClaimFeaturesCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimFeaturesCard3.Location = new System.Drawing.Point(319, 399);
+            this.ClaimFeaturesCard3.Name = "ClaimFeaturesCard3";
+            this.ClaimFeaturesCard3.Size = new System.Drawing.Size(75, 23);
+            this.ClaimFeaturesCard3.TabIndex = 67;
+            this.ClaimFeaturesCard3.Text = "Claim Card";
+            this.ClaimFeaturesCard3.UseVisualStyleBackColor = true;
+            this.ClaimFeaturesCard3.Click += new System.EventHandler(this.ClaimFeaturesCard3_Click);
+            // 
+            // ClaimFeaturesCard2
+            // 
+            this.ClaimFeaturesCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimFeaturesCard2.Location = new System.Drawing.Point(185, 399);
+            this.ClaimFeaturesCard2.Name = "ClaimFeaturesCard2";
+            this.ClaimFeaturesCard2.Size = new System.Drawing.Size(75, 23);
+            this.ClaimFeaturesCard2.TabIndex = 66;
+            this.ClaimFeaturesCard2.Text = "Claim Card";
+            this.ClaimFeaturesCard2.UseVisualStyleBackColor = true;
+            this.ClaimFeaturesCard2.Click += new System.EventHandler(this.ClaimFeaturesCard2_Click);
+            // 
+            // ClaimFeaturesCard1
+            // 
+            this.ClaimFeaturesCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimFeaturesCard1.Location = new System.Drawing.Point(45, 399);
+            this.ClaimFeaturesCard1.Name = "ClaimFeaturesCard1";
+            this.ClaimFeaturesCard1.Size = new System.Drawing.Size(75, 23);
+            this.ClaimFeaturesCard1.TabIndex = 65;
+            this.ClaimFeaturesCard1.Text = "Claim Card";
+            this.ClaimFeaturesCard1.UseVisualStyleBackColor = true;
+            this.ClaimFeaturesCard1.Click += new System.EventHandler(this.ClaimFeaturesCard1_Click);
+            // 
+            // AdditionalFeaturesTextBox4
+            // 
+            this.AdditionalFeaturesTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AdditionalFeaturesTextBox4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdditionalFeaturesTextBox4.Location = new System.Drawing.Point(426, 264);
+            this.AdditionalFeaturesTextBox4.Multiline = true;
+            this.AdditionalFeaturesTextBox4.Name = "AdditionalFeaturesTextBox4";
+            this.AdditionalFeaturesTextBox4.ReadOnly = true;
+            this.AdditionalFeaturesTextBox4.Size = new System.Drawing.Size(130, 129);
+            this.AdditionalFeaturesTextBox4.TabIndex = 64;
+            // 
+            // AdditionalFeaturesTextBox3
+            // 
+            this.AdditionalFeaturesTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AdditionalFeaturesTextBox3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdditionalFeaturesTextBox3.Location = new System.Drawing.Point(290, 264);
+            this.AdditionalFeaturesTextBox3.Multiline = true;
+            this.AdditionalFeaturesTextBox3.Name = "AdditionalFeaturesTextBox3";
+            this.AdditionalFeaturesTextBox3.ReadOnly = true;
+            this.AdditionalFeaturesTextBox3.Size = new System.Drawing.Size(130, 129);
+            this.AdditionalFeaturesTextBox3.TabIndex = 63;
+            // 
+            // AdditionalFeaturesTextBox2
+            // 
+            this.AdditionalFeaturesTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AdditionalFeaturesTextBox2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdditionalFeaturesTextBox2.Location = new System.Drawing.Point(154, 264);
+            this.AdditionalFeaturesTextBox2.Multiline = true;
+            this.AdditionalFeaturesTextBox2.Name = "AdditionalFeaturesTextBox2";
+            this.AdditionalFeaturesTextBox2.ReadOnly = true;
+            this.AdditionalFeaturesTextBox2.Size = new System.Drawing.Size(130, 129);
+            this.AdditionalFeaturesTextBox2.TabIndex = 62;
+            // 
+            // AdditionalFeaturesTextBox1
+            // 
+            this.AdditionalFeaturesTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AdditionalFeaturesTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdditionalFeaturesTextBox1.Location = new System.Drawing.Point(18, 264);
+            this.AdditionalFeaturesTextBox1.Multiline = true;
+            this.AdditionalFeaturesTextBox1.Name = "AdditionalFeaturesTextBox1";
+            this.AdditionalFeaturesTextBox1.ReadOnly = true;
+            this.AdditionalFeaturesTextBox1.Size = new System.Drawing.Size(130, 129);
+            this.AdditionalFeaturesTextBox1.TabIndex = 61;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.ClaimFeaturesCard4);
+            this.Controls.Add(this.ClaimFeaturesCard3);
+            this.Controls.Add(this.ClaimFeaturesCard2);
+            this.Controls.Add(this.ClaimFeaturesCard1);
+            this.Controls.Add(this.AdditionalFeaturesTextBox4);
+            this.Controls.Add(this.AdditionalFeaturesTextBox3);
+            this.Controls.Add(this.AdditionalFeaturesTextBox2);
+            this.Controls.Add(this.AdditionalFeaturesTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolMakerPictureBox);
             this.Controls.Add(this.toolsPictureBox);
@@ -695,10 +799,10 @@ namespace InformationAgeProject
             this.Controls.Add(this.toolSlot3);
             this.Controls.Add(this.toolSlot2);
             this.Controls.Add(this.toolSlot1);
-            this.Controls.Add(this.ClaimCard4);
-            this.Controls.Add(this.ClaimCard3);
-            this.Controls.Add(this.ClaimCard2);
-            this.Controls.Add(this.ClaimCard1);
+            this.Controls.Add(this.ClaimProgressCard4);
+            this.Controls.Add(this.ClaimProgressCard3);
+            this.Controls.Add(this.ClaimProgressCard2);
+            this.Controls.Add(this.ClaimProgressCard1);
             this.Controls.Add(this.ProjectProgressCard4);
             this.Controls.Add(this.ProjectProgressCard3);
             this.Controls.Add(this.ProjectProgressCard2);
@@ -780,10 +884,10 @@ namespace InformationAgeProject
         private System.Windows.Forms.TextBox ProjectProgressCard2;
         private System.Windows.Forms.TextBox ProjectProgressCard3;
         private System.Windows.Forms.TextBox ProjectProgressCard4;
-        private System.Windows.Forms.Button ClaimCard1;
-        private System.Windows.Forms.Button ClaimCard2;
-        private System.Windows.Forms.Button ClaimCard3;
-        private System.Windows.Forms.Button ClaimCard4;
+        private System.Windows.Forms.Button ClaimProgressCard1;
+        private System.Windows.Forms.Button ClaimProgressCard2;
+        private System.Windows.Forms.Button ClaimProgressCard3;
+        private System.Windows.Forms.Button ClaimProgressCard4;
         private System.Windows.Forms.TextBox toolSlot1;
         private System.Windows.Forms.TextBox toolSlot2;
         private System.Windows.Forms.TextBox toolSlot3;
@@ -794,6 +898,14 @@ namespace InformationAgeProject
         private System.Windows.Forms.PictureBox toolsPictureBox;
         private System.Windows.Forms.PictureBox toolMakerPictureBox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button ClaimFeaturesCard4;
+        private System.Windows.Forms.Button ClaimFeaturesCard3;
+        private System.Windows.Forms.Button ClaimFeaturesCard2;
+        private System.Windows.Forms.Button ClaimFeaturesCard1;
+        private System.Windows.Forms.TextBox AdditionalFeaturesTextBox4;
+        private System.Windows.Forms.TextBox AdditionalFeaturesTextBox3;
+        private System.Windows.Forms.TextBox AdditionalFeaturesTextBox2;
+        private System.Windows.Forms.TextBox AdditionalFeaturesTextBox1;
     }
 }
 
