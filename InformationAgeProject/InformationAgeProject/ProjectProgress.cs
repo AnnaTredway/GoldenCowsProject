@@ -1,8 +1,8 @@
 ﻿///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //	Solution/Project:  InformationAgeProject/InformationAgeProject
-//	File Name:         Dice.cs
-//	Description:       Inventory class for managing resources, tools, cards, buildings, and tools
+//	File Name:         ProjectProgress.cs
+//	Description:       Class for managing Project Progress cards 
 //	Course:            CSCI-4250-002 - Software Engineering I
 //	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
@@ -61,6 +61,10 @@ namespace InformationAgeProject
             this.iDifferentTypesNeeded = reseouceTypeNeeded;
         }// end ProjectProgress(int reseouceAmountNeeded, int reseouceTypeNeeded)
 
+        /// <summary>
+        /// Displays the card.
+        /// </summary>
+        /// <returns>sting that contains the card's info</returns>
         public string DisplayCard( )
         {
             StringBuilder card = new StringBuilder( );
@@ -81,7 +85,7 @@ namespace InformationAgeProject
         /// </summary>
         /// <param name="playersResources">The current players resource inventory</param>
         /// <returns>The number of points the player has earned</returns>
-        public int awardPoints(ResourceManager playersResources)
+        public int claimCard(ResourceManager playersResources)
         {
             bool enoughResources = true;                                // checks if the player has enough has enough resources to purchase the card
             int iPoints = 0;                                            // the points won from the card
@@ -154,6 +158,6 @@ namespace InformationAgeProject
                 }
             }*/
             return iPoints;
-        }// end awardPoints(ResourceManager playersResources)
+        }// end claimCard(ResourceManager playersResources)
     }// end  class ProjectProgress
 }// end namespace InformationAgeProject
