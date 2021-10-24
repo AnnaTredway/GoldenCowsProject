@@ -30,20 +30,24 @@ namespace InformationAgeProject
 	public partial class MainForm : Form
 	{
 		//Player and Dice instances to be used throughout program
-		Player player1 = new Player();
+		Player player;
 		Dice dice = new Dice();
 		ProjectProgressDeck ProjProgDeck = new ProjectProgressDeck( );
 		AdditionalProjectFeaturesDeck ProjFeatDeck = new AdditionalProjectFeaturesDeck( );
 
-		public MainForm( )
+		public MainForm(Player player)
 		{
-			InitializeComponent( );
+			InitializeComponent();
+
+			//Assigns player and corresponding team name to this MainForm instance
+			this.player = player;
+			this.Text = "Information Age: " + player.TeamName;
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			//Loads initial developer count into txtDevelopers
-			this.txtDevelopers.Text = player1.Developers.ToString( );
+			this.txtDevelopers.Text = player.Developers.ToString( );
 
 			//Loads initial progress cards into ProjectProgressCard textboxes
 			ProjectProgressCard1.Text = ProjProgDeck.Deck[0].DisplayCard( );
@@ -58,7 +62,7 @@ namespace InformationAgeProject
 			AdditionalFeaturesTextBox4.Text = ProjFeatDeck.Deck[3].DisplayCard( );
 
 			//Loads initial tool levels into toolSlot textboxes
-			int[] toolLevelList = player1.Inventory.getToolLevelList();
+			int[] toolLevelList = player.Inventory.getToolLevelList();
 			toolSlot1.Text = toolLevelList[0].ToString();
 			toolSlot2.Text = toolLevelList[1].ToString();
 			toolSlot3.Text = toolLevelList[2].ToString();
@@ -290,21 +294,21 @@ namespace InformationAgeProject
 				int[] finalToolVals = new int[4] { 0, 0, 0, 0 };
 
 				//Prompts user for possibility of using tools if first tool is not level 0 
-				if (player1.Inventory.getToolLevelList()[0] != 0)
+				if (player.Inventory.getToolLevelList()[0] != 0)
 				{
 					//Shows new toolPrompt for possibility of player using tools
 					//Uses list of tool levels and dice values for player to help decide if they want to use tools on tasks/resources
-					ToolTaskPrompt toolPrompt = new ToolTaskPrompt(player1.Inventory.getToolLevelList(), diceVals);
+					ToolTaskPrompt toolPrompt = new ToolTaskPrompt(player.Inventory.getToolLevelList(), diceVals);
 					toolPrompt.ShowDialog();
 
 					finalToolVals = toolPrompt.finalToolValues;
 				}
 
 				//Final dice and tool result is then divided by 3, 4, 5, or 6 to get final resource/task count acquired
-				player1.Inventory.addToBacklog((diceVals[0] + finalToolVals[0]) / 3);           //Lowest-tier backlog resource final result divided by 3
-				player1.Inventory.addToLowPriority((diceVals[1] + finalToolVals[1]) / 4);       //Low-tier resource divided by 4
-				player1.Inventory.addToMediumPriority((diceVals[2] + finalToolVals[2]) / 5);    //Mid-tier resource divided by 5
-				player1.Inventory.addToHighPriority((diceVals[3] + finalToolVals[3]) / 6);      //Highest-tier resource divided by 6
+				player.Inventory.addToBacklog((diceVals[0] + finalToolVals[0]) / 3);           //Lowest-tier backlog resource final result divided by 3
+				player.Inventory.addToLowPriority((diceVals[1] + finalToolVals[1]) / 4);       //Low-tier resource divided by 4
+				player.Inventory.addToMediumPriority((diceVals[2] + finalToolVals[2]) / 5);    //Mid-tier resource divided by 5
+				player.Inventory.addToHighPriority((diceVals[3] + finalToolVals[3]) / 6);      //Highest-tier resource divided by 6
 
 				//Adds developers back to player's free developer pool
 				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
@@ -321,11 +325,14 @@ namespace InformationAgeProject
 				txtHigh.Text = "0";
 
 				//Print out current inventory text to inventoryBox
-				inventoryBox.Text = player1.Inventory.printResources();
+				inventoryBox.Text = player.Inventory.printResources();
 
 				//Recalculate the score and update the score text box
-				Scoring score = new Scoring(player1.Inventory);
+				Scoring score = new Scoring(player.Inventory);
 				scoreBox.Text = score.calculateScore();
+
+				//Sets btnDoTasks to disabled so playerr cant do tasks again in same turn
+				btnDoTasks.Enabled = false;
 			}
 		}
 		#endregion
@@ -392,7 +399,7 @@ namespace InformationAgeProject
 			if (Int32.Parse(txtToolMaker.Text) == 1)
 			{
 				//Adds a tool to the players inventory if there are not 3 tools that equal 
-				player1.Inventory.addTool();
+				player.Inventory.addTool();
 
 				//Stores developer that is currently in tool maker
 				int toolMakerNum = Int32.Parse(txtToolMaker.Text);
@@ -405,7 +412,7 @@ namespace InformationAgeProject
 				txtDevelopers.Text = Convert.ToString(leftoverDevelopers + toolMakerNum);
 
 				//Reloads current tool levels after acquiring new tool
-				int[] toolLevelList = player1.Inventory.getToolLevelList();
+				int[] toolLevelList = player.Inventory.getToolLevelList();
 				toolSlot1.Text = Convert.ToString(toolLevelList[0]);
 				toolSlot2.Text = Convert.ToString(toolLevelList[1]);
 				toolSlot3.Text = Convert.ToString(toolLevelList[2]);
@@ -426,16 +433,16 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimProgressCard1_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[0].claimCard(player1.Inventory.ReturnResourceManager( )) ;
-			Scoring score = new Scoring(player1.Inventory);
+			int points = ProjProgDeck.Deck[0].claimCard(player.Inventory.ReturnResourceManager( )) ;
+			Scoring score = new Scoring(player.Inventory);
 
 			if (points > 0)
 			{
-				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[0]);
+				player.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[0]);
 				ProjProgDeck.Deck[0].blnSold = true;
 				ClaimProgressCard1.Enabled = false;
 				ProjectProgressCard1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printResources( );
+				inventoryBox.Text = player.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -447,16 +454,16 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimProgressCard2_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[1].claimCard(player1.Inventory.ReturnResourceManager( ));
-			Scoring score = new Scoring(player1.Inventory);
+			int points = ProjProgDeck.Deck[1].claimCard(player.Inventory.ReturnResourceManager( ));
+			Scoring score = new Scoring(player.Inventory);
 
 			if (points > 0)
 			{
-				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[1]);
+				player.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[1]);
 				ProjProgDeck.Deck[1].blnSold = true;
 				ClaimProgressCard2.Enabled = false;
 				ProjectProgressCard2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printResources( );
+				inventoryBox.Text = player.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -468,16 +475,16 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimProgressCard3_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[2].claimCard(player1.Inventory.ReturnResourceManager( ));
-			Scoring score = new Scoring(player1.Inventory);
+			int points = ProjProgDeck.Deck[2].claimCard(player.Inventory.ReturnResourceManager( ));
+			Scoring score = new Scoring(player.Inventory);
 
 			if (points > 0)
 			{
-				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[2]);
+				player.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[2]);
 				ProjProgDeck.Deck[2].blnSold = true;
 				ClaimProgressCard3.Enabled = false;
 				ProjectProgressCard3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printResources( );
+				inventoryBox.Text = player.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -489,16 +496,16 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimProgressCard4_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[3].claimCard(player1.Inventory.ReturnResourceManager( ));
-			Scoring score = new Scoring(player1.Inventory);
+			int points = ProjProgDeck.Deck[3].claimCard(player.Inventory.ReturnResourceManager( ));
+			Scoring score = new Scoring(player.Inventory);
 
 			if (points > 0)
 			{
-				player1.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[3]);
+				player.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[3]);
 				ProjProgDeck.Deck[3].blnSold = true;
 				ClaimProgressCard4.Enabled = false;
 				ProjectProgressCard4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printResources( );
+				inventoryBox.Text = player.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
@@ -507,18 +514,18 @@ namespace InformationAgeProject
 		#region Additional Project Features Cards
 		private void ClaimFeaturesCard1_Click(object sender, EventArgs e)
 		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[0].claimCard(4, player1.Inventory);
-			Scoring score = new Scoring(player1.Inventory);
+			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[0].claimCard(4, player.Inventory);
+			Scoring score = new Scoring(player.Inventory);
 
 			if (cards != null)
 			{
-				player1.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[0]);
+				player.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[0]);
 				ProjFeatDeck.Deck[0].blnSold = true;
 				ClaimFeaturesCard1.Enabled = false;
 				AdditionalFeaturesTextBox1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printResources( );
+				inventoryBox.Text = player.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
-				int[] toolLevelList = player1.Inventory.getToolLevelList( );
+				int[] toolLevelList = player.Inventory.getToolLevelList( );
 				toolSlot1.Text = toolLevelList[0].ToString( );
 				toolSlot2.Text = toolLevelList[1].ToString( );
 				toolSlot3.Text = toolLevelList[2].ToString( );
@@ -527,18 +534,18 @@ namespace InformationAgeProject
 
 		private void ClaimFeaturesCard2_Click(object sender, EventArgs e)
 		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[1].claimCard(3, player1.Inventory);
-			Scoring score = new Scoring(player1.Inventory);
+			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[1].claimCard(3, player.Inventory);
+			Scoring score = new Scoring(player.Inventory);
 
 			if (cards != null)
 			{
-				player1.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[1]);
+				player.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[1]);
 				ProjFeatDeck.Deck[1].blnSold = true;
 				ClaimFeaturesCard2.Enabled = false;
 				AdditionalFeaturesTextBox2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printResources( );
+				inventoryBox.Text = player.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
-				int[] toolLevelList = player1.Inventory.getToolLevelList( );
+				int[] toolLevelList = player.Inventory.getToolLevelList( );
 				toolSlot1.Text = toolLevelList[0].ToString( );
 				toolSlot2.Text = toolLevelList[1].ToString( );
 				toolSlot3.Text = toolLevelList[2].ToString( );
@@ -547,18 +554,18 @@ namespace InformationAgeProject
 
 		private void ClaimFeaturesCard3_Click(object sender, EventArgs e)
 		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[2].claimCard(2, player1.Inventory);
-			Scoring score = new Scoring(player1.Inventory);
+			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[2].claimCard(2, player.Inventory);
+			Scoring score = new Scoring(player.Inventory);
 
 			if (cards != null)
 			{
-				player1.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[2]);
+				player.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[2]);
 				ProjFeatDeck.Deck[2].blnSold = true;
 				ClaimFeaturesCard3.Enabled = false;
 				AdditionalFeaturesTextBox3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printResources( );
+				inventoryBox.Text = player.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
-				int[] toolLevelList = player1.Inventory.getToolLevelList( );
+				int[] toolLevelList = player.Inventory.getToolLevelList( );
 				toolSlot1.Text = toolLevelList[0].ToString( );
 				toolSlot2.Text = toolLevelList[1].ToString( );
 				toolSlot3.Text = toolLevelList[2].ToString( );
@@ -567,18 +574,18 @@ namespace InformationAgeProject
 
 		private void ClaimFeaturesCard4_Click(object sender, EventArgs e)
 		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[3].claimCard(1, player1.Inventory);
-			Scoring score = new Scoring(player1.Inventory);
+			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[3].claimCard(1, player.Inventory);
+			Scoring score = new Scoring(player.Inventory);
 
 			if (cards != null)
 			{
-				player1.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[3]);
+				player.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[3]);
 				ProjFeatDeck.Deck[3].blnSold = true;
 				ClaimFeaturesCard4.Enabled = false;
 				AdditionalFeaturesTextBox4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
-				inventoryBox.Text = player1.Inventory.printResources( );
+				inventoryBox.Text = player.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
-				int[] toolLevelList = player1.Inventory.getToolLevelList( );
+				int[] toolLevelList = player.Inventory.getToolLevelList( );
 				toolSlot1.Text = toolLevelList[0].ToString( );
 				toolSlot2.Text = toolLevelList[1].ToString( );
 				toolSlot3.Text = toolLevelList[2].ToString( );
@@ -587,6 +594,16 @@ namespace InformationAgeProject
 		#endregion
 
 		#region Menubar Dropdown Menu Buttons
+		/// <summary>
+		/// Event Handler for Statistics dropdown menu button to view the inventory, tools, etc. of all players
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
 		/// <summary>
 		/// Method: btnInstructions_Click opens the Instructionset.txt file upon clicking
 		/// the btnInstructions button on the main form
@@ -634,5 +651,33 @@ namespace InformationAgeProject
 		}
 		#endregion
 
+		#region EndTurn Button
+		/// <summary>
+		/// Event Handler for EndTurn button to go to next player's turn
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnEndTurn_Click(object sender, EventArgs e)
+		{
+			//Re-enables do task button for next time current player has a turn
+			this.btnDoTasks.Enabled = true;
+
+			//Sets current form to false and increments turn counter up by one
+			this.Visible = false;
+			MainMenu.turnCounter++;
+
+			try
+			{
+				//If there is a player form at the turnCounter index, go to that form
+				MainMenu.playerForms[MainMenu.turnCounter].Visible = true;
+			}
+			catch
+			{
+				//If there is not a player form at the turnCounter index, go back to first player form
+				MainMenu.turnCounter = 0;
+				MainMenu.playerForms[MainMenu.turnCounter].Visible = true;
+			}
+		}
+		#endregion
 	}
 }
