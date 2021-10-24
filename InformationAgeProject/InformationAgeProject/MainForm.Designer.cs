@@ -100,6 +100,8 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox3 = new System.Windows.Forms.TextBox();
             this.AdditionalFeaturesTextBox2 = new System.Windows.Forms.TextBox();
             this.AdditionalFeaturesTextBox1 = new System.Windows.Forms.TextBox();
+            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEndTurn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
@@ -405,6 +407,7 @@ namespace InformationAgeProject
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statisticsToolStripMenuItem,
             this.btnInstructionsMenuItem,
             this.btnAboutMenuItem,
             this.btnQuitMenuItem});
@@ -417,21 +420,21 @@ namespace InformationAgeProject
             // btnInstructionsMenuItem
             // 
             this.btnInstructionsMenuItem.Name = "btnInstructionsMenuItem";
-            this.btnInstructionsMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.btnInstructionsMenuItem.Size = new System.Drawing.Size(180, 22);
             this.btnInstructionsMenuItem.Text = "Instructions";
             this.btnInstructionsMenuItem.Click += new System.EventHandler(this.btnInstructionsMenuItem_Click);
             // 
             // btnAboutMenuItem
             // 
             this.btnAboutMenuItem.Name = "btnAboutMenuItem";
-            this.btnAboutMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.btnAboutMenuItem.Size = new System.Drawing.Size(180, 22);
             this.btnAboutMenuItem.Text = "About";
             this.btnAboutMenuItem.Click += new System.EventHandler(this.btnAboutMenuItem_Click);
             // 
             // btnQuitMenuItem
             // 
             this.btnQuitMenuItem.Name = "btnQuitMenuItem";
-            this.btnQuitMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.btnQuitMenuItem.Size = new System.Drawing.Size(180, 22);
             this.btnQuitMenuItem.Text = "Quit";
             this.btnQuitMenuItem.Click += new System.EventHandler(this.btnQuitMenuItem_Click);
             // 
@@ -758,12 +761,32 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox1.Size = new System.Drawing.Size(130, 129);
             this.AdditionalFeaturesTextBox1.TabIndex = 61;
             // 
+            // statisticsToolStripMenuItem
+            // 
+            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statisticsToolStripMenuItem.Text = "Statistics";
+            this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
+            // 
+            // btnEndTurn
+            // 
+            this.btnEndTurn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEndTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEndTurn.Location = new System.Drawing.Point(1022, 628);
+            this.btnEndTurn.Name = "btnEndTurn";
+            this.btnEndTurn.Size = new System.Drawing.Size(117, 41);
+            this.btnEndTurn.TabIndex = 69;
+            this.btnEndTurn.Text = "End Turn";
+            this.btnEndTurn.UseVisualStyleBackColor = true;
+            this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnEndTurn);
             this.Controls.Add(this.ClaimFeaturesCard4);
             this.Controls.Add(this.ClaimFeaturesCard3);
             this.Controls.Add(this.ClaimFeaturesCard2);
@@ -887,6 +910,8 @@ namespace InformationAgeProject
         private System.Windows.Forms.TextBox AdditionalFeaturesTextBox3;
         private System.Windows.Forms.TextBox AdditionalFeaturesTextBox2;
         private System.Windows.Forms.TextBox AdditionalFeaturesTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
+        private System.Windows.Forms.Button btnEndTurn;
     }
 }
 

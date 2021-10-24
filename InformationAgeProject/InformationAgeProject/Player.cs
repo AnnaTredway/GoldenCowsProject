@@ -24,7 +24,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Player class hosts methods and properties for managing a single player's team
     /// </summary>
-    class Player
+    public class Player
     {
         // Private Inventory objects for use by Inventory property of this class
         private Inventory _inventory;
