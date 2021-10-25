@@ -2,7 +2,7 @@
 //
 //	Solution/Project:  InformationAgeProject/InformationAgeProject
 //	File Name:         MainMenu.cs
-//	Description:       MainMenu form for main menu of Information Age
+//	Description:       MainMenu form for menu system of Information Age
 //	Course:            CSCI-4250-002 - Software Engineering I
 //	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
@@ -27,9 +27,6 @@ namespace InformationAgeProject
 {
 	public partial class MainMenu : Form
 	{
-		public static int turnCounter = 0;
-		public static Player[] playerList;
-		public static MainForm[] playerForms;
 
 		public MainMenu()
 		{
@@ -51,13 +48,13 @@ namespace InformationAgeProject
 			btnQuit.Visible = false;
 
 			//Sets all buttons on screen for selecting player count to true
-			radio2Players.Visible = true;
-			radio3Players.Visible = true;
-			radio4Players.Visible = true;
+			pnlSelectPlayers.Visible = true;
+			pnlTeamNames.Visible = true;
 			btnBack1.Visible = true;
 			btnStartGame.Visible = true;
-			lblPlayers.Visible = true;
-			pnlTeamNames.Visible = true;
+
+			//Sets window text to signify player selection screen
+			this.Text = "Information Age - Select Players";
 		}
 
 		/// <summary>
@@ -77,7 +74,9 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnQuit_Click(object sender, EventArgs e)
 		{
-			Application.Exit();
+			//Opens new QuitForm window for prompting user if they want to exit application
+			QuitForm quitForm = new QuitForm();
+			quitForm.Show();
 		}
 		#endregion
 
@@ -90,19 +89,19 @@ namespace InformationAgeProject
 		private void btnBack1_Click(object sender, EventArgs e)
 		{
 			//Sets all buttons on screen for selecting player count to invisible
-			radio2Players.Visible = false;
-			radio3Players.Visible = false;
-			radio4Players.Visible = false;
+			pnlSelectPlayers.Visible = false;
+			pnlTeamNames.Visible = false;
 			btnBack1.Visible = false;
 			btnStartGame.Visible = false;
-			lblPlayers.Visible = false;
-			pnlTeamNames.Visible = false;
 
 			//Sets all main menu items to visible
 			lblTitle.Visible = true;
 			btnPlayGame.Visible = true;
 			btnOptions.Visible = true;
 			btnQuit.Visible = true;
+			 
+			//Sets window text to signify main menu screen
+			this.Text = "Information Age - Main Menu";
 		}
 
 		/// <summary>
@@ -112,91 +111,97 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnStartGame_Click(object sender, EventArgs e)
 		{
+			//Array of team names to pass to startGame method for simplicity
+			string[] teamNames;
+			bool showError = true;
+
 			//Starts game with 2 players
 			if (radio2Players.Checked == true)
 			{
-				playerList = new Player[2];
-				playerForms = new MainForm[2];
+				//Makes the error message not appear if a radio button is selected
+				showError = false;
 
-				//Activates 2 players
-				playerList[0] = new Player();
-				playerList[1] = new Player();
+				//Checks if any of the team names for each of the amount of player selected are empty
+				if (string.IsNullOrEmpty(rtxtTeamName1.Text)
+				|| string.IsNullOrEmpty(rtxtTeamName2.Text))
+				{
+					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected");
+				}
+				else
+				{
+					//Activates 2 players
+					teamNames = new string[2];
+					teamNames[0] = rtxtTeamName1.Text;
+					teamNames[1] = rtxtTeamName2.Text;
 
-				//Sets team names for 2 players
-				playerList[0].TeamName = rtxtTeamName1.Text;
-				playerList[1].TeamName = rtxtTeamName2.Text;
+					GameController.startGame(2, teamNames);
 
-				//Activates game boards for 2 players
-				playerForms[0] = new MainForm(playerList[0]);
-				playerForms[1] = new MainForm(playerList[1]);
-
-				//Makes menu form invisible so it isnt open when main game boards are open
-				this.Visible = false;
-
-				//Shows first player form for first turn within first round
-				playerForms[0].Show();
-
+					//Makes menu form invisible so it isnt open when main game boards are open
+					this.Visible = false;
+				}
 			}
 
 			//Starts game with 3 players
 			if (radio3Players.Checked == true)
 			{
-				playerList = new Player[3];
-				playerForms = new MainForm[3];
+				//Makes the error message not appear if a radio button is selected
+				showError = false;
 
-				//Activates 3 players
-				playerList[0] = new Player();
-				playerList[1] = new Player();
-				playerList[2] = new Player();
+				//Checks if any of the team names for each of the amount of player selected are empty
+				if (string.IsNullOrEmpty(rtxtTeamName1.Text)
+				|| string.IsNullOrEmpty(rtxtTeamName2.Text)
+				|| string.IsNullOrEmpty(rtxtTeamName3.Text))
+				{
+					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected");
+				}
+				else
+				{
+					//Activates 3 players
+					teamNames = new string[3];
+					teamNames[0] = rtxtTeamName1.Text;
+					teamNames[1] = rtxtTeamName2.Text;
+					teamNames[2] = rtxtTeamName3.Text;
 
-				//Sets team names for 3 players
-				playerList[0].TeamName = rtxtTeamName1.Text;
-				playerList[1].TeamName = rtxtTeamName2.Text;
-				playerList[2].TeamName = rtxtTeamName3.Text;
+					GameController.startGame(3, teamNames);
 
-				//Activates game boards for 3 players
-				playerForms[0] = new MainForm(playerList[0]);
-				playerForms[1] = new MainForm(playerList[1]);
-				playerForms[2] = new MainForm(playerList[2]);
-
-				//Makes menu form invisible so it isnt open when main game boards are open
-				this.Visible = false;
-
-				//Shows first player form for first turn within first round
-				playerForms[0].Show();
-
+					//Makes menu form invisible so it isnt open when main game boards are open
+					this.Visible = false;
+				}
 			}
 
 			//Starts game with 4 players
 			if (radio4Players.Checked == true)
 			{
-				playerList = new Player[4];
-				playerForms = new MainForm[4];
+				//Makes the error message not appear if a radio button is selected
+				showError = false;
 
-				//Activates 4 players
-				playerList[0] = new Player();
-				playerList[1] = new Player();
-				playerList[2] = new Player();
-				playerList[3] = new Player();
+				//Checks if any of the team names for each of the amount of player selected are empty
+				if (string.IsNullOrEmpty(rtxtTeamName1.Text)
+				|| string.IsNullOrEmpty(rtxtTeamName2.Text)
+				|| string.IsNullOrEmpty(rtxtTeamName3.Text)
+				|| string.IsNullOrEmpty(rtxtTeamName4.Text))
+				{
+					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected");
+				}
+				else
+				{
+					//Activates 4 players
+					teamNames = new string[4];
+					teamNames[0] = rtxtTeamName1.Text;
+					teamNames[1] = rtxtTeamName2.Text;
+					teamNames[2] = rtxtTeamName3.Text;
+					teamNames[3] = rtxtTeamName4.Text;
 
-				//Sets team names for 4 players
-				playerList[0].TeamName = rtxtTeamName1.Text;
-				playerList[1].TeamName = rtxtTeamName2.Text;
-				playerList[2].TeamName = rtxtTeamName3.Text;
-				playerList[3].TeamName = rtxtTeamName4.Text;
+					GameController.startGame(4, teamNames);
 
-				//Activates game boards for 4 players
-				playerForms[0] = new MainForm(playerList[0]);
-				playerForms[1] = new MainForm(playerList[1]);
-				playerForms[2] = new MainForm(playerList[2]);
-				playerForms[3] = new MainForm(playerList[3]);
+					//Makes menu form invisible so it isnt open when main game boards are open
+					this.Visible = false;
+				}
+			}
 
-				//Makes menu form invisible so it isnt open when main game boards are open
-				this.Visible = false;
-
-				//Shows first player form for first turn within first round
-				playerForms[0].Show();
-
+			if (showError == true)
+			{
+				MessageBox.Show("You cannot start the game without selecting the number of players.", "Player Number Not Selected");
 			}
 		}
 		#endregion

@@ -52,7 +52,7 @@ namespace InformationAgeProject
         /// <param name="inputLevel">The input level for the first tool be set to.</param>
         public void setFirstSlotLevel(int inputLevel)
         {
-            this.toolList[0].ChangeLevel(inputLevel);
+            this.toolList[0].changeLevel(inputLevel);
 
         }//end setFirstSlotLevel()
 
@@ -62,7 +62,7 @@ namespace InformationAgeProject
         /// <param name="inputLevel">The input level for the second tool be set to.</param>
         public void setSecondSlotLevel(int inputLevel)
         {
-            this.toolList[1].ChangeLevel(inputLevel);
+            this.toolList[1].changeLevel(inputLevel);
 
         }//end setSecondSlotLevel()
 
@@ -72,7 +72,7 @@ namespace InformationAgeProject
         /// <param name="inputLevel">The input level for the third tool be set to.</param>
         public void setThirdSlotLevel(int inputLevel)
         {
-            this.toolList[2].ChangeLevel(inputLevel);
+            this.toolList[2].changeLevel(inputLevel);
 
         }//end setThirdSlotLevel()
         #endregion

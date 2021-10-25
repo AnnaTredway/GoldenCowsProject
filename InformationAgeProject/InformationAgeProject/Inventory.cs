@@ -49,13 +49,13 @@ namespace InformationAgeProject
 		/// </summary>
 		public List<ProjectProgress> ProjectProgressCards { get; set; }
 
-        /// <summary>
-        /// Gets or sets the additional project features cards.
-        /// </summary>
-        /// <value>
-        /// The additional project features cards.
-        /// </value>
-        public List<AdditionalProjectFeatures> AdditionalProjectFeaturesCards { get; set; }
+		/// <summary>
+		/// Gets or sets the additional project features cards.
+		/// </summary>
+		/// <value>
+		/// The additional project features cards.
+		/// </value>
+		public List<AdditionalProjectFeatures> AdditionalProjectFeaturesCards { get; set; }
 
 		#region Add to resource count methods
 		/// <summary>
