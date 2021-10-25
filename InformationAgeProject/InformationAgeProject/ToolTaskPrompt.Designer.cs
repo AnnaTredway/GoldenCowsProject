@@ -115,6 +115,7 @@
             // backlogListBox
             // 
             this.backlogListBox.AllowDrop = true;
+            this.backlogListBox.BackColor = System.Drawing.Color.White;
             this.backlogListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backlogListBox.FormattingEnabled = true;
             this.backlogListBox.ItemHeight = 20;
@@ -131,6 +132,7 @@
             // 
             this.toolListBox.AllowDrop = true;
             this.toolListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.toolListBox.BackColor = System.Drawing.Color.White;
             this.toolListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolListBox.FormattingEnabled = true;
             this.toolListBox.ItemHeight = 20;
@@ -146,6 +148,7 @@
             // lowListBox
             // 
             this.lowListBox.AllowDrop = true;
+            this.lowListBox.BackColor = System.Drawing.Color.White;
             this.lowListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lowListBox.FormattingEnabled = true;
             this.lowListBox.ItemHeight = 20;
@@ -161,6 +164,7 @@
             // medListBox
             // 
             this.medListBox.AllowDrop = true;
+            this.medListBox.BackColor = System.Drawing.Color.White;
             this.medListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.medListBox.FormattingEnabled = true;
             this.medListBox.ItemHeight = 20;
@@ -176,6 +180,7 @@
             // highListBox
             // 
             this.highListBox.AllowDrop = true;
+            this.highListBox.BackColor = System.Drawing.Color.White;
             this.highListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highListBox.FormattingEnabled = true;
             this.highListBox.ItemHeight = 20;
@@ -205,6 +210,7 @@
             // 
             // backlogTextBox
             // 
+            this.backlogTextBox.BackColor = System.Drawing.Color.White;
             this.backlogTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backlogTextBox.Location = new System.Drawing.Point(67, 40);
             this.backlogTextBox.Name = "backlogTextBox";
@@ -217,6 +223,7 @@
             // 
             // lowTextBox
             // 
+            this.lowTextBox.BackColor = System.Drawing.Color.White;
             this.lowTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lowTextBox.Location = new System.Drawing.Point(182, 40);
             this.lowTextBox.Name = "lowTextBox";
@@ -229,6 +236,7 @@
             // 
             // medTextBox
             // 
+            this.medTextBox.BackColor = System.Drawing.Color.White;
             this.medTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.medTextBox.Location = new System.Drawing.Point(297, 40);
             this.medTextBox.Name = "medTextBox";
@@ -241,6 +249,7 @@
             // 
             // highTextBox
             // 
+            this.highTextBox.BackColor = System.Drawing.Color.White;
             this.highTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highTextBox.Location = new System.Drawing.Point(412, 40);
             this.highTextBox.Name = "highTextBox";

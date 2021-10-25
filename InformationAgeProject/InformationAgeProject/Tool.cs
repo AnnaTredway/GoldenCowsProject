@@ -29,6 +29,7 @@ namespace InformationAgeProject
         public int toolLevel;  //Stores number of the level for easier access
         public ToolType type;  //Stores the enumerated ToolType for hard-coded error prevention
 
+        #region Tool Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="Tool"/> class.
         /// </summary>
@@ -107,12 +108,13 @@ namespace InformationAgeProject
             }
 
         }//end Tool() Constructor
+        #endregion
 
         /// <summary>
         /// Changes level of tool
         /// </summary>
         /// <param name="newLevel">New level for the tool.</param>
-        public void ChangeLevel(int newLevel)
+        public void changeLevel(int newLevel)
         {
             this.toolLevel = newLevel;
 

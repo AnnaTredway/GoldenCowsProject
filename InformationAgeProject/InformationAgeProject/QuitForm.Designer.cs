@@ -36,30 +36,34 @@
             // 
             // btnYes
             // 
+            this.btnYes.BackColor = System.Drawing.Color.IndianRed;
+            this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYes.Location = new System.Drawing.Point(12, 69);
+            this.btnYes.Location = new System.Drawing.Point(49, 69);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(100, 30);
             this.btnYes.TabIndex = 0;
             this.btnYes.Text = "Yes";
-            this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.UseVisualStyleBackColor = false;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
             // btnNo
             // 
+            this.btnNo.BackColor = System.Drawing.Color.IndianRed;
+            this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNo.Location = new System.Drawing.Point(192, 69);
+            this.btnNo.Location = new System.Drawing.Point(155, 69);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(100, 30);
             this.btnNo.TabIndex = 1;
             this.btnNo.Text = "No";
-            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.UseVisualStyleBackColor = false;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
             // lblQuit
             // 
             this.lblQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuit.Location = new System.Drawing.Point(12, 25);
+            this.lblQuit.Location = new System.Drawing.Point(12, 9);
             this.lblQuit.Name = "lblQuit";
             this.lblQuit.Size = new System.Drawing.Size(280, 41);
             this.lblQuit.TabIndex = 2;
@@ -71,6 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(304, 111);
             this.Controls.Add(this.lblQuit);
             this.Controls.Add(this.btnNo);

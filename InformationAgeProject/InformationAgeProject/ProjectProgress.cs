@@ -65,7 +65,7 @@ namespace InformationAgeProject
         /// Displays the card.
         /// </summary>
         /// <returns>sting that contains the card's info</returns>
-        public string DisplayCard( )
+        public string displayCard( )
         {
             StringBuilder card = new StringBuilder( );
             card.Append("----------------\r\n");

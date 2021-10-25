@@ -29,37 +29,40 @@ namespace InformationAgeProject
 {
 	public partial class MainForm : Form
 	{
-		//Player and Dice instances to be used throughout program
+		//Player to be used in this MainForm instance
 		Player player;
-		Dice dice = new Dice();
-		ProjectProgressDeck ProjProgDeck = new ProjectProgressDeck( );
-		AdditionalProjectFeaturesDeck ProjFeatDeck = new AdditionalProjectFeaturesDeck( );
+		ProjectProgressDeck ProjProgDeck;
+		AdditionalProjectFeaturesDeck ProjFeatDeck;
 
-		public MainForm(Player player)
+		public MainForm(Player player, ProjectProgressDeck progressDeck, AdditionalProjectFeaturesDeck featuresDeck)
 		{
 			InitializeComponent();
 
 			//Assigns player and corresponding team name to this MainForm instance
 			this.player = player;
 			this.Text = "Information Age: " + player.TeamName;
+
+			//Assigns master deck to current mainform
+			ProjProgDeck = progressDeck;
+			ProjFeatDeck = featuresDeck;
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			//Loads initial developer count into txtDevelopers
-			this.txtDevelopers.Text = player.Developers.ToString( );
+			this.txtDevelopers.Text = player.Developers.ToString();
 
 			//Loads initial progress cards into ProjectProgressCard textboxes
-			ProjectProgressCard1.Text = ProjProgDeck.Deck[0].DisplayCard( );
-			ProjectProgressCard2.Text = ProjProgDeck.Deck[1].DisplayCard( );
-			ProjectProgressCard3.Text = ProjProgDeck.Deck[2].DisplayCard( );
-			ProjectProgressCard4.Text = ProjProgDeck.Deck[3].DisplayCard( );
+			ProjectProgressCard1.Text = ProjProgDeck.Deck[0].displayCard();
+			ProjectProgressCard2.Text = ProjProgDeck.Deck[1].displayCard();
+			ProjectProgressCard3.Text = ProjProgDeck.Deck[2].displayCard();
+			ProjectProgressCard4.Text = ProjProgDeck.Deck[3].displayCard();
 
 			//Loads initial feature cards into AdditionalFeatures textboxes
-			AdditionalFeaturesTextBox1.Text = ProjFeatDeck.Deck[0].DisplayCard( );
-			AdditionalFeaturesTextBox2.Text = ProjFeatDeck.Deck[1].DisplayCard( );
-			AdditionalFeaturesTextBox3.Text = ProjFeatDeck.Deck[2].DisplayCard( );
-			AdditionalFeaturesTextBox4.Text = ProjFeatDeck.Deck[3].DisplayCard( );
+			AdditionalFeaturesTextBox1.Text = ProjFeatDeck.Deck[0].displayCard();
+			AdditionalFeaturesTextBox2.Text = ProjFeatDeck.Deck[1].displayCard();
+			AdditionalFeaturesTextBox3.Text = ProjFeatDeck.Deck[2].displayCard();
+			AdditionalFeaturesTextBox4.Text = ProjFeatDeck.Deck[3].displayCard();
 
 			//Loads initial tool levels into toolSlot textboxes
 			int[] toolLevelList = player.Inventory.getToolLevelList();
@@ -277,38 +280,19 @@ namespace InformationAgeProject
 			 && txtMed.Text == "0" 
 			 && txtHigh.Text == "0")
 			{
-				MessageBox.Show("You cannot acquire any tasks because there are no developers at any of the 4 tasks.", "Cannot Acquire Tasks");
+				MessageBox.Show("You cannot acquire any tasks because you have no developers at any of the 4 task areas.", "Cannot Acquire Tasks");
 			}
 			else
 			{
-				//Dice is rolled for current player on resources/tasks
-				//(Number of dice rolled is equal to number of developers on specific resource)
-				int[] diceVals = new int[4];
-				diceVals[0] = dice.RollDice(int.Parse(txtBacklog.Text));
-				diceVals[1] = dice.RollDice(int.Parse(txtLow.Text));
-				diceVals[2] = dice.RollDice(int.Parse(txtMed.Text));
-				diceVals[3] = dice.RollDice(int.Parse(txtHigh.Text));
+				//Stores counts of developers at each task/resource
+				int[] devCounts = new int[4];
+				devCounts[0] = int.Parse(txtBacklog.Text);
+				devCounts[1] = int.Parse(txtLow.Text);
+				devCounts[2] = int.Parse(txtMed.Text);
+				devCounts[3] = int.Parse(txtHigh.Text);
 
-				//Before divide calculation, a prompt window for using tools is shown if the player wants to use one or more tools
-				//These array values may not change if the player decides to not use any tools or has no tool levels to begin with
-				int[] finalToolVals = new int[4] { 0, 0, 0, 0 };
-
-				//Prompts user for possibility of using tools if first tool is not level 0 
-				if (player.Inventory.getToolLevelList()[0] != 0)
-				{
-					//Shows new toolPrompt for possibility of player using tools
-					//Uses list of tool levels and dice values for player to help decide if they want to use tools on tasks/resources
-					ToolTaskPrompt toolPrompt = new ToolTaskPrompt(player.Inventory.getToolLevelList(), diceVals);
-					toolPrompt.ShowDialog();
-
-					finalToolVals = toolPrompt.finalToolValues;
-				}
-
-				//Final dice and tool result is then divided by 3, 4, 5, or 6 to get final resource/task count acquired
-				player.Inventory.addToBacklog((diceVals[0] + finalToolVals[0]) / 3);           //Lowest-tier backlog resource final result divided by 3
-				player.Inventory.addToLowPriority((diceVals[1] + finalToolVals[1]) / 4);       //Low-tier resource divided by 4
-				player.Inventory.addToMediumPriority((diceVals[2] + finalToolVals[2]) / 5);    //Mid-tier resource divided by 5
-				player.Inventory.addToHighPriority((diceVals[3] + finalToolVals[3]) / 6);      //Highest-tier resource divided by 6
+				//Calculates number of tasks that player should acquire based on random dice rolls and tool usage and stores them in player's inventory
+				GameController.calcTasks(player, devCounts);
 
 				//Adds developers back to player's free developer pool
 				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
@@ -331,7 +315,7 @@ namespace InformationAgeProject
 				Scoring score = new Scoring(player.Inventory);
 				scoreBox.Text = score.calculateScore();
 
-				//Sets btnDoTasks to disabled so playerr cant do tasks again in same turn
+				//Sets btnDoTasks to disabled so player cant do tasks again in same turn
 				btnDoTasks.Enabled = false;
 			}
 		}
@@ -639,11 +623,21 @@ namespace InformationAgeProject
 		}
 
 		/// <summary>
+		/// Event Handler for dropdown menu button to quit to main menu
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnQuitToMenuMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		/// <summary>
 		/// Event Handler for dropdown menu button to open "are you sure you want to quit?" windows form
 		/// </summary>
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnQuitMenuItem_Click(object sender, EventArgs e)
+		private void btnQuitToDesktopMenuItem_Click(object sender, EventArgs e)
 		{
 			//Opens new QuitForm window for prompting user if they want to exit application
 			QuitForm quitForm = new QuitForm();
@@ -662,21 +656,8 @@ namespace InformationAgeProject
 			//Re-enables do task button for next time current player has a turn
 			this.btnDoTasks.Enabled = true;
 
-			//Sets current form to false and increments turn counter up by one
-			this.Visible = false;
-			MainMenu.turnCounter++;
-
-			try
-			{
-				//If there is a player form at the turnCounter index, go to that form
-				MainMenu.playerForms[MainMenu.turnCounter].Visible = true;
-			}
-			catch
-			{
-				//If there is not a player form at the turnCounter index, go back to first player form
-				MainMenu.turnCounter = 0;
-				MainMenu.playerForms[MainMenu.turnCounter].Visible = true;
-			}
+			//Ends current player's turn and goes to next player's turn
+			GameController.endTurn();
 		}
 		#endregion
 	}

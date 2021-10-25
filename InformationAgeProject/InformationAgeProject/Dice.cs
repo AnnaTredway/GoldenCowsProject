@@ -39,13 +39,13 @@ namespace InformationAgeProject
 		}//end Dice() Constructor
 		#endregion
 
-		#region RollDice() & RollCustomDice() Methods
+		#region rollDice() & rollCustomDice() Methods
 		/// <summary>
 		/// Method for returning random value from input number of regular 6-sided dice
 		/// </summary>
 		/// <param name="numDice">Total number of regular dice to be rolled</param>
 		/// <returns>Random value from input number of regular 6-sided dice</returns>
-		public int RollDice(int numDice)
+		public int rollDice(int numDice)
 		{
 			int rollVal = 0;    //Stored rolled value initialized to 0
 
@@ -66,7 +66,7 @@ namespace InformationAgeProject
 		/// <param name="numSides">Total number of sides per die</param>
 		/// <param name="startsAt">Number of sides die starts at(RNG result wont go below this number for each die)</param>
 		/// <returns>Random value from custom number of dice with custom number of sides</returns>
-		public int RollCustomDice(int numDice, int numSides, int startsAt)
+		public int rollCustomDice(int numDice, int numSides, int startsAt)
 		{
 			int rollVal = 0;    //Stored rolled value initialized to 0
 

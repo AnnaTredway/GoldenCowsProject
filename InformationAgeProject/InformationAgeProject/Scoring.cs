@@ -26,9 +26,8 @@ namespace InformationAgeProject
     /// </summary>
     public class Scoring
     {
-        //Inventory and Resource manager objects
+        //Inventory object
         private Inventory inventory = new Inventory();
-        private ResourceManager manager = new ResourceManager();
         
         /// <summary>
         /// Parameterized constructor for scoring
@@ -37,7 +36,6 @@ namespace InformationAgeProject
         public Scoring(Inventory inventory)
         {
             this.inventory = inventory;
-            manager = inventory.ReturnResourceManager();
         }
 
         /// <summary>
@@ -56,10 +54,10 @@ namespace InformationAgeProject
 
             //Retrieve the number of each resource and multiply it by the appropriate amount of points
             //Increase each scoring component by the newly calculated scores
-            backLog += manager.getBacklogAmount() * 1;
-            low += manager.getLowPriorityAmount() * 2;
-            medium += manager.getMediumPriorityAmount() * 3;
-            high += manager.getHighPriorityAmount() * 4;
+            backLog += inventory.ReturnResourceManager().getBacklogAmount() * 1;
+            low += inventory.ReturnResourceManager().getLowPriorityAmount() * 2;
+            medium += inventory.ReturnResourceManager().getMediumPriorityAmount() * 3;
+            high += inventory.ReturnResourceManager().getHighPriorityAmount() * 4;
 
             //Iterate through the player's list of project progress cards,
             //and add each card's point value to the total

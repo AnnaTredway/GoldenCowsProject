@@ -57,7 +57,6 @@ namespace InformationAgeProject
             this.btnSubtMed = new System.Windows.Forms.Button();
             this.btnAddHigh = new System.Windows.Forms.Button();
             this.btnSubtHigh = new System.Windows.Forms.Button();
-            this.lblTasks = new System.Windows.Forms.Label();
             this.btnDoTasks = new System.Windows.Forms.Button();
             this.txtBacklog = new System.Windows.Forms.TextBox();
             this.txtLow = new System.Windows.Forms.TextBox();
@@ -69,9 +68,10 @@ namespace InformationAgeProject
             this.scoreBox = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnInstructionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnQuitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnQuitToDesktopMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblInventory = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.ProjectProgressCard1 = new System.Windows.Forms.TextBox();
@@ -100,8 +100,8 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox3 = new System.Windows.Forms.TextBox();
             this.AdditionalFeaturesTextBox2 = new System.Windows.Forms.TextBox();
             this.AdditionalFeaturesTextBox1 = new System.Windows.Forms.TextBox();
-            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEndTurn = new System.Windows.Forms.Button();
+            this.btnQuitToMenuMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
@@ -276,17 +276,6 @@ namespace InformationAgeProject
             this.btnSubtHigh.UseVisualStyleBackColor = false;
             this.btnSubtHigh.Click += new System.EventHandler(this.btnSubtHigh_Click);
             // 
-            // lblTasks
-            // 
-            this.lblTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTasks.AutoSize = true;
-            this.lblTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTasks.Location = new System.Drawing.Point(783, 42);
-            this.lblTasks.Name = "lblTasks";
-            this.lblTasks.Size = new System.Drawing.Size(81, 26);
-            this.lblTasks.TabIndex = 24;
-            this.lblTasks.Text = "Tasks:";
-            // 
             // btnDoTasks
             // 
             this.btnDoTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -305,6 +294,7 @@ namespace InformationAgeProject
             // txtBacklog
             // 
             this.txtBacklog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBacklog.BackColor = System.Drawing.Color.White;
             this.txtBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBacklog.Location = new System.Drawing.Point(872, 73);
             this.txtBacklog.Name = "txtBacklog";
@@ -318,6 +308,7 @@ namespace InformationAgeProject
             // txtLow
             // 
             this.txtLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLow.BackColor = System.Drawing.Color.White;
             this.txtLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLow.Location = new System.Drawing.Point(966, 73);
             this.txtLow.Name = "txtLow";
@@ -331,6 +322,7 @@ namespace InformationAgeProject
             // txtMed
             // 
             this.txtMed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMed.BackColor = System.Drawing.Color.White;
             this.txtMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMed.Location = new System.Drawing.Point(1061, 72);
             this.txtMed.Name = "txtMed";
@@ -344,6 +336,7 @@ namespace InformationAgeProject
             // txtHigh
             // 
             this.txtHigh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtHigh.BackColor = System.Drawing.Color.White;
             this.txtHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHigh.Location = new System.Drawing.Point(1156, 73);
             this.txtHigh.Name = "txtHigh";
@@ -357,6 +350,7 @@ namespace InformationAgeProject
             // txtDevelopers
             // 
             this.txtDevelopers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDevelopers.BackColor = System.Drawing.Color.White;
             this.txtDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDevelopers.Location = new System.Drawing.Point(1145, 637);
             this.txtDevelopers.Name = "txtDevelopers";
@@ -374,19 +368,21 @@ namespace InformationAgeProject
             // inventoryBox
             // 
             this.inventoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.inventoryBox.BackColor = System.Drawing.Color.White;
             this.inventoryBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inventoryBox.Location = new System.Drawing.Point(871, 186);
+            this.inventoryBox.Location = new System.Drawing.Point(872, 213);
             this.inventoryBox.Name = "inventoryBox";
             this.inventoryBox.ReadOnly = true;
-            this.inventoryBox.Size = new System.Drawing.Size(381, 96);
+            this.inventoryBox.Size = new System.Drawing.Size(381, 105);
             this.inventoryBox.TabIndex = 33;
             this.inventoryBox.Text = "";
             // 
             // scoreBox
             // 
             this.scoreBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.scoreBox.BackColor = System.Drawing.Color.White;
             this.scoreBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.scoreBox.Location = new System.Drawing.Point(871, 288);
+            this.scoreBox.Location = new System.Drawing.Point(872, 351);
             this.scoreBox.Name = "scoreBox";
             this.scoreBox.ReadOnly = true;
             this.scoreBox.Size = new System.Drawing.Size(381, 96);
@@ -410,12 +406,20 @@ namespace InformationAgeProject
             this.statisticsToolStripMenuItem,
             this.btnInstructionsMenuItem,
             this.btnAboutMenuItem,
-            this.btnQuitMenuItem});
+            this.btnQuitToMenuMenuItem,
+            this.btnQuitToDesktopMenuItem});
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // statisticsToolStripMenuItem
+            // 
+            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statisticsToolStripMenuItem.Text = "Statistics";
+            this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
             // 
             // btnInstructionsMenuItem
             // 
@@ -431,38 +435,41 @@ namespace InformationAgeProject
             this.btnAboutMenuItem.Text = "About";
             this.btnAboutMenuItem.Click += new System.EventHandler(this.btnAboutMenuItem_Click);
             // 
-            // btnQuitMenuItem
+            // btnQuitToDesktopMenuItem
             // 
-            this.btnQuitMenuItem.Name = "btnQuitMenuItem";
-            this.btnQuitMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.btnQuitMenuItem.Text = "Quit";
-            this.btnQuitMenuItem.Click += new System.EventHandler(this.btnQuitMenuItem_Click);
+            this.btnQuitToDesktopMenuItem.Name = "btnQuitToDesktopMenuItem";
+            this.btnQuitToDesktopMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnQuitToDesktopMenuItem.Text = "Quit to Desktop";
+            this.btnQuitToDesktopMenuItem.Click += new System.EventHandler(this.btnQuitToDesktopMenuItem_Click);
             // 
             // lblInventory
             // 
             this.lblInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblInventory.AutoSize = true;
+            this.lblInventory.BackColor = System.Drawing.Color.SteelBlue;
             this.lblInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventory.Location = new System.Drawing.Point(748, 186);
+            this.lblInventory.Location = new System.Drawing.Point(872, 184);
             this.lblInventory.Name = "lblInventory";
-            this.lblInventory.Size = new System.Drawing.Size(117, 26);
+            this.lblInventory.Size = new System.Drawing.Size(381, 35);
             this.lblInventory.TabIndex = 37;
-            this.lblInventory.Text = "Inventory:";
+            this.lblInventory.Text = "Inventory";
+            this.lblInventory.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblScore
             // 
             this.lblScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblScore.AutoSize = true;
+            this.lblScore.BackColor = System.Drawing.Color.SteelBlue;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(783, 288);
+            this.lblScore.Location = new System.Drawing.Point(872, 321);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(81, 26);
+            this.lblScore.Size = new System.Drawing.Size(381, 36);
             this.lblScore.TabIndex = 38;
-            this.lblScore.Text = "Score:";
+            this.lblScore.Text = "Score";
+            this.lblScore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ProjectProgressCard1
             // 
             this.ProjectProgressCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProjectProgressCard1.BackColor = System.Drawing.Color.White;
             this.ProjectProgressCard1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectProgressCard1.Location = new System.Drawing.Point(12, 516);
             this.ProjectProgressCard1.Multiline = true;
@@ -474,6 +481,7 @@ namespace InformationAgeProject
             // ProjectProgressCard2
             // 
             this.ProjectProgressCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProjectProgressCard2.BackColor = System.Drawing.Color.White;
             this.ProjectProgressCard2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectProgressCard2.Location = new System.Drawing.Point(148, 516);
             this.ProjectProgressCard2.Multiline = true;
@@ -485,6 +493,7 @@ namespace InformationAgeProject
             // ProjectProgressCard3
             // 
             this.ProjectProgressCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProjectProgressCard3.BackColor = System.Drawing.Color.White;
             this.ProjectProgressCard3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectProgressCard3.Location = new System.Drawing.Point(284, 516);
             this.ProjectProgressCard3.Multiline = true;
@@ -496,6 +505,7 @@ namespace InformationAgeProject
             // ProjectProgressCard4
             // 
             this.ProjectProgressCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProjectProgressCard4.BackColor = System.Drawing.Color.White;
             this.ProjectProgressCard4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectProgressCard4.Location = new System.Drawing.Point(420, 516);
             this.ProjectProgressCard4.Multiline = true;
@@ -551,6 +561,7 @@ namespace InformationAgeProject
             // toolSlot1
             // 
             this.toolSlot1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolSlot1.BackColor = System.Drawing.Color.White;
             this.toolSlot1.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolSlot1.Location = new System.Drawing.Point(1201, 507);
             this.toolSlot1.Multiline = true;
@@ -563,6 +574,7 @@ namespace InformationAgeProject
             // toolSlot2
             // 
             this.toolSlot2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolSlot2.BackColor = System.Drawing.Color.White;
             this.toolSlot2.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolSlot2.Location = new System.Drawing.Point(1202, 563);
             this.toolSlot2.Multiline = true;
@@ -575,6 +587,7 @@ namespace InformationAgeProject
             // toolSlot3
             // 
             this.toolSlot3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolSlot3.BackColor = System.Drawing.Color.White;
             this.toolSlot3.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolSlot3.Location = new System.Drawing.Point(1202, 619);
             this.toolSlot3.Multiline = true;
@@ -586,6 +599,7 @@ namespace InformationAgeProject
             // 
             // txtToolMaker
             // 
+            this.txtToolMaker.BackColor = System.Drawing.Color.White;
             this.txtToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtToolMaker.Location = new System.Drawing.Point(43, 111);
             this.txtToolMaker.Name = "txtToolMaker";
@@ -720,6 +734,7 @@ namespace InformationAgeProject
             // AdditionalFeaturesTextBox4
             // 
             this.AdditionalFeaturesTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AdditionalFeaturesTextBox4.BackColor = System.Drawing.Color.White;
             this.AdditionalFeaturesTextBox4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdditionalFeaturesTextBox4.Location = new System.Drawing.Point(420, 342);
             this.AdditionalFeaturesTextBox4.Multiline = true;
@@ -731,6 +746,7 @@ namespace InformationAgeProject
             // AdditionalFeaturesTextBox3
             // 
             this.AdditionalFeaturesTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AdditionalFeaturesTextBox3.BackColor = System.Drawing.Color.White;
             this.AdditionalFeaturesTextBox3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdditionalFeaturesTextBox3.Location = new System.Drawing.Point(284, 342);
             this.AdditionalFeaturesTextBox3.Multiline = true;
@@ -742,6 +758,7 @@ namespace InformationAgeProject
             // AdditionalFeaturesTextBox2
             // 
             this.AdditionalFeaturesTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AdditionalFeaturesTextBox2.BackColor = System.Drawing.Color.White;
             this.AdditionalFeaturesTextBox2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdditionalFeaturesTextBox2.Location = new System.Drawing.Point(148, 342);
             this.AdditionalFeaturesTextBox2.Multiline = true;
@@ -753,6 +770,7 @@ namespace InformationAgeProject
             // AdditionalFeaturesTextBox1
             // 
             this.AdditionalFeaturesTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AdditionalFeaturesTextBox1.BackColor = System.Drawing.Color.White;
             this.AdditionalFeaturesTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdditionalFeaturesTextBox1.Location = new System.Drawing.Point(12, 342);
             this.AdditionalFeaturesTextBox1.Multiline = true;
@@ -760,13 +778,6 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox1.ReadOnly = true;
             this.AdditionalFeaturesTextBox1.Size = new System.Drawing.Size(130, 129);
             this.AdditionalFeaturesTextBox1.TabIndex = 61;
-            // 
-            // statisticsToolStripMenuItem
-            // 
-            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.statisticsToolStripMenuItem.Text = "Statistics";
-            this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
             // 
             // btnEndTurn
             // 
@@ -779,6 +790,13 @@ namespace InformationAgeProject
             this.btnEndTurn.Text = "End Turn";
             this.btnEndTurn.UseVisualStyleBackColor = true;
             this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
+            // 
+            // btnQuitToMenuMenuItem
+            // 
+            this.btnQuitToMenuMenuItem.Name = "btnQuitToMenuMenuItem";
+            this.btnQuitToMenuMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnQuitToMenuMenuItem.Text = "Quit to Menu";
+            this.btnQuitToMenuMenuItem.Click += new System.EventHandler(this.btnQuitToMenuMenuItem_Click);
             // 
             // MainForm
             // 
@@ -813,8 +831,6 @@ namespace InformationAgeProject
             this.Controls.Add(this.ProjectProgressCard3);
             this.Controls.Add(this.ProjectProgressCard2);
             this.Controls.Add(this.ProjectProgressCard1);
-            this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.lblInventory);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.scoreBox);
             this.Controls.Add(this.inventoryBox);
@@ -824,7 +840,6 @@ namespace InformationAgeProject
             this.Controls.Add(this.txtLow);
             this.Controls.Add(this.txtBacklog);
             this.Controls.Add(this.btnDoTasks);
-            this.Controls.Add(this.lblTasks);
             this.Controls.Add(this.btnSubtHigh);
             this.Controls.Add(this.btnAddHigh);
             this.Controls.Add(this.btnSubtMed);
@@ -837,6 +852,8 @@ namespace InformationAgeProject
             this.Controls.Add(this.lblMedium);
             this.Controls.Add(this.lblLow);
             this.Controls.Add(this.lblBacklog);
+            this.Controls.Add(this.lblScore);
+            this.Controls.Add(this.lblInventory);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -867,7 +884,6 @@ namespace InformationAgeProject
         private System.Windows.Forms.Button btnSubtMed;
         private System.Windows.Forms.Button btnAddHigh;
         private System.Windows.Forms.Button btnSubtHigh;
-        private System.Windows.Forms.Label lblTasks;
         private System.Windows.Forms.Button btnDoTasks;
         private System.Windows.Forms.TextBox txtBacklog;
         private System.Windows.Forms.TextBox txtLow;
@@ -881,7 +897,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnInstructionsMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnAboutMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem btnQuitMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnQuitToDesktopMenuItem;
         private System.Windows.Forms.Label lblInventory;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.TextBox ProjectProgressCard1;
@@ -912,6 +928,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.TextBox AdditionalFeaturesTextBox1;
         private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
         private System.Windows.Forms.Button btnEndTurn;
+        private System.Windows.Forms.ToolStripMenuItem btnQuitToMenuMenuItem;
     }
 }
 

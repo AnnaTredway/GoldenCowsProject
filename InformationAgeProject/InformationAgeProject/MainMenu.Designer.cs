@@ -48,24 +48,31 @@
             this.lblPlayer3Team = new System.Windows.Forms.Label();
             this.lblPlayer4Team = new System.Windows.Forms.Label();
             this.pnlTeamNames = new System.Windows.Forms.Panel();
+            this.pnlSelectPlayers = new System.Windows.Forms.Panel();
             this.pnlTeamNames.SuspendLayout();
+            this.pnlSelectPlayers.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPlayGame
             // 
-            this.btnPlayGame.Location = new System.Drawing.Point(296, 177);
+            this.btnPlayGame.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPlayGame.BackColor = System.Drawing.Color.IndianRed;
+            this.btnPlayGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayGame.Location = new System.Drawing.Point(300, 177);
             this.btnPlayGame.Name = "btnPlayGame";
             this.btnPlayGame.Size = new System.Drawing.Size(200, 40);
             this.btnPlayGame.TabIndex = 0;
             this.btnPlayGame.Text = "Play";
-            this.btnPlayGame.UseVisualStyleBackColor = true;
+            this.btnPlayGame.UseVisualStyleBackColor = false;
             this.btnPlayGame.Click += new System.EventHandler(this.btnPlayGame_Click);
             // 
             // lblTitle
             // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(241, 123);
+            this.lblTitle.Location = new System.Drawing.Point(237, 123);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(326, 51);
             this.lblTitle.TabIndex = 1;
@@ -73,79 +80,96 @@
             // 
             // btnOptions
             // 
-            this.btnOptions.Location = new System.Drawing.Point(296, 223);
+            this.btnOptions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOptions.BackColor = System.Drawing.Color.IndianRed;
+            this.btnOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOptions.Location = new System.Drawing.Point(300, 223);
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.Size = new System.Drawing.Size(200, 40);
             this.btnOptions.TabIndex = 2;
             this.btnOptions.Text = "Options";
-            this.btnOptions.UseVisualStyleBackColor = true;
+            this.btnOptions.UseVisualStyleBackColor = false;
             this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(296, 269);
+            this.btnQuit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnQuit.BackColor = System.Drawing.Color.IndianRed;
+            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuit.Location = new System.Drawing.Point(300, 269);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(200, 40);
             this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Quit";
-            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // radio2Players
             // 
             this.radio2Players.AutoSize = true;
-            this.radio2Players.Location = new System.Drawing.Point(361, 59);
+            this.radio2Players.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.radio2Players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio2Players.Location = new System.Drawing.Point(213, 58);
             this.radio2Players.Name = "radio2Players";
-            this.radio2Players.Size = new System.Drawing.Size(68, 17);
+            this.radio2Players.Size = new System.Drawing.Size(91, 24);
             this.radio2Players.TabIndex = 4;
             this.radio2Players.TabStop = true;
             this.radio2Players.Text = "2 Players";
-            this.radio2Players.UseVisualStyleBackColor = true;
-            this.radio2Players.Visible = false;
+            this.radio2Players.UseVisualStyleBackColor = false;
             // 
             // radio3Players
             // 
             this.radio3Players.AutoSize = true;
-            this.radio3Players.Location = new System.Drawing.Point(361, 82);
+            this.radio3Players.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.radio3Players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio3Players.Location = new System.Drawing.Point(213, 88);
             this.radio3Players.Name = "radio3Players";
-            this.radio3Players.Size = new System.Drawing.Size(68, 17);
+            this.radio3Players.Size = new System.Drawing.Size(91, 24);
             this.radio3Players.TabIndex = 5;
             this.radio3Players.TabStop = true;
             this.radio3Players.Text = "3 Players";
-            this.radio3Players.UseVisualStyleBackColor = true;
-            this.radio3Players.Visible = false;
+            this.radio3Players.UseVisualStyleBackColor = false;
             // 
             // radio4Players
             // 
             this.radio4Players.AutoSize = true;
-            this.radio4Players.Location = new System.Drawing.Point(361, 105);
+            this.radio4Players.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.radio4Players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio4Players.Location = new System.Drawing.Point(213, 118);
             this.radio4Players.Name = "radio4Players";
-            this.radio4Players.Size = new System.Drawing.Size(68, 17);
+            this.radio4Players.Size = new System.Drawing.Size(91, 24);
             this.radio4Players.TabIndex = 6;
             this.radio4Players.TabStop = true;
             this.radio4Players.Text = "4 Players";
-            this.radio4Players.UseVisualStyleBackColor = true;
-            this.radio4Players.Visible = false;
+            this.radio4Players.UseVisualStyleBackColor = false;
             // 
             // btnStartGame
             // 
+            this.btnStartGame.BackColor = System.Drawing.Color.IndianRed;
+            this.btnStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartGame.Location = new System.Drawing.Point(588, 398);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(200, 40);
             this.btnStartGame.TabIndex = 7;
             this.btnStartGame.Text = "Start Game";
-            this.btnStartGame.UseVisualStyleBackColor = true;
+            this.btnStartGame.UseVisualStyleBackColor = false;
             this.btnStartGame.Visible = false;
             this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
             // btnBack1
             // 
+            this.btnBack1.BackColor = System.Drawing.Color.IndianRed;
+            this.btnBack1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack1.Location = new System.Drawing.Point(12, 398);
             this.btnBack1.Name = "btnBack1";
             this.btnBack1.Size = new System.Drawing.Size(200, 40);
             this.btnBack1.TabIndex = 8;
             this.btnBack1.Text = "Back";
-            this.btnBack1.UseVisualStyleBackColor = true;
+            this.btnBack1.UseVisualStyleBackColor = false;
             this.btnBack1.Visible = false;
             this.btnBack1.Click += new System.EventHandler(this.btnBack1_Click);
             // 
@@ -153,46 +177,49 @@
             // 
             this.lblPlayers.AutoSize = true;
             this.lblPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayers.Location = new System.Drawing.Point(168, 5);
+            this.lblPlayers.Location = new System.Drawing.Point(3, 4);
             this.lblPlayers.Name = "lblPlayers";
             this.lblPlayers.Size = new System.Drawing.Size(510, 51);
             this.lblPlayers.TabIndex = 9;
             this.lblPlayers.Text = "Select Number of Players";
-            this.lblPlayers.Visible = false;
             // 
             // rtxtTeamName1
             // 
+            this.rtxtTeamName1.BackColor = System.Drawing.Color.White;
             this.rtxtTeamName1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtTeamName1.Location = new System.Drawing.Point(3, 16);
+            this.rtxtTeamName1.Location = new System.Drawing.Point(3, 19);
             this.rtxtTeamName1.Name = "rtxtTeamName1";
-            this.rtxtTeamName1.Size = new System.Drawing.Size(121, 25);
+            this.rtxtTeamName1.Size = new System.Drawing.Size(200, 25);
             this.rtxtTeamName1.TabIndex = 10;
             this.rtxtTeamName1.Text = "";
             // 
             // rtxtTeamName2
             // 
+            this.rtxtTeamName2.BackColor = System.Drawing.Color.White;
             this.rtxtTeamName2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtTeamName2.Location = new System.Drawing.Point(3, 60);
+            this.rtxtTeamName2.Location = new System.Drawing.Point(3, 63);
             this.rtxtTeamName2.Name = "rtxtTeamName2";
-            this.rtxtTeamName2.Size = new System.Drawing.Size(121, 25);
+            this.rtxtTeamName2.Size = new System.Drawing.Size(200, 25);
             this.rtxtTeamName2.TabIndex = 11;
             this.rtxtTeamName2.Text = "";
             // 
             // rtxtTeamName3
             // 
+            this.rtxtTeamName3.BackColor = System.Drawing.Color.White;
             this.rtxtTeamName3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtTeamName3.Location = new System.Drawing.Point(3, 104);
+            this.rtxtTeamName3.Location = new System.Drawing.Point(3, 107);
             this.rtxtTeamName3.Name = "rtxtTeamName3";
-            this.rtxtTeamName3.Size = new System.Drawing.Size(121, 25);
+            this.rtxtTeamName3.Size = new System.Drawing.Size(200, 25);
             this.rtxtTeamName3.TabIndex = 12;
             this.rtxtTeamName3.Text = "";
             // 
             // rtxtTeamName4
             // 
+            this.rtxtTeamName4.BackColor = System.Drawing.Color.White;
             this.rtxtTeamName4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtTeamName4.Location = new System.Drawing.Point(3, 148);
+            this.rtxtTeamName4.Location = new System.Drawing.Point(3, 151);
             this.rtxtTeamName4.Name = "rtxtTeamName4";
-            this.rtxtTeamName4.Size = new System.Drawing.Size(121, 25);
+            this.rtxtTeamName4.Size = new System.Drawing.Size(200, 25);
             this.rtxtTeamName4.TabIndex = 13;
             this.rtxtTeamName4.Text = "";
             // 
@@ -200,7 +227,7 @@
             // 
             this.lblPlayer1Team.AutoSize = true;
             this.lblPlayer1Team.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayer1Team.Location = new System.Drawing.Point(3, 0);
+            this.lblPlayer1Team.Location = new System.Drawing.Point(41, 4);
             this.lblPlayer1Team.Name = "lblPlayer1Team";
             this.lblPlayer1Team.Size = new System.Drawing.Size(124, 13);
             this.lblPlayer1Team.TabIndex = 14;
@@ -210,7 +237,7 @@
             // 
             this.lblPlayer2Team.AutoSize = true;
             this.lblPlayer2Team.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayer2Team.Location = new System.Drawing.Point(0, 44);
+            this.lblPlayer2Team.Location = new System.Drawing.Point(41, 47);
             this.lblPlayer2Team.Name = "lblPlayer2Team";
             this.lblPlayer2Team.Size = new System.Drawing.Size(124, 13);
             this.lblPlayer2Team.TabIndex = 15;
@@ -220,7 +247,7 @@
             // 
             this.lblPlayer3Team.AutoSize = true;
             this.lblPlayer3Team.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayer3Team.Location = new System.Drawing.Point(0, 88);
+            this.lblPlayer3Team.Location = new System.Drawing.Point(41, 91);
             this.lblPlayer3Team.Name = "lblPlayer3Team";
             this.lblPlayer3Team.Size = new System.Drawing.Size(124, 13);
             this.lblPlayer3Team.TabIndex = 16;
@@ -230,7 +257,7 @@
             // 
             this.lblPlayer4Team.AutoSize = true;
             this.lblPlayer4Team.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayer4Team.Location = new System.Drawing.Point(0, 132);
+            this.lblPlayer4Team.Location = new System.Drawing.Point(41, 135);
             this.lblPlayer4Team.Name = "lblPlayer4Team";
             this.lblPlayer4Team.Size = new System.Drawing.Size(124, 13);
             this.lblPlayer4Team.TabIndex = 17;
@@ -246,28 +273,38 @@
             this.pnlTeamNames.Controls.Add(this.rtxtTeamName4);
             this.pnlTeamNames.Controls.Add(this.lblPlayer3Team);
             this.pnlTeamNames.Controls.Add(this.rtxtTeamName3);
-            this.pnlTeamNames.Location = new System.Drawing.Point(660, 59);
+            this.pnlTeamNames.Location = new System.Drawing.Point(297, 177);
             this.pnlTeamNames.Name = "pnlTeamNames";
-            this.pnlTeamNames.Size = new System.Drawing.Size(128, 181);
+            this.pnlTeamNames.Size = new System.Drawing.Size(206, 180);
             this.pnlTeamNames.TabIndex = 19;
             this.pnlTeamNames.Visible = false;
+            // 
+            // pnlSelectPlayers
+            // 
+            this.pnlSelectPlayers.Controls.Add(this.lblPlayers);
+            this.pnlSelectPlayers.Controls.Add(this.radio2Players);
+            this.pnlSelectPlayers.Controls.Add(this.radio3Players);
+            this.pnlSelectPlayers.Controls.Add(this.radio4Players);
+            this.pnlSelectPlayers.Location = new System.Drawing.Point(142, 5);
+            this.pnlSelectPlayers.Name = "pnlSelectPlayers";
+            this.pnlSelectPlayers.Size = new System.Drawing.Size(517, 139);
+            this.pnlSelectPlayers.TabIndex = 20;
+            this.pnlSelectPlayers.Visible = false;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnlTeamNames);
-            this.Controls.Add(this.lblPlayers);
             this.Controls.Add(this.btnBack1);
             this.Controls.Add(this.btnStartGame);
-            this.Controls.Add(this.radio4Players);
-            this.Controls.Add(this.radio3Players);
-            this.Controls.Add(this.radio2Players);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnPlayGame);
+            this.Controls.Add(this.pnlTeamNames);
+            this.Controls.Add(this.pnlSelectPlayers);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
@@ -275,6 +312,8 @@
             this.Text = "Information Age - Main Menu";
             this.pnlTeamNames.ResumeLayout(false);
             this.pnlTeamNames.PerformLayout();
+            this.pnlSelectPlayers.ResumeLayout(false);
+            this.pnlSelectPlayers.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +340,6 @@
         private System.Windows.Forms.Label lblPlayer3Team;
         private System.Windows.Forms.Label lblPlayer4Team;
         private System.Windows.Forms.Panel pnlTeamNames;
+        private System.Windows.Forms.Panel pnlSelectPlayers;
     }
 }
