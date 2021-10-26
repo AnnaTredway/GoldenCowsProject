@@ -576,6 +576,16 @@ namespace InformationAgeProject
 
 		#region Menubar Dropdown Menu Buttons
 		/// <summary>
+		/// Event Handler for Save dropdown menu button to save current game
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		/// <summary>
 		/// Event Handler for Statistics dropdown menu button to view the inventory, tools, etc. of all players
 		/// </summary>
 		/// <param name="sender"></param>

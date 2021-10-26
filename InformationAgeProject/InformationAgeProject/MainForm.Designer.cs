@@ -71,6 +71,7 @@ namespace InformationAgeProject
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnInstructionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnQuitToMenuMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuitToDesktopMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblInventory = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
@@ -101,7 +102,7 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox2 = new System.Windows.Forms.TextBox();
             this.AdditionalFeaturesTextBox1 = new System.Windows.Forms.TextBox();
             this.btnEndTurn = new System.Windows.Forms.Button();
-            this.btnQuitToMenuMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
@@ -403,6 +404,7 @@ namespace InformationAgeProject
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
             this.statisticsToolStripMenuItem,
             this.btnInstructionsMenuItem,
             this.btnAboutMenuItem,
@@ -434,6 +436,13 @@ namespace InformationAgeProject
             this.btnAboutMenuItem.Size = new System.Drawing.Size(180, 22);
             this.btnAboutMenuItem.Text = "About";
             this.btnAboutMenuItem.Click += new System.EventHandler(this.btnAboutMenuItem_Click);
+            // 
+            // btnQuitToMenuMenuItem
+            // 
+            this.btnQuitToMenuMenuItem.Name = "btnQuitToMenuMenuItem";
+            this.btnQuitToMenuMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnQuitToMenuMenuItem.Text = "Quit to Menu";
+            this.btnQuitToMenuMenuItem.Click += new System.EventHandler(this.btnQuitToMenuMenuItem_Click);
             // 
             // btnQuitToDesktopMenuItem
             // 
@@ -791,12 +800,12 @@ namespace InformationAgeProject
             this.btnEndTurn.UseVisualStyleBackColor = true;
             this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
             // 
-            // btnQuitToMenuMenuItem
+            // saveToolStripMenuItem
             // 
-            this.btnQuitToMenuMenuItem.Name = "btnQuitToMenuMenuItem";
-            this.btnQuitToMenuMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.btnQuitToMenuMenuItem.Text = "Quit to Menu";
-            this.btnQuitToMenuMenuItem.Click += new System.EventHandler(this.btnQuitToMenuMenuItem_Click);
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -929,6 +938,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
         private System.Windows.Forms.Button btnEndTurn;
         private System.Windows.Forms.ToolStripMenuItem btnQuitToMenuMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     }
 }
 

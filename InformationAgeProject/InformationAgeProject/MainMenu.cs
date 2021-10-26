@@ -35,23 +35,21 @@ namespace InformationAgeProject
 
 		#region MainMenu Buttons
 		/// <summary>
-		/// Event Handler for button to play the game itself from the main menu
+		/// Event Handler for button to go to New Game or Load Game Screen
 		/// </summary>
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnPlayGame_Click(object sender, EventArgs e)
 		{
-			//Sets all main menu items to false to go to 
-			lblTitle.Visible = false;
+			//Sets all main menu items to invisible to go to New Game or Load Game screen
 			btnPlayGame.Visible = false;
 			btnOptions.Visible = false;
 			btnQuit.Visible = false;
 
-			//Sets all buttons on screen for selecting player count to true
-			pnlSelectPlayers.Visible = true;
-			pnlTeamNames.Visible = true;
-			btnBack1.Visible = true;
-			btnStartGame.Visible = true;
+			//Sets btnNewGame, btnLoadGame, and btnBackToMainMenu to visible
+			btnNewGame.Visible = true;
+			btnLoadGame.Visible = true;
+			btnBackToMainMenu.Visible = true;
 
 			//Sets window text to signify player selection screen
 			this.Text = "Information Age - Select Players";
@@ -79,6 +77,56 @@ namespace InformationAgeProject
 		}
 		#endregion
 
+		#region New Game or Load Game Screen
+		/// <summary>
+		/// Event Handler for button to go to player selection and team naming screen
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnNewGame_Click(object sender, EventArgs e)
+		{
+			//Sets title, btnNewGame, btnLoadGame, and btnBackToMainMenu to invisible
+			lblTitle.Visible = false;
+			btnNewGame.Visible = false;
+			btnLoadGame.Visible = false;
+			btnBackToMainMenu.Visible = false;
+
+			//Sets all items on screen for selecting player count and naming teams to visible
+			pnlSelectPlayers.Visible = true;
+			pnlTeamNames.Visible = true;
+			btnBack1.Visible = true;
+			btnStartGame.Visible = true;
+		}
+
+		/// <summary>
+		/// Event Handler for button to load game
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnLoadGame_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		/// <summary>
+		/// Event Handler for button to go back to main menu from New Game or Load Game screen
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnBackToMainMenu_Click(object sender, EventArgs e)
+		{
+			//Sets btnNewGame, btnLoadGame, and btnBackToMainMenu to invisible
+			btnNewGame.Visible = false;
+			btnLoadGame.Visible = false;
+			btnBackToMainMenu.Visible = false;
+
+			//Sets all items on main menu to visible
+			btnPlayGame.Visible = true;
+			btnOptions.Visible = true;
+			btnQuit.Visible = true;
+		}
+		#endregion
+
 		#region Select Player Screen Buttons
 		/// <summary>
 		/// Event Handler for bac to go back to main menu screen
@@ -93,12 +141,12 @@ namespace InformationAgeProject
 			btnBack1.Visible = false;
 			btnStartGame.Visible = false;
 
-			//Sets all main menu items to visible
+			//Sets title, btnNewGame, btnLoadGame, and btnBackToMainMenu to visible
 			lblTitle.Visible = true;
-			btnPlayGame.Visible = true;
-			btnOptions.Visible = true;
-			btnQuit.Visible = true;
-			 
+			btnNewGame.Visible = true;
+			btnLoadGame.Visible = true;
+			btnBackToMainMenu.Visible = true;
+
 			//Sets window text to signify main menu screen
 			this.Text = "Information Age - Main Menu";
 		}
