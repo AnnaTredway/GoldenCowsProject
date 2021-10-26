@@ -51,8 +51,8 @@ namespace InformationAgeProject
 			btnLoadGame.Visible = true;
 			btnBackToMainMenu.Visible = true;
 
-			//Sets window text to signify player selection screen
-			this.Text = "Information Age - Select Players";
+			//Sets window text to signify New Game or Load Game screen
+			this.Text = "Information Age - New Game or Load Game";
 		}
 
 		/// <summary>
@@ -96,6 +96,9 @@ namespace InformationAgeProject
 			pnlTeamNames.Visible = true;
 			btnBack1.Visible = true;
 			btnStartGame.Visible = true;
+
+			//Sets window text to signify New Game Setup screen
+			this.Text = "Information Age - New Game Setup";
 		}
 
 		/// <summary>
@@ -124,6 +127,9 @@ namespace InformationAgeProject
 			btnPlayGame.Visible = true;
 			btnOptions.Visible = true;
 			btnQuit.Visible = true;
+
+			//Sets window text to signify main menu screen
+			this.Text = "Information Age - Main Menu";
 		}
 		#endregion
 
@@ -147,8 +153,8 @@ namespace InformationAgeProject
 			btnLoadGame.Visible = true;
 			btnBackToMainMenu.Visible = true;
 
-			//Sets window text to signify main menu screen
-			this.Text = "Information Age - Main Menu";
+			//Sets window text to signify New Game or Load Game screen
+			this.Text = "Information Age - New Game or Load Game";
 		}
 
 		/// <summary>
