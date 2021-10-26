@@ -185,7 +185,11 @@ namespace InformationAgeProject
             }
             else
             {
-                MessageBox.Show("You do not have enough resources to claim this card.", "Not Enough Resources", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You do not have enough resources to claim this card."
+                    , "Not Enough Resources"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+
                 return null;
             }
         }

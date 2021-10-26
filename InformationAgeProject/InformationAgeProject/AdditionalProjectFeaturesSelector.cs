@@ -102,11 +102,17 @@ namespace InformationAgeProject
             }
             else if (iTotalSelected > iCardCost)
             {
-                MessageBox.Show("You have selected too many resources. Please select exactly " + iCardCost, "Too Many Resources", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You have selected too many resources. Please select exactly " + iCardCost
+                    , "Too Many Resources"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("You did not select enough resources. Please select exactly " + iCardCost, "Not Enough Resources", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You did not select enough resources. Please select exactly " + iCardCost
+                    , "Not Enough Resources"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
             }
             
         }

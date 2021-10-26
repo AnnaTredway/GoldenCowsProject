@@ -47,6 +47,12 @@ namespace InformationAgeProject
 			ProjFeatDeck = featuresDeck;
 		}
 
+		#region MainForm_Load()
+		/// <summary>
+		/// Event Handler for handling when MainForm loads
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			//Loads initial developer count into txtDevelopers
@@ -70,6 +76,7 @@ namespace InformationAgeProject
 			toolSlot2.Text = toolLevelList[1].ToString();
 			toolSlot3.Text = toolLevelList[2].ToString();
 		}
+		#endregion
 
 		#region Task Adding/Subtracting Buttons
 		/// <summary>
@@ -281,31 +288,33 @@ namespace InformationAgeProject
 			devCounts[3] = int.Parse(txtHigh.Text);
 
 			//Calculates number of tasks that player should acquire based on random dice rolls and tool usage and stores them in player's inventory
-			GameController.calcTasks(player, devCounts);
+			//Returns developers to developer pool and disables "DoTasks" button if task calculation was successful
+			if (GameController.calcTasks(player, devCounts) == true)
+			{
+				//Adds developers back to player's free developer pool
+				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
+				txtDevelopers.Text = Convert.ToString(leftoverDevelopers
+													+ int.Parse(txtBacklog.Text)
+													+ int.Parse(txtLow.Text)
+													+ int.Parse(txtMed.Text)
+													+ int.Parse(txtHigh.Text));
 
-			//Adds developers back to player's free developer pool
-			int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
-			txtDevelopers.Text = Convert.ToString(leftoverDevelopers
-												+ int.Parse(txtBacklog.Text)
-												+ int.Parse(txtLow.Text)
-												+ int.Parse(txtMed.Text)
-												+ int.Parse(txtHigh.Text));
+				//Resets developer counts on each task/resource
+				txtBacklog.Text = "0";
+				txtLow.Text = "0";
+				txtMed.Text = "0";
+				txtHigh.Text = "0";
 
-			//Resets developer counts on each task/resource
-			txtBacklog.Text = "0";
-			txtLow.Text = "0";
-			txtMed.Text = "0";
-			txtHigh.Text = "0";
+				//Print out current inventory text to inventoryBox
+				inventoryBox.Text = player.Inventory.printResources();
 
-			//Print out current inventory text to inventoryBox
-			inventoryBox.Text = player.Inventory.printResources();
+				//Recalculate the score and update the score text box
+				Scoring score = new Scoring(player.Inventory);
+				scoreBox.Text = score.calculateScore();
 
-			//Recalculate the score and update the score text box
-			Scoring score = new Scoring(player.Inventory);
-			scoreBox.Text = score.calculateScore();
-
-			//Sets btnDoTasks to disabled so player cant do tasks again in same turn
-			btnDoTasks.Enabled = false;
+				//Sets btnDoTasks to disabled so player cant do tasks again in same turn
+				btnDoTasks.Enabled = false;
+			}
 		}
 		#endregion
 
@@ -370,7 +379,7 @@ namespace InformationAgeProject
 			//Else, do nothing
 			if (Int32.Parse(txtToolMaker.Text) == 1)
 			{
-				//Adds a tool to the players inventory if there are not 3 tools that equal 
+				//Adds a tool to the players inventory if there are not 3 tools that equal level 4
 				player.Inventory.addTool();
 
 				//Stores developer that is currently in tool maker
@@ -584,18 +593,8 @@ namespace InformationAgeProject
 		/// <param name="e"></param>
 		private void btnInstructionsMenuItem_Click(object sender, EventArgs e)
 		{
-			//Get the current directory
-			string filePath = Directory.GetCurrentDirectory();
-
-			//Move up two parent directories
-			filePath = Directory.GetParent(filePath).FullName;
-			filePath = Directory.GetParent(filePath).FullName;
-
-			//Append the location of InstructionSet.txt to filePath
-			filePath += "/Files/InstructionSet.txt";
-
-			//Open the file located at filePath (which is InstructionSet.txt
-			Process.Start(filePath);
+			//Opens game instructions
+			GameController.openInstructions();
 		}
 
 		/// <summary>
@@ -605,9 +604,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnAboutMenuItem_Click(object sender, EventArgs e)
 		{
-			//Opens new AboutBox window for About information
-			AboutBox aboutBox = new AboutBox();
-			aboutBox.Show();
+			//Opens AboutBox with information about the game
+			GameController.openAboutBox();
 		}
 
 		/// <summary>
@@ -627,9 +625,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnQuitToDesktopMenuItem_Click(object sender, EventArgs e)
 		{
-			//Opens new QuitForm window for prompting user if they want to exit application
-			QuitForm quitForm = new QuitForm();
-			quitForm.Show();
+			//Opens QuitForm to prompt user to quit game or not
+			GameController.quitGame();
 		}
 		#endregion
 

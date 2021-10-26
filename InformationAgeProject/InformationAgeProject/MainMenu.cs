@@ -74,9 +74,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnQuit_Click(object sender, EventArgs e)
 		{
-			//Opens new QuitForm window for prompting user if they want to exit application
-			QuitForm quitForm = new QuitForm();
-			quitForm.Show();
+			//Opens QuitForm to prompt user to quit game or not
+			GameController.quitGame();
 		}
 		#endregion
 
@@ -115,93 +114,47 @@ namespace InformationAgeProject
 			string[] teamNames;
 			bool showError = true;
 
-			//Starts game with 2 players
+			//Stores team names in array even if some or all are null or whitespace
+			teamNames = new string[4];
+			teamNames[0] = rtxtTeamName1.Text;
+			teamNames[1] = rtxtTeamName2.Text;
+			teamNames[2] = rtxtTeamName3.Text;
+			teamNames[3] = rtxtTeamName4.Text;
+
 			if (radio2Players.Checked == true)
 			{
-				//Makes the error message not appear if a radio button is selected
+				//Sets "Player Number Not Selected" error to not show
 				showError = false;
 
-				//Checks if any of the team names for each of the amount of player selected are empty
-				if (string.IsNullOrEmpty(rtxtTeamName1.Text)
-				|| string.IsNullOrEmpty(rtxtTeamName2.Text))
-				{
-					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
-				else
-				{
-					//Activates 2 players
-					teamNames = new string[2];
-					teamNames[0] = rtxtTeamName1.Text;
-					teamNames[1] = rtxtTeamName2.Text;
-
-					GameController.startGame(2, teamNames);
-
-					//Makes menu form invisible so it isnt open when main game boards are open
-					this.Visible = false;
-				}
+				//Will only start game with 2 players and make main menu invisible if team names for number of players selected are not input
+				this.Visible = GameController.startGame(2, teamNames);
 			}
 
-			//Starts game with 3 players
 			if (radio3Players.Checked == true)
 			{
-				//Makes the error message not appear if a radio button is selected
+				//Sets "Player Number Not Selected" error to not show
 				showError = false;
 
-				//Checks if any of the team names for each of the amount of player selected are empty
-				if (string.IsNullOrEmpty(rtxtTeamName1.Text)
-				|| string.IsNullOrEmpty(rtxtTeamName2.Text)
-				|| string.IsNullOrEmpty(rtxtTeamName3.Text))
-				{
-					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
-				else
-				{
-					//Activates 3 players
-					teamNames = new string[3];
-					teamNames[0] = rtxtTeamName1.Text;
-					teamNames[1] = rtxtTeamName2.Text;
-					teamNames[2] = rtxtTeamName3.Text;
-
-					GameController.startGame(3, teamNames);
-
-					//Makes menu form invisible so it isnt open when main game boards are open
-					this.Visible = false;
-				}
+				//Will only start game with 3 players and make main menu invisible if team names for number of players selected are not input
+				this.Visible = GameController.startGame(3, teamNames);
 			}
 
-			//Starts game with 4 players
 			if (radio4Players.Checked == true)
 			{
-				//Makes the error message not appear if a radio button is selected
+				//Sets "Player Number Not Selected" error to not show
 				showError = false;
 
-				//Checks if any of the team names for each of the amount of player selected are empty
-				if (string.IsNullOrEmpty(rtxtTeamName1.Text)
-				|| string.IsNullOrEmpty(rtxtTeamName2.Text)
-				|| string.IsNullOrEmpty(rtxtTeamName3.Text)
-				|| string.IsNullOrEmpty(rtxtTeamName4.Text))
-				{
-					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
-				else
-				{
-					//Activates 4 players
-					teamNames = new string[4];
-					teamNames[0] = rtxtTeamName1.Text;
-					teamNames[1] = rtxtTeamName2.Text;
-					teamNames[2] = rtxtTeamName3.Text;
-					teamNames[3] = rtxtTeamName4.Text;
-
-					GameController.startGame(4, teamNames);
-
-					//Makes menu form invisible so it isnt open when main game boards are open
-					this.Visible = false;
-				}
+				//Will only start game with 4 players and make main menu invisible if team names for number of players selected are not input
+				this.Visible = GameController.startGame(4, teamNames);
 			}
 
+			//Shows "Player Number Not Selected" error if no radio button is selected when StartGame button is pressed
 			if (showError == true)
 			{
-				MessageBox.Show("You cannot start the game without selecting the number of players.", "Player Number Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("You cannot start the game without selecting the number of players."
+					, "Player Number Not Selected"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
 			}
 		}
 		#endregion

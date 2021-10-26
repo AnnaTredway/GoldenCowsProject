@@ -15,6 +15,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,8 +49,32 @@ namespace InformationAgeProject
 		/// </summary>
 		/// <param name="playerCount">Number of players to start game with</param>
 		/// <param name="teamNames">Team names of each player</param>
-		public static void startGame(int playerCount, string[] teamNames)
+		/// <returns>Bool of whether or not the main menu should be invisible for starting game</returns>
+		public static bool startGame(int playerCount, string[] teamNames)
 		{
+			//Checks if number of players is between 2 and 4
+			//Ends method immediately if there are not atleast 2 players or more than 4 players
+			if(playerCount < 2 || playerCount > 4)
+			{
+				MessageBox.Show("Number of players cannot be less than 2 or more than 4."
+						, "Invalid Number Of Players"
+						, MessageBoxButtons.OK
+						, MessageBoxIcon.Error);
+				return true;
+			}
+
+			for(int i = 0; i < playerCount; i++)
+			{
+				if (string.IsNullOrWhiteSpace(teamNames[i]))
+				{
+					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected."
+						, "Team Names Not Input"
+						, MessageBoxButtons.OK
+						, MessageBoxIcon.Error);
+					return true;
+				}
+			}
+
 			//Activates Dice instance
 			dice = new Dice();
 
@@ -70,6 +96,8 @@ namespace InformationAgeProject
 
 			//Shows first player form for first turn within first round
 			playerForms[0].Show();
+
+			return false;
 
 		}//end startGame()
 		#endregion
@@ -107,14 +135,41 @@ namespace InformationAgeProject
 		/// </summary>
 		/// <param name="player">Player that is currently collecting tasks/resources</param>
 		/// <param name="player">Array of developer counts for each task/resource for current player</param>
-		public static void calcTasks(Player player, int[] devCounts)
+		/// <returns>Bool of whether or not task calculation was successful (Used for determining if DoTasks button should be deactivated for current turn)</returns>
+		public static bool calcTasks(Player player, int[] devCounts)
 		{
+			//Checks if input Player object is null
+			if (player == null)
+			{
+				MessageBox.Show("ERROR: Input Player object null in calcTasks() method."
+					, "Player Object Null"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+				return false;   //Value to return to show that calculation was unsuccessful
+			}
+
+			//Checks if input devCounts length is not equal to 4
+			if (devCounts.Length != 4)
+			{
+				MessageBox.Show("The input number of indexes in devCounts has to be equal to 4 when calculating tasks."
+					, "Number Of Developer Count Categories Invalid"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+
+				return false;   //Value to return to show that calculation was unsuccessful
+			}
+
 			if (devCounts[0] == 0
 			 && devCounts[1] == 0
 			 && devCounts[2] == 0
 			 && devCounts[3] == 0)
 			{
-				MessageBox.Show("You cannot acquire any tasks because you have no developers at any of the 4 task areas.", "Cannot Acquire Tasks", MessageBoxButtons.OK , MessageBoxIcon.Error);
+				MessageBox.Show("You cannot acquire any tasks because you have no developers at any of the 4 task areas."
+					, "Cannot Acquire Tasks"
+					, MessageBoxButtons.OK 
+					, MessageBoxIcon.Error);
+
+				return false; //Value to return to show that calculation was unsuccessful
 			}
 			else
 			{
@@ -146,6 +201,8 @@ namespace InformationAgeProject
 				player.Inventory.addToLowPriority((diceVals[1] + finalToolVals[1]) / 4);       //Low-tier resource divided by 4
 				player.Inventory.addToMediumPriority((diceVals[2] + finalToolVals[2]) / 5);    //Mid-tier resource divided by 5
 				player.Inventory.addToHighPriority((diceVals[3] + finalToolVals[3]) / 6);      //Highest-tier resource divided by 6
+
+				return true;	//Value to return to show that calculation was successful
 			}
 
 		}//end calcTasks()
@@ -156,9 +213,19 @@ namespace InformationAgeProject
 		/// Method for returning total added up levels value from a single list
 		/// </summary>
 		/// <param name="listBox">List of tools to have levels added up from</param>
-		/// <returns>Int of total calculated levels add up from list</returns>
+		/// <returns>Int of total calculated levels add up from list (Returns -1 if error occurs)</returns>
 		public static int calcToolLevelsFromList(ListBox listBox)
 		{
+			//Checks if input ListBox object is null
+			if (listBox == null)
+			{
+				MessageBox.Show("ERROR: Input ListBox object null in calcToolLevelsFromList() method.."
+					, "ListBox Object Null"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+				return -1;   //Value to return to show that calculation was unsuccessful
+			}
+
 			int finalToolVal = 0;
 
 			//If there are items in the list, go through each item's level and add them up
@@ -174,6 +241,54 @@ namespace InformationAgeProject
 			return finalToolVal;
 
 		}//end calcToolLevelsFromList()
+		#endregion
+
+		#region openInstructions() Method
+		/// <summary>
+		/// Method for opening game instructions
+		/// </summary>
+		public static void openInstructions()
+		{
+			//Get the current directory
+			string filePath = Directory.GetCurrentDirectory();
+
+			//Move up two parent directories
+			filePath = Directory.GetParent(filePath).FullName;
+			filePath = Directory.GetParent(filePath).FullName;
+
+			//Append the location of InstructionSet.txt to filePath
+			filePath += "/Files/InstructionSet.txt";
+
+			//Open the file located at filePath (which is InstructionSet.txt
+			Process.Start(filePath);
+
+		}//end openInstructions()
+		#endregion
+
+		#region openAbout() Method
+		/// <summary>
+		/// Method for opening about information within AboutBox for game
+		/// </summary>
+		public static void openAboutBox()
+		{
+			//Opens new AboutBox window for About information
+			AboutBox aboutBox = new AboutBox();
+			aboutBox.Show();
+
+		}//end openAbout()
+		#endregion
+
+		#region quitGame() Method
+		/// <summary>
+		/// Method for opening QuitForm to prompt user to quit game or not
+		/// </summary>
+		public static void quitGame()
+		{
+			//Opens new QuitForm window for prompting user if they want to exit application
+			QuitForm quitForm = new QuitForm();
+			quitForm.Show();
+
+		}//end quitGame()
 		#endregion
 	}
 }
