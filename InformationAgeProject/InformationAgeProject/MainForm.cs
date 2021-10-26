@@ -273,51 +273,39 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnDoTasks_Click(object sender, EventArgs e)
 		{
-			//If there are no developers on the resources, give error message to player that they need to put devlopers on them before acquiring them
-			//Else, go through with normal task calculation with added tool functionality
-			if (txtBacklog.Text == "0" 
-			 && txtLow.Text == "0"
-			 && txtMed.Text == "0" 
-			 && txtHigh.Text == "0")
-			{
-				MessageBox.Show("You cannot acquire any tasks because you have no developers at any of the 4 task areas.", "Cannot Acquire Tasks");
-			}
-			else
-			{
-				//Stores counts of developers at each task/resource
-				int[] devCounts = new int[4];
-				devCounts[0] = int.Parse(txtBacklog.Text);
-				devCounts[1] = int.Parse(txtLow.Text);
-				devCounts[2] = int.Parse(txtMed.Text);
-				devCounts[3] = int.Parse(txtHigh.Text);
+			//Stores counts of developers at each task/resource
+			int[] devCounts = new int[4];
+			devCounts[0] = int.Parse(txtBacklog.Text);
+			devCounts[1] = int.Parse(txtLow.Text);
+			devCounts[2] = int.Parse(txtMed.Text);
+			devCounts[3] = int.Parse(txtHigh.Text);
 
-				//Calculates number of tasks that player should acquire based on random dice rolls and tool usage and stores them in player's inventory
-				GameController.calcTasks(player, devCounts);
+			//Calculates number of tasks that player should acquire based on random dice rolls and tool usage and stores them in player's inventory
+			GameController.calcTasks(player, devCounts);
 
-				//Adds developers back to player's free developer pool
-				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
-				txtDevelopers.Text = Convert.ToString(leftoverDevelopers
-													+ int.Parse(txtBacklog.Text)
-													+ int.Parse(txtLow.Text)
-													+ int.Parse(txtMed.Text)
-													+ int.Parse(txtHigh.Text));
+			//Adds developers back to player's free developer pool
+			int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
+			txtDevelopers.Text = Convert.ToString(leftoverDevelopers
+												+ int.Parse(txtBacklog.Text)
+												+ int.Parse(txtLow.Text)
+												+ int.Parse(txtMed.Text)
+												+ int.Parse(txtHigh.Text));
 
-				//Resets developer counts on each task/resource
-				txtBacklog.Text = "0";
-				txtLow.Text = "0";
-				txtMed.Text = "0";
-				txtHigh.Text = "0";
+			//Resets developer counts on each task/resource
+			txtBacklog.Text = "0";
+			txtLow.Text = "0";
+			txtMed.Text = "0";
+			txtHigh.Text = "0";
 
-				//Print out current inventory text to inventoryBox
-				inventoryBox.Text = player.Inventory.printResources();
+			//Print out current inventory text to inventoryBox
+			inventoryBox.Text = player.Inventory.printResources();
 
-				//Recalculate the score and update the score text box
-				Scoring score = new Scoring(player.Inventory);
-				scoreBox.Text = score.calculateScore();
+			//Recalculate the score and update the score text box
+			Scoring score = new Scoring(player.Inventory);
+			scoreBox.Text = score.calculateScore();
 
-				//Sets btnDoTasks to disabled so player cant do tasks again in same turn
-				btnDoTasks.Enabled = false;
-			}
+			//Sets btnDoTasks to disabled so player cant do tasks again in same turn
+			btnDoTasks.Enabled = false;
 		}
 		#endregion
 

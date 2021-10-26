@@ -125,7 +125,7 @@ namespace InformationAgeProject
 				if (string.IsNullOrEmpty(rtxtTeamName1.Text)
 				|| string.IsNullOrEmpty(rtxtTeamName2.Text))
 				{
-					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected");
+					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else
 				{
@@ -152,7 +152,7 @@ namespace InformationAgeProject
 				|| string.IsNullOrEmpty(rtxtTeamName2.Text)
 				|| string.IsNullOrEmpty(rtxtTeamName3.Text))
 				{
-					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected");
+					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else
 				{
@@ -181,7 +181,7 @@ namespace InformationAgeProject
 				|| string.IsNullOrEmpty(rtxtTeamName3.Text)
 				|| string.IsNullOrEmpty(rtxtTeamName4.Text))
 				{
-					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected");
+					MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected.", "Player Number Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else
 				{
@@ -201,7 +201,7 @@ namespace InformationAgeProject
 
 			if (showError == true)
 			{
-				MessageBox.Show("You cannot start the game without selecting the number of players.", "Player Number Not Selected");
+				MessageBox.Show("You cannot start the game without selecting the number of players.", "Player Number Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		#endregion

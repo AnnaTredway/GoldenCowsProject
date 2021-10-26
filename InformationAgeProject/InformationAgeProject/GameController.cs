@@ -109,34 +109,44 @@ namespace InformationAgeProject
 		/// <param name="player">Array of developer counts for each task/resource for current player</param>
 		public static void calcTasks(Player player, int[] devCounts)
 		{
-			//Dice is rolled for current player on resources/tasks
-			//(Number of dice rolled is equal to number of developers on specific resource)
-			int[] diceVals = new int[4];
-			diceVals[0] = dice.rollDice(devCounts[0]);
-			diceVals[1] = dice.rollDice(devCounts[1]);
-			diceVals[2] = dice.rollDice(devCounts[2]);
-			diceVals[3] = dice.rollDice(devCounts[3]);
-
-			//Before divide calculation, a prompt window for using tools is shown if the player wants to use one or more tools
-			//These array values may not change if the player decides to not use any tools or has no tool levels to begin with
-			int[] finalToolVals = new int[4] { 0, 0, 0, 0 };
-
-			//Prompts user for possibility of using tools if first tool is not level 0 
-			if (player.Inventory.getToolLevelList()[0] != 0)
+			if (devCounts[0] == 0
+			 && devCounts[1] == 0
+			 && devCounts[2] == 0
+			 && devCounts[3] == 0)
 			{
-				//Shows new toolPrompt for possibility of player using tools
-				//Uses list of tool levels and dice values for player to help decide if they want to use tools on tasks/resources
-				ToolTaskPrompt toolPrompt = new ToolTaskPrompt(player.Inventory.getToolLevelList(), diceVals);
-				toolPrompt.ShowDialog();
-
-				finalToolVals = toolPrompt.finalToolValues;
+				MessageBox.Show("You cannot acquire any tasks because you have no developers at any of the 4 task areas.", "Cannot Acquire Tasks", MessageBoxButtons.OK , MessageBoxIcon.Error);
 			}
+			else
+			{
+				//Dice is rolled for current player on resources/tasks
+				//(Number of dice rolled is equal to number of developers on specific resource)
+				int[] diceVals = new int[4];
+				diceVals[0] = dice.rollDice(devCounts[0]);
+				diceVals[1] = dice.rollDice(devCounts[1]);
+				diceVals[2] = dice.rollDice(devCounts[2]);
+				diceVals[3] = dice.rollDice(devCounts[3]);
 
-			//Final dice and tool result is then divided by 3, 4, 5, or 6 to get final resource/task count acquired
-			player.Inventory.addToBacklog((diceVals[0] + finalToolVals[0]) / 3);           //Lowest-tier backlog resource final result divided by 3
-			player.Inventory.addToLowPriority((diceVals[1] + finalToolVals[1]) / 4);       //Low-tier resource divided by 4
-			player.Inventory.addToMediumPriority((diceVals[2] + finalToolVals[2]) / 5);    //Mid-tier resource divided by 5
-			player.Inventory.addToHighPriority((diceVals[3] + finalToolVals[3]) / 6);      //Highest-tier resource divided by 6
+				//Before divide calculation, a prompt window for using tools is shown if the player wants to use one or more tools
+				//These array values may not change if the player decides to not use any tools or has no tool levels to begin with
+				int[] finalToolVals = new int[4] { 0, 0, 0, 0 };
+
+				//Prompts user for possibility of using tools if first tool is not level 0 
+				if (player.Inventory.getToolLevelList()[0] != 0)
+				{
+					//Shows new toolPrompt for possibility of player using tools
+					//Uses list of tool levels and dice values for player to help decide if they want to use tools on tasks/resources
+					ToolTaskPrompt toolPrompt = new ToolTaskPrompt(player.Inventory.getToolLevelList(), diceVals);
+					toolPrompt.ShowDialog();
+
+					finalToolVals = toolPrompt.finalToolValues;
+				}
+
+				//Final dice and tool result is then divided by 3, 4, 5, or 6 to get final resource/task count acquired
+				player.Inventory.addToBacklog((diceVals[0] + finalToolVals[0]) / 3);           //Lowest-tier backlog resource final result divided by 3
+				player.Inventory.addToLowPriority((diceVals[1] + finalToolVals[1]) / 4);       //Low-tier resource divided by 4
+				player.Inventory.addToMediumPriority((diceVals[2] + finalToolVals[2]) / 5);    //Mid-tier resource divided by 5
+				player.Inventory.addToHighPriority((diceVals[3] + finalToolVals[3]) / 6);      //Highest-tier resource divided by 6
+			}
 
 		}//end calcTasks()
 		#endregion
