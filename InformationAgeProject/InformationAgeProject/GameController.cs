@@ -27,7 +27,7 @@ namespace InformationAgeProject
 	/// <summary>
 	/// GameController class for methods and controls the windows forms of the program
 	/// </summary>
-	class GameController
+	public class GameController
 	{
 		public static int turnCounter = 0;
 		public static Dice dice;
@@ -60,7 +60,8 @@ namespace InformationAgeProject
 						, "Invalid Number Of Players"
 						, MessageBoxButtons.OK
 						, MessageBoxIcon.Error);
-				return true;
+
+				return false;//Main menu stays visible
 			}
 
 			for(int i = 0; i < playerCount; i++)
@@ -71,7 +72,7 @@ namespace InformationAgeProject
 						, "Team Names Not Input"
 						, MessageBoxButtons.OK
 						, MessageBoxIcon.Error);
-					return true;
+					return false;//Main menu stays visible
 				}
 			}
 
@@ -97,7 +98,7 @@ namespace InformationAgeProject
 			//Shows first player form for first turn within first round
 			playerForms[0].Show();
 
-			return false;
+			return true;//Main menu becomes invisible
 
 		}//end startGame()
 		#endregion
@@ -145,6 +146,7 @@ namespace InformationAgeProject
 					, "Player Object Null"
 					, MessageBoxButtons.OK
 					, MessageBoxIcon.Error);
+
 				return false;   //Value to return to show that calculation was unsuccessful
 			}
 

@@ -166,7 +166,6 @@ namespace InformationAgeProject
 		{
 			//Array of team names to pass to startGame method for simplicity
 			string[] teamNames;
-			bool showError = true;
 
 			//Stores team names in array even if some or all are null or whitespace
 			teamNames = new string[4];
@@ -177,33 +176,23 @@ namespace InformationAgeProject
 
 			if (radio2Players.Checked == true)
 			{
-				//Sets "Player Number Not Selected" error to not show
-				showError = false;
-
 				//Will only start game with 2 players and make main menu invisible if team names for number of players selected are not input
-				this.Visible = GameController.startGame(2, teamNames);
+				this.Visible = !GameController.startGame(2, teamNames);
 			}
-
-			if (radio3Players.Checked == true)
+			else if (radio3Players.Checked == true)
 			{
-				//Sets "Player Number Not Selected" error to not show
-				showError = false;
 
 				//Will only start game with 3 players and make main menu invisible if team names for number of players selected are not input
-				this.Visible = GameController.startGame(3, teamNames);
+				this.Visible = !GameController.startGame(3, teamNames);
 			}
-
-			if (radio4Players.Checked == true)
+			else if (radio4Players.Checked == true)
 			{
-				//Sets "Player Number Not Selected" error to not show
-				showError = false;
 
 				//Will only start game with 4 players and make main menu invisible if team names for number of players selected are not input
-				this.Visible = GameController.startGame(4, teamNames);
+				this.Visible = !GameController.startGame(4, teamNames);
 			}
-
 			//Shows "Player Number Not Selected" error if no radio button is selected when StartGame button is pressed
-			if (showError == true)
+			else
 			{
 				MessageBox.Show("You cannot start the game without selecting the number of players."
 					, "Player Number Not Selected"

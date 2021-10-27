@@ -35,8 +35,28 @@ namespace InformationAgeTests
 	public class GameControllerTests
 	{
 		[TestMethod]
-		public void TestMethod1()
+		[DataRow(4, new string[4] { "a", "b","c", "d" }, true)]
+		//Arrange
+		public void startGameTest(int playerCount, string[] teamNames, bool expected)
 		{
+			//Act
+			bool actual = GameController.startGame(playerCount, teamNames);
+
+			//Assert
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		[DataRow(null, new int[4] { 1, 1, 1, 1 }, false)]
+		//[DataRow(new Player(), new int[4] { 0, 0, 0, 0 }, false)]
+		//Arrange
+		public void calcTasksTest(Player player, int[] devCounts, bool expected)
+		{
+			//Act
+			bool actual = GameController.calcTasks(player, devCounts);
+
+			//Assert
+			Assert.AreEqual(expected, actual);
 		}
 	}
 }
