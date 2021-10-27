@@ -47,6 +47,12 @@ namespace InformationAgeProject
 			ProjFeatDeck = featuresDeck;
 		}
 
+		#region MainForm_Load()
+		/// <summary>
+		/// Event Handler for handling when MainForm loads
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			//Loads initial developer count into txtDevelopers
@@ -70,6 +76,7 @@ namespace InformationAgeProject
 			toolSlot2.Text = toolLevelList[1].ToString();
 			toolSlot3.Text = toolLevelList[2].ToString();
 		}
+		#endregion
 
 		#region Task Adding/Subtracting Buttons
 		/// <summary>
@@ -273,27 +280,17 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnDoTasks_Click(object sender, EventArgs e)
 		{
-			//If there are no developers on the resources, give error message to player that they need to put devlopers on them before acquiring them
-			//Else, go through with normal task calculation with added tool functionality
-			if (txtBacklog.Text == "0" 
-			 && txtLow.Text == "0"
-			 && txtMed.Text == "0" 
-			 && txtHigh.Text == "0")
-			{
-				MessageBox.Show("You cannot acquire any tasks because you have no developers at any of the 4 task areas.", "Cannot Acquire Tasks");
-			}
-			else
-			{
-				//Stores counts of developers at each task/resource
-				int[] devCounts = new int[4];
-				devCounts[0] = int.Parse(txtBacklog.Text);
-				devCounts[1] = int.Parse(txtLow.Text);
-				devCounts[2] = int.Parse(txtMed.Text);
-				devCounts[3] = int.Parse(txtHigh.Text);
+			//Stores counts of developers at each task/resource
+			int[] devCounts = new int[4];
+			devCounts[0] = int.Parse(txtBacklog.Text);
+			devCounts[1] = int.Parse(txtLow.Text);
+			devCounts[2] = int.Parse(txtMed.Text);
+			devCounts[3] = int.Parse(txtHigh.Text);
 
-				//Calculates number of tasks that player should acquire based on random dice rolls and tool usage and stores them in player's inventory
-				GameController.calcTasks(player, devCounts);
-
+			//Calculates number of tasks that player should acquire based on random dice rolls and tool usage and stores them in player's inventory
+			//Returns developers to developer pool and disables "DoTasks" button if task calculation was successful
+			if (GameController.calcTasks(player, devCounts) == true)
+			{
 				//Adds developers back to player's free developer pool
 				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
 				txtDevelopers.Text = Convert.ToString(leftoverDevelopers
@@ -382,7 +379,7 @@ namespace InformationAgeProject
 			//Else, do nothing
 			if (Int32.Parse(txtToolMaker.Text) == 1)
 			{
-				//Adds a tool to the players inventory if there are not 3 tools that equal 
+				//Adds a tool to the players inventory if there are not 3 tools that equal level 4
 				player.Inventory.addTool();
 
 				//Stores developer that is currently in tool maker
@@ -579,6 +576,16 @@ namespace InformationAgeProject
 
 		#region Menubar Dropdown Menu Buttons
 		/// <summary>
+		/// Event Handler for Save dropdown menu button to save current game
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		/// <summary>
 		/// Event Handler for Statistics dropdown menu button to view the inventory, tools, etc. of all players
 		/// </summary>
 		/// <param name="sender"></param>
@@ -596,18 +603,8 @@ namespace InformationAgeProject
 		/// <param name="e"></param>
 		private void btnInstructionsMenuItem_Click(object sender, EventArgs e)
 		{
-			//Get the current directory
-			string filePath = Directory.GetCurrentDirectory();
-
-			//Move up two parent directories
-			filePath = Directory.GetParent(filePath).FullName;
-			filePath = Directory.GetParent(filePath).FullName;
-
-			//Append the location of InstructionSet.txt to filePath
-			filePath += "/Files/InstructionSet.txt";
-
-			//Open the file located at filePath (which is InstructionSet.txt
-			Process.Start(filePath);
+			//Opens game instructions
+			GameController.openInstructions();
 		}
 
 		/// <summary>
@@ -617,9 +614,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnAboutMenuItem_Click(object sender, EventArgs e)
 		{
-			//Opens new AboutBox window for About information
-			AboutBox aboutBox = new AboutBox();
-			aboutBox.Show();
+			//Opens AboutBox with information about the game
+			GameController.openAboutBox();
 		}
 
 		/// <summary>
@@ -639,9 +635,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnQuitToDesktopMenuItem_Click(object sender, EventArgs e)
 		{
-			//Opens new QuitForm window for prompting user if they want to exit application
-			QuitForm quitForm = new QuitForm();
-			quitForm.Show();
+			//Opens QuitForm to prompt user to quit game or not
+			GameController.quitGame();
 		}
 		#endregion
 

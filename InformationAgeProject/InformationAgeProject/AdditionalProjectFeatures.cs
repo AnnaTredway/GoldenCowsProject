@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Forms;
 
 namespace InformationAgeProject
 {
@@ -185,7 +185,11 @@ namespace InformationAgeProject
             }
             else
             {
-                MessageBox.Show("You do not have enough resources to claim this card.");
+                MessageBox.Show("You do not have enough resources to claim this card."
+                    , "Not Enough Resources"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+
                 return null;
             }
         }

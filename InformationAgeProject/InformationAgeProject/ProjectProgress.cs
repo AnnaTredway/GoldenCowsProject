@@ -117,7 +117,11 @@ namespace InformationAgeProject
                     }// end else if (this.ResourceCost[i].type == ResourceType.HIGHPRIORITY && iPlayer[3] > 0)
                     else
                     {
-                        MessageBox.Show("You do not have enough resources to complete this card!", "Not Enough Resources");
+                        MessageBox.Show("You do not have enough resources to complete this card!"
+                            , "Not Enough Resources"
+                            , MessageBoxButtons.OK
+                            , MessageBoxIcon.Error);
+
                         enoughResources = false;
                         break;
                     }// end else

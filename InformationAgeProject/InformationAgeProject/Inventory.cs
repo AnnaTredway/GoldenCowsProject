@@ -169,7 +169,10 @@ namespace InformationAgeProject
 			}
 			else
 			{
-				MessageBox.Show("You cannot acquire anymore tools because all three tools in your inventory are at max level.", "Cannot Acquire More Tools");
+				MessageBox.Show("You cannot acquire anymore tools because all three tools in your inventory are at max level."
+					, "Cannot Acquire More Tools"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
 			}
 		}
 

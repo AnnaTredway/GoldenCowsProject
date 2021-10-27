@@ -24,7 +24,7 @@ namespace InformationAgeProject
 	/// <summary>
 	/// Dice class for random number generation
 	/// </summary>
-	class Dice
+	public class Dice
 	{
 		private readonly Random RNG;    //Random Number Generator for use in RollDice() method
 
