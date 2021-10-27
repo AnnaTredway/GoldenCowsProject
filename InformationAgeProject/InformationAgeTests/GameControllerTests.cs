@@ -36,7 +36,7 @@ namespace InformationAgeTests
 	{
 		[TestMethod]
 		//Arrange
-		[DataRow(4, new string[4] { "a", "b","c", "d" }, true)]
+		[DataRow(4, new string[4] { "a", "b", "c", "d" }, true)]
 		public void startGameTest(int playerCount, string[] teamNames, bool expected)
 		{
 			//Act
