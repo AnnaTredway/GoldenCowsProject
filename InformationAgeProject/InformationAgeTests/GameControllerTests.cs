@@ -29,14 +29,14 @@ using System.Windows.Forms;
 namespace InformationAgeTests
 {
 	/// <summary>
-	/// Test class for MainForm class
+	/// Test class for GameController class
 	/// </summary>
 	[TestClass]
 	public class GameControllerTests
 	{
 		[TestMethod]
-		[DataRow(4, new string[4] { "a", "b","c", "d" }, true)]
 		//Arrange
+		[DataRow(4, new string[4] { "a", "b","c", "d" }, true)]
 		public void startGameTest(int playerCount, string[] teamNames, bool expected)
 		{
 			//Act
@@ -47,9 +47,9 @@ namespace InformationAgeTests
 		}
 
 		[TestMethod]
+		//Arrange
 		[DataRow(null, new int[4] { 1, 1, 1, 1 }, false)]
 		//[DataRow(new Player(), new int[4] { 0, 0, 0, 0 }, false)]
-		//Arrange
 		public void calcTasksTest(Player player, int[] devCounts, bool expected)
 		{
 			//Act
