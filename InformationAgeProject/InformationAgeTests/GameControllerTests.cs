@@ -34,7 +34,7 @@ namespace InformationAgeTests
 	[TestClass]
 	public class GameControllerTests
 	{
-		[TestMethod]
+        [TestMethod]
 		//Arrange
 		[DataRow(4, new string[4] { "a", "b", "c", "d" }, true)]
 		public void startGameTest(int playerCount, string[] teamNames, bool expected)
@@ -57,6 +57,55 @@ namespace InformationAgeTests
 
 			//Assert
 			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void endTurn()
+        {
+			//Instantiate players, their main forms, team names, and a counter to keep track of player turns
+			MainForm[] playerForms = new MainForm[4];
+			int turnCounter = 0;
+			Player[] playerList = new Player[4];
+			playerForms = new MainForm[4];
+			string[] teamNames = { "a", "b", "c", "d" };
+
+			//Creates new master card decks
+			ProjectProgressDeck ProjProgDeck = new ProjectProgressDeck();
+			AdditionalProjectFeaturesDeck ProjFeatDeck = new AdditionalProjectFeaturesDeck();
+
+			//Activates players, sets their team names, and instantiates their MainForms
+			for (int i = 0; i < 4; i++)
+			{
+				playerList[i] = new Player();
+				playerList[i].TeamName = teamNames[i];
+				playerForms[i] = new MainForm(playerList[i], ProjProgDeck, ProjFeatDeck);
+			}
+
+			//Current form is set to invisible so it is not in the way of the next player
+			playerForms[turnCounter].Visible = false;
+
+			//Turn counter goes up by one to move on to next player
+			turnCounter++;
+
+			//Act
+			bool actual;
+
+			try
+			{
+				//If there is a player form at the turnCounter index, go to that form
+				playerForms[turnCounter].Visible = true;
+				actual = playerForms[turnCounter].Visible;
+			}
+			catch
+			{
+				//If there is not a player form at the turnCounter index, go back to first player form
+				turnCounter = 0;
+				playerForms[turnCounter].Visible = true;
+				actual = playerForms[turnCounter].Visible;
+			}
+
+			//Assert
+			Assert.AreEqual(true, actual);
 		}
 	}
 }
