@@ -58,5 +58,6 @@ namespace InformationAgeTests
 			//Assert
 			Assert.AreEqual(expected, actual);
 		}
+		//comment
 	}
 }
