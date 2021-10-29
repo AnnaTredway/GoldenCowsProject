@@ -48,7 +48,7 @@ namespace InformationAgeTests
         [TestMethod]
         //Arrange
         [DataRow(4, true)]
-        //Should expect true because there will be either 1 or 2 items awarded to the player
+        //Should expect true because the points returned should be greater then 0
         public void ClaimCardTest_WithEnoughResources(int iCardCost, bool expected)
         {
             bool actual;
