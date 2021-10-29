@@ -24,7 +24,7 @@ using System.Windows.Forms;
 
 namespace InformationAgeProject
 {
-	partial class AboutBox : Form
+	public partial class AboutBox : Form
 	{
 		public AboutBox()
 		{

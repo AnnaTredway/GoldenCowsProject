@@ -31,20 +31,14 @@ namespace InformationAgeProject
 	{
 		//Player to be used in this MainForm instance
 		Player player;
-		ProjectProgressDeck ProjProgDeck;
-		AdditionalProjectFeaturesDeck ProjFeatDeck;
 
-		public MainForm(Player player, ProjectProgressDeck progressDeck, AdditionalProjectFeaturesDeck featuresDeck)
+		public MainForm(Player player)
 		{
 			InitializeComponent();
 
 			//Assigns player and corresponding team name to this MainForm instance
 			this.player = player;
 			this.Text = "Information Age: " + player.TeamName;
-
-			//Assigns master deck to current mainform
-			ProjProgDeck = progressDeck;
-			ProjFeatDeck = featuresDeck;
 		}
 
 		#region MainForm_Load()
@@ -59,16 +53,16 @@ namespace InformationAgeProject
 			this.txtDevelopers.Text = player.Developers.ToString();
 
 			//Loads initial progress cards into ProjectProgressCard textboxes
-			ProjectProgressCard1.Text = ProjProgDeck.Deck[0].displayCard();
-			ProjectProgressCard2.Text = ProjProgDeck.Deck[1].displayCard();
-			ProjectProgressCard3.Text = ProjProgDeck.Deck[2].displayCard();
-			ProjectProgressCard4.Text = ProjProgDeck.Deck[3].displayCard();
+			ProjectProgressCard1.Text = GameController.ProjProgDeck.Deck[0].displayCard();
+			ProjectProgressCard2.Text = GameController.ProjProgDeck.Deck[1].displayCard();
+			ProjectProgressCard3.Text = GameController.ProjProgDeck.Deck[2].displayCard();
+			ProjectProgressCard4.Text = GameController.ProjProgDeck.Deck[3].displayCard();
 
 			//Loads initial feature cards into AdditionalFeatures textboxes
-			AdditionalFeaturesTextBox1.Text = ProjFeatDeck.Deck[0].displayCard();
-			AdditionalFeaturesTextBox2.Text = ProjFeatDeck.Deck[1].displayCard();
-			AdditionalFeaturesTextBox3.Text = ProjFeatDeck.Deck[2].displayCard();
-			AdditionalFeaturesTextBox4.Text = ProjFeatDeck.Deck[3].displayCard();
+			AdditionalFeaturesTextBox1.Text = GameController.ProjFeatDeck.Deck[0].displayCard();
+			AdditionalFeaturesTextBox2.Text = GameController.ProjFeatDeck.Deck[1].displayCard();
+			AdditionalFeaturesTextBox3.Text = GameController.ProjFeatDeck.Deck[2].displayCard();
+			AdditionalFeaturesTextBox4.Text = GameController.ProjFeatDeck.Deck[3].displayCard();
 
 			//Loads initial tool levels into toolSlot textboxes
 			int[] toolLevelList = player.Inventory.getToolLevelList();
@@ -414,13 +408,13 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimProgressCard1_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[0].claimCard(player.Inventory.ReturnResourceManager( )) ;
+			int points = GameController.ProjProgDeck.Deck[0].claimCard(player.Inventory.ReturnResourceManager( )) ;
 			Scoring score = new Scoring(player.Inventory);
 
 			if (points > 0)
 			{
-				player.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[0]);
-				ProjProgDeck.Deck[0].blnSold = true;
+				player.Inventory.ProjectProgressCards.Add(GameController.ProjProgDeck.Deck[0]);
+				GameController.ProjProgDeck.Deck[0].blnSold = true;
 				ClaimProgressCard1.Enabled = false;
 				ProjectProgressCard1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player.Inventory.printResources( );
@@ -435,13 +429,13 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimProgressCard2_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[1].claimCard(player.Inventory.ReturnResourceManager( ));
+			int points = GameController.ProjProgDeck.Deck[1].claimCard(player.Inventory.ReturnResourceManager( ));
 			Scoring score = new Scoring(player.Inventory);
 
 			if (points > 0)
 			{
-				player.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[1]);
-				ProjProgDeck.Deck[1].blnSold = true;
+				player.Inventory.ProjectProgressCards.Add(GameController.ProjProgDeck.Deck[1]);
+				GameController.ProjProgDeck.Deck[1].blnSold = true;
 				ClaimProgressCard2.Enabled = false;
 				ProjectProgressCard2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player.Inventory.printResources( );
@@ -456,13 +450,13 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimProgressCard3_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[2].claimCard(player.Inventory.ReturnResourceManager( ));
+			int points = GameController.ProjProgDeck.Deck[2].claimCard(player.Inventory.ReturnResourceManager( ));
 			Scoring score = new Scoring(player.Inventory);
 
 			if (points > 0)
 			{
-				player.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[2]);
-				ProjProgDeck.Deck[2].blnSold = true;
+				player.Inventory.ProjectProgressCards.Add(GameController.ProjProgDeck.Deck[2]);
+				GameController.ProjProgDeck.Deck[2].blnSold = true;
 				ClaimProgressCard3.Enabled = false;
 				ProjectProgressCard3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player.Inventory.printResources( );
@@ -477,31 +471,37 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimProgressCard4_Click(object sender, EventArgs e)
 		{
-			int points = ProjProgDeck.Deck[3].claimCard(player.Inventory.ReturnResourceManager( ));
+			int points = GameController.ProjProgDeck.Deck[3].claimCard(player.Inventory.ReturnResourceManager( ));
 			Scoring score = new Scoring(player.Inventory);
 
 			if (points > 0)
 			{
-				player.Inventory.ProjectProgressCards.Add(ProjProgDeck.Deck[3]);
-				ProjProgDeck.Deck[3].blnSold = true;
+				player.Inventory.ProjectProgressCards.Add(GameController.ProjProgDeck.Deck[3]);
+				GameController.ProjProgDeck.Deck[3].blnSold = true;
 				ClaimProgressCard4.Enabled = false;
 				ProjectProgressCard4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player.Inventory.printResources( );
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
-		#endregion
+        #endregion
 
-		#region Additional Project Features Cards
-		private void ClaimFeaturesCard1_Click(object sender, EventArgs e)
+        #region Additional Project Features Cards
+
+        /// <summary>
+        /// Claims the first feature card available, costs 4 resources
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void ClaimFeaturesCard1_Click(object sender, EventArgs e)
 		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[0].claimCard(4, player.Inventory);
+			AdditionalProjectFeaturesType[] cards = GameController.ProjFeatDeck.Deck[0].claimCard(4, player.Inventory);
 			Scoring score = new Scoring(player.Inventory);
 
 			if (cards != null)
 			{
-				player.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[0]);
-				ProjFeatDeck.Deck[0].blnSold = true;
+				player.Inventory.AdditionalProjectFeaturesCards.Add(GameController.ProjFeatDeck.Deck[0]);
+				GameController.ProjFeatDeck.Deck[0].blnSold = true;
 				ClaimFeaturesCard1.Enabled = false;
 				AdditionalFeaturesTextBox1.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player.Inventory.printResources( );
@@ -513,15 +513,20 @@ namespace InformationAgeProject
 			}
 		}
 
+		/// <summary>
+		/// Claims the second feature card available, costs 3 resources
+		/// </summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
 		private void ClaimFeaturesCard2_Click(object sender, EventArgs e)
 		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[1].claimCard(3, player.Inventory);
+			AdditionalProjectFeaturesType[] cards = GameController.ProjFeatDeck.Deck[1].claimCard(3, player.Inventory);
 			Scoring score = new Scoring(player.Inventory);
 
 			if (cards != null)
 			{
-				player.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[1]);
-				ProjFeatDeck.Deck[1].blnSold = true;
+				player.Inventory.AdditionalProjectFeaturesCards.Add(GameController.ProjFeatDeck.Deck[1]);
+				GameController.ProjFeatDeck.Deck[1].blnSold = true;
 				ClaimFeaturesCard2.Enabled = false;
 				AdditionalFeaturesTextBox2.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player.Inventory.printResources( );
@@ -533,15 +538,20 @@ namespace InformationAgeProject
 			}
 		}
 
+		/// <summary>
+		/// Claims the third feature card available, costs 2 resources
+		/// </summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
 		private void ClaimFeaturesCard3_Click(object sender, EventArgs e)
 		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[2].claimCard(2, player.Inventory);
+			AdditionalProjectFeaturesType[] cards = GameController.ProjFeatDeck.Deck[2].claimCard(2, player.Inventory);
 			Scoring score = new Scoring(player.Inventory);
 
 			if (cards != null)
 			{
-				player.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[2]);
-				ProjFeatDeck.Deck[2].blnSold = true;
+				player.Inventory.AdditionalProjectFeaturesCards.Add(GameController.ProjFeatDeck.Deck[2]);
+				GameController.ProjFeatDeck.Deck[2].blnSold = true;
 				ClaimFeaturesCard3.Enabled = false;
 				AdditionalFeaturesTextBox3.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player.Inventory.printResources( );
@@ -553,15 +563,20 @@ namespace InformationAgeProject
 			}
 		}
 
+		/// <summary>
+		/// Claims the fourth feature card available, costs 1 resource
+		/// </summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
 		private void ClaimFeaturesCard4_Click(object sender, EventArgs e)
 		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[3].claimCard(1, player.Inventory);
+			AdditionalProjectFeaturesType[] cards = GameController.ProjFeatDeck.Deck[3].claimCard(1, player.Inventory);
 			Scoring score = new Scoring(player.Inventory);
 
 			if (cards != null)
 			{
-				player.Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[3]);
-				ProjFeatDeck.Deck[3].blnSold = true;
+				player.Inventory.AdditionalProjectFeaturesCards.Add(GameController.ProjFeatDeck.Deck[3]);
+				GameController.ProjFeatDeck.Deck[3].blnSold = true;
 				ClaimFeaturesCard4.Enabled = false;
 				AdditionalFeaturesTextBox4.Text = "Card claimed by\r\nPLAYERPLACEHOLDER";
 				inventoryBox.Text = player.Inventory.printResources( );
