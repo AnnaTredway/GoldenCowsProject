@@ -68,6 +68,7 @@ namespace InformationAgeProject
             this.scoreBox = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnInstructionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,7 +103,11 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox2 = new System.Windows.Forms.TextBox();
             this.AdditionalFeaturesTextBox1 = new System.Windows.Forms.TextBox();
             this.btnEndTurn = new System.Windows.Forms.Button();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FeatureCardsCostLable = new System.Windows.Forms.Label();
+            this.FeatureCardsLabel1 = new System.Windows.Forms.Label();
+            this.FeatureCardsLabel2 = new System.Windows.Forms.Label();
+            this.FeatureCardsLabel3 = new System.Windows.Forms.Label();
+            this.FeatureCardsLabel4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
@@ -416,38 +421,45 @@ namespace InformationAgeProject
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
             // statisticsToolStripMenuItem
             // 
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.statisticsToolStripMenuItem.Text = "Statistics";
             this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
             // 
             // btnInstructionsMenuItem
             // 
             this.btnInstructionsMenuItem.Name = "btnInstructionsMenuItem";
-            this.btnInstructionsMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnInstructionsMenuItem.Size = new System.Drawing.Size(163, 22);
             this.btnInstructionsMenuItem.Text = "Instructions";
             this.btnInstructionsMenuItem.Click += new System.EventHandler(this.btnInstructionsMenuItem_Click);
             // 
             // btnAboutMenuItem
             // 
             this.btnAboutMenuItem.Name = "btnAboutMenuItem";
-            this.btnAboutMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnAboutMenuItem.Size = new System.Drawing.Size(163, 22);
             this.btnAboutMenuItem.Text = "About";
             this.btnAboutMenuItem.Click += new System.EventHandler(this.btnAboutMenuItem_Click);
             // 
             // btnQuitToMenuMenuItem
             // 
             this.btnQuitToMenuMenuItem.Name = "btnQuitToMenuMenuItem";
-            this.btnQuitToMenuMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnQuitToMenuMenuItem.Size = new System.Drawing.Size(163, 22);
             this.btnQuitToMenuMenuItem.Text = "Quit to Menu";
             this.btnQuitToMenuMenuItem.Click += new System.EventHandler(this.btnQuitToMenuMenuItem_Click);
             // 
             // btnQuitToDesktopMenuItem
             // 
             this.btnQuitToDesktopMenuItem.Name = "btnQuitToDesktopMenuItem";
-            this.btnQuitToDesktopMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnQuitToDesktopMenuItem.Size = new System.Drawing.Size(163, 22);
             this.btnQuitToDesktopMenuItem.Text = "Quit to Desktop";
             this.btnQuitToDesktopMenuItem.Click += new System.EventHandler(this.btnQuitToDesktopMenuItem_Click);
             // 
@@ -800,12 +812,50 @@ namespace InformationAgeProject
             this.btnEndTurn.UseVisualStyleBackColor = true;
             this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
             // 
-            // saveToolStripMenuItem
+            // FeatureCardsCostLable
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            this.FeatureCardsCostLable.AutoSize = true;
+            this.FeatureCardsCostLable.Location = new System.Drawing.Point(12, 295);
+            this.FeatureCardsCostLable.Name = "FeatureCardsCostLable";
+            this.FeatureCardsCostLable.Size = new System.Drawing.Size(56, 13);
+            this.FeatureCardsCostLable.TabIndex = 70;
+            this.FeatureCardsCostLable.Text = "Card Cost:";
+            // 
+            // FeatureCardsLabel1
+            // 
+            this.FeatureCardsLabel1.AutoSize = true;
+            this.FeatureCardsLabel1.Location = new System.Drawing.Point(36, 321);
+            this.FeatureCardsLabel1.Name = "FeatureCardsLabel1";
+            this.FeatureCardsLabel1.Size = new System.Drawing.Size(88, 13);
+            this.FeatureCardsLabel1.TabIndex = 71;
+            this.FeatureCardsLabel1.Text = "Any 4 Resources";
+            // 
+            // FeatureCardsLabel2
+            // 
+            this.FeatureCardsLabel2.AutoSize = true;
+            this.FeatureCardsLabel2.Location = new System.Drawing.Point(166, 321);
+            this.FeatureCardsLabel2.Name = "FeatureCardsLabel2";
+            this.FeatureCardsLabel2.Size = new System.Drawing.Size(88, 13);
+            this.FeatureCardsLabel2.TabIndex = 72;
+            this.FeatureCardsLabel2.Text = "Any 3 Resources";
+            // 
+            // FeatureCardsLabel3
+            // 
+            this.FeatureCardsLabel3.AutoSize = true;
+            this.FeatureCardsLabel3.Location = new System.Drawing.Point(310, 321);
+            this.FeatureCardsLabel3.Name = "FeatureCardsLabel3";
+            this.FeatureCardsLabel3.Size = new System.Drawing.Size(88, 13);
+            this.FeatureCardsLabel3.TabIndex = 73;
+            this.FeatureCardsLabel3.Text = "Any 2 Resources";
+            // 
+            // FeatureCardsLabel4
+            // 
+            this.FeatureCardsLabel4.AutoSize = true;
+            this.FeatureCardsLabel4.Location = new System.Drawing.Point(445, 321);
+            this.FeatureCardsLabel4.Name = "FeatureCardsLabel4";
+            this.FeatureCardsLabel4.Size = new System.Drawing.Size(83, 13);
+            this.FeatureCardsLabel4.TabIndex = 74;
+            this.FeatureCardsLabel4.Text = "Any 1 Resource";
             // 
             // MainForm
             // 
@@ -813,6 +863,11 @@ namespace InformationAgeProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.FeatureCardsLabel4);
+            this.Controls.Add(this.FeatureCardsLabel3);
+            this.Controls.Add(this.FeatureCardsLabel2);
+            this.Controls.Add(this.FeatureCardsLabel1);
+            this.Controls.Add(this.FeatureCardsCostLable);
             this.Controls.Add(this.btnEndTurn);
             this.Controls.Add(this.ClaimFeaturesCard4);
             this.Controls.Add(this.ClaimFeaturesCard3);
@@ -939,6 +994,11 @@ namespace InformationAgeProject
         private System.Windows.Forms.Button btnEndTurn;
         private System.Windows.Forms.ToolStripMenuItem btnQuitToMenuMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.Label FeatureCardsCostLable;
+        private System.Windows.Forms.Label FeatureCardsLabel1;
+        private System.Windows.Forms.Label FeatureCardsLabel2;
+        private System.Windows.Forms.Label FeatureCardsLabel3;
+        private System.Windows.Forms.Label FeatureCardsLabel4;
     }
 }
 

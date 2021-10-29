@@ -33,8 +33,8 @@ namespace InformationAgeProject
 		public static Dice dice;
 		public static Player[] playerList;
 		public static MainForm[] playerForms;
-		public static ProjectProgressDeck ProjProgDeck;
-		public static AdditionalProjectFeaturesDeck ProjFeatDeck;
+		public static ProjectProgressDeck ProjProgDeck { get; set; }
+		public static AdditionalProjectFeaturesDeck ProjFeatDeck { get; set; }
 
 		#region GameController Constructor
 		/// <summary>
@@ -92,7 +92,7 @@ namespace InformationAgeProject
 			{
 				playerList[i] = new Player();
 				playerList[i].TeamName = teamNames[i];
-				playerForms[i] = new MainForm(playerList[i], ProjProgDeck, ProjFeatDeck);
+				playerForms[i] = new MainForm(playerList[i]);
 			}
 
 			//Shows first player form for first turn within first round

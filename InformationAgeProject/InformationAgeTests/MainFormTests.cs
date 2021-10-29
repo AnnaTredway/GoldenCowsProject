@@ -41,7 +41,7 @@ namespace InformationAgeTests
 		static Player player = new Player();
 		static ProjectProgressDeck progressDeck = new ProjectProgressDeck();
 		static AdditionalProjectFeaturesDeck additionalDeck = new AdditionalProjectFeaturesDeck();
-		static MainForm mainForm = new MainForm(player, progressDeck, additionalDeck);
+		static MainForm mainForm = new MainForm(player);
 
 		/*
 		/// <summary>
