@@ -35,6 +35,8 @@ namespace InformationAgeTests
         [TestMethod]
         //Arrange
         [DataRow(4, null)]
+        /// <param name="iCardCost">Card cost to be tested</param>
+        /// <param name="expected">Success string value expected of test</param>
         //Should return null because there are not enough resources to claim this card.
         public void ClaimCardTest_NotEnoughResources(int iCardCost, string expected)
         {
@@ -51,6 +53,8 @@ namespace InformationAgeTests
         [TestMethod]
         //Arrange
         [DataRow(4, true)]
+        /// <param name="iCardCost">Card cost to be tested</param>
+        /// <param name="expected">Success bool value expected of test</param>
         //Should expect true because there will be either 1 or 2 items awarded to the player
         public void ClaimCardTest_WithEnoughResources(int iCardCost, bool expected)
         {

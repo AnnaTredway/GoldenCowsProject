@@ -37,6 +37,12 @@ namespace InformationAgeTests
 		[TestMethod]
 		//Arrange
 		[DataRow(4, new string[4] { "a", "b", "c", "d" }, true)]
+		[DataRow(4, new string[4] { "a", "", "c", "" }, false)]
+		[DataRow(5, new string[4] { "a", "b", "c", "d" }, false)]
+		[DataRow(1, new string[4] { "a", "b", "c", "d" }, false)]
+		/// <param name="playerCount">Number of players to be tested</param>
+		/// <param name="teamNames">Array of string names for each of the player teams to be tested</param>
+		/// <param name="expected">Success expected of test</param>
 		public void startGameTest(int playerCount, string[] teamNames, bool expected)
 		{
 			//Act
@@ -48,10 +54,27 @@ namespace InformationAgeTests
 
 		[TestMethod]
 		//Arrange
-		[DataRow(null, new int[4] { 1, 1, 1, 1 }, false)]
-		//[DataRow(new Player(), new int[4] { 0, 0, 0, 0 }, false)]
-		public void calcTasksTest(Player player, int[] devCounts, bool expected)
+		[DataRow(true, new int[4] { 1, 1, 1, 1 }, true)]
+		[DataRow(false, new int[4] { 1, 1, 1, 1 }, false)]
+		[DataRow(true, new int[4] { 0, 0, 0, 0 }, false)]
+		/// <param name="testPlayer">Whether player object to be tested is new Player(true) or is null(false)</param>
+		/// <param name="devCounts">Number of devcounts for each task/resource to be tested</param>
+		/// <param name="expected">Success expected of test</param>
+		public void calcTasksTest(bool testPlayer, int[] devCounts, bool expected)
 		{
+			Player player;
+
+			//Makes player a new Player or null based on if testPlayer is true or false
+			if (testPlayer == true)
+			{
+				player = new Player();
+			}
+			else
+			{
+				player = null;
+
+			}
+
 			//Act
 			bool actual = GameController.calcTasks(player, devCounts);
 
@@ -59,135 +82,146 @@ namespace InformationAgeTests
 			Assert.AreEqual(expected, actual);
 		}
 
-        [TestMethod]
-        public void endTurnTest()
-        {
-            //Instantiate players, their main forms, team names, and a counter to keep track of player turns
-            MainForm[] playerForms = new MainForm[4];
-            int turnCounter = 0;
-            Player[] playerList = new Player[4];
-            playerForms = new MainForm[4];
-            string[] teamNames = { "a", "b", "c", "d" };
+		[TestMethod]
+		public void endTurnTest()
+		{
+			//Instantiate players, their main forms, team names, and a counter to keep track of player turns
+			MainForm[] playerForms = new MainForm[4];
+			int turnCounter = 0;
+			Player[] playerList = new Player[4];
+			playerForms = new MainForm[4];
+			string[] teamNames = { "a", "b", "c", "d" };
 
-            //Creates new master card decks
-            ProjectProgressDeck ProjProgDeck = new ProjectProgressDeck();
-            AdditionalProjectFeaturesDeck ProjFeatDeck = new AdditionalProjectFeaturesDeck();
+			//Activates players, sets their team names, and instantiates their MainForms
+			for (int i = 0; i < 4; i++)
+			{
+				playerList[i] = new Player();
+				playerList[i].TeamName = teamNames[i];
+				playerForms[i] = new MainForm(playerList[i]);
+			}
 
-            //Activates players, sets their team names, and instantiates their MainForms
-            for (int i = 0; i < 4; i++)
-            {
-                playerList[i] = new Player();
-                playerList[i].TeamName = teamNames[i];
-                playerForms[i] = new MainForm(playerList[i], ProjProgDeck, ProjFeatDeck);
-            }
+			//Current form is set to invisible so it is not in the way of the next player
+			playerForms[turnCounter].Visible = false;
 
-            //Current form is set to invisible so it is not in the way of the next player
-            playerForms[turnCounter].Visible = false;
+			//Turn counter goes up by one to move on to next player
+			turnCounter++;
 
-            //Turn counter goes up by one to move on to next player
-            turnCounter++;
+			//Act
+			bool actual;
 
-            //Act
-            bool actual;
+			try
+			{
+				//If there is a player form at the turnCounter index, go to that form
+				playerForms[turnCounter].Visible = true;
+				actual = playerForms[turnCounter].Visible;
+			}
+			catch
+			{
+				//If there is not a player form at the turnCounter index, go back to first player form
+				turnCounter = 0;
+				playerForms[turnCounter].Visible = true;
+				actual = playerForms[turnCounter].Visible;
+			}
 
-            try
-            {
-                //If there is a player form at the turnCounter index, go to that form
-                playerForms[turnCounter].Visible = true;
-                actual = playerForms[turnCounter].Visible;
-            }
-            catch
-            {
-                //If there is not a player form at the turnCounter index, go back to first player form
-                turnCounter = 0;
-                playerForms[turnCounter].Visible = true;
-                actual = playerForms[turnCounter].Visible;
-            }
+			//Assert
+			Assert.AreEqual(true, actual);
+		}
 
-            //Assert
-            Assert.AreEqual(true, actual);
-        }
+		[TestMethod]
+		//Arrange
+		[DataRow(true, 6)]
+		[DataRow(false, -1)]
+		/// <param name="testListBox">Whether listBox object to be tested is new ListBox(true) or is null(false)</param>
+		/// <param name="expected">Expected int value to be returned by calcToolLevelsFromList()</param>
+		public void calcToolLevelsFromListTest(bool testListBox, int expected)
+		{
+			ListBox listBox;
 
-        [TestMethod]
-        [DataRow(null)]
-        public void calcToolLevelsFromListTest(ListBox listBox)
-        {
-            //Add 3 level 2 tools to listBox
-            listBox = new ListBox();
-            listBox.Items.Add(2);
-            listBox.Items.Add(2);
-            listBox.Items.Add(2);
+			//Makes listBox a new ListBox or null based on if testListBox is true or false
+			if (testListBox == true)
+			{
+				//Add 3 level 2 tools to listBox
+				listBox = new ListBox();
+				listBox.Items.Add(2);
+				listBox.Items.Add(2);
+				listBox.Items.Add(2);
+			}
+			else
+			{
+				listBox = null;
+			}
 
-            int expected = 6;
+			//Act
+			int actual = GameController.calcToolLevelsFromList(listBox);
 
-            int actual = GameController.calcToolLevelsFromList(listBox);
+			//Assert
+			Assert.AreEqual(expected, actual);
+		}
 
-            Assert.AreEqual(expected, actual);
-        }
+		[TestMethod]
+		public void openInstructionsTest()
+		{
+			bool actual = true;
 
-        [TestMethod]
-        public void openInstructionsTest()
-        {
-            bool actual = true;
+			//Get the current directory
+			string filePath = Directory.GetCurrentDirectory();
 
-            /**Get the current directory
-            string filePath = Directory.GetCurrentDirectory();
+			//Move up two parent directories
+			filePath = Directory.GetParent(filePath).FullName;
+			filePath = Directory.GetParent(filePath).FullName;
+			filePath = Directory.GetParent(filePath).FullName;
 
-            //Move up two parent directories
-            filePath = Directory.GetParent(filePath).FullName;
-            filePath = Directory.GetParent(filePath).FullName;
+			//Append the location of InstructionSet.txt to filePath
+			filePath += "\\InformationAgeProject\\Files\\InstructionSet.txt";
 
-            //Append the location of InstructionSet.txt to filePath
-            filePath += "/Files/InstructionSet.txt";
+			//Open the file located at filePath (which is InstructionSet.txt
+			Process.Start(filePath);
 
-            //Open the file located at filePath (which is InstructionSet.txt
-            Process.Start(filePath);**/
 
-            GameController.openInstructions();
+			//Get the currently running process
+			Process process = Process.GetCurrentProcess();
 
-            //Get the currently running process
-            Process process = Process.GetCurrentProcess();
+			if (process == null)
+			{
+				actual = false;
+			}
 
-            if (process == null)
-            {
-                actual = false;
-            }
+			//Assert
+			Assert.AreEqual(true, actual);
+		}
 
-            Assert.AreEqual(true, actual);
-        }
+		[TestMethod]
+		public void openAboutBoxTest()
+		{
+			bool actual = true;
 
-        [TestMethod]
-        public void openAboutBoxTest()
-        {
-            bool actual = true;
+			//Opens new AboutBox window for About information
+			AboutBox aboutBox = new AboutBox();
+			aboutBox.Show();
 
-            //Opens new AboutBox window for About information
-            AboutBox aboutBox = new AboutBox();
-            aboutBox.Show();
+			if (aboutBox.Visible != true)
+			{
+				actual = false;
+			}
 
-            if (aboutBox.Visible != true)
-            {
-                actual = false;
-            }
+			Assert.AreEqual(true, actual);
+		}
 
-            Assert.AreEqual(true, actual);
-        }
+		[TestMethod]
+		public void quitGameTest()
+		{
+			bool actual = true;
 
-        [TestMethod]
-        public void quitGameTest()
-        {
-            bool actual = true;
+			//Opens new QuitForm window for prompting user if they want to exit application
+			QuitForm quitForm = new QuitForm();
+			quitForm.Show();
 
-            //Opens new QuitForm window for prompting user if they want to exit application
-            QuitForm quitForm = new QuitForm();
-            quitForm.Show();
+			if (quitForm.Visible != true)
+			{
+				actual = false;
+			}
 
-            if (quitForm.Visible != true)
-            {
-                actual = false;
-            }
-
-            Assert.AreEqual(true, actual);
-        }
-    }
+			Assert.AreEqual(true, actual);
+		}
+	}
 }

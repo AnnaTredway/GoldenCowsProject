@@ -50,17 +50,16 @@ namespace InformationAgeProject
         /// <summary>
         /// Creates an advance card that takes X# amount of resources and how many types are needed.
         /// </summary>
-        /// <param name="reseouceAmountNeeded">The total amount of recourse needed to purchase this card</param>
-        /// <param name="reseouceTypeNeeded">The number of different resource types are needed</param>
-        public ProjectProgress(int reseouceAmountNeeded, int reseouceTypeNeeded)
+        /// <param name="resourceAmountNeeded">The total amount of recourse needed to purchase this card</param>
+        /// <param name="resourceTypeNeeded">The number of different resource types are needed</param>
+        public ProjectProgress(int resourceAmountNeeded, int resourceTypeNeeded)
         {
-            for (int i = 0; i < reseouceAmountNeeded; i++)
+            for (int i = 0; i < resourceAmountNeeded; i++)
             {
                 this.ResourceCost.Add(new Resource());
             }
-            this.iDifferentTypesNeeded = reseouceTypeNeeded;
-        }// end ProjectProgress(int reseouceAmountNeeded, int reseouceTypeNeeded)
-
+            this.iDifferentTypesNeeded = resourceTypeNeeded;
+        }// end ProjectProgress(int resourceAmountNeeded, int resourceTypeNeeded
         /// <summary>
         /// Displays the card.
         /// </summary>
