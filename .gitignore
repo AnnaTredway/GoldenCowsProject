@@ -36,6 +36,7 @@ ipch/
 *.bak
 *.v2
 *.testlog
+*.manifest
 
 #Tools
 _ReSharper.*

@@ -30,7 +30,6 @@ namespace InformationAgeProject
 	public class GameController
 	{
 		public static int turnCounter = 0;
-		public static Dice dice;
 		public static Player[] playerList;
 		public static MainForm[] playerForms;
 		public static ProjectProgressDeck ProjProgDeck { get; set; }
@@ -75,9 +74,6 @@ namespace InformationAgeProject
 					return false;//Main menu stays visible
 				}
 			}
-
-			//Activates Dice instance
-			dice = new Dice();
 
 			//Sets array index counts to playerCount number
 			playerList = new Player[playerCount];
@@ -177,6 +173,7 @@ namespace InformationAgeProject
 			{
 				//Dice is rolled for current player on resources/tasks
 				//(Number of dice rolled is equal to number of developers on specific resource)
+				Dice dice = new Dice();
 				int[] diceVals = new int[4];
 				diceVals[0] = dice.rollDice(devCounts[0]);
 				diceVals[1] = dice.rollDice(devCounts[1]);
@@ -259,7 +256,7 @@ namespace InformationAgeProject
 			filePath = Directory.GetParent(filePath).FullName;
 
 			//Append the location of InstructionSet.txt to filePath
-			filePath += "/Files/InstructionSet.txt";
+			filePath += "\\Files\\InstructionSet.txt";
 
 			//Open the file located at filePath (which is InstructionSet.txt
 			Process.Start(filePath);

@@ -484,16 +484,16 @@ namespace InformationAgeProject
 				scoreBox.Text = score.calculateScore( );
 			}
 		}
-        #endregion
+		#endregion
 
-        #region Additional Project Features Cards
+		#region Additional Project Features Cards
 
-        /// <summary>
-        /// Claims the first feature card available, costs 4 resources
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        private void ClaimFeaturesCard1_Click(object sender, EventArgs e)
+		/// <summary>
+		/// Claims the first feature card available, costs 4 resources
+		/// </summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+		private void ClaimFeaturesCard1_Click(object sender, EventArgs e)
 		{
 			AdditionalProjectFeaturesType[] cards = GameController.ProjFeatDeck.Deck[0].claimCard(4, player.Inventory);
 			Scoring score = new Scoring(player.Inventory);
