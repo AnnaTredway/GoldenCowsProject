@@ -52,6 +52,7 @@
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnLoadGame = new System.Windows.Forms.Button();
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
+            this.btnInstructions = new System.Windows.Forms.Button();
             this.pnlTeamNames.SuspendLayout();
             this.pnlSelectPlayers.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +76,7 @@
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(237, 123);
+            this.lblTitle.Location = new System.Drawing.Point(237, 100);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(326, 51);
             this.lblTitle.TabIndex = 1;
@@ -101,7 +102,7 @@
             this.btnQuit.BackColor = System.Drawing.Color.IndianRed;
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuit.Location = new System.Drawing.Point(300, 269);
+            this.btnQuit.Location = new System.Drawing.Point(300, 315);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(200, 40);
             this.btnQuit.TabIndex = 3;
@@ -112,7 +113,7 @@
             // radio2Players
             // 
             this.radio2Players.AutoSize = true;
-            this.radio2Players.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.radio2Players.BackColor = System.Drawing.Color.Transparent;
             this.radio2Players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio2Players.Location = new System.Drawing.Point(213, 58);
             this.radio2Players.Name = "radio2Players";
@@ -125,7 +126,7 @@
             // radio3Players
             // 
             this.radio3Players.AutoSize = true;
-            this.radio3Players.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.radio3Players.BackColor = System.Drawing.Color.Transparent;
             this.radio3Players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio3Players.Location = new System.Drawing.Point(213, 88);
             this.radio3Players.Name = "radio3Players";
@@ -138,7 +139,7 @@
             // radio4Players
             // 
             this.radio4Players.AutoSize = true;
-            this.radio4Players.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.radio4Players.BackColor = System.Drawing.Color.Transparent;
             this.radio4Players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio4Players.Location = new System.Drawing.Point(213, 118);
             this.radio4Players.Name = "radio4Players";
@@ -150,6 +151,7 @@
             // 
             // btnStartGame
             // 
+            this.btnStartGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStartGame.BackColor = System.Drawing.Color.IndianRed;
             this.btnStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,6 +166,7 @@
             // 
             // btnBack1
             // 
+            this.btnBack1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBack1.BackColor = System.Drawing.Color.IndianRed;
             this.btnBack1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -296,6 +299,7 @@
             // 
             // btnNewGame
             // 
+            this.btnNewGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNewGame.BackColor = System.Drawing.Color.IndianRed;
             this.btnNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -310,6 +314,7 @@
             // 
             // btnLoadGame
             // 
+            this.btnLoadGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLoadGame.BackColor = System.Drawing.Color.IndianRed;
             this.btnLoadGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -324,6 +329,7 @@
             // 
             // btnBackToMainMenu
             // 
+            this.btnBackToMainMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBackToMainMenu.BackColor = System.Drawing.Color.IndianRed;
             this.btnBackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -336,12 +342,27 @@
             this.btnBackToMainMenu.Visible = false;
             this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
+            // btnInstructions
+            // 
+            this.btnInstructions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnInstructions.BackColor = System.Drawing.Color.IndianRed;
+            this.btnInstructions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstructions.Location = new System.Drawing.Point(300, 269);
+            this.btnInstructions.Name = "btnInstructions";
+            this.btnInstructions.Size = new System.Drawing.Size(200, 40);
+            this.btnInstructions.TabIndex = 24;
+            this.btnInstructions.Text = "Instructions";
+            this.btnInstructions.UseVisualStyleBackColor = false;
+            this.btnInstructions.Click += new System.EventHandler(this.btnInstructions_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnInstructions);
             this.Controls.Add(this.btnBackToMainMenu);
             this.Controls.Add(this.btnBack1);
             this.Controls.Add(this.btnStartGame);
@@ -350,14 +371,16 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnPlayGame);
             this.Controls.Add(this.pnlTeamNames);
-            this.Controls.Add(this.pnlSelectPlayers);
             this.Controls.Add(this.btnLoadGame);
             this.Controls.Add(this.btnNewGame);
+            this.Controls.Add(this.pnlSelectPlayers);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Information Age - Main Menu";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.pnlTeamNames.ResumeLayout(false);
             this.pnlTeamNames.PerformLayout();
             this.pnlSelectPlayers.ResumeLayout(false);
@@ -392,5 +415,6 @@
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.Button btnLoadGame;
         private System.Windows.Forms.Button btnBackToMainMenu;
+        private System.Windows.Forms.Button btnInstructions;
     }
 }

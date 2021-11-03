@@ -32,6 +32,29 @@ namespace InformationAgeProject
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Event Handler for handling when OptionsForm loads
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void OptionsForm_Load(object sender, EventArgs e)
+        {
+            //Sets every control on the form to invisible
+            foreach (Control control in Controls)
+            {
+                control.Visible = false;
+            }
+
+            //Sets every control on main options screen to visible
+            lblOptions.Visible = true;
+            btnGraphics.Visible = true;
+            btnSound.Visible = true;
+            btnBackToMainMenu.Visible = true;
+            btnResetGraphics.Visible = true;
+            btnResetSound.Visible = true;
+        }
+
         /// <summary>
         /// Event Handler for button to go to graphics options screen
         /// </summary>
@@ -39,7 +62,19 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnGraphics_Click(object sender, EventArgs e)
         {
+            //Sets every control on the form to invisible
+            foreach (Control control in Controls)
+            {
+                control.Visible = false;
+            }
 
+            //Sets every control on graphics options screen to visible
+            lblGraphics.Visible = true;
+            btnBackColor.Visible = true;
+            btnButtonColor.Visible = true;
+            btnBack.Visible = true;
+            btnResetGraphics.Visible = true;
+            btnResetSound.Visible = true;
         }
 
         /// <summary>
@@ -49,19 +84,43 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnSound_Click(object sender, EventArgs e)
         {
+            //Sets every control on the form to invisible
+            foreach (Control control in Controls)
+            {
+                control.Visible = false;
+            }
 
+            //Sets every control on sound options screen to visible
+            lblSound.Visible = true;
+
+            btnBack.Visible = true;
+            btnResetGraphics.Visible = true;
+            btnResetSound.Visible = true;
         }
 
+        #region Graphics Options Buttons
         /// <summary>
-        /// Event Handler for button to go back to main menu
+        /// Event Handler for button to change background color in program
         /// </summary>
         /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
-        private void btnBackToMenu_Click(object sender, EventArgs e)
+        private void btnBackColor_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Event Handler for button to change button color in program
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void btnButtonColor_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region Reset Buttons
         /// <summary>
         /// Event Handler for button to reset graphics options back to default
         /// </summary>
@@ -81,5 +140,41 @@ namespace InformationAgeProject
         {
 
         }
+        #endregion
+
+        #region Back Buttons
+        /// <summary>
+        /// Event Handler for button to go back to main menu
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void btnBackToMainMenu_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        /// <summary>
+        /// Event Handler for button to go back to main options screen
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            //Sets every control on the form to invisible
+            foreach (Control control in Controls)
+            {
+                control.Visible = false;
+            }
+
+            //Sets every control on main options screen to visible
+            lblOptions.Visible = true;
+            btnGraphics.Visible = true;
+            btnSound.Visible = true;
+            btnBackToMainMenu.Visible = true;
+            btnResetGraphics.Visible = true;
+            btnResetSound.Visible = true;
+        }
+        #endregion
+
     }
 }
