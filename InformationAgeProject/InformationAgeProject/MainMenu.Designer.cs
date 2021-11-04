@@ -304,6 +304,7 @@
             // 
             // pnlTeamNames
             // 
+            this.pnlTeamNames.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlTeamNames.Controls.Add(this.lblPlayer4Team);
             this.pnlTeamNames.Controls.Add(this.lblPlayer1Team);
             this.pnlTeamNames.Controls.Add(this.rtxtTeamName2);
@@ -320,6 +321,7 @@
             // 
             // pnlSelectPlayers
             // 
+            this.pnlSelectPlayers.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlSelectPlayers.Controls.Add(this.lblPlayers);
             this.pnlSelectPlayers.Controls.Add(this.radio2Players);
             this.pnlSelectPlayers.Controls.Add(this.radio3Players);
