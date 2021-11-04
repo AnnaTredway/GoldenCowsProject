@@ -29,6 +29,7 @@ namespace InformationAgeProject
 	/// </summary>
 	public class GameController
 	{
+		public static MainMenu mainMenu;
 		public static int turnCounter = 0;
 		public static Player[] playerList;
 		public static MainForm[] playerForms;
@@ -40,6 +41,22 @@ namespace InformationAgeProject
 		/// Private Constructor for GameController 
 		/// </summary>
 		private GameController() { }
+		#endregion
+
+		#region openGame() Method
+		/// <summary>
+		/// Method for opening game to main menu on startup
+		/// </summary>
+		public static void openGame()
+		{
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+
+			//Opens application to main menu
+			mainMenu = new MainMenu();
+			Application.Run(mainMenu);
+
+		}//end openGame()
 		#endregion
 
 		#region startGame() Method
@@ -264,7 +281,7 @@ namespace InformationAgeProject
 		}//end openInstructions()
 		#endregion
 
-		#region openAbout() Method
+		#region openAboutBox() Method
 		/// <summary>
 		/// Method for opening about information within AboutBox for game
 		/// </summary>
@@ -274,18 +291,60 @@ namespace InformationAgeProject
 			AboutBox aboutBox = new AboutBox();
 			aboutBox.Show();
 
-		}//end openAbout()
+		}//end openAboutBox()
 		#endregion
 
-		#region quitGame() Method
+		#region openQuitToMenuForm() Method
 		/// <summary>
-		/// Method for opening QuitForm to prompt user to quit game or not
+		/// Method for opening QuitToMenuForm to prompt user to quit game to main menu
 		/// </summary>
-		public static void quitGame()
+		public static void openQuitToMenuForm()
+		{
+			//Opens new QuitToMenuForm window for prompting user if they want to exit application
+			QuitToMenuForm quitToMenuForm = new QuitToMenuForm();
+			quitToMenuForm.Show();
+
+		}//end openQuitToMenuForm()
+		#endregion
+
+		#region quitToMainMenu() Method
+		/// <summary>
+		/// Method for quitting game to go back to main menu
+		/// </summary>
+		public static void quitToMainMenu()
+		{
+			//Closes each mainform before going back to main menu
+			foreach (MainForm form in playerForms)
+			{
+				form.Dispose();
+			}
+
+			//Shows main menu
+			mainMenu.Show();
+
+		}//end quitToMainMenu()
+		#endregion
+
+		#region openQuitForm() Method
+		/// <summary>
+		/// Method for opening QuitForm to prompt user to quit game entirely or not
+		/// </summary>
+		public static void openQuitForm()
 		{
 			//Opens new QuitForm window for prompting user if they want to exit application
 			QuitForm quitForm = new QuitForm();
 			quitForm.Show();
+
+		}//end openQuitForm()
+		#endregion
+
+		#region quitGame() Method
+		/// <summary>
+		/// Method for quitting game application entirely
+		/// </summary>
+		public static void quitGame()
+		{
+			Application.Exit();
 
 		}//end quitGame()
 		#endregion

@@ -589,72 +589,6 @@ namespace InformationAgeProject
 		}
 		#endregion
 
-		#region Menubar Dropdown Menu Buttons
-		/// <summary>
-		/// Event Handler for Save dropdown menu button to save current game
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		/// <summary>
-		/// Event Handler for Statistics dropdown menu button to view the inventory, tools, etc. of all players
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		/// <summary>
-		/// Method: btnInstructions_Click opens the Instructionset.txt file upon clicking
-		/// the btnInstructions button on the main form
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void btnInstructionsMenuItem_Click(object sender, EventArgs e)
-		{
-			//Opens game instructions
-			GameController.openInstructions();
-		}
-
-		/// <summary>
-		/// Event Handler for dropdown menu button to open "about" windows form
-		/// </summary>
-		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
-		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnAboutMenuItem_Click(object sender, EventArgs e)
-		{
-			//Opens AboutBox with information about the game
-			GameController.openAboutBox();
-		}
-
-		/// <summary>
-		/// Event Handler for dropdown menu button to quit to main menu
-		/// </summary>
-		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
-		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnQuitToMenuMenuItem_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		/// <summary>
-		/// Event Handler for dropdown menu button to open "are you sure you want to quit?" windows form
-		/// </summary>
-		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
-		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnQuitToDesktopMenuItem_Click(object sender, EventArgs e)
-		{
-			//Opens QuitForm to prompt user to quit game or not
-			GameController.quitGame();
-		}
-		#endregion
-
 		#region EndTurn Button
 		/// <summary>
 		/// Event Handler for EndTurn button to go to next player's turn
@@ -668,6 +602,75 @@ namespace InformationAgeProject
 
 			//Ends current player's turn and goes to next player's turn
 			GameController.endTurn();
+		}
+		#endregion
+
+		#region Menu Dropdown Buttons
+		/// <summary>
+		/// Event Handler for Save dropdown menu button to save current game
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		/// <summary>
+		/// Event Handler for dropdown menu button to quit to main menu
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnQuitToMenuMenuItem_Click(object sender, EventArgs e)
+		{
+			//Opens QuitToMenuForm to prompt user to quit game to main menu or not
+			GameController.openQuitToMenuForm();
+		}
+
+		/// <summary>
+		/// Event Handler for dropdown menu button to open "are you sure you want to quit?" windows form
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnQuitToDesktopMenuItem_Click(object sender, EventArgs e)
+		{
+			//Opens QuitForm to prompt user to quit game entirely or not
+			GameController.openQuitForm();
+		}
+		#endregion
+
+		#region Help Dropdown Buttons
+		/// <summary>
+		/// Event Handler for Statistics dropdown menu button to view the inventory, tools, etc. of all players
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		/// <summary>
+		/// Method: instructionsToolStripMenuItem_Click opens the Instructionset.txt file upon clicking
+		/// the btnInstructions button on the main form
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			//Opens game instructions
+			GameController.openInstructions();
+		}
+
+		/// <summary>
+		/// Event Handler for dropdown menu button to open "about" windows form
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			//Opens AboutBox with information about the game
+			GameController.openAboutBox();
 		}
 		#endregion
 	}

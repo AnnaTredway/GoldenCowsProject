@@ -196,10 +196,13 @@
             // btnDone
             // 
             this.btnDone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDone.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDone.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnDone.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnDone.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnDone.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDone.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnDone.Location = new System.Drawing.Point(498, 236);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(114, 33);
@@ -308,10 +311,13 @@
             // btnReset
             // 
             this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReset.BackColor = System.Drawing.Color.IndianRed;
+            this.btnReset.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnReset.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnReset.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnReset.Location = new System.Drawing.Point(239, 236);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(111, 33);
@@ -325,7 +331,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(624, 281);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.diceImage4);
@@ -347,6 +353,7 @@
             this.Controls.Add(this.lblLow);
             this.Controls.Add(this.lblBacklog);
             this.Controls.Add(this.toolsPictureBox);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "FormsBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ToolTaskPrompt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

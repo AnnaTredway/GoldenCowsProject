@@ -41,14 +41,19 @@ namespace InformationAgeProject
             this.lblGraphics = new System.Windows.Forms.Label();
             this.lblSound = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnChangeButtonTextColor = new System.Windows.Forms.Button();
+            this.btnChangeTextColor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGraphics
             // 
             this.btnGraphics.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGraphics.BackColor = System.Drawing.Color.IndianRed;
+            this.btnGraphics.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnGraphics.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnGraphics.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnGraphics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGraphics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraphics.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnGraphics.Location = new System.Drawing.Point(197, 205);
             this.btnGraphics.Name = "btnGraphics";
             this.btnGraphics.Size = new System.Drawing.Size(200, 40);
@@ -60,9 +65,12 @@ namespace InformationAgeProject
             // btnSound
             // 
             this.btnSound.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSound.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSound.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnSound.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnSound.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSound.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnSound.Location = new System.Drawing.Point(403, 205);
             this.btnSound.Name = "btnSound";
             this.btnSound.Size = new System.Drawing.Size(200, 40);
@@ -75,7 +83,9 @@ namespace InformationAgeProject
             // 
             this.lblOptions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblOptions.AutoSize = true;
+            this.lblOptions.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOptions.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblOptions.Location = new System.Drawing.Point(315, 120);
             this.lblOptions.Name = "lblOptions";
             this.lblOptions.Size = new System.Drawing.Size(171, 51);
@@ -85,9 +95,12 @@ namespace InformationAgeProject
             // btnBackToMainMenu
             // 
             this.btnBackToMainMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBackToMainMenu.BackColor = System.Drawing.Color.IndianRed;
+            this.btnBackToMainMenu.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnBackToMainMenu.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnBackToMainMenu.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnBackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToMainMenu.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnBackToMainMenu.Location = new System.Drawing.Point(300, 398);
             this.btnBackToMainMenu.Name = "btnBackToMainMenu";
             this.btnBackToMainMenu.Size = new System.Drawing.Size(200, 40);
@@ -102,6 +115,7 @@ namespace InformationAgeProject
             this.btnResetSound.BackColor = System.Drawing.Color.IndianRed;
             this.btnResetSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetSound.ForeColor = System.Drawing.Color.Black;
             this.btnResetSound.Location = new System.Drawing.Point(638, 408);
             this.btnResetSound.Name = "btnResetSound";
             this.btnResetSound.Size = new System.Drawing.Size(150, 30);
@@ -116,6 +130,7 @@ namespace InformationAgeProject
             this.btnResetGraphics.BackColor = System.Drawing.Color.IndianRed;
             this.btnResetGraphics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetGraphics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetGraphics.ForeColor = System.Drawing.Color.Black;
             this.btnResetGraphics.Location = new System.Drawing.Point(638, 372);
             this.btnResetGraphics.Name = "btnResetGraphics";
             this.btnResetGraphics.Size = new System.Drawing.Size(150, 30);
@@ -127,9 +142,12 @@ namespace InformationAgeProject
             // btnBackColor
             // 
             this.btnBackColor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBackColor.BackColor = System.Drawing.Color.IndianRed;
+            this.btnBackColor.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnBackColor.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnBackColor.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnBackColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackColor.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnBackColor.Location = new System.Drawing.Point(295, 205);
             this.btnBackColor.Name = "btnBackColor";
             this.btnBackColor.Size = new System.Drawing.Size(210, 40);
@@ -141,10 +159,13 @@ namespace InformationAgeProject
             // btnButtonColor
             // 
             this.btnButtonColor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnButtonColor.BackColor = System.Drawing.Color.IndianRed;
+            this.btnButtonColor.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnButtonColor.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnButtonColor.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnButtonColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnButtonColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnButtonColor.Location = new System.Drawing.Point(295, 251);
+            this.btnButtonColor.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
+            this.btnButtonColor.Location = new System.Drawing.Point(295, 297);
             this.btnButtonColor.Name = "btnButtonColor";
             this.btnButtonColor.Size = new System.Drawing.Size(210, 40);
             this.btnButtonColor.TabIndex = 13;
@@ -156,7 +177,9 @@ namespace InformationAgeProject
             // 
             this.lblGraphics.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGraphics.AutoSize = true;
+            this.lblGraphics.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblGraphics.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGraphics.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblGraphics.Location = new System.Drawing.Point(223, 120);
             this.lblGraphics.Name = "lblGraphics";
             this.lblGraphics.Size = new System.Drawing.Size(355, 51);
@@ -167,7 +190,9 @@ namespace InformationAgeProject
             // 
             this.lblSound.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSound.AutoSize = true;
+            this.lblSound.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSound.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblSound.Location = new System.Drawing.Point(247, 120);
             this.lblSound.Name = "lblSound";
             this.lblSound.Size = new System.Drawing.Size(307, 51);
@@ -177,9 +202,12 @@ namespace InformationAgeProject
             // btnBack
             // 
             this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBack.BackColor = System.Drawing.Color.IndianRed;
+            this.btnBack.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnBack.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnBack.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnBack.Location = new System.Drawing.Point(300, 398);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(200, 40);
@@ -188,12 +216,48 @@ namespace InformationAgeProject
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnChangeButtonTextColor
+            // 
+            this.btnChangeButtonTextColor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChangeButtonTextColor.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnChangeButtonTextColor.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnChangeButtonTextColor.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnChangeButtonTextColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeButtonTextColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeButtonTextColor.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
+            this.btnChangeButtonTextColor.Location = new System.Drawing.Point(295, 343);
+            this.btnChangeButtonTextColor.Name = "btnChangeButtonTextColor";
+            this.btnChangeButtonTextColor.Size = new System.Drawing.Size(210, 40);
+            this.btnChangeButtonTextColor.TabIndex = 17;
+            this.btnChangeButtonTextColor.Text = "Change Button Text Color";
+            this.btnChangeButtonTextColor.UseVisualStyleBackColor = false;
+            this.btnChangeButtonTextColor.Click += new System.EventHandler(this.btnChangeButtonTextColor_Click);
+            // 
+            // btnChangeTextColor
+            // 
+            this.btnChangeTextColor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChangeTextColor.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnChangeTextColor.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnChangeTextColor.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnChangeTextColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeTextColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeTextColor.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
+            this.btnChangeTextColor.Location = new System.Drawing.Point(295, 251);
+            this.btnChangeTextColor.Name = "btnChangeTextColor";
+            this.btnChangeTextColor.Size = new System.Drawing.Size(210, 40);
+            this.btnChangeTextColor.TabIndex = 18;
+            this.btnChangeTextColor.Text = "Change Text Color";
+            this.btnChangeTextColor.UseVisualStyleBackColor = false;
+            this.btnChangeTextColor.Click += new System.EventHandler(this.btnChangeTextColor_Click);
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnChangeTextColor);
+            this.Controls.Add(this.btnChangeButtonTextColor);
             this.Controls.Add(this.btnResetGraphics);
             this.Controls.Add(this.btnResetSound);
             this.Controls.Add(this.btnBackToMainMenu);
@@ -205,6 +269,7 @@ namespace InformationAgeProject
             this.Controls.Add(this.lblSound);
             this.Controls.Add(this.lblGraphics);
             this.Controls.Add(this.btnBack);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "FormsBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OptionsForm";
@@ -229,5 +294,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.Label lblGraphics;
         private System.Windows.Forms.Label lblSound;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnChangeButtonTextColor;
+        private System.Windows.Forms.Button btnChangeTextColor;
     }
 }

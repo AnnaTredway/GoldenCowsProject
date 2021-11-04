@@ -22,5 +22,53 @@ namespace InformationAgeProject.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightSkyBlue")]
+        public global::System.Drawing.Color FormsBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["FormsBackgroundColor"]));
+            }
+            set {
+                this["FormsBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color FormsTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["FormsTextColor"]));
+            }
+            set {
+                this["FormsTextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("IndianRed")]
+        public global::System.Drawing.Color ButtonBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ButtonBackgroundColor"]));
+            }
+            set {
+                this["ButtonBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color ButtonTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["ButtonTextColor"]));
+            }
+            set {
+                this["ButtonTextColor"] = value;
+            }
+        }
     }
 }

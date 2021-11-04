@@ -32,10 +32,7 @@ namespace InformationAgeProject
         [STAThread]
         static void Main()
         {
-          Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu());
-
+            GameController.openGame();
         }//end Main()
 
     }//end Driver class

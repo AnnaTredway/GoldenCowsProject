@@ -69,11 +69,12 @@ namespace InformationAgeProject
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnInstructionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuitToMenuMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuitToDesktopMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblInventory = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.ProjectProgressCard1 = new System.Windows.Forms.TextBox();
@@ -165,10 +166,13 @@ namespace InformationAgeProject
             // btnAddBacklog
             // 
             this.btnAddBacklog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddBacklog.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAddBacklog.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnAddBacklog.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnAddBacklog.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnAddBacklog.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddBacklog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBacklog.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnAddBacklog.Location = new System.Drawing.Point(903, 73);
             this.btnAddBacklog.Name = "btnAddBacklog";
             this.btnAddBacklog.Size = new System.Drawing.Size(25, 25);
@@ -180,10 +184,13 @@ namespace InformationAgeProject
             // btnSubtBacklog
             // 
             this.btnSubtBacklog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubtBacklog.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubtBacklog.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnSubtBacklog.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnSubtBacklog.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnSubtBacklog.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubtBacklog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtBacklog.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnSubtBacklog.Location = new System.Drawing.Point(903, 102);
             this.btnSubtBacklog.Name = "btnSubtBacklog";
             this.btnSubtBacklog.Size = new System.Drawing.Size(25, 25);
@@ -195,10 +202,13 @@ namespace InformationAgeProject
             // btnAddLow
             // 
             this.btnAddLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddLow.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAddLow.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnAddLow.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnAddLow.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnAddLow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddLow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddLow.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnAddLow.Location = new System.Drawing.Point(997, 73);
             this.btnAddLow.Name = "btnAddLow";
             this.btnAddLow.Size = new System.Drawing.Size(25, 25);
@@ -210,10 +220,13 @@ namespace InformationAgeProject
             // btnSubtLow
             // 
             this.btnSubtLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubtLow.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubtLow.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnSubtLow.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnSubtLow.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnSubtLow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubtLow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtLow.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnSubtLow.Location = new System.Drawing.Point(997, 102);
             this.btnSubtLow.Name = "btnSubtLow";
             this.btnSubtLow.Size = new System.Drawing.Size(25, 25);
@@ -225,10 +238,13 @@ namespace InformationAgeProject
             // btnAddMed
             // 
             this.btnAddMed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddMed.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAddMed.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnAddMed.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnAddMed.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnAddMed.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMed.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnAddMed.Location = new System.Drawing.Point(1092, 70);
             this.btnAddMed.Name = "btnAddMed";
             this.btnAddMed.Size = new System.Drawing.Size(25, 25);
@@ -240,10 +256,13 @@ namespace InformationAgeProject
             // btnSubtMed
             // 
             this.btnSubtMed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubtMed.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubtMed.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnSubtMed.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnSubtMed.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnSubtMed.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubtMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtMed.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnSubtMed.Location = new System.Drawing.Point(1092, 101);
             this.btnSubtMed.Name = "btnSubtMed";
             this.btnSubtMed.Size = new System.Drawing.Size(25, 25);
@@ -255,10 +274,13 @@ namespace InformationAgeProject
             // btnAddHigh
             // 
             this.btnAddHigh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddHigh.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAddHigh.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnAddHigh.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnAddHigh.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnAddHigh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddHigh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddHigh.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnAddHigh.Location = new System.Drawing.Point(1187, 73);
             this.btnAddHigh.Name = "btnAddHigh";
             this.btnAddHigh.Size = new System.Drawing.Size(25, 25);
@@ -270,10 +292,13 @@ namespace InformationAgeProject
             // btnSubtHigh
             // 
             this.btnSubtHigh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubtHigh.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSubtHigh.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnSubtHigh.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnSubtHigh.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnSubtHigh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubtHigh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubtHigh.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnSubtHigh.Location = new System.Drawing.Point(1187, 102);
             this.btnSubtHigh.Name = "btnSubtHigh";
             this.btnSubtHigh.Size = new System.Drawing.Size(25, 25);
@@ -285,10 +310,13 @@ namespace InformationAgeProject
             // btnDoTasks
             // 
             this.btnDoTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDoTasks.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDoTasks.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnDoTasks.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnDoTasks.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnDoTasks.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDoTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoTasks.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnDoTasks.Location = new System.Drawing.Point(871, 147);
             this.btnDoTasks.Name = "btnDoTasks";
             this.btnDoTasks.Size = new System.Drawing.Size(381, 33);
@@ -399,7 +427,8 @@ namespace InformationAgeProject
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Firebrick;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
+            this.menuToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -410,9 +439,6 @@ namespace InformationAgeProject
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
-            this.statisticsToolStripMenuItem,
-            this.btnInstructionsMenuItem,
-            this.btnAboutMenuItem,
             this.btnQuitToMenuMenuItem,
             this.btnQuitToDesktopMenuItem});
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -428,27 +454,6 @@ namespace InformationAgeProject
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
-            // statisticsToolStripMenuItem
-            // 
-            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.statisticsToolStripMenuItem.Text = "Statistics";
-            this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
-            // 
-            // btnInstructionsMenuItem
-            // 
-            this.btnInstructionsMenuItem.Name = "btnInstructionsMenuItem";
-            this.btnInstructionsMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.btnInstructionsMenuItem.Text = "Instructions";
-            this.btnInstructionsMenuItem.Click += new System.EventHandler(this.btnInstructionsMenuItem_Click);
-            // 
-            // btnAboutMenuItem
-            // 
-            this.btnAboutMenuItem.Name = "btnAboutMenuItem";
-            this.btnAboutMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.btnAboutMenuItem.Text = "About";
-            this.btnAboutMenuItem.Click += new System.EventHandler(this.btnAboutMenuItem_Click);
-            // 
             // btnQuitToMenuMenuItem
             // 
             this.btnQuitToMenuMenuItem.Name = "btnQuitToMenuMenuItem";
@@ -463,11 +468,45 @@ namespace InformationAgeProject
             this.btnQuitToDesktopMenuItem.Text = "Quit to Desktop";
             this.btnQuitToDesktopMenuItem.Click += new System.EventHandler(this.btnQuitToDesktopMenuItem_Click);
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statisticsToolStripMenuItem1,
+            this.instructionsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // statisticsToolStripMenuItem1
+            // 
+            this.statisticsToolStripMenuItem1.Name = "statisticsToolStripMenuItem1";
+            this.statisticsToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.statisticsToolStripMenuItem1.Text = "Statistics";
+            this.statisticsToolStripMenuItem1.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
+            // 
+            // instructionsToolStripMenuItem
+            // 
+            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.instructionsToolStripMenuItem.Text = "Instructions";
+            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // lblInventory
             // 
             this.lblInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInventory.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblInventory.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInventory.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblInventory.Location = new System.Drawing.Point(872, 184);
             this.lblInventory.Name = "lblInventory";
             this.lblInventory.Size = new System.Drawing.Size(381, 35);
@@ -479,7 +518,9 @@ namespace InformationAgeProject
             // 
             this.lblScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblScore.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblScore.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblScore.Location = new System.Drawing.Point(872, 321);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(381, 36);
@@ -538,45 +579,65 @@ namespace InformationAgeProject
             // ClaimProgressCard1
             // 
             this.ClaimProgressCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimProgressCard1.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.ClaimProgressCard1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimProgressCard1.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimProgressCard1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClaimProgressCard1.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.ClaimProgressCard1.Location = new System.Drawing.Point(39, 651);
             this.ClaimProgressCard1.Name = "ClaimProgressCard1";
             this.ClaimProgressCard1.Size = new System.Drawing.Size(75, 23);
             this.ClaimProgressCard1.TabIndex = 43;
             this.ClaimProgressCard1.Text = "Claim Card";
-            this.ClaimProgressCard1.UseVisualStyleBackColor = true;
+            this.ClaimProgressCard1.UseVisualStyleBackColor = false;
             this.ClaimProgressCard1.Click += new System.EventHandler(this.ClaimProgressCard1_Click);
             // 
             // ClaimProgressCard2
             // 
             this.ClaimProgressCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimProgressCard2.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.ClaimProgressCard2.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimProgressCard2.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimProgressCard2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClaimProgressCard2.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.ClaimProgressCard2.Location = new System.Drawing.Point(179, 651);
             this.ClaimProgressCard2.Name = "ClaimProgressCard2";
             this.ClaimProgressCard2.Size = new System.Drawing.Size(75, 23);
             this.ClaimProgressCard2.TabIndex = 44;
             this.ClaimProgressCard2.Text = "Claim Card";
-            this.ClaimProgressCard2.UseVisualStyleBackColor = true;
+            this.ClaimProgressCard2.UseVisualStyleBackColor = false;
             this.ClaimProgressCard2.Click += new System.EventHandler(this.ClaimProgressCard2_Click);
             // 
             // ClaimProgressCard3
             // 
             this.ClaimProgressCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimProgressCard3.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.ClaimProgressCard3.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimProgressCard3.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimProgressCard3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClaimProgressCard3.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.ClaimProgressCard3.Location = new System.Drawing.Point(313, 651);
             this.ClaimProgressCard3.Name = "ClaimProgressCard3";
             this.ClaimProgressCard3.Size = new System.Drawing.Size(75, 23);
             this.ClaimProgressCard3.TabIndex = 45;
             this.ClaimProgressCard3.Text = "Claim Card";
-            this.ClaimProgressCard3.UseVisualStyleBackColor = true;
+            this.ClaimProgressCard3.UseVisualStyleBackColor = false;
             this.ClaimProgressCard3.Click += new System.EventHandler(this.ClaimProgressCard3_Click);
             // 
             // ClaimProgressCard4
             // 
             this.ClaimProgressCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimProgressCard4.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.ClaimProgressCard4.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimProgressCard4.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimProgressCard4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClaimProgressCard4.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.ClaimProgressCard4.Location = new System.Drawing.Point(448, 651);
             this.ClaimProgressCard4.Name = "ClaimProgressCard4";
             this.ClaimProgressCard4.Size = new System.Drawing.Size(75, 23);
             this.ClaimProgressCard4.TabIndex = 46;
             this.ClaimProgressCard4.Text = "Claim Card";
-            this.ClaimProgressCard4.UseVisualStyleBackColor = true;
+            this.ClaimProgressCard4.UseVisualStyleBackColor = false;
             this.ClaimProgressCard4.Click += new System.EventHandler(this.ClaimProgressCard4_Click);
             // 
             // toolSlot1
@@ -711,45 +772,65 @@ namespace InformationAgeProject
             // ClaimFeaturesCard4
             // 
             this.ClaimFeaturesCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimFeaturesCard4.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.ClaimFeaturesCard4.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimFeaturesCard4.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimFeaturesCard4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClaimFeaturesCard4.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.ClaimFeaturesCard4.Location = new System.Drawing.Point(448, 477);
             this.ClaimFeaturesCard4.Name = "ClaimFeaturesCard4";
             this.ClaimFeaturesCard4.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard4.TabIndex = 68;
             this.ClaimFeaturesCard4.Text = "Claim Card";
-            this.ClaimFeaturesCard4.UseVisualStyleBackColor = true;
+            this.ClaimFeaturesCard4.UseVisualStyleBackColor = false;
             this.ClaimFeaturesCard4.Click += new System.EventHandler(this.ClaimFeaturesCard4_Click);
             // 
             // ClaimFeaturesCard3
             // 
             this.ClaimFeaturesCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimFeaturesCard3.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.ClaimFeaturesCard3.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimFeaturesCard3.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimFeaturesCard3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClaimFeaturesCard3.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.ClaimFeaturesCard3.Location = new System.Drawing.Point(313, 477);
             this.ClaimFeaturesCard3.Name = "ClaimFeaturesCard3";
             this.ClaimFeaturesCard3.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard3.TabIndex = 67;
             this.ClaimFeaturesCard3.Text = "Claim Card";
-            this.ClaimFeaturesCard3.UseVisualStyleBackColor = true;
+            this.ClaimFeaturesCard3.UseVisualStyleBackColor = false;
             this.ClaimFeaturesCard3.Click += new System.EventHandler(this.ClaimFeaturesCard3_Click);
             // 
             // ClaimFeaturesCard2
             // 
             this.ClaimFeaturesCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimFeaturesCard2.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.ClaimFeaturesCard2.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimFeaturesCard2.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimFeaturesCard2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClaimFeaturesCard2.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.ClaimFeaturesCard2.Location = new System.Drawing.Point(179, 477);
             this.ClaimFeaturesCard2.Name = "ClaimFeaturesCard2";
             this.ClaimFeaturesCard2.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard2.TabIndex = 66;
             this.ClaimFeaturesCard2.Text = "Claim Card";
-            this.ClaimFeaturesCard2.UseVisualStyleBackColor = true;
+            this.ClaimFeaturesCard2.UseVisualStyleBackColor = false;
             this.ClaimFeaturesCard2.Click += new System.EventHandler(this.ClaimFeaturesCard2_Click);
             // 
             // ClaimFeaturesCard1
             // 
             this.ClaimFeaturesCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ClaimFeaturesCard1.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.ClaimFeaturesCard1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimFeaturesCard1.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ClaimFeaturesCard1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClaimFeaturesCard1.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.ClaimFeaturesCard1.Location = new System.Drawing.Point(39, 477);
             this.ClaimFeaturesCard1.Name = "ClaimFeaturesCard1";
             this.ClaimFeaturesCard1.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard1.TabIndex = 65;
             this.ClaimFeaturesCard1.Text = "Claim Card";
-            this.ClaimFeaturesCard1.UseVisualStyleBackColor = true;
+            this.ClaimFeaturesCard1.UseVisualStyleBackColor = false;
             this.ClaimFeaturesCard1.Click += new System.EventHandler(this.ClaimFeaturesCard1_Click);
             // 
             // AdditionalFeaturesTextBox4
@@ -802,58 +883,83 @@ namespace InformationAgeProject
             // 
             // btnEndTurn
             // 
-            this.btnEndTurn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEndTurn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEndTurn.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnEndTurn.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnEndTurn.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnEndTurn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEndTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEndTurn.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnEndTurn.Location = new System.Drawing.Point(1022, 628);
             this.btnEndTurn.Name = "btnEndTurn";
             this.btnEndTurn.Size = new System.Drawing.Size(117, 41);
             this.btnEndTurn.TabIndex = 69;
             this.btnEndTurn.Text = "End Turn";
-            this.btnEndTurn.UseVisualStyleBackColor = true;
+            this.btnEndTurn.UseVisualStyleBackColor = false;
             this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
             // 
             // FeatureCardsCostLable
             // 
+            this.FeatureCardsCostLable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FeatureCardsCostLable.AutoSize = true;
+            this.FeatureCardsCostLable.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.FeatureCardsCostLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FeatureCardsCostLable.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.FeatureCardsCostLable.Location = new System.Drawing.Point(12, 295);
             this.FeatureCardsCostLable.Name = "FeatureCardsCostLable";
-            this.FeatureCardsCostLable.Size = new System.Drawing.Size(56, 13);
+            this.FeatureCardsCostLable.Size = new System.Drawing.Size(84, 20);
             this.FeatureCardsCostLable.TabIndex = 70;
             this.FeatureCardsCostLable.Text = "Card Cost:";
             // 
             // FeatureCardsLabel1
             // 
+            this.FeatureCardsLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FeatureCardsLabel1.AutoSize = true;
-            this.FeatureCardsLabel1.Location = new System.Drawing.Point(36, 321);
+            this.FeatureCardsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.FeatureCardsLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FeatureCardsLabel1.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
+            this.FeatureCardsLabel1.Location = new System.Drawing.Point(12, 321);
             this.FeatureCardsLabel1.Name = "FeatureCardsLabel1";
-            this.FeatureCardsLabel1.Size = new System.Drawing.Size(88, 13);
+            this.FeatureCardsLabel1.Size = new System.Drawing.Size(130, 20);
             this.FeatureCardsLabel1.TabIndex = 71;
             this.FeatureCardsLabel1.Text = "Any 4 Resources";
             // 
             // FeatureCardsLabel2
             // 
+            this.FeatureCardsLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FeatureCardsLabel2.AutoSize = true;
-            this.FeatureCardsLabel2.Location = new System.Drawing.Point(166, 321);
+            this.FeatureCardsLabel2.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.FeatureCardsLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FeatureCardsLabel2.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
+            this.FeatureCardsLabel2.Location = new System.Drawing.Point(148, 321);
             this.FeatureCardsLabel2.Name = "FeatureCardsLabel2";
-            this.FeatureCardsLabel2.Size = new System.Drawing.Size(88, 13);
+            this.FeatureCardsLabel2.Size = new System.Drawing.Size(130, 20);
             this.FeatureCardsLabel2.TabIndex = 72;
             this.FeatureCardsLabel2.Text = "Any 3 Resources";
             // 
             // FeatureCardsLabel3
             // 
+            this.FeatureCardsLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FeatureCardsLabel3.AutoSize = true;
-            this.FeatureCardsLabel3.Location = new System.Drawing.Point(310, 321);
+            this.FeatureCardsLabel3.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.FeatureCardsLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FeatureCardsLabel3.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
+            this.FeatureCardsLabel3.Location = new System.Drawing.Point(284, 321);
             this.FeatureCardsLabel3.Name = "FeatureCardsLabel3";
-            this.FeatureCardsLabel3.Size = new System.Drawing.Size(88, 13);
+            this.FeatureCardsLabel3.Size = new System.Drawing.Size(130, 20);
             this.FeatureCardsLabel3.TabIndex = 73;
             this.FeatureCardsLabel3.Text = "Any 2 Resources";
             // 
             // FeatureCardsLabel4
             // 
+            this.FeatureCardsLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FeatureCardsLabel4.AutoSize = true;
-            this.FeatureCardsLabel4.Location = new System.Drawing.Point(445, 321);
+            this.FeatureCardsLabel4.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.FeatureCardsLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FeatureCardsLabel4.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
+            this.FeatureCardsLabel4.Location = new System.Drawing.Point(424, 321);
             this.FeatureCardsLabel4.Name = "FeatureCardsLabel4";
-            this.FeatureCardsLabel4.Size = new System.Drawing.Size(83, 13);
+            this.FeatureCardsLabel4.Size = new System.Drawing.Size(122, 20);
             this.FeatureCardsLabel4.TabIndex = 74;
             this.FeatureCardsLabel4.Text = "Any 1 Resource";
             // 
@@ -861,7 +967,7 @@ namespace InformationAgeProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.FeatureCardsLabel4);
             this.Controls.Add(this.FeatureCardsLabel3);
@@ -918,6 +1024,7 @@ namespace InformationAgeProject
             this.Controls.Add(this.lblBacklog);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblInventory);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "FormsBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -959,8 +1066,6 @@ namespace InformationAgeProject
         private System.Windows.Forms.RichTextBox scoreBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem btnInstructionsMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem btnAboutMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnQuitToDesktopMenuItem;
         private System.Windows.Forms.Label lblInventory;
         private System.Windows.Forms.Label lblScore;
@@ -990,7 +1095,6 @@ namespace InformationAgeProject
         private System.Windows.Forms.TextBox AdditionalFeaturesTextBox3;
         private System.Windows.Forms.TextBox AdditionalFeaturesTextBox2;
         private System.Windows.Forms.TextBox AdditionalFeaturesTextBox1;
-        private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
         private System.Windows.Forms.Button btnEndTurn;
         private System.Windows.Forms.ToolStripMenuItem btnQuitToMenuMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
@@ -999,6 +1103,10 @@ namespace InformationAgeProject
         private System.Windows.Forms.Label FeatureCardsLabel2;
         private System.Windows.Forms.Label FeatureCardsLabel3;
         private System.Windows.Forms.Label FeatureCardsLabel4;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

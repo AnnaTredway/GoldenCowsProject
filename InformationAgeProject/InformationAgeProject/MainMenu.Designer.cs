@@ -60,9 +60,12 @@
             // btnPlayGame
             // 
             this.btnPlayGame.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPlayGame.BackColor = System.Drawing.Color.IndianRed;
+            this.btnPlayGame.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnPlayGame.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnPlayGame.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnPlayGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlayGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayGame.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnPlayGame.Location = new System.Drawing.Point(300, 177);
             this.btnPlayGame.Name = "btnPlayGame";
             this.btnPlayGame.Size = new System.Drawing.Size(200, 40);
@@ -75,7 +78,9 @@
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.AutoSize = true;
+            this.lblTitle.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblTitle.Location = new System.Drawing.Point(237, 100);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(326, 51);
@@ -85,9 +90,12 @@
             // btnOptions
             // 
             this.btnOptions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOptions.BackColor = System.Drawing.Color.IndianRed;
+            this.btnOptions.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnOptions.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnOptions.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOptions.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnOptions.Location = new System.Drawing.Point(300, 223);
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.Size = new System.Drawing.Size(200, 40);
@@ -99,9 +107,12 @@
             // btnQuit
             // 
             this.btnQuit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnQuit.BackColor = System.Drawing.Color.IndianRed;
+            this.btnQuit.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnQuit.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnQuit.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuit.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnQuit.Location = new System.Drawing.Point(300, 315);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(200, 40);
@@ -114,7 +125,9 @@
             // 
             this.radio2Players.AutoSize = true;
             this.radio2Players.BackColor = System.Drawing.Color.Transparent;
+            this.radio2Players.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.radio2Players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio2Players.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.radio2Players.Location = new System.Drawing.Point(213, 58);
             this.radio2Players.Name = "radio2Players";
             this.radio2Players.Size = new System.Drawing.Size(91, 24);
@@ -127,7 +140,9 @@
             // 
             this.radio3Players.AutoSize = true;
             this.radio3Players.BackColor = System.Drawing.Color.Transparent;
+            this.radio3Players.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.radio3Players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio3Players.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.radio3Players.Location = new System.Drawing.Point(213, 88);
             this.radio3Players.Name = "radio3Players";
             this.radio3Players.Size = new System.Drawing.Size(91, 24);
@@ -140,7 +155,9 @@
             // 
             this.radio4Players.AutoSize = true;
             this.radio4Players.BackColor = System.Drawing.Color.Transparent;
+            this.radio4Players.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.radio4Players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio4Players.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.radio4Players.Location = new System.Drawing.Point(213, 118);
             this.radio4Players.Name = "radio4Players";
             this.radio4Players.Size = new System.Drawing.Size(91, 24);
@@ -152,9 +169,12 @@
             // btnStartGame
             // 
             this.btnStartGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStartGame.BackColor = System.Drawing.Color.IndianRed;
+            this.btnStartGame.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnStartGame.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnStartGame.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartGame.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnStartGame.Location = new System.Drawing.Point(588, 398);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(200, 40);
@@ -167,9 +187,12 @@
             // btnBack1
             // 
             this.btnBack1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnBack1.BackColor = System.Drawing.Color.IndianRed;
+            this.btnBack1.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnBack1.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnBack1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnBack1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack1.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnBack1.Location = new System.Drawing.Point(12, 398);
             this.btnBack1.Name = "btnBack1";
             this.btnBack1.Size = new System.Drawing.Size(200, 40);
@@ -182,7 +205,9 @@
             // lblPlayers
             // 
             this.lblPlayers.AutoSize = true;
+            this.lblPlayers.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayers.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblPlayers.Location = new System.Drawing.Point(3, 4);
             this.lblPlayers.Name = "lblPlayers";
             this.lblPlayers.Size = new System.Drawing.Size(510, 51);
@@ -232,7 +257,9 @@
             // lblPlayer1Team
             // 
             this.lblPlayer1Team.AutoSize = true;
+            this.lblPlayer1Team.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblPlayer1Team.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer1Team.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblPlayer1Team.Location = new System.Drawing.Point(41, 4);
             this.lblPlayer1Team.Name = "lblPlayer1Team";
             this.lblPlayer1Team.Size = new System.Drawing.Size(124, 13);
@@ -242,7 +269,9 @@
             // lblPlayer2Team
             // 
             this.lblPlayer2Team.AutoSize = true;
+            this.lblPlayer2Team.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblPlayer2Team.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer2Team.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblPlayer2Team.Location = new System.Drawing.Point(41, 47);
             this.lblPlayer2Team.Name = "lblPlayer2Team";
             this.lblPlayer2Team.Size = new System.Drawing.Size(124, 13);
@@ -252,7 +281,9 @@
             // lblPlayer3Team
             // 
             this.lblPlayer3Team.AutoSize = true;
+            this.lblPlayer3Team.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblPlayer3Team.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer3Team.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblPlayer3Team.Location = new System.Drawing.Point(41, 91);
             this.lblPlayer3Team.Name = "lblPlayer3Team";
             this.lblPlayer3Team.Size = new System.Drawing.Size(124, 13);
@@ -262,7 +293,9 @@
             // lblPlayer4Team
             // 
             this.lblPlayer4Team.AutoSize = true;
+            this.lblPlayer4Team.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblPlayer4Team.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer4Team.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.lblPlayer4Team.Location = new System.Drawing.Point(41, 135);
             this.lblPlayer4Team.Name = "lblPlayer4Team";
             this.lblPlayer4Team.Size = new System.Drawing.Size(124, 13);
@@ -300,9 +333,12 @@
             // btnNewGame
             // 
             this.btnNewGame.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNewGame.BackColor = System.Drawing.Color.IndianRed;
+            this.btnNewGame.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnNewGame.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnNewGame.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewGame.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnNewGame.Location = new System.Drawing.Point(197, 205);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(200, 40);
@@ -315,9 +351,12 @@
             // btnLoadGame
             // 
             this.btnLoadGame.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLoadGame.BackColor = System.Drawing.Color.IndianRed;
+            this.btnLoadGame.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnLoadGame.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnLoadGame.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnLoadGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadGame.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnLoadGame.Location = new System.Drawing.Point(403, 205);
             this.btnLoadGame.Name = "btnLoadGame";
             this.btnLoadGame.Size = new System.Drawing.Size(200, 40);
@@ -330,9 +369,12 @@
             // btnBackToMainMenu
             // 
             this.btnBackToMainMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBackToMainMenu.BackColor = System.Drawing.Color.IndianRed;
+            this.btnBackToMainMenu.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnBackToMainMenu.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnBackToMainMenu.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnBackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToMainMenu.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnBackToMainMenu.Location = new System.Drawing.Point(300, 363);
             this.btnBackToMainMenu.Name = "btnBackToMainMenu";
             this.btnBackToMainMenu.Size = new System.Drawing.Size(200, 40);
@@ -345,9 +387,12 @@
             // btnInstructions
             // 
             this.btnInstructions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnInstructions.BackColor = System.Drawing.Color.IndianRed;
+            this.btnInstructions.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnInstructions.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnInstructions.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.btnInstructions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstructions.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
             this.btnInstructions.Location = new System.Drawing.Point(300, 269);
             this.btnInstructions.Name = "btnInstructions";
             this.btnInstructions.Size = new System.Drawing.Size(200, 40);
@@ -360,7 +405,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnInstructions);
             this.Controls.Add(this.btnBackToMainMenu);
@@ -370,10 +415,11 @@
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnPlayGame);
-            this.Controls.Add(this.pnlTeamNames);
             this.Controls.Add(this.btnLoadGame);
             this.Controls.Add(this.btnNewGame);
+            this.Controls.Add(this.pnlTeamNames);
             this.Controls.Add(this.pnlSelectPlayers);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "FormsBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

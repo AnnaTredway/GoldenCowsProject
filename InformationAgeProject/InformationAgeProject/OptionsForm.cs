@@ -55,6 +55,7 @@ namespace InformationAgeProject
             btnResetSound.Visible = true;
         }
 
+        #region Main Options Screen Buttons
         /// <summary>
         /// Event Handler for button to go to graphics options screen
         /// </summary>
@@ -71,10 +72,13 @@ namespace InformationAgeProject
             //Sets every control on graphics options screen to visible
             lblGraphics.Visible = true;
             btnBackColor.Visible = true;
+            btnChangeTextColor.Visible = true;
             btnButtonColor.Visible = true;
+            btnChangeButtonTextColor.Visible = true;
             btnBack.Visible = true;
             btnResetGraphics.Visible = true;
             btnResetSound.Visible = true;
+            this.Text = "Graphics Options";
         }
 
         /// <summary>
@@ -96,7 +100,9 @@ namespace InformationAgeProject
             btnBack.Visible = true;
             btnResetGraphics.Visible = true;
             btnResetSound.Visible = true;
+            this.Text = "Sound Options";
         }
+        #endregion
 
         #region Graphics Options Buttons
         /// <summary>
@@ -106,7 +112,30 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnBackColor_Click(object sender, EventArgs e)
         {
+            ColorDialog colorDlg = new ColorDialog();
 
+            if (colorDlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.FormsBackgroundColor = colorDlg.Color;
+                Properties.Settings.Default.Save();
+                this.BackColor = colorDlg.Color;
+            }
+        }
+
+        /// <summary>
+        /// Event Handler for button to change text not in buttons color in program
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void btnChangeTextColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDlg = new ColorDialog();
+
+            if (colorDlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.FormsTextColor = colorDlg.Color;
+                Properties.Settings.Default.Save();
+            }
         }
 
         /// <summary>
@@ -116,7 +145,29 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnButtonColor_Click(object sender, EventArgs e)
         {
+            ColorDialog colorDlg = new ColorDialog();
 
+            if (colorDlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.ButtonBackgroundColor = colorDlg.Color;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        /// <summary>
+        /// Event Handler for button to change button text color in program
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void btnChangeButtonTextColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDlg = new ColorDialog();
+
+            if (colorDlg.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.ButtonTextColor = colorDlg.Color;
+                Properties.Settings.Default.Save();
+            }
         }
         #endregion
 
@@ -128,7 +179,12 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnResetGraphics_Click(object sender, EventArgs e)
         {
-
+            //Resets all colors back to default values
+            Properties.Settings.Default.FormsBackgroundColor = Color.LightSkyBlue;
+            Properties.Settings.Default.FormsTextColor = Color.Black;
+            Properties.Settings.Default.ButtonBackgroundColor = Color.IndianRed;
+            Properties.Settings.Default.ButtonTextColor = Color.Black;
+            Properties.Settings.Default.Save();
         }
 
         /// <summary>
@@ -150,7 +206,7 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnBackToMainMenu_Click(object sender, EventArgs e)
         {
-            Close();
+            Dispose();
         }
 
         /// <summary>
@@ -173,7 +229,9 @@ namespace InformationAgeProject
             btnBackToMainMenu.Visible = true;
             btnResetGraphics.Visible = true;
             btnResetSound.Visible = true;
+            this.Text = "Options";
         }
+
         #endregion
 
     }

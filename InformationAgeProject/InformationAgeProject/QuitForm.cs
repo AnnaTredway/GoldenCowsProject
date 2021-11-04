@@ -39,7 +39,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnYes_Click(object sender, EventArgs e)
 		{
-			Application.Exit();
+			GameController.quitGame();
 		}
 
 		/// <summary>
@@ -49,7 +49,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnNo_Click(object sender, EventArgs e)
 		{
-			Close();
+			Dispose();
 		}
 	}
 }
