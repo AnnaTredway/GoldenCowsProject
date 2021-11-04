@@ -31,6 +31,28 @@ namespace InformationAgeProject
 		public MainMenu()
 		{
 			InitializeComponent();
+			SetStyle(ControlStyles.SupportsTransparentBackColor, true);	//Allows radio buttons to have transparent background without border
+		}
+
+		/// <summary>
+		/// Event Handler for handling when MainMenu loads
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void MainMenu_Load(object sender, EventArgs e)
+		{
+			//Sets every control on the form to invisible
+			foreach (Control control in Controls)
+			{
+				control.Visible = false;
+			}
+
+			//Sets every control on the main menu screen to visible
+			lblTitle.Visible = true;
+			btnPlayGame.Visible = true;
+			btnOptions.Visible = true;
+			btnInstructions.Visible = true;
+			btnQuit.Visible = true;
 		}
 
 		#region MainMenu Buttons
@@ -41,12 +63,14 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnPlayGame_Click(object sender, EventArgs e)
 		{
-			//Sets all main menu items to invisible to go to New Game or Load Game screen
-			btnPlayGame.Visible = false;
-			btnOptions.Visible = false;
-			btnQuit.Visible = false;
+			//Sets every control on the form to invisible
+			foreach (Control control in Controls)
+			{
+				control.Visible = false;
+			}
 
-			//Sets btnNewGame, btnLoadGame, and btnBackToMainMenu to visible
+			//Sets title, btnNewGame, btnLoadGame, and btnBackToMainMenu to visible
+			lblTitle.Visible = true;
 			btnNewGame.Visible = true;
 			btnLoadGame.Visible = true;
 			btnBackToMainMenu.Visible = true;
@@ -62,7 +86,17 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnOptions_Click(object sender, EventArgs e)
 		{
+			new OptionsForm().Show();
+		}
 
+		/// <summary>
+		/// Event Handler for button to open game instructions
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		private void btnInstructions_Click(object sender, EventArgs e)
+		{
+			GameController.openInstructions();
 		}
 
 		/// <summary>
@@ -85,11 +119,11 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnNewGame_Click(object sender, EventArgs e)
 		{
-			//Sets title, btnNewGame, btnLoadGame, and btnBackToMainMenu to invisible
-			lblTitle.Visible = false;
-			btnNewGame.Visible = false;
-			btnLoadGame.Visible = false;
-			btnBackToMainMenu.Visible = false;
+			//Sets every control on the form to invisible
+			foreach (Control control in Controls)
+			{
+				control.Visible = false;
+			}
 
 			//Sets all items on screen for selecting player count and naming teams to visible
 			pnlSelectPlayers.Visible = true;
@@ -118,14 +152,17 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnBackToMainMenu_Click(object sender, EventArgs e)
 		{
-			//Sets btnNewGame, btnLoadGame, and btnBackToMainMenu to invisible
-			btnNewGame.Visible = false;
-			btnLoadGame.Visible = false;
-			btnBackToMainMenu.Visible = false;
+			//Sets every control on the form to invisible
+			foreach (Control control in Controls)
+			{
+				control.Visible = false;
+			}
 
 			//Sets all items on main menu to visible
+			lblTitle.Visible = true;
 			btnPlayGame.Visible = true;
 			btnOptions.Visible = true;
+			btnInstructions.Visible = true;
 			btnQuit.Visible = true;
 
 			//Sets window text to signify main menu screen
@@ -141,11 +178,11 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnBack1_Click(object sender, EventArgs e)
 		{
-			//Sets all buttons on screen for selecting player count to invisible
-			pnlSelectPlayers.Visible = false;
-			pnlTeamNames.Visible = false;
-			btnBack1.Visible = false;
-			btnStartGame.Visible = false;
+			//Sets every control on the form to invisible
+			foreach (Control control in Controls)
+			{
+				control.Visible = false;
+			}
 
 			//Sets title, btnNewGame, btnLoadGame, and btnBackToMainMenu to visible
 			lblTitle.Visible = true;
@@ -201,5 +238,6 @@ namespace InformationAgeProject
 			}
 		}
 		#endregion
+
 	}
 }

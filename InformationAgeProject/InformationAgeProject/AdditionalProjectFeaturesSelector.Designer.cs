@@ -41,7 +41,9 @@ namespace InformationAgeProject
             // TitleLable
             // 
             this.TitleLable.AutoSize = true;
+            this.TitleLable.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.TitleLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLable.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.TitleLable.Location = new System.Drawing.Point(12, 9);
             this.TitleLable.Name = "TitleLable";
             this.TitleLable.Size = new System.Drawing.Size(70, 25);
@@ -82,18 +84,24 @@ namespace InformationAgeProject
             // 
             // SelectButton
             // 
-            this.SelectButton.Location = new System.Drawing.Point(450, 188);
+            this.SelectButton.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.SelectButton.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.SelectButton.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.SelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SelectButton.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
+            this.SelectButton.Location = new System.Drawing.Point(447, 188);
             this.SelectButton.Name = "SelectButton";
-            this.SelectButton.Size = new System.Drawing.Size(100, 23);
+            this.SelectButton.Size = new System.Drawing.Size(103, 23);
             this.SelectButton.TabIndex = 5;
             this.SelectButton.Text = "Select Resources";
-            this.SelectButton.UseVisualStyleBackColor = true;
+            this.SelectButton.UseVisualStyleBackColor = false;
             this.SelectButton.Click += new System.EventHandler(this.SelectButton_Click);
             // 
             // AdditionalProjectFeaturesSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(559, 222);
             this.ControlBox = false;
             this.Controls.Add(this.SelectButton);
@@ -102,6 +110,7 @@ namespace InformationAgeProject
             this.Controls.Add(this.LowPriorityCheckList);
             this.Controls.Add(this.BacklogCheckList);
             this.Controls.Add(this.TitleLable);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "FormsBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdditionalProjectFeaturesSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
