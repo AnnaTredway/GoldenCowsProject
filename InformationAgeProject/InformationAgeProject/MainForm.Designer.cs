@@ -975,6 +975,7 @@ namespace InformationAgeProject
             // 
             // ProjectFeaturesCardsGroupBox
             // 
+            this.ProjectFeaturesCardsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectFeaturesCardsGroupBox.Controls.Add(this.AdditionalFeaturesTextBox4);
             this.ProjectFeaturesCardsGroupBox.Controls.Add(this.AdditionalFeaturesTextBox1);
             this.ProjectFeaturesCardsGroupBox.Controls.Add(this.FeatureCardsLabel4);
@@ -998,6 +999,7 @@ namespace InformationAgeProject
             // 
             // ProjectProgressCardsGroupBox
             // 
+            this.ProjectProgressCardsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCardsGroupBox.Controls.Add(this.ProjectProgressCard1);
             this.ProjectProgressCardsGroupBox.Controls.Add(this.ClaimProgressCard1);
             this.ProjectProgressCardsGroupBox.Location = new System.Drawing.Point(12, 482);

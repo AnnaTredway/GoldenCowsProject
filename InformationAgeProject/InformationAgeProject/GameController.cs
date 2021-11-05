@@ -380,15 +380,23 @@ namespace InformationAgeProject
 			}
 			return 0;
 		}
-		#endregion
+        #endregion
 
-		#region Claim Project Feature Card
-		public static AdditionalProjectFeaturesType[] ClaimFeatureCard(int cardNumber, int cardCost)
+        #region Claim Project Feature Card		
+        /// <summary>
+        /// Claims a feature card.
+        /// </summary>
+        /// <param name="cardNumber">The card's index in the array.</param>
+        /// <param name="cardCost">The card's cost in resources.</param>
+        /// <returns></returns>
+        public static AdditionalProjectFeaturesType[] ClaimFeatureCard(int cardNumber, int cardCost)
 		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[cardNumber].claimCard(cardCost, playerList[turnCounter].Inventory);
-			Scoring score = new Scoring(playerList[turnCounter].Inventory);
-			int cardCounter = ProjFeatDeck.Deck.Count;
+			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[cardNumber].claimCard(cardCost, playerList[turnCounter].Inventory); // The items rewarded by the card
+			Scoring score = new Scoring(playerList[turnCounter].Inventory);		// The total calculated score from the player
+			int cardCounter = ProjFeatDeck.Deck.Count;							// The total number of cards left in the deck
 
+			// if there are cards returned then the player did not have enough resources to claim the card
+			// if the player claims the card the player is given the card and updates the player's inventory
 			if (cards != null)
 			{
 				playerList[turnCounter].Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[cardNumber]);
@@ -397,6 +405,7 @@ namespace InformationAgeProject
 				playerForms[turnCounter].inventoryBox.Text = playerList[turnCounter].Inventory.printResources( );
 				playerForms[turnCounter].scoreBox.Text = score.calculateScore( );
 
+				// Updates the number of available cards in the deck
                 for (int i = 0; i < ProjFeatDeck.Deck.Count; i++)
                 {
                     if (ProjFeatDeck.Deck[i].blnSold == true)
@@ -413,6 +422,21 @@ namespace InformationAgeProject
 				return cards;
 			}
 			return null;
+		}
+
+        /// <summary>
+        /// Removes any claimed cards at the deck.
+        /// </summary>
+        public static void removeClaimedFeatureCards( )
+		{
+            for (int i = 0; i < 4; i++)
+            {
+				if (ProjFeatDeck.Deck[i].blnSold == true)
+				{
+					ProjFeatDeck.Deck.RemoveAt(i);
+				}
+
+			}
 		}
 		#endregion
 	}

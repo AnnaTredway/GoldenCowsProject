@@ -507,8 +507,16 @@ namespace InformationAgeProject
 				for (int i = 0; i < GameController.playerForms.Length; i++)
                 {
 					GameController.playerForms[i].ClaimFeaturesCard1.Enabled = false;
-					GameController.playerForms[i].AdditionalFeaturesTextBox1.Text = GameController.ProjFeatDeck.Deck[0].displayCard( ); 
-                }
+
+					if (GameController.ProjFeatDeck.Deck.Count < 1)
+                    {
+						GameController.playerForms[i].AdditionalFeaturesTextBox1.Text = "All available cards have been purchased.";
+					}
+                    else
+                    {
+						GameController.playerForms[i].AdditionalFeaturesTextBox1.Text = GameController.ProjFeatDeck.Deck[0].displayCard( );
+					}
+				}
 			}
 		}
 
@@ -527,7 +535,15 @@ namespace InformationAgeProject
 				for (int i = 0; i < GameController.playerForms.Length; i++)
 				{
 					GameController.playerForms[i].ClaimFeaturesCard2.Enabled = false;
-					GameController.playerForms[i].AdditionalFeaturesTextBox2.Text = GameController.ProjFeatDeck.Deck[1].displayCard( );
+
+					if (GameController.ProjFeatDeck.Deck.Count < 2)
+					{
+						GameController.playerForms[i].AdditionalFeaturesTextBox2.Text = "All available cards have been purchased.";
+					}
+					else
+					{
+						GameController.playerForms[i].AdditionalFeaturesTextBox2.Text = GameController.ProjFeatDeck.Deck[1].displayCard( );
+					}
 				}
 			}
 		}
@@ -547,7 +563,15 @@ namespace InformationAgeProject
 				for (int i = 0; i < GameController.playerForms.Length; i++)
 				{
 					GameController.playerForms[i].ClaimFeaturesCard3.Enabled = false;
-					GameController.playerForms[i].AdditionalFeaturesTextBox3.Text = GameController.ProjFeatDeck.Deck[2].displayCard( );
+
+					if (GameController.ProjFeatDeck.Deck.Count < 3)
+					{
+						GameController.playerForms[i].AdditionalFeaturesTextBox3.Text = "All available cards have been purchased.";
+					}
+					else
+					{
+						GameController.playerForms[i].AdditionalFeaturesTextBox3.Text = GameController.ProjFeatDeck.Deck[2].displayCard( );
+					}
 				}
 			}
 		}
@@ -567,7 +591,15 @@ namespace InformationAgeProject
 				for (int i = 0; i < GameController.playerForms.Length; i++)
 				{
 					GameController.playerForms[i].ClaimFeaturesCard4.Enabled = false;
-					GameController.playerForms[i].AdditionalFeaturesTextBox4.Text = GameController.ProjFeatDeck.Deck[3].displayCard( );
+
+					if (GameController.ProjFeatDeck.Deck.Count < 4)
+					{
+						GameController.playerForms[i].AdditionalFeaturesTextBox4.Text = "All available cards have been purchased.";
+					}
+					else
+					{
+						GameController.playerForms[i].AdditionalFeaturesTextBox4.Text = GameController.ProjFeatDeck.Deck[3].displayCard( );
+					}
 				}
 			}
 		}
