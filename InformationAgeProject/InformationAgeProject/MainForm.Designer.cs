@@ -109,10 +109,14 @@ namespace InformationAgeProject
             this.FeatureCardsLabel2 = new System.Windows.Forms.Label();
             this.FeatureCardsLabel3 = new System.Windows.Forms.Label();
             this.FeatureCardsLabel4 = new System.Windows.Forms.Label();
+            this.ProjectFeaturesCardsGroupBox = new System.Windows.Forms.GroupBox();
+            this.ProjectProgressCardsGroupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ProjectFeaturesCardsGroupBox.SuspendLayout();
+            this.ProjectProgressCardsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBacklog
@@ -533,7 +537,7 @@ namespace InformationAgeProject
             this.ProjectProgressCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCard1.BackColor = System.Drawing.Color.White;
             this.ProjectProgressCard1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectProgressCard1.Location = new System.Drawing.Point(12, 516);
+            this.ProjectProgressCard1.Location = new System.Drawing.Point(25, 20);
             this.ProjectProgressCard1.Multiline = true;
             this.ProjectProgressCard1.Name = "ProjectProgressCard1";
             this.ProjectProgressCard1.ReadOnly = true;
@@ -551,6 +555,7 @@ namespace InformationAgeProject
             this.ProjectProgressCard2.ReadOnly = true;
             this.ProjectProgressCard2.Size = new System.Drawing.Size(130, 129);
             this.ProjectProgressCard2.TabIndex = 40;
+            this.ProjectProgressCard2.Visible = false;
             // 
             // ProjectProgressCard3
             // 
@@ -563,6 +568,7 @@ namespace InformationAgeProject
             this.ProjectProgressCard3.ReadOnly = true;
             this.ProjectProgressCard3.Size = new System.Drawing.Size(130, 129);
             this.ProjectProgressCard3.TabIndex = 41;
+            this.ProjectProgressCard3.Visible = false;
             // 
             // ProjectProgressCard4
             // 
@@ -575,6 +581,7 @@ namespace InformationAgeProject
             this.ProjectProgressCard4.ReadOnly = true;
             this.ProjectProgressCard4.Size = new System.Drawing.Size(130, 129);
             this.ProjectProgressCard4.TabIndex = 42;
+            this.ProjectProgressCard4.Visible = false;
             // 
             // ClaimProgressCard1
             // 
@@ -584,7 +591,7 @@ namespace InformationAgeProject
             this.ClaimProgressCard1.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ClaimProgressCard1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClaimProgressCard1.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ClaimProgressCard1.Location = new System.Drawing.Point(39, 651);
+            this.ClaimProgressCard1.Location = new System.Drawing.Point(52, 158);
             this.ClaimProgressCard1.Name = "ClaimProgressCard1";
             this.ClaimProgressCard1.Size = new System.Drawing.Size(75, 23);
             this.ClaimProgressCard1.TabIndex = 43;
@@ -606,6 +613,7 @@ namespace InformationAgeProject
             this.ClaimProgressCard2.TabIndex = 44;
             this.ClaimProgressCard2.Text = "Claim Card";
             this.ClaimProgressCard2.UseVisualStyleBackColor = false;
+            this.ClaimProgressCard2.Visible = false;
             this.ClaimProgressCard2.Click += new System.EventHandler(this.ClaimProgressCard2_Click);
             // 
             // ClaimProgressCard3
@@ -622,6 +630,7 @@ namespace InformationAgeProject
             this.ClaimProgressCard3.TabIndex = 45;
             this.ClaimProgressCard3.Text = "Claim Card";
             this.ClaimProgressCard3.UseVisualStyleBackColor = false;
+            this.ClaimProgressCard3.Visible = false;
             this.ClaimProgressCard3.Click += new System.EventHandler(this.ClaimProgressCard3_Click);
             // 
             // ClaimProgressCard4
@@ -638,6 +647,7 @@ namespace InformationAgeProject
             this.ClaimProgressCard4.TabIndex = 46;
             this.ClaimProgressCard4.Text = "Claim Card";
             this.ClaimProgressCard4.UseVisualStyleBackColor = false;
+            this.ClaimProgressCard4.Visible = false;
             this.ClaimProgressCard4.Click += new System.EventHandler(this.ClaimProgressCard4_Click);
             // 
             // toolSlot1
@@ -777,7 +787,7 @@ namespace InformationAgeProject
             this.ClaimFeaturesCard4.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ClaimFeaturesCard4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClaimFeaturesCard4.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ClaimFeaturesCard4.Location = new System.Drawing.Point(448, 477);
+            this.ClaimFeaturesCard4.Location = new System.Drawing.Point(461, 200);
             this.ClaimFeaturesCard4.Name = "ClaimFeaturesCard4";
             this.ClaimFeaturesCard4.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard4.TabIndex = 68;
@@ -793,7 +803,7 @@ namespace InformationAgeProject
             this.ClaimFeaturesCard3.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ClaimFeaturesCard3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClaimFeaturesCard3.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ClaimFeaturesCard3.Location = new System.Drawing.Point(313, 477);
+            this.ClaimFeaturesCard3.Location = new System.Drawing.Point(326, 200);
             this.ClaimFeaturesCard3.Name = "ClaimFeaturesCard3";
             this.ClaimFeaturesCard3.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard3.TabIndex = 67;
@@ -809,7 +819,7 @@ namespace InformationAgeProject
             this.ClaimFeaturesCard2.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ClaimFeaturesCard2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClaimFeaturesCard2.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ClaimFeaturesCard2.Location = new System.Drawing.Point(179, 477);
+            this.ClaimFeaturesCard2.Location = new System.Drawing.Point(192, 200);
             this.ClaimFeaturesCard2.Name = "ClaimFeaturesCard2";
             this.ClaimFeaturesCard2.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard2.TabIndex = 66;
@@ -825,7 +835,7 @@ namespace InformationAgeProject
             this.ClaimFeaturesCard1.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ClaimFeaturesCard1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClaimFeaturesCard1.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ClaimFeaturesCard1.Location = new System.Drawing.Point(39, 477);
+            this.ClaimFeaturesCard1.Location = new System.Drawing.Point(52, 200);
             this.ClaimFeaturesCard1.Name = "ClaimFeaturesCard1";
             this.ClaimFeaturesCard1.Size = new System.Drawing.Size(75, 23);
             this.ClaimFeaturesCard1.TabIndex = 65;
@@ -838,7 +848,7 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AdditionalFeaturesTextBox4.BackColor = System.Drawing.Color.White;
             this.AdditionalFeaturesTextBox4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdditionalFeaturesTextBox4.Location = new System.Drawing.Point(420, 342);
+            this.AdditionalFeaturesTextBox4.Location = new System.Drawing.Point(433, 65);
             this.AdditionalFeaturesTextBox4.Multiline = true;
             this.AdditionalFeaturesTextBox4.Name = "AdditionalFeaturesTextBox4";
             this.AdditionalFeaturesTextBox4.ReadOnly = true;
@@ -850,7 +860,7 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AdditionalFeaturesTextBox3.BackColor = System.Drawing.Color.White;
             this.AdditionalFeaturesTextBox3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdditionalFeaturesTextBox3.Location = new System.Drawing.Point(284, 342);
+            this.AdditionalFeaturesTextBox3.Location = new System.Drawing.Point(297, 65);
             this.AdditionalFeaturesTextBox3.Multiline = true;
             this.AdditionalFeaturesTextBox3.Name = "AdditionalFeaturesTextBox3";
             this.AdditionalFeaturesTextBox3.ReadOnly = true;
@@ -862,7 +872,7 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AdditionalFeaturesTextBox2.BackColor = System.Drawing.Color.White;
             this.AdditionalFeaturesTextBox2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdditionalFeaturesTextBox2.Location = new System.Drawing.Point(148, 342);
+            this.AdditionalFeaturesTextBox2.Location = new System.Drawing.Point(161, 65);
             this.AdditionalFeaturesTextBox2.Multiline = true;
             this.AdditionalFeaturesTextBox2.Name = "AdditionalFeaturesTextBox2";
             this.AdditionalFeaturesTextBox2.ReadOnly = true;
@@ -874,7 +884,7 @@ namespace InformationAgeProject
             this.AdditionalFeaturesTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AdditionalFeaturesTextBox1.BackColor = System.Drawing.Color.White;
             this.AdditionalFeaturesTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdditionalFeaturesTextBox1.Location = new System.Drawing.Point(12, 342);
+            this.AdditionalFeaturesTextBox1.Location = new System.Drawing.Point(25, 65);
             this.AdditionalFeaturesTextBox1.Multiline = true;
             this.AdditionalFeaturesTextBox1.Name = "AdditionalFeaturesTextBox1";
             this.AdditionalFeaturesTextBox1.ReadOnly = true;
@@ -905,7 +915,7 @@ namespace InformationAgeProject
             this.FeatureCardsCostLable.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FeatureCardsCostLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FeatureCardsCostLable.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
-            this.FeatureCardsCostLable.Location = new System.Drawing.Point(12, 295);
+            this.FeatureCardsCostLable.Location = new System.Drawing.Point(25, 18);
             this.FeatureCardsCostLable.Name = "FeatureCardsCostLable";
             this.FeatureCardsCostLable.Size = new System.Drawing.Size(84, 20);
             this.FeatureCardsCostLable.TabIndex = 70;
@@ -918,7 +928,7 @@ namespace InformationAgeProject
             this.FeatureCardsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FeatureCardsLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FeatureCardsLabel1.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
-            this.FeatureCardsLabel1.Location = new System.Drawing.Point(12, 321);
+            this.FeatureCardsLabel1.Location = new System.Drawing.Point(25, 44);
             this.FeatureCardsLabel1.Name = "FeatureCardsLabel1";
             this.FeatureCardsLabel1.Size = new System.Drawing.Size(130, 20);
             this.FeatureCardsLabel1.TabIndex = 71;
@@ -931,7 +941,7 @@ namespace InformationAgeProject
             this.FeatureCardsLabel2.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FeatureCardsLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FeatureCardsLabel2.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
-            this.FeatureCardsLabel2.Location = new System.Drawing.Point(148, 321);
+            this.FeatureCardsLabel2.Location = new System.Drawing.Point(161, 44);
             this.FeatureCardsLabel2.Name = "FeatureCardsLabel2";
             this.FeatureCardsLabel2.Size = new System.Drawing.Size(130, 20);
             this.FeatureCardsLabel2.TabIndex = 72;
@@ -944,7 +954,7 @@ namespace InformationAgeProject
             this.FeatureCardsLabel3.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FeatureCardsLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FeatureCardsLabel3.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
-            this.FeatureCardsLabel3.Location = new System.Drawing.Point(284, 321);
+            this.FeatureCardsLabel3.Location = new System.Drawing.Point(297, 44);
             this.FeatureCardsLabel3.Name = "FeatureCardsLabel3";
             this.FeatureCardsLabel3.Size = new System.Drawing.Size(130, 20);
             this.FeatureCardsLabel3.TabIndex = 73;
@@ -957,11 +967,45 @@ namespace InformationAgeProject
             this.FeatureCardsLabel4.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FeatureCardsLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FeatureCardsLabel4.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
-            this.FeatureCardsLabel4.Location = new System.Drawing.Point(424, 321);
+            this.FeatureCardsLabel4.Location = new System.Drawing.Point(437, 44);
             this.FeatureCardsLabel4.Name = "FeatureCardsLabel4";
             this.FeatureCardsLabel4.Size = new System.Drawing.Size(122, 20);
             this.FeatureCardsLabel4.TabIndex = 74;
             this.FeatureCardsLabel4.Text = "Any 1 Resource";
+            // 
+            // ProjectFeaturesCardsGroupBox
+            // 
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.AdditionalFeaturesTextBox4);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.AdditionalFeaturesTextBox1);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.FeatureCardsLabel4);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.AdditionalFeaturesTextBox2);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.FeatureCardsLabel3);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.AdditionalFeaturesTextBox3);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.FeatureCardsLabel2);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.ClaimFeaturesCard1);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.FeatureCardsLabel1);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.ClaimFeaturesCard2);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.FeatureCardsCostLable);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.ClaimFeaturesCard3);
+            this.ProjectFeaturesCardsGroupBox.Controls.Add(this.ClaimFeaturesCard4);
+            this.ProjectFeaturesCardsGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProjectFeaturesCardsGroupBox.Location = new System.Drawing.Point(12, 243);
+            this.ProjectFeaturesCardsGroupBox.Name = "ProjectFeaturesCardsGroupBox";
+            this.ProjectFeaturesCardsGroupBox.Size = new System.Drawing.Size(607, 233);
+            this.ProjectFeaturesCardsGroupBox.TabIndex = 75;
+            this.ProjectFeaturesCardsGroupBox.TabStop = false;
+            this.ProjectFeaturesCardsGroupBox.Text = "Project Features Cards:";
+            // 
+            // ProjectProgressCardsGroupBox
+            // 
+            this.ProjectProgressCardsGroupBox.Controls.Add(this.ProjectProgressCard1);
+            this.ProjectProgressCardsGroupBox.Controls.Add(this.ClaimProgressCard1);
+            this.ProjectProgressCardsGroupBox.Location = new System.Drawing.Point(12, 482);
+            this.ProjectProgressCardsGroupBox.Name = "ProjectProgressCardsGroupBox";
+            this.ProjectProgressCardsGroupBox.Size = new System.Drawing.Size(217, 187);
+            this.ProjectProgressCardsGroupBox.TabIndex = 76;
+            this.ProjectProgressCardsGroupBox.TabStop = false;
+            this.ProjectProgressCardsGroupBox.Text = "Project Progress Cards:";
             // 
             // MainForm
             // 
@@ -969,20 +1013,9 @@ namespace InformationAgeProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.FeatureCardsLabel4);
-            this.Controls.Add(this.FeatureCardsLabel3);
-            this.Controls.Add(this.FeatureCardsLabel2);
-            this.Controls.Add(this.FeatureCardsLabel1);
-            this.Controls.Add(this.FeatureCardsCostLable);
+            this.Controls.Add(this.ProjectProgressCardsGroupBox);
+            this.Controls.Add(this.ProjectFeaturesCardsGroupBox);
             this.Controls.Add(this.btnEndTurn);
-            this.Controls.Add(this.ClaimFeaturesCard4);
-            this.Controls.Add(this.ClaimFeaturesCard3);
-            this.Controls.Add(this.ClaimFeaturesCard2);
-            this.Controls.Add(this.ClaimFeaturesCard1);
-            this.Controls.Add(this.AdditionalFeaturesTextBox4);
-            this.Controls.Add(this.AdditionalFeaturesTextBox3);
-            this.Controls.Add(this.AdditionalFeaturesTextBox2);
-            this.Controls.Add(this.AdditionalFeaturesTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolMakerPictureBox);
             this.Controls.Add(this.toolsPictureBox);
@@ -996,11 +1029,9 @@ namespace InformationAgeProject
             this.Controls.Add(this.ClaimProgressCard4);
             this.Controls.Add(this.ClaimProgressCard3);
             this.Controls.Add(this.ClaimProgressCard2);
-            this.Controls.Add(this.ClaimProgressCard1);
             this.Controls.Add(this.ProjectProgressCard4);
             this.Controls.Add(this.ProjectProgressCard3);
             this.Controls.Add(this.ProjectProgressCard2);
-            this.Controls.Add(this.ProjectProgressCard1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.scoreBox);
             this.Controls.Add(this.inventoryBox);
@@ -1037,6 +1068,10 @@ namespace InformationAgeProject
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ProjectFeaturesCardsGroupBox.ResumeLayout(false);
+            this.ProjectFeaturesCardsGroupBox.PerformLayout();
+            this.ProjectProgressCardsGroupBox.ResumeLayout(false);
+            this.ProjectProgressCardsGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1062,24 +1097,24 @@ namespace InformationAgeProject
         private System.Windows.Forms.TextBox txtHigh;
         private System.Windows.Forms.TextBox txtDevelopers;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.RichTextBox inventoryBox;
-        private System.Windows.Forms.RichTextBox scoreBox;
+        public System.Windows.Forms.RichTextBox inventoryBox;
+        public System.Windows.Forms.RichTextBox scoreBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnQuitToDesktopMenuItem;
         private System.Windows.Forms.Label lblInventory;
         private System.Windows.Forms.Label lblScore;
-        private System.Windows.Forms.TextBox ProjectProgressCard1;
-        private System.Windows.Forms.TextBox ProjectProgressCard2;
-        private System.Windows.Forms.TextBox ProjectProgressCard3;
-        private System.Windows.Forms.TextBox ProjectProgressCard4;
-        private System.Windows.Forms.Button ClaimProgressCard1;
-        private System.Windows.Forms.Button ClaimProgressCard2;
-        private System.Windows.Forms.Button ClaimProgressCard3;
-        private System.Windows.Forms.Button ClaimProgressCard4;
-        private System.Windows.Forms.TextBox toolSlot1;
-        private System.Windows.Forms.TextBox toolSlot2;
-        private System.Windows.Forms.TextBox toolSlot3;
+        public System.Windows.Forms.TextBox ProjectProgressCard1;
+        public System.Windows.Forms.TextBox ProjectProgressCard2;
+        public System.Windows.Forms.TextBox ProjectProgressCard3;
+        public System.Windows.Forms.TextBox ProjectProgressCard4;
+        public System.Windows.Forms.Button ClaimProgressCard1;
+        public System.Windows.Forms.Button ClaimProgressCard2;
+        public System.Windows.Forms.Button ClaimProgressCard3;
+        public System.Windows.Forms.Button ClaimProgressCard4;
+        public System.Windows.Forms.TextBox toolSlot1;
+        public System.Windows.Forms.TextBox toolSlot2;
+        public System.Windows.Forms.TextBox toolSlot3;
         private System.Windows.Forms.TextBox txtToolMaker;
         private System.Windows.Forms.Button btnAddToolMaker;
         private System.Windows.Forms.Button btnSubtToolMaker;
@@ -1087,14 +1122,14 @@ namespace InformationAgeProject
         private System.Windows.Forms.PictureBox toolsPictureBox;
         private System.Windows.Forms.PictureBox toolMakerPictureBox;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button ClaimFeaturesCard4;
-        private System.Windows.Forms.Button ClaimFeaturesCard3;
-        private System.Windows.Forms.Button ClaimFeaturesCard2;
-        private System.Windows.Forms.Button ClaimFeaturesCard1;
-        private System.Windows.Forms.TextBox AdditionalFeaturesTextBox4;
-        private System.Windows.Forms.TextBox AdditionalFeaturesTextBox3;
-        private System.Windows.Forms.TextBox AdditionalFeaturesTextBox2;
-        private System.Windows.Forms.TextBox AdditionalFeaturesTextBox1;
+        public System.Windows.Forms.Button ClaimFeaturesCard4;
+        public System.Windows.Forms.Button ClaimFeaturesCard3;
+        public System.Windows.Forms.Button ClaimFeaturesCard2;
+        public System.Windows.Forms.Button ClaimFeaturesCard1;
+        public System.Windows.Forms.TextBox AdditionalFeaturesTextBox4;
+        public System.Windows.Forms.TextBox AdditionalFeaturesTextBox3;
+        public System.Windows.Forms.TextBox AdditionalFeaturesTextBox2;
+        public System.Windows.Forms.TextBox AdditionalFeaturesTextBox1;
         private System.Windows.Forms.Button btnEndTurn;
         private System.Windows.Forms.ToolStripMenuItem btnQuitToMenuMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
@@ -1107,6 +1142,8 @@ namespace InformationAgeProject
         private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        public System.Windows.Forms.GroupBox ProjectFeaturesCardsGroupBox;
+        private System.Windows.Forms.GroupBox ProjectProgressCardsGroupBox;
     }
 }
 

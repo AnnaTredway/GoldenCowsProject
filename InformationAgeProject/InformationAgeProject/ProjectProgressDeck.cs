@@ -28,14 +28,14 @@ namespace InformationAgeProject
     /// </summary>
     public class ProjectProgressDeck
     {
-        public List<ProjectProgress> Deck = new List<ProjectProgress>(); // Creates a deck of 28 Project Progress cards
+        public List<ProjectProgress> Deck = new List<ProjectProgress>(); // Creates a deck of 7 Project Progress cards
 
         /// <summary>
         /// Creates a new deck of cards and shuffles them.
         /// </summary>
         public ProjectProgressDeck( )
         {
-            for (int i = 0; i < 28; i++)
+            for (int i = 0; i < 7; i++)
             {
                 Deck.Add(new ProjectProgress());
             }// end for (int i = 0; i < Deck.Length; i++)

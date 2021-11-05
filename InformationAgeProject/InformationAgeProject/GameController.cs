@@ -33,7 +33,7 @@ namespace InformationAgeProject
 		public static int turnCounter = 0;
 		public static Player[] playerList;
 		public static MainForm[] playerForms;
-		public static ProjectProgressDeck ProjProgDeck { get; set; }
+		public static ProjectProgressDeck[] ProjProgDeck { get; set; }
 		public static AdditionalProjectFeaturesDeck ProjFeatDeck { get; set; }
 
 		#region GameController Constructor
@@ -69,7 +69,7 @@ namespace InformationAgeProject
 		public static bool startGame(int playerCount, string[] teamNames)
 		{
 			//Checks if number of players is between 2 and 4
-			//Ends method immediately if there are not atleast 2 players or more than 4 players
+			//Ends method immediately if there are not at least 2 players or more than 4 players
 			if(playerCount < 2 || playerCount > 4)
 			{
 				MessageBox.Show("Number of players cannot be less than 2 or more than 4."
@@ -95,9 +95,14 @@ namespace InformationAgeProject
 			//Sets array index counts to playerCount number
 			playerList = new Player[playerCount];
 			playerForms = new MainForm[playerCount];
+			ProjProgDeck = new ProjectProgressDeck[playerCount];
 
-			//Creates new master card decks
-			ProjProgDeck = new ProjectProgressDeck();
+            //Creates new master card decks
+            for (int i = 0; i < ProjProgDeck.Length; i++)
+            {
+                ProjProgDeck[i] = new ProjectProgressDeck( ); 
+            }
+
 			ProjFeatDeck = new AdditionalProjectFeaturesDeck();
 
 			//Activates players, sets their team names, and instantiates their MainForms
@@ -347,6 +352,68 @@ namespace InformationAgeProject
 			Application.Exit();
 
 		}//end quitGame()
+        #endregion
+
+        #region Claim Project Progress Card		
+        /// <summary>
+        /// Claims a selected Project Progress card.
+        /// </summary>
+        /// <param name="cardNumber">The card number.</param>
+        public static int ClaimProgressCard( )
+		{
+			int points = ProjProgDeck[turnCounter].Deck[0].claimCard(playerList[turnCounter].Inventory.ReturnResourceManager( )); // Gets the number of points the card returns
+			Scoring score = new Scoring(playerList[turnCounter].Inventory);														  // Calculates the total score of the player
+
+			if (points > 0)
+			{
+				playerList[turnCounter].Inventory.ProjectProgressCards.Add(ProjProgDeck[turnCounter].Deck[0]);
+
+
+				//ProjProgDeck[turnCounter].Deck[0].blnSold = true; // ???
+				//ProjProgDeck[turnCounter].Deck[0].strCard = "Card claimed by\r\n" + playerList[turnCounter].TeamName; // ???
+				ProjProgDeck[turnCounter].Deck.RemoveAt(0);
+
+				playerForms[turnCounter].inventoryBox.Text = playerList[turnCounter].Inventory.printResources( );
+				playerForms[turnCounter].scoreBox.Text = score.calculateScore( );
+
+				return points;
+			}
+			return 0;
+		}
+		#endregion
+
+		#region Claim Project Feature Card
+		public static AdditionalProjectFeaturesType[] ClaimFeatureCard(int cardNumber, int cardCost)
+		{
+			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[cardNumber].claimCard(cardCost, playerList[turnCounter].Inventory);
+			Scoring score = new Scoring(playerList[turnCounter].Inventory);
+			int cardCounter = ProjFeatDeck.Deck.Count;
+
+			if (cards != null)
+			{
+				playerList[turnCounter].Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[cardNumber]);
+				ProjFeatDeck.Deck[cardNumber].blnSold = true;
+				ProjFeatDeck.Deck[cardNumber].strCard = "Card claimed by\r\n" + playerList[turnCounter].TeamName;
+				playerForms[turnCounter].inventoryBox.Text = playerList[turnCounter].Inventory.printResources( );
+				playerForms[turnCounter].scoreBox.Text = score.calculateScore( );
+
+                for (int i = 0; i < ProjFeatDeck.Deck.Count; i++)
+                {
+                    if (ProjFeatDeck.Deck[i].blnSold == true)
+                    {
+						cardCounter--;
+					}
+                }
+				playerForms[turnCounter].ProjectFeaturesCardsGroupBox.Text = "Project Features Cards: " + cardCounter + " cards remain";
+
+				int[] toolLevelList = playerList[turnCounter].Inventory.getToolLevelList( );
+				playerForms[turnCounter].toolSlot1.Text = toolLevelList[0].ToString( );
+				playerForms[turnCounter].toolSlot2.Text = toolLevelList[1].ToString( );
+				playerForms[turnCounter].toolSlot3.Text = toolLevelList[2].ToString( );
+				return cards;
+			}
+			return null;
+		}
 		#endregion
 	}
 }
