@@ -32,6 +32,7 @@ namespace InformationAgeProject
         private static Random rNum = new Random( ); // Used to select a random resource to use
         public int iPointValue;                    // Stores the amount of points this card is worth
         public Boolean blnSold = false;
+        public string strCard;
         private int iDifferentTypesNeeded;          // Stores the number of different resources types needed to purchase this card (used for advance cards)
         private List<Resource> ResourceCost = new List<Resource>( ); // Stores the resources need to purchase this card
 
@@ -45,6 +46,7 @@ namespace InformationAgeProject
             this.ResourceCost.Add(new Resource(rNum.Next(4)));
             this.ResourceCost.Add(new Resource(rNum.Next(4)));
             this.ResourceCost.Add(new Resource(rNum.Next(4)));
+            generateCardDescription( );
         }// end ProjectProgress( )
 
         /// <summary>
@@ -59,12 +61,13 @@ namespace InformationAgeProject
                 this.ResourceCost.Add(new Resource());
             }
             this.iDifferentTypesNeeded = resourceTypeNeeded;
-        }// end ProjectProgress(int resourceAmountNeeded, int resourceTypeNeeded
+            generateCardDescription( );
+        }// end ProjectProgress(int resourceAmountNeeded, int resourceTypeNeeded)
+
         /// <summary>
-        /// Displays the card.
+        /// Generates the card description.
         /// </summary>
-        /// <returns>sting that contains the card's info</returns>
-        public string displayCard( )
+        public void generateCardDescription( )
         {
             StringBuilder card = new StringBuilder( );
             card.Append("----------------\r\n");
@@ -76,7 +79,16 @@ namespace InformationAgeProject
                 card.Append("- " + this.ResourceCost[i].resourceName.PadLeft(12) + " -\r\n");
             }
             card.Append("----------------");
-            return card.ToString( );
+            strCard = card.ToString( );
+        }// end generateCardDescription( )
+
+        /// <summary>
+        /// Displays the card.
+        /// </summary>
+        /// <returns>sting that contains the card's info</returns>
+        public string displayCard( )
+        {
+            return strCard;
         }
 
         /// <summary>
