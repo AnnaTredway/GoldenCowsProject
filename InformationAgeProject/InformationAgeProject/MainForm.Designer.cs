@@ -321,7 +321,7 @@ namespace InformationAgeProject
             this.btnDoTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoTasks.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.btnDoTasks.Location = new System.Drawing.Point(871, 147);
+            this.btnDoTasks.Location = new System.Drawing.Point(872, 148);
             this.btnDoTasks.Name = "btnDoTasks";
             this.btnDoTasks.Size = new System.Drawing.Size(381, 33);
             this.btnDoTasks.TabIndex = 26;
@@ -390,7 +390,7 @@ namespace InformationAgeProject
             this.txtDevelopers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDevelopers.BackColor = System.Drawing.Color.White;
             this.txtDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDevelopers.Location = new System.Drawing.Point(1145, 637);
+            this.txtDevelopers.Location = new System.Drawing.Point(1146, 637);
             this.txtDevelopers.Name = "txtDevelopers";
             this.txtDevelopers.ReadOnly = true;
             this.txtDevelopers.Size = new System.Drawing.Size(51, 32);
@@ -655,7 +655,7 @@ namespace InformationAgeProject
             this.toolSlot1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.toolSlot1.BackColor = System.Drawing.Color.White;
             this.toolSlot1.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolSlot1.Location = new System.Drawing.Point(1201, 507);
+            this.toolSlot1.Location = new System.Drawing.Point(1203, 507);
             this.toolSlot1.Multiline = true;
             this.toolSlot1.Name = "toolSlot1";
             this.toolSlot1.ReadOnly = true;
@@ -668,7 +668,7 @@ namespace InformationAgeProject
             this.toolSlot2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.toolSlot2.BackColor = System.Drawing.Color.White;
             this.toolSlot2.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolSlot2.Location = new System.Drawing.Point(1202, 563);
+            this.toolSlot2.Location = new System.Drawing.Point(1203, 563);
             this.toolSlot2.Multiline = true;
             this.toolSlot2.Name = "toolSlot2";
             this.toolSlot2.ReadOnly = true;
@@ -681,7 +681,7 @@ namespace InformationAgeProject
             this.toolSlot3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.toolSlot3.BackColor = System.Drawing.Color.White;
             this.toolSlot3.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolSlot3.Location = new System.Drawing.Point(1202, 619);
+            this.toolSlot3.Location = new System.Drawing.Point(1203, 619);
             this.toolSlot3.Multiline = true;
             this.toolSlot3.Name = "toolSlot3";
             this.toolSlot3.ReadOnly = true;
@@ -693,7 +693,7 @@ namespace InformationAgeProject
             // 
             this.txtToolMaker.BackColor = System.Drawing.Color.White;
             this.txtToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtToolMaker.Location = new System.Drawing.Point(43, 111);
+            this.txtToolMaker.Location = new System.Drawing.Point(43, 173);
             this.txtToolMaker.Name = "txtToolMaker";
             this.txtToolMaker.ReadOnly = true;
             this.txtToolMaker.Size = new System.Drawing.Size(25, 23);
@@ -708,7 +708,7 @@ namespace InformationAgeProject
             this.btnAddToolMaker.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddToolMaker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToolMaker.Location = new System.Drawing.Point(74, 111);
+            this.btnAddToolMaker.Location = new System.Drawing.Point(74, 173);
             this.btnAddToolMaker.Name = "btnAddToolMaker";
             this.btnAddToolMaker.Size = new System.Drawing.Size(25, 25);
             this.btnAddToolMaker.TabIndex = 54;
@@ -722,7 +722,7 @@ namespace InformationAgeProject
             this.btnSubtToolMaker.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubtToolMaker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubtToolMaker.Location = new System.Drawing.Point(12, 111);
+            this.btnSubtToolMaker.Location = new System.Drawing.Point(12, 173);
             this.btnSubtToolMaker.Name = "btnSubtToolMaker";
             this.btnSubtToolMaker.Size = new System.Drawing.Size(25, 25);
             this.btnSubtToolMaker.TabIndex = 55;
@@ -736,7 +736,7 @@ namespace InformationAgeProject
             this.btnAcquireTool.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAcquireTool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcquireTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcquireTool.Location = new System.Drawing.Point(12, 140);
+            this.btnAcquireTool.Location = new System.Drawing.Point(12, 202);
             this.btnAcquireTool.Name = "btnAcquireTool";
             this.btnAcquireTool.Size = new System.Drawing.Size(87, 33);
             this.btnAcquireTool.TabIndex = 57;
@@ -749,7 +749,7 @@ namespace InformationAgeProject
             this.toolsPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.toolsPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("toolsPictureBox.Image")));
             this.toolsPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("toolsPictureBox.InitialImage")));
-            this.toolsPictureBox.Location = new System.Drawing.Point(1201, 453);
+            this.toolsPictureBox.Location = new System.Drawing.Point(1202, 453);
             this.toolsPictureBox.Name = "toolsPictureBox";
             this.toolsPictureBox.Size = new System.Drawing.Size(51, 48);
             this.toolsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -760,7 +760,7 @@ namespace InformationAgeProject
             // 
             this.toolMakerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("toolMakerPictureBox.Image")));
             this.toolMakerPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("toolMakerPictureBox.InitialImage")));
-            this.toolMakerPictureBox.Location = new System.Drawing.Point(12, 27);
+            this.toolMakerPictureBox.Location = new System.Drawing.Point(12, 89);
             this.toolMakerPictureBox.Name = "toolMakerPictureBox";
             this.toolMakerPictureBox.Size = new System.Drawing.Size(87, 78);
             this.toolMakerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -772,7 +772,7 @@ namespace InformationAgeProject
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(1145, 583);
+            this.pictureBox1.Location = new System.Drawing.Point(1146, 583);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -989,7 +989,9 @@ namespace InformationAgeProject
             this.ProjectFeaturesCardsGroupBox.Controls.Add(this.FeatureCardsCostLable);
             this.ProjectFeaturesCardsGroupBox.Controls.Add(this.ClaimFeaturesCard3);
             this.ProjectFeaturesCardsGroupBox.Controls.Add(this.ClaimFeaturesCard4);
+            this.ProjectFeaturesCardsGroupBox.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ProjectFeaturesCardsGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProjectFeaturesCardsGroupBox.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.ProjectFeaturesCardsGroupBox.Location = new System.Drawing.Point(12, 243);
             this.ProjectFeaturesCardsGroupBox.Name = "ProjectFeaturesCardsGroupBox";
             this.ProjectFeaturesCardsGroupBox.Size = new System.Drawing.Size(607, 233);
@@ -1002,6 +1004,8 @@ namespace InformationAgeProject
             this.ProjectProgressCardsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProjectProgressCardsGroupBox.Controls.Add(this.ProjectProgressCard1);
             this.ProjectProgressCardsGroupBox.Controls.Add(this.ClaimProgressCard1);
+            this.ProjectProgressCardsGroupBox.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ProjectProgressCardsGroupBox.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
             this.ProjectProgressCardsGroupBox.Location = new System.Drawing.Point(12, 482);
             this.ProjectProgressCardsGroupBox.Name = "ProjectProgressCardsGroupBox";
             this.ProjectProgressCardsGroupBox.Size = new System.Drawing.Size(217, 187);

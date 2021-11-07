@@ -413,8 +413,8 @@ namespace InformationAgeProject
 			int points = GameController.ClaimProgressCard();
 
 			//Removes the card from the deck and updates the text fields to show the new card
-            if (points > 0)
-            {
+			if (points > 0)
+			{
 				// if the deck is empty stop the player from pressing the button and display an empty message
 				if (GameController.ProjProgDeck[GameController.turnCounter].Deck.Count == 0)
 				{
@@ -501,19 +501,19 @@ namespace InformationAgeProject
 
 			AdditionalProjectFeaturesType[] cards = GameController.ClaimFeatureCard(0, 4);
 
-            if (cards != null)
-            {
+			if (cards != null)
+			{
 				//Syncs the purchased card ඞmong all the players
 				for (int i = 0; i < GameController.playerForms.Length; i++)
-                {
+				{
 					GameController.playerForms[i].ClaimFeaturesCard1.Enabled = false;
 
 					if (GameController.ProjFeatDeck.Deck.Count < 1)
-                    {
+					{
 						GameController.playerForms[i].AdditionalFeaturesTextBox1.Text = "All available cards have been purchased.";
 					}
-                    else
-                    {
+					else
+					{
 						GameController.playerForms[i].AdditionalFeaturesTextBox1.Text = GameController.ProjFeatDeck.Deck[0].displayCard( );
 					}
 				}
