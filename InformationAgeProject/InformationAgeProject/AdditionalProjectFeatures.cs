@@ -31,6 +31,7 @@ namespace InformationAgeProject
         private List<ResourceType> listResourceAwared = new List<ResourceType>( );
         private List<AdditionalProjectFeaturesType> listTypeAwared = new List<AdditionalProjectFeaturesType>( );
         public Boolean blnSold = false;
+        public string strCard;
 
         /// <summary>
         /// Creates a card that awards the player a random resource and item
@@ -48,6 +49,8 @@ namespace InformationAgeProject
             {
                 this.listTypeAwared.Add(listTypeAwared[0]);
             }
+
+            generateCard( );
         }
 
         /// <summary>
@@ -76,6 +79,8 @@ namespace InformationAgeProject
                     this.listTypeAwared.Add(listTypeAwared[0]);
                 }
             }
+
+            generateCard( );
         }
 
         /// <summary>
@@ -195,10 +200,9 @@ namespace InformationAgeProject
         }
 
         /// <summary>
-        /// Displays the card.
+        /// generates the cards description.
         /// </summary>
-        /// <returns>The string that represents the card</returns>
-        public string displayCard( )
+        public void generateCard( )
         {
             StringBuilder card = new StringBuilder( );
             card.Append("----------------\r\n");
@@ -228,7 +232,16 @@ namespace InformationAgeProject
                 card.Append("- " + this.listTypeAwared[i].ToString().PadLeft(12) + " -\r\n");
             }
             card.Append("----------------");
-            return card.ToString( );
+            strCard = card.ToString( );
+        }
+
+        /// <summary>
+        /// Displays the card.
+        /// </summary>
+        /// <returns>The string that represents the card</returns>
+        public string displayCard( )
+        {
+            return strCard;
         }
     }
 }

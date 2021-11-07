@@ -43,3 +43,6 @@ C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Proj
 C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.ToolTaskPrompt.resources
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.OptionsForm.resources
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.QuitToMenuForm.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.AssemblyReference.cache
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.OptionsForm.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.QuitToMenuForm.resources
