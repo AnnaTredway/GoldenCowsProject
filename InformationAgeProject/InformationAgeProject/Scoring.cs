@@ -68,6 +68,17 @@ namespace InformationAgeProject
                     total =  total + p.iPointValue;
                 }
             }
+
+            //Iterate through the player's list of additional project feature cards,
+            //and add each card's point value to the total
+            
+            /**if (inventory.AdditionalProjectFeaturesCards.Count != 0)
+            {
+                foreach ( AdditionalProjectFeatures a in inventory.AdditionalProjectFeaturesCards)
+                {
+                    total = total + ;
+                }
+            }**/
             
             total += backLog + low + medium + high;
 

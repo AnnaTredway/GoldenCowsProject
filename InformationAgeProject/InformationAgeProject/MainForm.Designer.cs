@@ -111,6 +111,9 @@ namespace InformationAgeProject
             this.FeatureCardsLabel4 = new System.Windows.Forms.Label();
             this.ProjectFeaturesCardsGroupBox = new System.Windows.Forms.GroupBox();
             this.ProjectProgressCardsGroupBox = new System.Windows.Forms.GroupBox();
+            this.btnSendDevs = new System.Windows.Forms.Button();
+            this.btnRecallDevs = new System.Windows.Forms.Button();
+            this.lblRecruitStatus = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
@@ -1009,12 +1012,53 @@ namespace InformationAgeProject
             this.ProjectProgressCardsGroupBox.TabStop = false;
             this.ProjectProgressCardsGroupBox.Text = "Project Progress Cards:";
             // 
+            // btnSendDevs
+            // 
+            this.btnSendDevs.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnSendDevs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendDevs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendDevs.Location = new System.Drawing.Point(173, 104);
+            this.btnSendDevs.Name = "btnSendDevs";
+            this.btnSendDevs.Size = new System.Drawing.Size(151, 23);
+            this.btnSendDevs.TabIndex = 78;
+            this.btnSendDevs.Text = "Send 2 Developers";
+            this.btnSendDevs.UseVisualStyleBackColor = false;
+            this.btnSendDevs.Click += new System.EventHandler(this.btnSendDevs_Click);
+            // 
+            // btnRecallDevs
+            // 
+            this.btnRecallDevs.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnRecallDevs.Enabled = false;
+            this.btnRecallDevs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecallDevs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecallDevs.Location = new System.Drawing.Point(173, 133);
+            this.btnRecallDevs.Name = "btnRecallDevs";
+            this.btnRecallDevs.Size = new System.Drawing.Size(151, 23);
+            this.btnRecallDevs.TabIndex = 79;
+            this.btnRecallDevs.Text = "Recall Developers";
+            this.btnRecallDevs.UseVisualStyleBackColor = false;
+            this.btnRecallDevs.Click += new System.EventHandler(this.btnRecallDevs_Click);
+            // 
+            // lblRecruitStatus
+            // 
+            this.lblRecruitStatus.BackColor = System.Drawing.Color.White;
+            this.lblRecruitStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRecruitStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecruitStatus.Location = new System.Drawing.Point(132, 45);
+            this.lblRecruitStatus.Name = "lblRecruitStatus";
+            this.lblRecruitStatus.Size = new System.Drawing.Size(240, 53);
+            this.lblRecruitStatus.TabIndex = 80;
+            this.lblRecruitStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblRecruitStatus);
+            this.Controls.Add(this.btnRecallDevs);
+            this.Controls.Add(this.btnSendDevs);
             this.Controls.Add(this.ProjectProgressCardsGroupBox);
             this.Controls.Add(this.ProjectFeaturesCardsGroupBox);
             this.Controls.Add(this.btnEndTurn);
@@ -1146,6 +1190,9 @@ namespace InformationAgeProject
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         public System.Windows.Forms.GroupBox ProjectFeaturesCardsGroupBox;
         private System.Windows.Forms.GroupBox ProjectProgressCardsGroupBox;
+        private System.Windows.Forms.Button btnSendDevs;
+        private System.Windows.Forms.Button btnRecallDevs;
+        private System.Windows.Forms.Label lblRecruitStatus;
     }
 }
 
