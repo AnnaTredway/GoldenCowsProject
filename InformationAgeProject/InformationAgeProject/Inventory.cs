@@ -152,7 +152,7 @@ namespace InformationAgeProject
 		}
 		#endregion
 
-		#region Tool Related Method
+		#region Tool Related Methods
 		/// <summary>
 		/// Method for adding a tool to the current player's inventory
 		/// If there are already 3 tools of the current level, one tool is instead upgraded to the next level to a maximum of 4 levels

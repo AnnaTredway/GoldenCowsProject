@@ -28,9 +28,15 @@ namespace InformationAgeProject
     {
         // Private Inventory objects for use by Inventory property of this class
         private Inventory _inventory;
-        
+
+        // Private teamcount int for use by TeamCount property of this class 
+        private int _teamcount;
+
         // Private developers int for use by Developers property of this class 
         private int _developers;
+
+        // Private _playernum int for use by PlayerNum property of this class 
+        private int _playernum;
 
         /// <summary>
         /// Player default constructor for setting the object's default values
@@ -41,34 +47,35 @@ namespace InformationAgeProject
             // Instantiate a new Inventory for the player
             _inventory = new Inventory();
 
-            // Set the initial amount of developers for the player to 5
+            // Set the initial amount of developers and teamcount for the player to 5
+            _teamcount = 5;
             _developers = 5;
         }
 
         /// <summary>
-        /// Developers property for maintaining the number of developers on
+        /// TeamCount property for maintaining the number of developers on
         /// a player's team. A player's team begins with 5 developers,
         /// and may not exceed a total of 20.
         /// </summary>
-        public int Developers
+        public int TeamCount
         {
-           // Return the current value for Developers
-            get { return _developers; }
+            // Return the current value for TeamCount
+            get { return _teamcount; }
 
-            // Set the value for Developers
+            // Set the value for TeamCount
             set
             {
-                // If the current value of Developers is less than 20
-                if (_developers < 20)
+                // If the current value of TeamCount is less than 20
+                if (_teamcount < 20)
                 {
-                    // Increase the total of developers by one
-                    _developers = _developers + 1;
+                    // Increase the total of TeamCount by one
+                    _teamcount = _teamcount + 1;
                 }
-                // Else the value of Developers has already reached twenty
+                // Else the value of TeamCount has already reached twenty
                 else
                 {
-                    // Maintain the value of 20 for Developers
-                    _developers = 20;
+                    // Maintain the value of 20 for TeamCount
+                    _teamcount = 20;
                 }
             }
         }
@@ -83,6 +90,30 @@ namespace InformationAgeProject
 
             // Set the value for Inventory
             set { _inventory = value; }
+        }
+
+        /// <summary>
+        /// Developer property for keeping count of number of free developers not assigned anywhere
+        /// </summary>
+        public int Developers
+        {
+            // Return the current number within free _developers pool
+            get { return _developers; }
+
+            // Set the value for _developers
+            set { _developers = value; }
+        }
+
+        /// <summary>
+        /// PlayerNum property for keeping count of player index
+        /// </summary>
+        public int PlayerNum
+        {
+            // Return the current state of the _playernum
+            get { return _playernum; }
+
+            // Set the value for _playernum
+            set { _playernum = value; }
         }
 
         /// <summary>

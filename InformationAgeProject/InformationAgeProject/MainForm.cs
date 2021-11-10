@@ -38,7 +38,7 @@ namespace InformationAgeProject
 
 			//Assigns player and corresponding team name to this MainForm instance
 			this.player = player;
-			this.Text = "Information Age: " + player.TeamName;
+			this.Text = "Information Age | Team: " + player.TeamName;
 		}
 
 		#region MainForm_Load()
@@ -71,6 +71,30 @@ namespace InformationAgeProject
 			toolSlot1.Text = toolLevelList[0].ToString();
 			toolSlot2.Text = toolLevelList[1].ToString();
 			toolSlot3.Text = toolLevelList[2].ToString();
+
+			//Resets tool maker because developer was already added back to player at the end of previous round
+			txtToolMaker.Text = "0";
+		}
+		#endregion
+
+		#region Reload()
+		/// <summary>
+		/// Method for reloading some parts of main forms when new round begins
+		/// </summary>
+		public void Reload()
+		{
+			//Re-Loads developer count into txtDevelopers
+			this.txtDevelopers.Text = player.Developers.ToString();
+
+
+			//Re-Loads tool levels into toolSlot textboxes
+			int[] toolLevelList = player.Inventory.getToolLevelList();
+			toolSlot1.Text = toolLevelList[0].ToString();
+			toolSlot2.Text = toolLevelList[1].ToString();
+			toolSlot3.Text = toolLevelList[2].ToString();
+
+			//Resets tool maker because developer was already added back to player at the end of previous round
+			txtToolMaker.Text = "0";
 		}
 		#endregion
 
@@ -84,10 +108,11 @@ namespace InformationAgeProject
 		{
 			//If the number of developers is larger than 0 and backlog count is less than 7, then subtract 1 from developer count and add 1 to backlog count
 			//Else, do nothing
-			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtBacklog.Text) < 7)
+			if (player.Developers > 0 && Int32.Parse(txtBacklog.Text) < 7)
 			{
-				//Subtract 1 developer from developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
+				//Subtract 1 developer from current player's developer count and show in text box
+				player.Developers--;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
 				//Add 1 developer to backlog count
 				txtBacklog.Text = Convert.ToString(Int32.Parse(txtBacklog.Text) + 1);
@@ -113,8 +138,9 @@ namespace InformationAgeProject
 				//Subtract 1 developer from backlog count
 				txtBacklog.Text = Convert.ToString(Int32.Parse(txtBacklog.Text) - 1);
 
-				//Add 1 developer to developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 1);
+				//Add 1 developer to current player's developer count and show in text box
+				player.Developers++;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
 			}
 			else
@@ -132,10 +158,11 @@ namespace InformationAgeProject
 		{
 			//If the number of developers is larger than 0 and low-priority count is less than 7, then subtract 1 from developer count and add 1 to low-priority count
 			//Else, do nothing
-			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtLow.Text) < 7)
+			if (player.Developers > 0 && Int32.Parse(txtLow.Text) < 7)
 			{
-				//Subtract 1 developer from developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
+				//Subtract 1 developer from current player's developer count and show in text box
+				player.Developers--;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
 				//Add 1 developer to low-priority count
 				txtLow.Text = Convert.ToString(Int32.Parse(txtLow.Text) + 1);
@@ -161,8 +188,9 @@ namespace InformationAgeProject
 				//Subtract 1 developer from low-priority count
 				txtLow.Text = Convert.ToString(Int32.Parse(txtLow.Text) - 1);
 
-				//Add 1 developer to developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 1);
+				//Add 1 developer to current player's developer count and show in text box
+				player.Developers++;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
 			}
 			else
@@ -180,10 +208,11 @@ namespace InformationAgeProject
 		{
 			//If the number of developers is larger than 0 and medium-priority count is less than 7, then subtract 1 from developer count and add 1 to medium-priority count
 			//Else, do nothing
-			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtMed.Text) < 7)
+			if (player.Developers > 0 && Int32.Parse(txtMed.Text) < 7)
 			{
-				//Subtract 1 developer from developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
+				//Subtract 1 developer from current player's developer count and show in text box
+				player.Developers--;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
 				//Add 1 developer to medium-priority count
 				txtMed.Text = Convert.ToString(Int32.Parse(txtMed.Text) + 1);
@@ -209,8 +238,9 @@ namespace InformationAgeProject
 				//Subtract 1 developer from medium-priority count
 				txtMed.Text = Convert.ToString(Int32.Parse(txtMed.Text) - 1);
 
-				//Add 1 developer to developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 1);
+				//Add 1 developer to current player's developer count and show in text box
+				player.Developers++;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
 			}
 			else
@@ -228,10 +258,11 @@ namespace InformationAgeProject
 		{
 			//If the number of developers is larger than 0 and high-priority count is less than 7, then subtract 1 from developer count and add 1 to high-priority count
 			//Else, do nothing
-			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtHigh.Text) < 7)
+			if (player.Developers > 0 && Int32.Parse(txtHigh.Text) < 7)
 			{
-				//Subtract 1 developer from developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
+				//Subtract 1 developer from current player's developer count and show in text box
+				player.Developers--;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
 				//Add 1 developer to medium-priority count
 				txtHigh.Text = Convert.ToString(Int32.Parse(txtHigh.Text) + 1);
@@ -257,8 +288,9 @@ namespace InformationAgeProject
 				//Subtract 1 developer from high-priority count
 				txtHigh.Text = Convert.ToString(Int32.Parse(txtHigh.Text) - 1);
 
-				//Add 1 developer to developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 1);
+				//Add 1 developer to current player's developer count and show in text box
+				player.Developers++;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
 			}
 			else
@@ -287,13 +319,14 @@ namespace InformationAgeProject
 			//Returns developers to developer pool and disables "DoTasks" button if task calculation was successful
 			if (GameController.calcTasks(player, devCounts) == true)
 			{
-				//Adds developers back to player's free developer pool
-				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
-				txtDevelopers.Text = Convert.ToString(leftoverDevelopers
-													+ int.Parse(txtBacklog.Text)
-													+ int.Parse(txtLow.Text)
-													+ int.Parse(txtMed.Text)
-													+ int.Parse(txtHigh.Text));
+				//Adds developers back to player's free developer pool and show in text box
+				int leftoverDevelopers = player.Developers;
+				player.Developers = leftoverDevelopers
+									+ int.Parse(txtBacklog.Text)
+									+ int.Parse(txtLow.Text)
+									+ int.Parse(txtMed.Text)
+									+ int.Parse(txtHigh.Text);
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
 				//Resets developer counts on each task/resource
 				txtBacklog.Text = "0";
@@ -322,16 +355,33 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnAddToolMaker_Click(object sender, EventArgs e)
 		{
-			//If the number of developers is larger than 0 and any player has not put a developer at the tool maker, add 1 to tool maker
+			//If the number of developers is larger than 0 and the number of developers at the tool maker less than 1, go to next check
 			//Else, do nothing
-			if (Int32.Parse(txtDevelopers.Text) > 0 && Int32.Parse(txtToolMaker.Text) < 1)
+			if (player.Developers > 0 && Int32.Parse(txtToolMaker.Text) < 1)
 			{
-				//Subtract 1 developer from developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 1);
+				//If any player has not put a developer at the tool maker, add a developer to the tool maker
+				//Else, show error stating that another player already has a developer at the tool maker
+				if (GameController.toolMakerFull == false)
+			{
 
-				//Add 1 developer to tool maker count
-				txtToolMaker.Text = Convert.ToString(Int32.Parse(txtToolMaker.Text) + 1);
+					//Subtract 1 developer from current player's developer count and show in text box
+					player.Developers--;
+					txtDevelopers.Text = Convert.ToString(player.Developers);
 
+					//Add 1 developer to tool maker count and show in text box
+					txtToolMaker.Text = Convert.ToString(1);
+
+					//Sets storage integer showing which player has a developer at the tool maker equal to the index of the player at the tool maker
+					GameController.playerAtToolMaker = player.PlayerNum;
+					GameController.toolMakerFull = true;
+				}
+				else
+				{
+					MessageBox.Show("Another player already has a developer at the tool maker."
+					, "Cannot Assign Developer To Tool Maker"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+				}
 			}
 			else
 			{
@@ -350,50 +400,16 @@ namespace InformationAgeProject
 			//Else, do nothing
 			if (Int32.Parse(txtToolMaker.Text) > 0)
 			{
-				//Subtract 1 developer from tool maker count
-				txtToolMaker.Text = Convert.ToString(Int32.Parse(txtToolMaker.Text) - 1);
+				//Subtract 1 developer from tool maker and show in text box
+				txtToolMaker.Text = Convert.ToString(0);
 
-				//Add 1 developer to developer count
-				txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 1);
+				//Add 1 developer to current player's developer count and show in text box
+				player.Developers++;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 
-			}
-			else
-			{
-				//Do nothing
-			}
-		}
-
-		/// <summary>
-		/// PLACEHOLDER Event Handler for button to acquire tool for current player 
-		/// (In the finished game, tools are only acquired after a round ends and a player has a developer at the tool maker, not when a button is pressed)
-		/// </summary>
-		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
-		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void btnAcquireTool_Click(object sender, EventArgs e)
-		{
-			//If there is atleast one developer at the tool maker for the current player, add one tool to inventory if able to
-			//Else, do nothing
-			if (Int32.Parse(txtToolMaker.Text) == 1)
-			{
-				//Adds a tool to the players inventory if there are not 3 tools that equal level 4
-				player.Inventory.addTool();
-
-				//Stores developer that is currently in tool maker
-				int toolMakerNum = Int32.Parse(txtToolMaker.Text);
-
-				//Resets developer count at tool maker
-				txtToolMaker.Text = "0";
-
-				//Returns developer that was at the tool maker back to developer pool
-				int leftoverDevelopers = Int32.Parse(txtDevelopers.Text);
-				txtDevelopers.Text = Convert.ToString(leftoverDevelopers + toolMakerNum);
-
-				//Reloads current tool levels after acquiring new tool
-				int[] toolLevelList = player.Inventory.getToolLevelList();
-				toolSlot1.Text = Convert.ToString(toolLevelList[0]);
-				toolSlot2.Text = Convert.ToString(toolLevelList[1]);
-				toolSlot3.Text = Convert.ToString(toolLevelList[2]);
-
+				//Resets the storage integer for showing which player has developer at the tool maker
+				GameController.playerAtToolMaker = -1;
+				GameController.toolMakerFull = false;
 			}
 			else
 			{

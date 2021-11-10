@@ -91,7 +91,6 @@ namespace InformationAgeProject
             this.txtToolMaker = new System.Windows.Forms.TextBox();
             this.btnAddToolMaker = new System.Windows.Forms.Button();
             this.btnSubtToolMaker = new System.Windows.Forms.Button();
-            this.btnAcquireTool = new System.Windows.Forms.Button();
             this.toolsPictureBox = new System.Windows.Forms.PictureBox();
             this.toolMakerPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -693,7 +692,7 @@ namespace InformationAgeProject
             // 
             this.txtToolMaker.BackColor = System.Drawing.Color.White;
             this.txtToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtToolMaker.Location = new System.Drawing.Point(43, 173);
+            this.txtToolMaker.Location = new System.Drawing.Point(43, 111);
             this.txtToolMaker.Name = "txtToolMaker";
             this.txtToolMaker.ReadOnly = true;
             this.txtToolMaker.Size = new System.Drawing.Size(25, 23);
@@ -708,7 +707,7 @@ namespace InformationAgeProject
             this.btnAddToolMaker.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddToolMaker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToolMaker.Location = new System.Drawing.Point(74, 173);
+            this.btnAddToolMaker.Location = new System.Drawing.Point(74, 111);
             this.btnAddToolMaker.Name = "btnAddToolMaker";
             this.btnAddToolMaker.Size = new System.Drawing.Size(25, 25);
             this.btnAddToolMaker.TabIndex = 54;
@@ -722,27 +721,13 @@ namespace InformationAgeProject
             this.btnSubtToolMaker.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubtToolMaker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtToolMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubtToolMaker.Location = new System.Drawing.Point(12, 173);
+            this.btnSubtToolMaker.Location = new System.Drawing.Point(12, 111);
             this.btnSubtToolMaker.Name = "btnSubtToolMaker";
             this.btnSubtToolMaker.Size = new System.Drawing.Size(25, 25);
             this.btnSubtToolMaker.TabIndex = 55;
             this.btnSubtToolMaker.Text = "-";
             this.btnSubtToolMaker.UseVisualStyleBackColor = false;
             this.btnSubtToolMaker.Click += new System.EventHandler(this.btnSubtToolMaker_Click);
-            // 
-            // btnAcquireTool
-            // 
-            this.btnAcquireTool.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.btnAcquireTool.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAcquireTool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcquireTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcquireTool.Location = new System.Drawing.Point(12, 202);
-            this.btnAcquireTool.Name = "btnAcquireTool";
-            this.btnAcquireTool.Size = new System.Drawing.Size(87, 33);
-            this.btnAcquireTool.TabIndex = 57;
-            this.btnAcquireTool.Text = "Acquire Tool";
-            this.btnAcquireTool.UseVisualStyleBackColor = false;
-            this.btnAcquireTool.Click += new System.EventHandler(this.btnAcquireTool_Click);
             // 
             // toolsPictureBox
             // 
@@ -760,7 +745,7 @@ namespace InformationAgeProject
             // 
             this.toolMakerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("toolMakerPictureBox.Image")));
             this.toolMakerPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("toolMakerPictureBox.InitialImage")));
-            this.toolMakerPictureBox.Location = new System.Drawing.Point(12, 89);
+            this.toolMakerPictureBox.Location = new System.Drawing.Point(12, 27);
             this.toolMakerPictureBox.Name = "toolMakerPictureBox";
             this.toolMakerPictureBox.Size = new System.Drawing.Size(87, 78);
             this.toolMakerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1025,7 +1010,6 @@ namespace InformationAgeProject
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolMakerPictureBox);
             this.Controls.Add(this.toolsPictureBox);
-            this.Controls.Add(this.btnAcquireTool);
             this.Controls.Add(this.btnSubtToolMaker);
             this.Controls.Add(this.btnAddToolMaker);
             this.Controls.Add(this.txtToolMaker);
@@ -1124,7 +1108,6 @@ namespace InformationAgeProject
         private System.Windows.Forms.TextBox txtToolMaker;
         private System.Windows.Forms.Button btnAddToolMaker;
         private System.Windows.Forms.Button btnSubtToolMaker;
-        private System.Windows.Forms.Button btnAcquireTool;
         private System.Windows.Forms.PictureBox toolsPictureBox;
         private System.Windows.Forms.PictureBox toolMakerPictureBox;
         private System.Windows.Forms.PictureBox pictureBox1;

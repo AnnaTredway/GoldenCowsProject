@@ -29,8 +29,11 @@ namespace InformationAgeProject
 	/// </summary>
 	public class GameController
 	{
-		public static int turnCounter = 0;      //Counnts what turn currently being done within a single round
-		public static int roundCounter = 1;     //Counts how many rounds are in game and stores current round
+		public static int turnCounter = 0;		//Counts what turn currently being done within a single round
+		public static int roundCounter = 1;		//Counts how many rounds are in game and stores current round
+
+		public static bool toolMakerFull = false;   //Player array index who has the tool at the tool maker
+		public static int playerAtToolMaker = -1;	//Array of index of player that has developer at tool maker
 
 		public static MainMenu mainMenu;		//MainMenu instance that opens when opening game
 		public static Player[] playerList;		//Array of players for game
@@ -109,11 +112,12 @@ namespace InformationAgeProject
 
 			ProjFeatDeck = new AdditionalProjectFeaturesDeck();
 
-			//Activates players, sets their team names, and instantiates their MainForms
+			//Activates players, sets their team names, sets their player numbers, and instantiates their MainForms
 			for (int i = 0; i < playerCount; i++)
 			{
 				playerList[i] = new Player();
 				playerList[i].TeamName = teamNames[i];
+				playerList[i].PlayerNum = i;
 				playerForms[i] = new MainForm(playerList[i]);
 			}
 
@@ -130,7 +134,7 @@ namespace InformationAgeProject
 		/// Method for calculating number of tasks that player should acquire based on random dice rolls and tool usage and stores them in player's inventory
 		/// </summary>
 		/// <param name="player">Player that is currently collecting tasks/resources</param>
-		/// <param name="player">Array of developer counts for each task/resource for current player</param>
+		/// <param name="devCounts">Array of developer counts for each task/resource for current player</param>
 		/// <returns>Bool of whether or not task calculation was successful (Used for determining if DoTasks button should be deactivated for current turn)</returns>
 		public static bool calcTasks(Player player, int[] devCounts)
 		{
@@ -204,6 +208,24 @@ namespace InformationAgeProject
 			}
 
 		}//end calcTasks()
+		#endregion
+
+		#region acquireTool() Method
+		/// <summary>
+		/// Method for a player to acquire tool from tool maker if that player has a developer at the tool maker when the round ends
+		/// </summary>
+		public static void acquireTool()
+		{
+			//Adds one tool to inventory of the player with a developer at the tool maker if able to
+			playerList[playerAtToolMaker].Inventory.addTool();
+
+			//Adds player's developer back to their free developer pool
+			playerList[playerAtToolMaker].Developers++;
+
+			playerAtToolMaker = -1; //Resets value of player at tool maker to not equal any player for new round
+			toolMakerFull = false;	//Resets boolean for checking if a player has a developer at the tool maker
+
+		}//end acquireTool()
 		#endregion
 
 		#region calcToolLevelsFromList() Method
@@ -346,13 +368,40 @@ namespace InformationAgeProject
 			}
 			catch
 			{
-				//If there is not a player form at the turnCounter index, go back to first player form and increase round counter
-				turnCounter = 0;
-				playerForms[turnCounter].Visible = true;
-				roundCounter++;
+				//If there is not a player form at the next turnCounter index, end round and go to next one
+				endRound();
 			}
 
 		}//end endTurn()
+		#endregion
+
+		#region endRound() Method
+		/// <summary>
+		/// Method for ending round and going to next round
+		/// </summary>
+		public static void endRound()
+		{
+			//Acquires tool for player that had developer at tool maker if tool maker has a developer at it
+			if (toolMakerFull == true)
+			{
+				acquireTool();
+			}
+
+			//Resets turn counter and increases the round counter
+			turnCounter = 0;
+			roundCounter++;
+
+			//Reloads data within main form
+			foreach(MainForm form in playerForms)
+			{
+				form.Reload();
+			}
+
+			//Sets player 1's form to visible, 
+			playerForms[turnCounter].Visible = true;
+
+
+		}//end endRound()
 		#endregion
 
 		//Switching to different windows/forms methods regions
