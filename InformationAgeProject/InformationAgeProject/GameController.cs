@@ -322,7 +322,11 @@ namespace InformationAgeProject
 						cardCounter--;
 					}
 				}
-				playerForms[turnCounter].ProjectFeaturesCardsGroupBox.Text = "Project Features Cards: " + cardCounter + " cards remain";
+
+                for (int i = 0; i < playerForms.Length; i++)
+                {
+                    playerForms[i].ProjectFeaturesCardsGroupBox.Text = "Project Features Cards: " + cardCounter + " cards remain";
+                }
 
 				int[] toolLevelList = playerList[turnCounter].Inventory.getToolLevelList();
 				playerForms[turnCounter].toolSlot1.Text = toolLevelList[0].ToString();
@@ -346,6 +350,118 @@ namespace InformationAgeProject
 				}
 
 			}
+		}
+        #endregion
+
+        #region Calculate Project Feature Card's score		
+        /// <summary>
+        /// Calculates the points earned from collecting feature cards.
+        /// </summary>
+        /// <param name="currentPlayer">The current player.</param>
+        /// <returns>The points the player has earned.</returns>
+        public static int calculateFeatureCardPoints(Player currentPlayer)
+		{
+			int iPoints = 0;					// Stores the number of points awarded from each card claimed by the player
+			List<AdditionalProjectFeaturesType> awaredItems = new List<AdditionalProjectFeaturesType>( ); // Stores the items associated with a card
+			int[] iTypeTally = new int[11];		// Stores a tally of the different item types
+			Boolean blnContinue = true;			// Continues through a loop if true
+
+			// Add all the items collected from the player into a single list
+            for (int i = 0; i < currentPlayer.Inventory.AdditionalProjectFeaturesCards.Count; i++)
+            {
+				awaredItems.AddRange(currentPlayer.Inventory.AdditionalProjectFeaturesCards[i].listTypeAwared);
+			}
+
+			// Tally all the items
+			for (int i = 0; i < awaredItems.Count; i++)
+			{
+				switch (awaredItems[i])
+				{
+					case AdditionalProjectFeaturesType.medicine:
+						iTypeTally[0]++;
+						break;
+					case AdditionalProjectFeaturesType.art:
+						iTypeTally[1]++;
+						break;
+					case AdditionalProjectFeaturesType.music:
+						iTypeTally[2]++;
+						break;
+					case AdditionalProjectFeaturesType.writing:
+						iTypeTally[3]++;
+						break;
+					case AdditionalProjectFeaturesType.clock:
+						iTypeTally[4]++;
+						break;
+					case AdditionalProjectFeaturesType.pottery:
+						iTypeTally[5]++;
+						break;
+					case AdditionalProjectFeaturesType.transport:
+						iTypeTally[6]++;
+						break;
+					case AdditionalProjectFeaturesType.weaving:
+						iTypeTally[7]++;
+						break;
+					case AdditionalProjectFeaturesType.tool_maker:
+						iTypeTally[8]++;
+						break;
+					case AdditionalProjectFeaturesType.hut_builder:
+						iTypeTally[9]++;
+						break;
+					case AdditionalProjectFeaturesType.shamen:
+						iTypeTally[10]++;
+						break;
+				}
+			}
+			// Multiply the number of tool makers by the value of the player's tools.
+			if (iTypeTally[8] > 0)
+            {
+				int[] tools = currentPlayer.Inventory.getToolLevelList( ); // Stores the tools the player currently has
+				int toolCount = 0;										   // Stores the number of tools the player has
+
+                for (int i = 0; i < tools.Length; i++)
+                {
+					toolCount += tools[i];
+                }
+
+				iPoints += iTypeTally[8] * toolCount;
+			}
+
+			// Multiply the number of hut builders by the number of project progress cards.
+			if (iTypeTally[9] > 0)
+			{
+				iPoints += iTypeTally[9] * currentPlayer.Inventory.ProjectProgressCards.Count( );
+			}
+
+			// Multiply the number of shamen by the number of people.
+			if (iTypeTally[10] > 0)
+			{
+				iPoints += iTypeTally[10] * currentPlayer.Developers;
+			}
+
+            // Multiply the different project feature card items
+            while (blnContinue == true)
+            {
+				blnContinue = false;
+				int iMultValue = 0;		// Stores the multiplication value for the group of items 
+
+				for (int i = 0; i < 8; i++)
+                {
+                    if (iTypeTally[i] > 0)
+                    {
+                        iMultValue++;
+                        iTypeTally[i]--;
+						
+						// if there is still items left then run through the while loop again.
+                        if (iTypeTally[i] > 0)
+                        {
+							blnContinue = true;
+						}
+                    }
+                }
+				iPoints += iMultValue * iMultValue; // max score multiplier is 8 * 8
+            }
+
+			return iPoints;
 		}
 		#endregion
 

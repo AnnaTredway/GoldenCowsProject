@@ -751,5 +751,5 @@ namespace InformationAgeProject
 			if (player.Developers >= 2)
 				btnSendDevs.Enabled = true; 
 		}
-	}
+    }
 }

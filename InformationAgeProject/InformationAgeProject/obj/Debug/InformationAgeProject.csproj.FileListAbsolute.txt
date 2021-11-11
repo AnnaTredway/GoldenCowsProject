@@ -32,3 +32,20 @@ C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAge
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.CoreCompileInputs.cache
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.exe
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.pdb
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\bin\Debug\InformationAgeProject.exe.config
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\bin\Debug\InformationAgeProject.exe
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\bin\Debug\InformationAgeProject.pdb
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.AssemblyReference.cache
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.AboutBox.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.AdditionalProjectFeaturesSelector.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.MainForm.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.MainMenu.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.OptionsForm.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.Properties.Resources.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.QuitForm.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.QuitToMenuForm.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.ToolTaskPrompt.resources
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.GenerateResource.cache
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.CoreCompileInputs.cache
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.exe
+C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.pdb
