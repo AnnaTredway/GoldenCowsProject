@@ -704,7 +704,7 @@ namespace InformationAgeProject
 			//Opens AboutBox with information about the game
 			GameController.openAboutBox();
 		}
-        #endregion
+		#endregion
 
 		/// <summary>
 		/// PLACEHOLDER EVENT: Only one player can use the recruitment office per round.
@@ -713,27 +713,29 @@ namespace InformationAgeProject
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-        private void btnSendDevs_Click(object sender, EventArgs e)
-        {
+		private void btnSendDevs_Click(object sender, EventArgs e)
+		{
 			//Create new recruitment office object, with the current number of the player's developers
-			RecruitmentOffice recruitmentOffice = new RecruitmentOffice(player.Developers);
+			RecruitmentOffice recruitmentOffice = new RecruitmentOffice(player.TeamCount);
 
 			//If the player has at least two developers
 			if (player.Developers >= 2)
-            {
+			{
 				int totalDevs = recruitmentOffice.RecruitNewDev();
 				btnSendDevs.Enabled = false;
 				lblRecruitStatus.Text = $"Recruitment Status:\n-----------------------" +
 					$"\nOccupied with 2 developers from Team:" +
 					$"\n{player.TeamName}";
-				txtDevelopers.Text = txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 2);
+
+				player.Developers = player.Developers - 2;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
 				btnRecallDevs.Enabled = true;
 			}
 			else
-            {
+			{
 				//throw an error message stating that you must have at least 2 devs
-            }
-        }
+			}
+		}
 
 		/// <summary>
 		/// PLACEHOLDER EVENT: Only one player can use the recruitment office per round.
@@ -741,12 +743,13 @@ namespace InformationAgeProject
 		/// Will need to be updated for round based functionality.
 		/// </summary>
 		private void btnRecallDevs_Click(object sender, EventArgs e)
-        {
-			txtDevelopers.Text = txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 2);
+		{
+			player.Developers = player.Developers + 2;
+			txtDevelopers.Text = Convert.ToString(player.Developers);
 			btnRecallDevs.Enabled = false;
 
 			if (player.Developers >= 2)
 				btnSendDevs.Enabled = true; 
 		}
-    }
+	}
 }
