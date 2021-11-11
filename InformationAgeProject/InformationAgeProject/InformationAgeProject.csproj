@@ -94,6 +94,7 @@
     <Compile Include="QuitToMenuForm.Designer.cs">
       <DependentUpon>QuitToMenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecruitmentOffice.cs" />
     <Compile Include="ResourceType.cs" />
     <Compile Include="ProjectProgress.cs" />
     <Compile Include="Dice.cs" />

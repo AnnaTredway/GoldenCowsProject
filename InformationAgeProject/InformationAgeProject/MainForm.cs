@@ -704,6 +704,49 @@ namespace InformationAgeProject
 			//Opens AboutBox with information about the game
 			GameController.openAboutBox();
 		}
-		#endregion
-	}
+        #endregion
+
+		/// <summary>
+		/// PLACEHOLDER EVENT: Only one player can use the recruitment office per round.
+		/// This event as is handles the recruitment office on a turn-by-turn basis.
+		/// Will need to be updated for round based functionality.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+        private void btnSendDevs_Click(object sender, EventArgs e)
+        {
+			//Create new recruitment office object, with the current number of the player's developers
+			RecruitmentOffice recruitmentOffice = new RecruitmentOffice(player.Developers);
+
+			//If the player has at least two developers
+			if (player.Developers >= 2)
+            {
+				int totalDevs = recruitmentOffice.RecruitNewDev();
+				btnSendDevs.Enabled = false;
+				lblRecruitStatus.Text = $"Recruitment Status:\n-----------------------" +
+					$"\nOccupied with 2 developers from Team:" +
+					$"\n{player.TeamName}";
+				txtDevelopers.Text = txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) - 2);
+				btnRecallDevs.Enabled = true;
+			}
+			else
+            {
+				//throw an error message stating that you must have at least 2 devs
+            }
+        }
+
+		/// <summary>
+		/// PLACEHOLDER EVENT: Only one player can use the recruitment office per round.
+		/// This event as is handles the recruitment office on a turn-by-turn basis.
+		/// Will need to be updated for round based functionality.
+		/// </summary>
+		private void btnRecallDevs_Click(object sender, EventArgs e)
+        {
+			txtDevelopers.Text = txtDevelopers.Text = Convert.ToString(Int32.Parse(txtDevelopers.Text) + 2);
+			btnRecallDevs.Enabled = false;
+
+			if (player.Developers >= 2)
+				btnSendDevs.Enabled = true; 
+		}
+    }
 }
