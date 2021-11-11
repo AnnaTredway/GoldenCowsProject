@@ -2,7 +2,7 @@
 //
 //	Solution/Project:  InformationAgeProject/InformationAgeProject
 //	File Name:         GameController.cs
-//	Description:       GameController class for methods and controls the windows forms of the program
+//	Description:       GameController class for methods and controls of the windows forms and game functionality of the program
 //	Course:            CSCI-4250-002 - Software Engineering I
 //	Authors:           Anna Tredway, harwellab@etsu.edu
 //                     Bobby Mullins, mullinsbd@etsu.edu
@@ -29,10 +29,16 @@ namespace InformationAgeProject
 	/// </summary>
 	public class GameController
 	{
-		public static MainMenu mainMenu;
-		public static int turnCounter = 0;
-		public static Player[] playerList;
-		public static MainForm[] playerForms;
+		public static int turnCounter = 0;		//Counts what turn currently being done within a single round
+		public static int roundCounter = 1;		//Counts how many rounds are in game and stores current round
+
+		public static bool toolMakerFull = false;   //Player array index who has the tool at the tool maker
+		public static int playerAtToolMaker = -1;	//Array of index of player that has developer at tool maker
+
+		public static MainMenu mainMenu;		//MainMenu instance that opens when opening game
+		public static Player[] playerList;		//Array of players for game
+		public static MainForm[] playerForms;	//Array of MainForms to be used by players
+
 		public static ProjectProgressDeck[] ProjProgDeck { get; set; }
 		public static AdditionalProjectFeaturesDeck ProjFeatDeck { get; set; }
 
@@ -59,6 +65,7 @@ namespace InformationAgeProject
 		}//end openGame()
 		#endregion
 
+		//Game functionality methods regions
 		#region startGame() Method
 		/// <summary>
 		/// Method for starting game with set number of players to open set number of MainForms for each player
@@ -70,7 +77,7 @@ namespace InformationAgeProject
 		{
 			//Checks if number of players is between 2 and 4
 			//Ends method immediately if there are not at least 2 players or more than 4 players
-			if(playerCount < 2 || playerCount > 4)
+			if (playerCount < 2 || playerCount > 4)
 			{
 				MessageBox.Show("Number of players cannot be less than 2 or more than 4."
 						, "Invalid Number Of Players"
@@ -80,7 +87,7 @@ namespace InformationAgeProject
 				return false;//Main menu stays visible
 			}
 
-			for(int i = 0; i < playerCount; i++)
+			for (int i = 0; i < playerCount; i++)
 			{
 				if (string.IsNullOrWhiteSpace(teamNames[i]))
 				{
@@ -97,19 +104,20 @@ namespace InformationAgeProject
 			playerForms = new MainForm[playerCount];
 			ProjProgDeck = new ProjectProgressDeck[playerCount];
 
-            //Creates new master card decks
-            for (int i = 0; i < ProjProgDeck.Length; i++)
-            {
-                ProjProgDeck[i] = new ProjectProgressDeck( ); 
-            }
+			//Creates new master card decks
+			for (int i = 0; i < ProjProgDeck.Length; i++)
+			{
+				ProjProgDeck[i] = new ProjectProgressDeck();
+			}
 
 			ProjFeatDeck = new AdditionalProjectFeaturesDeck();
 
-			//Activates players, sets their team names, and instantiates their MainForms
+			//Activates players, sets their team names, sets their player numbers, and instantiates their MainForms
 			for (int i = 0; i < playerCount; i++)
 			{
 				playerList[i] = new Player();
 				playerList[i].TeamName = teamNames[i];
+				playerList[i].PlayerNum = i;
 				playerForms[i] = new MainForm(playerList[i]);
 			}
 
@@ -121,39 +129,12 @@ namespace InformationAgeProject
 		}//end startGame()
 		#endregion
 
-		#region endTurn() Method
-		/// <summary>
-		/// Method for ending turn to go to next player's turn
-		/// </summary>
-		public static void endTurn()
-		{
-			//Current form is set to invisible so it is not in the way of the next player
-			playerForms[turnCounter].Visible = false;
-
-			//Turn counter goes up by one to move on to next player
-			turnCounter++;
-
-			try
-			{
-				//If there is a player form at the turnCounter index, go to that form
-				playerForms[turnCounter].Visible = true;
-			}
-			catch
-			{
-				//If there is not a player form at the turnCounter index, go back to first player form
-				turnCounter = 0;
-				playerForms[turnCounter].Visible = true;
-			}
-
-		}//end endTurn()
-		#endregion
-
 		#region calcTasks() Method
 		/// <summary>
 		/// Method for calculating number of tasks that player should acquire based on random dice rolls and tool usage and stores them in player's inventory
 		/// </summary>
 		/// <param name="player">Player that is currently collecting tasks/resources</param>
-		/// <param name="player">Array of developer counts for each task/resource for current player</param>
+		/// <param name="devCounts">Array of developer counts for each task/resource for current player</param>
 		/// <returns>Bool of whether or not task calculation was successful (Used for determining if DoTasks button should be deactivated for current turn)</returns>
 		public static bool calcTasks(Player player, int[] devCounts)
 		{
@@ -229,6 +210,24 @@ namespace InformationAgeProject
 		}//end calcTasks()
 		#endregion
 
+		#region acquireTool() Method
+		/// <summary>
+		/// Method for a player to acquire tool from tool maker if that player has a developer at the tool maker when the round ends
+		/// </summary>
+		public static void acquireTool()
+		{
+			//Adds one tool to inventory of the player with a developer at the tool maker if able to
+			playerList[playerAtToolMaker].Inventory.addTool();
+
+			//Adds player's developer back to their free developer pool
+			playerList[playerAtToolMaker].Developers++;
+
+			playerAtToolMaker = -1; //Resets value of player at tool maker to not equal any player for new round
+			toolMakerFull = false;	//Resets boolean for checking if a player has a developer at the tool maker
+
+		}//end acquireTool()
+		#endregion
+
 		#region calcToolLevelsFromList() Method
 		/// <summary>
 		/// Method for returning total added up levels value from a single list
@@ -264,6 +263,148 @@ namespace InformationAgeProject
 		}//end calcToolLevelsFromList()
 		#endregion
 
+		#region Claim Project Progress Card		
+		/// <summary>
+		/// Claims a selected Project Progress card.
+		/// </summary>
+		/// <param name="cardNumber">The card number.</param>
+		public static int ClaimProgressCard()
+		{
+			int points = ProjProgDeck[turnCounter].Deck[0].claimCard(playerList[turnCounter].Inventory.ReturnResourceManager()); // Gets the number of points the card returns
+			Scoring score = new Scoring(playerList[turnCounter].Inventory);                                                       // Calculates the total score of the player
+
+			if (points > 0)
+			{
+				playerList[turnCounter].Inventory.ProjectProgressCards.Add(ProjProgDeck[turnCounter].Deck[0]);
+
+
+				//ProjProgDeck[turnCounter].Deck[0].blnSold = true; // ???
+				//ProjProgDeck[turnCounter].Deck[0].strCard = "Card claimed by\r\n" + playerList[turnCounter].TeamName; // ???
+				ProjProgDeck[turnCounter].Deck.RemoveAt(0);
+
+				playerForms[turnCounter].inventoryBox.Text = playerList[turnCounter].Inventory.printResources();
+				playerForms[turnCounter].scoreBox.Text = score.calculateScore();
+
+				return points;
+			}
+			return 0;
+		}
+		#endregion
+
+		#region Claim Project Feature Card		
+		/// <summary>
+		/// Claims a feature card.
+		/// </summary>
+		/// <param name="cardNumber">The card's index in the array.</param>
+		/// <param name="cardCost">The card's cost in resources.</param>
+		/// <returns></returns>
+		public static AdditionalProjectFeaturesType[] ClaimFeatureCard(int cardNumber, int cardCost)
+		{
+			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[cardNumber].claimCard(cardCost, playerList[turnCounter].Inventory); // The items rewarded by the card
+			Scoring score = new Scoring(playerList[turnCounter].Inventory);     // The total calculated score from the player
+			int cardCounter = ProjFeatDeck.Deck.Count;                          // The total number of cards left in the deck
+
+			// if there are cards returned then the player did not have enough resources to claim the card
+			// if the player claims the card the player is given the card and updates the player's inventory
+			if (cards != null)
+			{
+				playerList[turnCounter].Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[cardNumber]);
+				ProjFeatDeck.Deck[cardNumber].blnSold = true;
+				ProjFeatDeck.Deck[cardNumber].strCard = "Card claimed by\r\n" + playerList[turnCounter].TeamName;
+				playerForms[turnCounter].inventoryBox.Text = playerList[turnCounter].Inventory.printResources();
+				playerForms[turnCounter].scoreBox.Text = score.calculateScore();
+
+				// Updates the number of available cards in the deck
+				for (int i = 0; i < ProjFeatDeck.Deck.Count; i++)
+				{
+					if (ProjFeatDeck.Deck[i].blnSold == true)
+					{
+						cardCounter--;
+					}
+				}
+				playerForms[turnCounter].ProjectFeaturesCardsGroupBox.Text = "Project Features Cards: " + cardCounter + " cards remain";
+
+				int[] toolLevelList = playerList[turnCounter].Inventory.getToolLevelList();
+				playerForms[turnCounter].toolSlot1.Text = toolLevelList[0].ToString();
+				playerForms[turnCounter].toolSlot2.Text = toolLevelList[1].ToString();
+				playerForms[turnCounter].toolSlot3.Text = toolLevelList[2].ToString();
+				return cards;
+			}
+			return null;
+		}
+
+		/// <summary>
+		/// Removes any claimed cards at the deck.
+		/// </summary>
+		public static void removeClaimedFeatureCards()
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				if (ProjFeatDeck.Deck[i].blnSold == true)
+				{
+					ProjFeatDeck.Deck.RemoveAt(i);
+				}
+
+			}
+		}
+		#endregion
+
+		#region endTurn() Method
+		/// <summary>
+		/// Method for ending turn to go to next player's turn
+		/// </summary>
+		public static void endTurn()
+		{
+			//Current form is set to invisible so it is not in the way of the next player
+			playerForms[turnCounter].Visible = false;
+
+			//Turn counter goes up by one to move on to next player
+			turnCounter++;
+
+			try
+			{
+				//If there is a player form at the turnCounter index, go to that form
+				playerForms[turnCounter].Visible = true;
+			}
+			catch
+			{
+				//If there is not a player form at the next turnCounter index, end round and go to next one
+				endRound();
+			}
+
+		}//end endTurn()
+		#endregion
+
+		#region endRound() Method
+		/// <summary>
+		/// Method for ending round and going to next round
+		/// </summary>
+		public static void endRound()
+		{
+			//Acquires tool for player that had developer at tool maker if tool maker has a developer at it
+			if (toolMakerFull == true)
+			{
+				acquireTool();
+			}
+
+			//Resets turn counter and increases the round counter
+			turnCounter = 0;
+			roundCounter++;
+
+			//Reloads data within main form
+			foreach(MainForm form in playerForms)
+			{
+				form.Reload();
+			}
+
+			//Sets player 1's form to visible, 
+			playerForms[turnCounter].Visible = true;
+
+
+		}//end endRound()
+		#endregion
+
+		//Switching to different windows/forms methods regions
 		#region openInstructions() Method
 		/// <summary>
 		/// Method for opening game instructions
@@ -352,92 +493,7 @@ namespace InformationAgeProject
 			Application.Exit();
 
 		}//end quitGame()
-        #endregion
-
-        #region Claim Project Progress Card		
-        /// <summary>
-        /// Claims a selected Project Progress card.
-        /// </summary>
-        /// <param name="cardNumber">The card number.</param>
-        public static int ClaimProgressCard( )
-		{
-			int points = ProjProgDeck[turnCounter].Deck[0].claimCard(playerList[turnCounter].Inventory.ReturnResourceManager( )); // Gets the number of points the card returns
-			Scoring score = new Scoring(playerList[turnCounter].Inventory);														  // Calculates the total score of the player
-
-			if (points > 0)
-			{
-				playerList[turnCounter].Inventory.ProjectProgressCards.Add(ProjProgDeck[turnCounter].Deck[0]);
-
-
-				//ProjProgDeck[turnCounter].Deck[0].blnSold = true; // ???
-				//ProjProgDeck[turnCounter].Deck[0].strCard = "Card claimed by\r\n" + playerList[turnCounter].TeamName; // ???
-				ProjProgDeck[turnCounter].Deck.RemoveAt(0);
-
-				playerForms[turnCounter].inventoryBox.Text = playerList[turnCounter].Inventory.printResources( );
-				playerForms[turnCounter].scoreBox.Text = score.calculateScore( );
-
-				return points;
-			}
-			return 0;
-		}
-        #endregion
-
-        #region Claim Project Feature Card		
-        /// <summary>
-        /// Claims a feature card.
-        /// </summary>
-        /// <param name="cardNumber">The card's index in the array.</param>
-        /// <param name="cardCost">The card's cost in resources.</param>
-        /// <returns></returns>
-        public static AdditionalProjectFeaturesType[] ClaimFeatureCard(int cardNumber, int cardCost)
-		{
-			AdditionalProjectFeaturesType[] cards = ProjFeatDeck.Deck[cardNumber].claimCard(cardCost, playerList[turnCounter].Inventory); // The items rewarded by the card
-			Scoring score = new Scoring(playerList[turnCounter].Inventory);		// The total calculated score from the player
-			int cardCounter = ProjFeatDeck.Deck.Count;							// The total number of cards left in the deck
-
-			// if there are cards returned then the player did not have enough resources to claim the card
-			// if the player claims the card the player is given the card and updates the player's inventory
-			if (cards != null)
-			{
-				playerList[turnCounter].Inventory.AdditionalProjectFeaturesCards.Add(ProjFeatDeck.Deck[cardNumber]);
-				ProjFeatDeck.Deck[cardNumber].blnSold = true;
-				ProjFeatDeck.Deck[cardNumber].strCard = "Card claimed by\r\n" + playerList[turnCounter].TeamName;
-				playerForms[turnCounter].inventoryBox.Text = playerList[turnCounter].Inventory.printResources( );
-				playerForms[turnCounter].scoreBox.Text = score.calculateScore( );
-
-				// Updates the number of available cards in the deck
-                for (int i = 0; i < ProjFeatDeck.Deck.Count; i++)
-                {
-                    if (ProjFeatDeck.Deck[i].blnSold == true)
-                    {
-						cardCounter--;
-					}
-                }
-				playerForms[turnCounter].ProjectFeaturesCardsGroupBox.Text = "Project Features Cards: " + cardCounter + " cards remain";
-
-				int[] toolLevelList = playerList[turnCounter].Inventory.getToolLevelList( );
-				playerForms[turnCounter].toolSlot1.Text = toolLevelList[0].ToString( );
-				playerForms[turnCounter].toolSlot2.Text = toolLevelList[1].ToString( );
-				playerForms[turnCounter].toolSlot3.Text = toolLevelList[2].ToString( );
-				return cards;
-			}
-			return null;
-		}
-
-        /// <summary>
-        /// Removes any claimed cards at the deck.
-        /// </summary>
-        public static void removeClaimedFeatureCards( )
-		{
-            for (int i = 0; i < 4; i++)
-            {
-				if (ProjFeatDeck.Deck[i].blnSold == true)
-				{
-					ProjFeatDeck.Deck.RemoveAt(i);
-				}
-
-			}
-		}
 		#endregion
+
 	}
 }
