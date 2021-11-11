@@ -113,12 +113,14 @@ namespace InformationAgeProject
             this.btnSendDevs = new System.Windows.Forms.Button();
             this.btnRecallDevs = new System.Windows.Forms.Button();
             this.lblRecruitStatus = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ProjectFeaturesCardsGroupBox.SuspendLayout();
             this.ProjectProgressCardsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBacklog
@@ -1006,7 +1008,7 @@ namespace InformationAgeProject
             this.btnSendDevs.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnSendDevs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSendDevs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendDevs.Location = new System.Drawing.Point(173, 104);
+            this.btnSendDevs.Location = new System.Drawing.Point(172, 170);
             this.btnSendDevs.Name = "btnSendDevs";
             this.btnSendDevs.Size = new System.Drawing.Size(151, 23);
             this.btnSendDevs.TabIndex = 78;
@@ -1020,7 +1022,7 @@ namespace InformationAgeProject
             this.btnRecallDevs.Enabled = false;
             this.btnRecallDevs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecallDevs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecallDevs.Location = new System.Drawing.Point(173, 133);
+            this.btnRecallDevs.Location = new System.Drawing.Point(172, 199);
             this.btnRecallDevs.Name = "btnRecallDevs";
             this.btnRecallDevs.Size = new System.Drawing.Size(151, 23);
             this.btnRecallDevs.TabIndex = 79;
@@ -1033,11 +1035,22 @@ namespace InformationAgeProject
             this.lblRecruitStatus.BackColor = System.Drawing.Color.White;
             this.lblRecruitStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecruitStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecruitStatus.Location = new System.Drawing.Point(132, 45);
+            this.lblRecruitStatus.Location = new System.Drawing.Point(127, 111);
             this.lblRecruitStatus.Name = "lblRecruitStatus";
             this.lblRecruitStatus.Size = new System.Drawing.Size(240, 53);
             this.lblRecruitStatus.TabIndex = 80;
             this.lblRecruitStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(204, 27);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(87, 78);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 81;
+            this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
@@ -1045,6 +1058,7 @@ namespace InformationAgeProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblRecruitStatus);
             this.Controls.Add(this.btnRecallDevs);
             this.Controls.Add(this.btnSendDevs);
@@ -1106,6 +1120,7 @@ namespace InformationAgeProject
             this.ProjectFeaturesCardsGroupBox.PerformLayout();
             this.ProjectProgressCardsGroupBox.ResumeLayout(false);
             this.ProjectProgressCardsGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1180,6 +1195,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.Button btnSendDevs;
         private System.Windows.Forms.Button btnRecallDevs;
         private System.Windows.Forms.Label lblRecruitStatus;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
