@@ -173,6 +173,7 @@
     <Content Include="GameIcons\minecraftsteve.png" />
     <Content Include="GameIcons\moobloom.ico" />
     <Content Include="GameIcons\moobloom.png" />
+    <Content Include="GameIcons\redbed.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
