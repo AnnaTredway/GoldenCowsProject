@@ -59,6 +59,12 @@
       <DependentUpon>AdditionalProjectFeaturesSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="AdditionalProjectFeaturesDeck.cs" />
+    <Compile Include="StatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatsForm.Designer.cs">
+      <DependentUpon>StatsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameController.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuitToMenuForm.resx">
       <DependentUpon>QuitToMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatsForm.resx">
+      <DependentUpon>StatsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolTaskPrompt.resx">
       <DependentUpon>ToolTaskPrompt.cs</DependentUpon>

@@ -679,7 +679,8 @@ namespace InformationAgeProject
 		/// <param name="e"></param>
 		private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-
+			StatsForm stats = new StatsForm( );
+			stats.Show( );
 		}
 
 		/// <summary>
