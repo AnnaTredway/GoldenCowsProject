@@ -658,6 +658,16 @@ namespace InformationAgeProject
 		}
 
 		/// <summary>
+		/// Event Handler for Options dropdown menu button to go to options screen
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		/// 
+		private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new OptionsForm().Show();
+		}
+		/// <summary>
 		/// Event Handler for dropdown menu button to quit to main menu
 		/// </summary>
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>

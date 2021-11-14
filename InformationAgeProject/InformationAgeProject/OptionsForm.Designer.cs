@@ -43,6 +43,10 @@ namespace InformationAgeProject
             this.btnBack = new System.Windows.Forms.Button();
             this.btnChangeButtonTextColor = new System.Windows.Forms.Button();
             this.btnChangeTextColor = new System.Windows.Forms.Button();
+            this.musicVolumeScrollBar = new System.Windows.Forms.TrackBar();
+            this.effectsVolumeScrollBar = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.musicVolumeScrollBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effectsVolumeScrollBar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGraphics
@@ -105,7 +109,7 @@ namespace InformationAgeProject
             this.btnBackToMainMenu.Name = "btnBackToMainMenu";
             this.btnBackToMainMenu.Size = new System.Drawing.Size(200, 40);
             this.btnBackToMainMenu.TabIndex = 9;
-            this.btnBackToMainMenu.Text = "Back To Main Menu";
+            this.btnBackToMainMenu.Text = "Back";
             this.btnBackToMainMenu.UseVisualStyleBackColor = false;
             this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
@@ -250,12 +254,32 @@ namespace InformationAgeProject
             this.btnChangeTextColor.UseVisualStyleBackColor = false;
             this.btnChangeTextColor.Click += new System.EventHandler(this.btnChangeTextColor_Click);
             // 
+            // musicVolumeScrollBar
+            // 
+            this.musicVolumeScrollBar.Location = new System.Drawing.Point(200, 256);
+            this.musicVolumeScrollBar.Maximum = 100;
+            this.musicVolumeScrollBar.Name = "musicVolumeScrollBar";
+            this.musicVolumeScrollBar.Size = new System.Drawing.Size(400, 45);
+            this.musicVolumeScrollBar.TabIndex = 19;
+            this.musicVolumeScrollBar.Scroll += new System.EventHandler(this.musicVolumeScrollBar_Scroll);
+            // 
+            // effectsVolumeScrollBar
+            // 
+            this.effectsVolumeScrollBar.Location = new System.Drawing.Point(200, 205);
+            this.effectsVolumeScrollBar.Maximum = 100;
+            this.effectsVolumeScrollBar.Name = "effectsVolumeScrollBar";
+            this.effectsVolumeScrollBar.Size = new System.Drawing.Size(400, 45);
+            this.effectsVolumeScrollBar.TabIndex = 20;
+            this.effectsVolumeScrollBar.Scroll += new System.EventHandler(this.effectsVolumeScrollBar_Scroll);
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.effectsVolumeScrollBar);
+            this.Controls.Add(this.musicVolumeScrollBar);
             this.Controls.Add(this.btnChangeTextColor);
             this.Controls.Add(this.btnChangeButtonTextColor);
             this.Controls.Add(this.btnResetGraphics);
@@ -276,6 +300,8 @@ namespace InformationAgeProject
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Options";
             this.Load += new System.EventHandler(this.OptionsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.musicVolumeScrollBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effectsVolumeScrollBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +322,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnChangeButtonTextColor;
         private System.Windows.Forms.Button btnChangeTextColor;
+        private System.Windows.Forms.TrackBar musicVolumeScrollBar;
+        private System.Windows.Forms.TrackBar effectsVolumeScrollBar;
     }
 }

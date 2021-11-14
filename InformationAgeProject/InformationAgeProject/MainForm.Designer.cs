@@ -114,6 +114,7 @@ namespace InformationAgeProject
             this.btnRecallDevs = new System.Windows.Forms.Button();
             this.lblRecruitStatus = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
@@ -447,6 +448,7 @@ namespace InformationAgeProject
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
+            this.optionsToolStripMenuItem,
             this.btnQuitToMenuMenuItem,
             this.btnQuitToDesktopMenuItem});
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -1052,6 +1054,13 @@ namespace InformationAgeProject
             this.pictureBox2.TabIndex = 81;
             this.pictureBox2.TabStop = false;
             // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1196,6 +1205,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.Button btnRecallDevs;
         private System.Windows.Forms.Label lblRecruitStatus;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
     }
 }
 

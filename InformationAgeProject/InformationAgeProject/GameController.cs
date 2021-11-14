@@ -65,6 +65,8 @@ namespace InformationAgeProject
 			mainMenu = new MainMenu();
 			Application.Run(mainMenu);
 
+			SoundController.playMusic();
+
 		}//end openGame()
 		#endregion
 

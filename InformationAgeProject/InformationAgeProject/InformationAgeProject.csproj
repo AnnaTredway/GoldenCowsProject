@@ -59,6 +59,7 @@
       <DependentUpon>AdditionalProjectFeaturesSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="AdditionalProjectFeaturesDeck.cs" />
+    <Compile Include="SoundController.cs" />
     <Compile Include="StatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +177,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\InstructionSet.txt" />
+    <Content Include="Files\Music\goodmusic.wav" />
+    <Content Include="Files\SoundEffects\minecraft_click.wav" />
     <Content Include="GameIcons\anvil.png" />
     <Content Include="GameIcons\diamondpickaxe.png" />
     <Content Include="GameIcons\dice.png" />

@@ -96,7 +96,8 @@ namespace InformationAgeProject
 
             //Sets every control on sound options screen to visible
             lblSound.Visible = true;
-
+            effectsVolumeScrollBar.Visible = true;
+            musicVolumeScrollBar.Visible = true;
             btnBack.Visible = true;
             btnResetGraphics.Visible = true;
             btnResetSound.Visible = true;
@@ -104,7 +105,7 @@ namespace InformationAgeProject
         }
         #endregion
 
-        #region Graphics Options Buttons
+        #region Graphics Options Controls
         /// <summary>
         /// Event Handler for button to change background color in program
         /// </summary>
@@ -118,7 +119,6 @@ namespace InformationAgeProject
             {
                 Properties.Settings.Default.FormsBackgroundColor = colorDlg.Color;
                 Properties.Settings.Default.Save();
-                this.BackColor = colorDlg.Color;
             }
         }
 
@@ -168,6 +168,28 @@ namespace InformationAgeProject
                 Properties.Settings.Default.ButtonTextColor = colorDlg.Color;
                 Properties.Settings.Default.Save();
             }
+        }
+        #endregion
+
+        #region Sound Options Controls
+        /// <summary>
+        /// Event Handler for scroll bar to change sound effects volume within game
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void effectsVolumeScrollBar_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Event Handler for scroll bar to change music volume within game
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void musicVolumeScrollBar_Scroll(object sender, EventArgs e)
+        {
+
         }
         #endregion
 
