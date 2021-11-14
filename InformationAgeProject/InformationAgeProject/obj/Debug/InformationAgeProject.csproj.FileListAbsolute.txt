@@ -51,3 +51,4 @@ C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Proj
 C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.StatsForm.resources
 C:\Users\tnbra\OneDrive\School\Seinor\Fall Semester\Software Engineering\SE Project\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.SuggestedBindingRedirects.cache
 C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.StatsForm.resources
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.AssemblyReference.cache

@@ -48,6 +48,7 @@
     <Compile Include="GameControllerTests.cs" />
     <Compile Include="AdditionalProjectFeaturesTests.cs" />
     <Compile Include="ProjectProgressTests.cs" />
+    <Compile Include="SystemTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InformationAgeProject\InformationAgeProject.csproj">
