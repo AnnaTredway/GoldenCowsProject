@@ -42,6 +42,9 @@ namespace InformationAgeProject
 		public static ProjectProgressDeck[] ProjProgDeck { get; set; }
 		public static AdditionalProjectFeaturesDeck ProjFeatDeck { get; set; }
 
+		public static bool recruitmentOfficeFull = false;
+		public static int playerAtRecruitmentOffice = 0;
+
 		#region GameController Constructor
 		/// <summary>
 		/// Private Constructor for GameController 
@@ -501,6 +504,20 @@ namespace InformationAgeProject
 			if (toolMakerFull == true)
 			{
 				acquireTool();
+			}
+
+			if (recruitmentOfficeFull == true)
+			{
+				//Create new recruitment office object, with the current number of the player's developers
+				int teamTotal = playerList[playerAtRecruitmentOffice].TeamCount;
+				RecruitmentOffice recruitmentOffice = new RecruitmentOffice(teamTotal);
+				//Recruit a new developer
+				int newTotalDevs = recruitmentOffice.RecruitNewDev();
+				//Add the new dev to player's total team count
+				playerList[playerAtRecruitmentOffice].TeamCount = newTotalDevs;
+				playerList[playerAtRecruitmentOffice].Developers = newTotalDevs;
+
+				recruitmentOfficeFull = false;
 			}
 
 			//Resets turn counter and increases the round counter

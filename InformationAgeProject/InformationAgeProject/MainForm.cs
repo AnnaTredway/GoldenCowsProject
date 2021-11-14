@@ -50,7 +50,7 @@ namespace InformationAgeProject
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			//Loads initial developer count into txtDevelopers
-			this.txtDevelopers.Text = player.Developers.ToString();
+			this.txtDevelopers.Text = player.TeamCount.ToString();
 
 			//Loads initial progress cards into ProjectProgressCard textboxes
 			ProjectProgressCard1.Text = GameController.ProjProgDeck[GameController.turnCounter].Deck[0].displayCard();
@@ -84,8 +84,17 @@ namespace InformationAgeProject
 		public void Reload()
 		{
 			//Re-Loads developer count into txtDevelopers
-			this.txtDevelopers.Text = player.Developers.ToString();
+			this.txtDevelopers.Text = player.TeamCount.ToString();
+			lblRecruitStatus.Text = "";
 
+			if (GameController.recruitmentOfficeFull == true)
+            {
+				btnSendDevs.Enabled = false;
+            }
+			else
+            {
+				btnSendDevs.Enabled = true;
+            }
 
 			//Re-Loads tool levels into toolSlot textboxes
 			int[] toolLevelList = player.Inventory.getToolLevelList();
@@ -708,21 +717,17 @@ namespace InformationAgeProject
 		#endregion
 
 		/// <summary>
-		/// PLACEHOLDER EVENT: Only one player can use the recruitment office per round.
-		/// This event as is handles the recruitment office on a turn-by-turn basis.
-		/// Will need to be updated for round based functionality.
+		/// Sends two developers from the player's count of available devs.
+		/// The two devs, as well as one additional dev, are returned to the player at the round's end.
+		/// Only one player can use the recruitment office per round.
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
 		private void btnSendDevs_Click(object sender, EventArgs e)
 		{
-			//Create new recruitment office object, with the current number of the player's developers
-			RecruitmentOffice recruitmentOffice = new RecruitmentOffice(player.TeamCount);
-
 			//If the player has at least two developers
-			if (player.Developers >= 2)
+			if (player.Developers >= 2 & GameController.recruitmentOfficeFull == false)
 			{
-				int totalDevs = recruitmentOffice.RecruitNewDev();
 				btnSendDevs.Enabled = false;
 				lblRecruitStatus.Text = $"Recruitment Status:\n-----------------------" +
 					$"\nOccupied with 2 developers from Team:" +
@@ -731,6 +736,8 @@ namespace InformationAgeProject
 				player.Developers = player.Developers - 2;
 				txtDevelopers.Text = Convert.ToString(player.Developers);
 				btnRecallDevs.Enabled = true;
+				GameController.recruitmentOfficeFull = true;
+				GameController.playerAtRecruitmentOffice = GameController.turnCounter;
 			}
 			else
 			{
@@ -739,18 +746,22 @@ namespace InformationAgeProject
 		}
 
 		/// <summary>
-		/// PLACEHOLDER EVENT: Only one player can use the recruitment office per round.
-		/// This event as is handles the recruitment office on a turn-by-turn basis.
-		/// Will need to be updated for round based functionality.
+		/// If the current player has just just assigned two developers to the recruitment office,
+		/// pressing the recall button will remove the two devs and add them back to the player's
+		/// available developers count
 		/// </summary>
 		private void btnRecallDevs_Click(object sender, EventArgs e)
 		{
 			player.Developers = player.Developers + 2;
 			txtDevelopers.Text = Convert.ToString(player.Developers);
+			lblRecruitStatus.Text = "";
 			btnRecallDevs.Enabled = false;
 
 			if (player.Developers >= 2)
-				btnSendDevs.Enabled = true; 
+			{
+				btnSendDevs.Enabled = true;
+				GameController.recruitmentOfficeFull = false;
+			}
 		}
     }
 }
