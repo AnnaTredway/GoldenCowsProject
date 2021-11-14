@@ -29,7 +29,7 @@ namespace InformationAgeProject
         private static Random rNum = new Random( );
         private Boolean blnDiceRollRequired = false;
         private List<ResourceType> listResourceAwared = new List<ResourceType>( );
-        private List<AdditionalProjectFeaturesType> listTypeAwared = new List<AdditionalProjectFeaturesType>( );
+        public List<AdditionalProjectFeaturesType> listTypeAwared = new List<AdditionalProjectFeaturesType>( );
         public Boolean blnSold = false;
         public string strCard;
 
