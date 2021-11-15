@@ -36,7 +36,6 @@ namespace InformationAgeTests
             playerForms = new MainForm[2];
             string[] teamNames = { "a", "b" };
 
-
             //Activates players, sets their team names, and instantiates their MainForms
             for (int i = 0; i < 2; i++)
             {
