@@ -61,11 +61,18 @@ namespace InformationAgeProject
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
+			//Opens all sound files before game opens and then starts music
+			SoundController.openAllSounds();
+
+			//Gives time for sound to open
+			System.Threading.Thread.Sleep(8500);
+
+			//Plays great music upon startup
+			SoundController.playMusic();
+
 			//Opens application to main menu
 			mainMenu = new MainMenu();
 			Application.Run(mainMenu);
-
-			SoundController.playMusic();
 
 		}//end openGame()
 		#endregion
