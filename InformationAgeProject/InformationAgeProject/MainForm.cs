@@ -74,6 +74,17 @@ namespace InformationAgeProject
 
 			//Resets tool maker because developer was already added back to player at the end of previous round
 			txtToolMaker.Text = "0";
+
+			if (GameController.recruitmentOfficeFull == true)
+            {
+				btnSendDevs.Enabled = false;
+				btnRecallDevs.Enabled = false;
+            }
+			else
+            {
+				btnSendDevs.Enabled = true;
+				btnRecallDevs.Enabled = false;
+            }
 		}
 		#endregion
 
@@ -90,10 +101,12 @@ namespace InformationAgeProject
 			if (GameController.recruitmentOfficeFull == true)
             {
 				btnSendDevs.Enabled = false;
+				btnRecallDevs.Enabled = false;
             }
 			else
             {
 				btnSendDevs.Enabled = true;
+				btnRecallDevs.Enabled = false;
             }
 
 			//Re-Loads tool levels into toolSlot textboxes
