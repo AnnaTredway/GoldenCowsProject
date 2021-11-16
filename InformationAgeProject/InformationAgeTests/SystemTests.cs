@@ -31,7 +31,6 @@ namespace InformationAgeTests
         {
             //Instantiate players, their main forms, team names, and a counter to keep track of player turns
             MainForm[] playerForms = new MainForm[2];
-            int turnCounter = 0;
             Player[] playerList = new Player[2];
             playerForms = new MainForm[2];
             string[] teamNames = { "a", "b" };
@@ -50,21 +49,50 @@ namespace InformationAgeTests
             PrivateObject obj1 = new PrivateObject(playerForm1);
             PrivateObject obj2 = new PrivateObject(playerForm2);
 
-            //Send 2 devs belonging to player 1, and recall them
-            obj1.Invoke("btnSendDevs_Click");
-            obj1.Invoke("btnRecallDevs_Click");
+            //Pull the player instances from the private objects
+            Player player1 = new Player();
+            player1 = (Player)obj1.GetField("player");
+            Player player2 = new Player();
+            player2 = (Player)obj2.GetField("player");
 
-            //Send 2 devs belonging to player 1, and leaving them until round's end
-            obj1.Invoke("btnSendDevs_Click");
-            obj1.Invoke("btnEndTurn_Click");
+            //Boolean value representing whether the recruitment office is occupied
+            bool recruitmentOfficeFull = false;
 
-            //End turn of player 2
-            obj2.Invoke("btnEndTurn_Click");
+            //If the first player has at least two free developers,
+            //and the recruitment office is vacant
+            if (player1.Developers >= 2 & recruitmentOfficeFull == false)
+            {
+                player1.Developers = player1.Developers - 2;
+                recruitmentOfficeFull = true;
+            }
+            //Else, test that player1's free dev count remains at 5
+            else
+            {
+                Assert.AreEqual(5, player1.Developers);
+            }
 
-            Player player = new Player();
-            player.TeamCount = (int)obj1.GetFieldOrProperty("TeamCount");
+            //At the end of round, check for recruitment office vacancy
+            if (recruitmentOfficeFull == true)
+            {
+                //Create new recruitment office object, with the current number of the player's developers
+                int teamTotal = player1.TeamCount;
+                RecruitmentOffice recruitmentOffice = new RecruitmentOffice(teamTotal);
+                //Recruit a new developer
+                int newTotalDevs = recruitmentOffice.RecruitNewDev();
+                //Add the new dev to player's total team count, and available dev count
+                player1.TeamCount = newTotalDevs;
+                player1.Developers = newTotalDevs;
 
-            Assert.AreEqual(6, player.TeamCount);
+                recruitmentOfficeFull = false;
+
+                //Test that one developer was successfully added to player's total team count
+                Assert.AreEqual(6, player1.TeamCount);
+            }
+            //Else, test that player's free dev count remains at five.
+            else
+            {
+                Assert.AreEqual(5, player1.TeamCount);
+            }
         }
     }
 }
