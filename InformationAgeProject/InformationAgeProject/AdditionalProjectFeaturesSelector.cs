@@ -125,5 +125,10 @@ namespace InformationAgeProject
         {
             return listPlayersChoice.ToArray();
         }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
