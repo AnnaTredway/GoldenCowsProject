@@ -46,6 +46,9 @@ namespace InformationAgeProject
                 control.Visible = false;
             }
 
+            effectsVolumeScrollBar.Value = (int)(SoundController.buttonPlayer.Volume * 100);
+            musicVolumeScrollBar.Value = (int)(SoundController.musicPlayer.Volume * 100);
+
             //Sets every control on main options screen to visible
             lblOptions.Visible = true;
             btnGraphics.Visible = true;

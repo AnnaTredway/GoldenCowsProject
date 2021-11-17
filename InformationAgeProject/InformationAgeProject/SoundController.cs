@@ -26,6 +26,9 @@ namespace InformationAgeProject
 {
     class SoundController
     {
+		//Random object for choosing next soundtrack
+		public static Random random = new Random();
+
 		//MediaPlayers for music and sounds
 		public static MediaPlayer musicPlayer;
 		public static MediaPlayer buttonPlayer;
@@ -53,8 +56,13 @@ namespace InformationAgeProject
 			buttonPlayer = new MediaPlayer();
 			musicPlayer = new MediaPlayer();
 
-			//Open relative location of sound files for later use
+			//Adds event handlers to media players that require it
+			musicPlayer.MediaEnded += new EventHandler(c_MusicMediaEnded);
+
+			//Open relative location of sound effect files for later use
 			buttonPlayer.Open(new Uri(filePath + "\\Effects\\minecraftclick.wav"));
+
+			//Open relative location of music files for later use
 			musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
 
 			buttonPlayer.Volume = 0.5;
@@ -75,7 +83,7 @@ namespace InformationAgeProject
 			soundsPath = Directory.GetParent(soundsPath).FullName;
 			soundsPath = Directory.GetParent(soundsPath).FullName;
 
-			//Add the relative location of "Sounds" folder for
+			//Add the relative location of "Sounds" folder to soundsPath
 			soundsPath += "\\Sounds";
 
 			return soundsPath;
@@ -97,23 +105,48 @@ namespace InformationAgeProject
 
 		#region playMusic() Method
 		/// <summary>
-		/// Method for playing music
+		/// Method for playing random music track
 		/// </summary>
 		public static void playMusic()
 		{
-			//Random object to randomly select next song as long as it hasnt been played in current playback session
-			Random random = new Random();
+			//Selects next song to play randomly after previous one ends
+			//(Currently only has 1 track to play and may play same track in a row even if more tracks are added)
+			switch (random.Next(4))
+			{
+				case 0:
+					musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
+					musicPlayer.Play();
+					break;
 
-			//Repeatedly plays music in random order (Currently only one song is within program)
-			//(May need to be put on separate thread and also some way to wait to play next file so it doesnt constantly loop)
-			//(Possibly use multi-threading or background worker)
-			//while(true)
-			//{
-			musicPlayer.Position = TimeSpan.Zero;
-			musicPlayer.Play();
-			//}
+				case 1:
+					musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
+					musicPlayer.Play();
+					break;
+
+				case 2:
+					musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
+					musicPlayer.Play();
+					break;
+
+				case 3:
+					musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
+					musicPlayer.Play();
+					break;
+			}
 
 		}
 		#endregion
+
+
+		/// <summary>
+		/// Event Handler for handling when musicPlayer media ends
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		static void c_MusicMediaEnded(object sender, EventArgs e)
+		{
+			//Starts next track
+			playMusic();
+		}
 	}
 }
