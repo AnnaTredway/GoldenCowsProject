@@ -107,86 +107,89 @@ namespace InformationAgeProject
                 listPlayersChoice = form.getSelectedResources();
                 form.Dispose( );
 
-                for (int i = 0; i < listPlayersChoice.Length; i++)
+                if (listPlayersChoice.Length > 0)
                 {
-                    if (listPlayersChoice[i] == ResourceType.BACKLOG)
+                    for (int i = 0; i < listPlayersChoice.Length; i++)
                     {
-                        playerInventory.removeFromBacklog(1);
-                    }
-
-                    if (listPlayersChoice[i] == ResourceType.LOWPRIORITY)
-                    {
-                        playerInventory.removeFromLowPriority(1);
-                    }
-
-                    if (listPlayersChoice[i] == ResourceType.MEDPRIORITY)
-                    {
-                        playerInventory.removeFromMediumPriority(1);
-                    }
-
-                    if (listPlayersChoice[i] == ResourceType.HIGHPRIORITY)
-                    {
-                        playerInventory.removeFromHighPriority(1);
-                    }
-                }
-
-                if (listResourceAwared.Count > 0)
-                {
-                    if (blnDiceRollRequired == true)
-                    {
-                        int iDiceRoll = rNum.Next(5) + 1;
-
-                        if (listResourceAwared[0] == ResourceType.BACKLOG)
+                        if (listPlayersChoice[i] == ResourceType.BACKLOG)
                         {
-                            playerInventory.addToBacklog(iDiceRoll);
+                            playerInventory.removeFromBacklog(1);
                         }
 
-                        if (listResourceAwared[0] == ResourceType.LOWPRIORITY)
+                        if (listPlayersChoice[i] == ResourceType.LOWPRIORITY)
                         {
-                            playerInventory.addToLowPriority(iDiceRoll);
+                            playerInventory.removeFromLowPriority(1);
                         }
 
-                        if (listResourceAwared[0] == ResourceType.MEDPRIORITY)
+                        if (listPlayersChoice[i] == ResourceType.MEDPRIORITY)
                         {
-                            playerInventory.addToMediumPriority(iDiceRoll);
+                            playerInventory.removeFromMediumPriority(1);
                         }
 
-                        if (listResourceAwared[0] == ResourceType.HIGHPRIORITY)
+                        if (listPlayersChoice[i] == ResourceType.HIGHPRIORITY)
                         {
-                            playerInventory.addToHighPriority(iDiceRoll);
+                            playerInventory.removeFromHighPriority(1);
+                        }
+                    }
+
+                    if (listResourceAwared.Count > 0)
+                    {
+                        if (blnDiceRollRequired == true)
+                        {
+                            int iDiceRoll = rNum.Next(5) + 1;
+
+                            if (listResourceAwared[0] == ResourceType.BACKLOG)
+                            {
+                                playerInventory.addToBacklog(iDiceRoll);
+                            }
+
+                            if (listResourceAwared[0] == ResourceType.LOWPRIORITY)
+                            {
+                                playerInventory.addToLowPriority(iDiceRoll);
+                            }
+
+                            if (listResourceAwared[0] == ResourceType.MEDPRIORITY)
+                            {
+                                playerInventory.addToMediumPriority(iDiceRoll);
+                            }
+
+                            if (listResourceAwared[0] == ResourceType.HIGHPRIORITY)
+                            {
+                                playerInventory.addToHighPriority(iDiceRoll);
+                            }
+                        }
+                        else
+                        {
+                            for (int i = 0; i < listResourceAwared.Count; i++)
+                            {
+                                if (listResourceAwared[i] == ResourceType.BACKLOG)
+                                {
+                                    playerInventory.addToBacklog(1);
+                                }
+
+                                if (listResourceAwared[i] == ResourceType.LOWPRIORITY)
+                                {
+                                    playerInventory.addToLowPriority(1);
+                                }
+
+                                if (listResourceAwared[i] == ResourceType.MEDPRIORITY)
+                                {
+                                    playerInventory.addToMediumPriority(1);
+                                }
+
+                                if (listResourceAwared[i] == ResourceType.HIGHPRIORITY)
+                                {
+                                    playerInventory.addToHighPriority(1);
+                                }
+                            }
                         }
                     }
                     else
                     {
-                        for (int i = 0; i < listResourceAwared.Count; i++)
-                        {
-                            if (listResourceAwared[i] == ResourceType.BACKLOG)
-                            {
-                                playerInventory.addToBacklog(1);
-                            }
-
-                            if (listResourceAwared[i] == ResourceType.LOWPRIORITY)
-                            {
-                                playerInventory.addToLowPriority(1);
-                            }
-
-                            if (listResourceAwared[i] == ResourceType.MEDPRIORITY)
-                            {
-                                playerInventory.addToMediumPriority(1);
-                            }
-
-                            if (listResourceAwared[i] == ResourceType.HIGHPRIORITY)
-                            {
-                                playerInventory.addToHighPriority(1);
-                            }
-                        }
+                        playerInventory.addTool();
                     }
+                    return listTypeAwared.ToArray(); 
                 }
-                else
-                {
-                    playerInventory.addTool( );
-                }
-                return listTypeAwared.ToArray( );
             }
             else
             {
@@ -194,9 +197,8 @@ namespace InformationAgeProject
                     , "Not Enough Resources"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Error);
-
-                return null;
             }
+            return null;
         }
 
         /// <summary>

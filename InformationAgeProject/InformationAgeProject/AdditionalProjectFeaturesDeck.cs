@@ -60,5 +60,24 @@ namespace InformationAgeProject
                 Deck[iRandom] = swap;
             }// end for (int i = 0; i < Deck.Length; i++)
         }// end Shuffle( )
+
+        /// <summary>
+        /// Counts the number of cards not sold yet.
+        /// </summary>
+        /// <returns>The number of cards not sold</returns>
+        public int AvailableCount( )
+        {
+            int iNotSold = Deck.Count;
+
+            for (int i = 0; i < Deck.Count; i++)
+            {
+                if (Deck[i].blnSold == true)
+                {
+                    iNotSold--;
+                }
+            }
+            return iNotSold;
+        }
+
     }// end class AdditionalProjectFeaturesDeck
 }// end namespace InformationAgeProject
