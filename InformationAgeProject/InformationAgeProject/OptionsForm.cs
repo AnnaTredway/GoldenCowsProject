@@ -46,6 +46,10 @@ namespace InformationAgeProject
                 control.Visible = false;
             }
 
+            //Sets volume sliders to current global property value
+            effectsVolumeScrollBar.Value = Properties.Settings.Default.EffectsVolume;
+            musicVolumeScrollBar.Value = Properties.Settings.Default.MusicVolume;
+
             //Sets every control on main options screen to visible
             lblOptions.Visible = true;
             btnGraphics.Visible = true;
@@ -63,6 +67,8 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnGraphics_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             //Sets every control on the form to invisible
             foreach (Control control in Controls)
             {
@@ -88,6 +94,8 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnSound_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             //Sets every control on the form to invisible
             foreach (Control control in Controls)
             {
@@ -96,7 +104,10 @@ namespace InformationAgeProject
 
             //Sets every control on sound options screen to visible
             lblSound.Visible = true;
-
+            lblSoundEffects.Visible = true;
+            effectsVolumeScrollBar.Visible = true;
+            lblMusic.Visible = true;
+            musicVolumeScrollBar.Visible = true;
             btnBack.Visible = true;
             btnResetGraphics.Visible = true;
             btnResetSound.Visible = true;
@@ -104,7 +115,7 @@ namespace InformationAgeProject
         }
         #endregion
 
-        #region Graphics Options Buttons
+        #region Graphics Options Controls
         /// <summary>
         /// Event Handler for button to change background color in program
         /// </summary>
@@ -112,13 +123,14 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnBackColor_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             ColorDialog colorDlg = new ColorDialog();
 
             if (colorDlg.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.FormsBackgroundColor = colorDlg.Color;
                 Properties.Settings.Default.Save();
-                this.BackColor = colorDlg.Color;
             }
         }
 
@@ -129,6 +141,8 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnChangeTextColor_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             ColorDialog colorDlg = new ColorDialog();
 
             if (colorDlg.ShowDialog() == DialogResult.OK)
@@ -145,6 +159,8 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnButtonColor_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             ColorDialog colorDlg = new ColorDialog();
 
             if (colorDlg.ShowDialog() == DialogResult.OK)
@@ -161,6 +177,8 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnChangeButtonTextColor_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             ColorDialog colorDlg = new ColorDialog();
 
             if (colorDlg.ShowDialog() == DialogResult.OK)
@@ -168,6 +186,32 @@ namespace InformationAgeProject
                 Properties.Settings.Default.ButtonTextColor = colorDlg.Color;
                 Properties.Settings.Default.Save();
             }
+        }
+        #endregion
+
+        #region Sound Options Controls
+        /// <summary>
+        /// Event Handler for scroll bar to change sound effects volume within game
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void effectsVolumeScrollBar_Scroll(object sender, EventArgs e)
+        {
+            SoundController.buttonPlayer.Volume = (double)effectsVolumeScrollBar.Value / 100;
+            Properties.Settings.Default.EffectsVolume = effectsVolumeScrollBar.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        /// <summary>
+        /// Event Handler for scroll bar to change music volume within game
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void musicVolumeScrollBar_Scroll(object sender, EventArgs e)
+        {
+            SoundController.musicPlayer.Volume = (double)musicVolumeScrollBar.Value / 100;
+            Properties.Settings.Default.MusicVolume = musicVolumeScrollBar.Value;
+            Properties.Settings.Default.Save();
         }
         #endregion
 
@@ -179,6 +223,8 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnResetGraphics_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             //Resets all colors back to default values
             Properties.Settings.Default.FormsBackgroundColor = Color.LightSkyBlue;
             Properties.Settings.Default.FormsTextColor = Color.Black;
@@ -194,7 +240,18 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnResetSound_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
 
+            //Resets Volume sliders and global variables back to what they were on first-time startup
+            Properties.Settings.Default.EffectsVolume = 50;
+            effectsVolumeScrollBar.Value = Properties.Settings.Default.EffectsVolume;
+            SoundController.buttonPlayer.Volume = (double)Properties.Settings.Default.EffectsVolume / 100;
+            Properties.Settings.Default.Save();
+
+            Properties.Settings.Default.MusicVolume = 25;
+            musicVolumeScrollBar.Value = Properties.Settings.Default.MusicVolume;
+            SoundController.musicPlayer.Volume = (double)musicVolumeScrollBar.Value / 100;
+            Properties.Settings.Default.Save();
         }
         #endregion
 
@@ -206,6 +263,8 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnBackToMainMenu_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             Dispose();
         }
 
@@ -216,6 +275,8 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnBack_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             //Sets every control on the form to invisible
             foreach (Control control in Controls)
             {

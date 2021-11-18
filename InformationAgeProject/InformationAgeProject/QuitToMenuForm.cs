@@ -39,6 +39,7 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnYes_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
             GameController.quitToMainMenu();
             Dispose();
         }
@@ -50,6 +51,7 @@ namespace InformationAgeProject
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void btnNo_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
             Dispose();
         }
     }

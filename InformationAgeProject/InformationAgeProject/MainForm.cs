@@ -125,6 +125,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnAddBacklog_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the number of developers is larger than 0 and backlog count is less than 7, then subtract 1 from developer count and add 1 to backlog count
 			//Else, do nothing
 			if (player.Developers > 0 && Int32.Parse(txtBacklog.Text) < 7)
@@ -150,6 +152,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnSubtBacklog_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the number of backlog developers is larger than 0, then subtract 1 from backlog count and add 1 to developer count
 			//Else, do nothing
 			if (Int32.Parse(txtBacklog.Text) > 0)
@@ -175,6 +179,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnAddLow_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the number of developers is larger than 0 and low-priority count is less than 7, then subtract 1 from developer count and add 1 to low-priority count
 			//Else, do nothing
 			if (player.Developers > 0 && Int32.Parse(txtLow.Text) < 7)
@@ -200,6 +206,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnSubtLow_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the number of low-priority developers is larger than 0, then subtract 1 from low-priority count and add 1 to developer count
 			//Else, do nothing
 			if (Int32.Parse(txtLow.Text) > 0)
@@ -225,6 +233,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnAddMed_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the number of developers is larger than 0 and medium-priority count is less than 7, then subtract 1 from developer count and add 1 to medium-priority count
 			//Else, do nothing
 			if (player.Developers > 0 && Int32.Parse(txtMed.Text) < 7)
@@ -250,6 +260,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnSubtMed_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the number of medium-priority developers is larger than 0, then subtract 1 from medium-priority count and add 1 to developer count
 			//Else, do nothing
 			if (Int32.Parse(txtMed.Text) > 0)
@@ -275,6 +287,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnAddHigh_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the number of developers is larger than 0 and high-priority count is less than 7, then subtract 1 from developer count and add 1 to high-priority count
 			//Else, do nothing
 			if (player.Developers > 0 && Int32.Parse(txtHigh.Text) < 7)
@@ -300,6 +314,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnSubtHigh_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the number of high-priority developers is larger than 0, then subtract 1 from high-priority count and add 1 to developer count
 			//Else, do nothing
 			if (Int32.Parse(txtHigh.Text) > 0)
@@ -327,6 +343,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnDoTasks_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//Stores counts of developers at each task/resource
 			int[] devCounts = new int[4];
 			devCounts[0] = int.Parse(txtBacklog.Text);
@@ -374,6 +392,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnAddToolMaker_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the number of developers is larger than 0 and the number of developers at the tool maker less than 1, go to next check
 			//Else, do nothing
 			if (player.Developers > 0 && Int32.Parse(txtToolMaker.Text) < 1)
@@ -415,6 +435,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnSubtToolMaker_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If there is a developer from the current player at the tool maker, then subtract 1 from tool maker count and add 1 to developer count
 			//Else, do nothing
 			if (Int32.Parse(txtToolMaker.Text) > 0)
@@ -445,6 +467,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void ClaimProgressCard1_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			int points = GameController.ClaimProgressCard();
 
 			//Removes the card from the deck and updates the text fields to show the new card
@@ -473,6 +497,7 @@ namespace InformationAgeProject
 		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
 		private void ClaimFeaturesCard1_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
 
 			AdditionalProjectFeaturesType[] cards = GameController.ClaimFeatureCard(0, 4);
 
@@ -502,6 +527,8 @@ namespace InformationAgeProject
 		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
 		private void ClaimFeaturesCard2_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			AdditionalProjectFeaturesType[] cards = GameController.ClaimFeatureCard(1, 3);
 
 			if (cards != null)
@@ -530,6 +557,8 @@ namespace InformationAgeProject
 		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
 		private void ClaimFeaturesCard3_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			AdditionalProjectFeaturesType[] cards = GameController.ClaimFeatureCard(2, 2);
 
 			if (cards != null)
@@ -558,6 +587,8 @@ namespace InformationAgeProject
 		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
 		private void ClaimFeaturesCard4_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			AdditionalProjectFeaturesType[] cards = GameController.ClaimFeatureCard(3, 1);
 
 			if (cards != null)
@@ -588,6 +619,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnEndTurn_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//Re-enables do task button for next time current player has a turn
 			this.btnDoTasks.Enabled = true;
 
@@ -607,6 +640,16 @@ namespace InformationAgeProject
 
 		}
 
+		/// <summary>
+		/// Event Handler for Options dropdown menu button to go to options screen
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		/// 
+		private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new OptionsForm().Show();
+		}
 		/// <summary>
 		/// Event Handler for dropdown menu button to quit to main menu
 		/// </summary>
@@ -675,6 +718,8 @@ namespace InformationAgeProject
 		/// <param name="e"></param>
 		private void btnSendDevs_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//If the player has at least two developers
 			if (player.Developers >= 2 & GameController.recruitmentOfficeFull == false)
 			{
@@ -702,6 +747,8 @@ namespace InformationAgeProject
 		/// </summary>
 		private void btnRecallDevs_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			player.Developers = player.Developers + 2;
 			txtDevelopers.Text = Convert.ToString(player.Developers);
 			lblRecruitStatus.Text = "";

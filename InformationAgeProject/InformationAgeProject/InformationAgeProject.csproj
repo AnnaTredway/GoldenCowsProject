@@ -59,6 +59,7 @@
       <DependentUpon>AdditionalProjectFeaturesSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="AdditionalProjectFeaturesDeck.cs" />
+    <Compile Include="SoundController.cs" />
     <Compile Include="StatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\InstructionSet.txt" />
+    <Content Include="Sounds\Effects\minecraftclick.wav" />
     <Content Include="GameIcons\anvil.png" />
     <Content Include="GameIcons\diamondpickaxe.png" />
     <Content Include="GameIcons\dice.png" />
@@ -183,6 +185,8 @@
     <Content Include="GameIcons\moobloom.ico" />
     <Content Include="GameIcons\moobloom.png" />
     <Content Include="GameIcons\redbed.png" />
+    <Content Include="Sounds\Music\NeverGonnaGiveYouUp.wav" />
+    <Content Include="Sounds\Music\NokiaEspionagePTRK.wav" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

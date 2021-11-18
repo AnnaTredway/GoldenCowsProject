@@ -74,6 +74,8 @@ namespace InformationAgeProject
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void SelectButton_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
+
             int iTotalSelected;
             iTotalSelected = BacklogCheckList.CheckedItems.Count;
             iTotalSelected += LowPriorityCheckList.CheckedItems.Count;

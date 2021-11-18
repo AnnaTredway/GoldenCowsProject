@@ -47,6 +47,22 @@ namespace InformationAgeProject
 				control.Visible = false;
 			}
 
+			//Sets loading text to visible
+			lblLoading.Visible = true;
+		}
+
+		#region showMainMenuScreenControls() Method
+		/// <summary>
+		/// Method for only showing controls on the main menu screen
+		/// </summary>
+		public void showMainMenuScreenControls()
+		{
+			//Sets every control on the form to invisible
+			foreach (Control control in Controls)
+			{
+				control.Visible = false;
+			}
+
 			//Sets every control on the main menu screen to visible
 			lblTitle.Visible = true;
 			btnPlayGame.Visible = true;
@@ -54,6 +70,7 @@ namespace InformationAgeProject
 			btnInstructions.Visible = true;
 			btnQuit.Visible = true;
 		}
+		#endregion
 
 		#region MainMenu Buttons
 		/// <summary>
@@ -63,6 +80,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnPlayGame_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//Sets every control on the form to invisible
 			foreach (Control control in Controls)
 			{
@@ -86,6 +105,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnOptions_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			new OptionsForm().Show();
 		}
 
@@ -96,6 +117,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnInstructions_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			GameController.openInstructions();
 		}
 
@@ -106,6 +129,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnQuit_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//Opens QuitForm to prompt user to quit game or not
 			GameController.quitGame();
 		}
@@ -119,6 +144,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnNewGame_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//Sets every control on the form to invisible
 			foreach (Control control in Controls)
 			{
@@ -142,7 +169,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnLoadGame_Click(object sender, EventArgs e)
 		{
-
+			SoundController.playButtonClick();
 		}
 
 		/// <summary>
@@ -152,6 +179,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnBackToMainMenu_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//Sets every control on the form to invisible
 			foreach (Control control in Controls)
 			{
@@ -178,6 +207,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnBack1_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//Sets every control on the form to invisible
 			foreach (Control control in Controls)
 			{
@@ -201,6 +232,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnStartGame_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//Array of team names to pass to startGame method for simplicity
 			string[] teamNames;
 
@@ -238,6 +271,7 @@ namespace InformationAgeProject
 			}
 		}
 		#endregion
+
 
 	}
 }

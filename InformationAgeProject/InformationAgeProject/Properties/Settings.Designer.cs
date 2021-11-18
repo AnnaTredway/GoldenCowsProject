@@ -70,5 +70,29 @@ namespace InformationAgeProject.Properties {
                 this["ButtonTextColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
+        public int MusicVolume {
+            get {
+                return ((int)(this["MusicVolume"]));
+            }
+            set {
+                this["MusicVolume"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("75")]
+        public int EffectsVolume {
+            get {
+                return ((int)(this["EffectsVolume"]));
+            }
+            set {
+                this["EffectsVolume"] = value;
+            }
+        }
     }
 }

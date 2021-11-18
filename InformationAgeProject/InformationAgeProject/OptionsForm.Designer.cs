@@ -43,6 +43,12 @@ namespace InformationAgeProject
             this.btnBack = new System.Windows.Forms.Button();
             this.btnChangeButtonTextColor = new System.Windows.Forms.Button();
             this.btnChangeTextColor = new System.Windows.Forms.Button();
+            this.musicVolumeScrollBar = new System.Windows.Forms.TrackBar();
+            this.effectsVolumeScrollBar = new System.Windows.Forms.TrackBar();
+            this.lblMusic = new System.Windows.Forms.Label();
+            this.lblSoundEffects = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.musicVolumeScrollBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effectsVolumeScrollBar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGraphics
@@ -105,7 +111,7 @@ namespace InformationAgeProject
             this.btnBackToMainMenu.Name = "btnBackToMainMenu";
             this.btnBackToMainMenu.Size = new System.Drawing.Size(200, 40);
             this.btnBackToMainMenu.TabIndex = 9;
-            this.btnBackToMainMenu.Text = "Back To Main Menu";
+            this.btnBackToMainMenu.Text = "Back";
             this.btnBackToMainMenu.UseVisualStyleBackColor = false;
             this.btnBackToMainMenu.Click += new System.EventHandler(this.btnBackToMainMenu_Click);
             // 
@@ -250,12 +256,64 @@ namespace InformationAgeProject
             this.btnChangeTextColor.UseVisualStyleBackColor = false;
             this.btnChangeTextColor.Click += new System.EventHandler(this.btnChangeTextColor_Click);
             // 
+            // musicVolumeScrollBar
+            // 
+            this.musicVolumeScrollBar.Location = new System.Drawing.Point(200, 329);
+            this.musicVolumeScrollBar.Maximum = 100;
+            this.musicVolumeScrollBar.Name = "musicVolumeScrollBar";
+            this.musicVolumeScrollBar.Size = new System.Drawing.Size(400, 45);
+            this.musicVolumeScrollBar.TabIndex = 19;
+            this.musicVolumeScrollBar.Value = 30;
+            this.musicVolumeScrollBar.Scroll += new System.EventHandler(this.musicVolumeScrollBar_Scroll);
+            // 
+            // effectsVolumeScrollBar
+            // 
+            this.effectsVolumeScrollBar.Location = new System.Drawing.Point(200, 243);
+            this.effectsVolumeScrollBar.Maximum = 100;
+            this.effectsVolumeScrollBar.Name = "effectsVolumeScrollBar";
+            this.effectsVolumeScrollBar.Size = new System.Drawing.Size(400, 45);
+            this.effectsVolumeScrollBar.TabIndex = 20;
+            this.effectsVolumeScrollBar.Value = 50;
+            this.effectsVolumeScrollBar.Scroll += new System.EventHandler(this.effectsVolumeScrollBar_Scroll);
+            // 
+            // lblMusic
+            // 
+            this.lblMusic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMusic.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblMusic.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.lblMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMusic.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
+            this.lblMusic.Location = new System.Drawing.Point(210, 291);
+            this.lblMusic.Name = "lblMusic";
+            this.lblMusic.Size = new System.Drawing.Size(381, 35);
+            this.lblMusic.TabIndex = 38;
+            this.lblMusic.Text = "Music";
+            this.lblMusic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblSoundEffects
+            // 
+            this.lblSoundEffects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSoundEffects.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblSoundEffects.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.lblSoundEffects.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoundEffects.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
+            this.lblSoundEffects.Location = new System.Drawing.Point(210, 205);
+            this.lblSoundEffects.Name = "lblSoundEffects";
+            this.lblSoundEffects.Size = new System.Drawing.Size(381, 35);
+            this.lblSoundEffects.TabIndex = 39;
+            this.lblSoundEffects.Text = "Sound Effects";
+            this.lblSoundEffects.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSoundEffects);
+            this.Controls.Add(this.lblMusic);
+            this.Controls.Add(this.effectsVolumeScrollBar);
+            this.Controls.Add(this.musicVolumeScrollBar);
             this.Controls.Add(this.btnChangeTextColor);
             this.Controls.Add(this.btnChangeButtonTextColor);
             this.Controls.Add(this.btnResetGraphics);
@@ -276,6 +334,8 @@ namespace InformationAgeProject
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Options";
             this.Load += new System.EventHandler(this.OptionsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.musicVolumeScrollBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effectsVolumeScrollBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +356,9 @@ namespace InformationAgeProject
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnChangeButtonTextColor;
         private System.Windows.Forms.Button btnChangeTextColor;
+        public System.Windows.Forms.TrackBar musicVolumeScrollBar;
+        public System.Windows.Forms.TrackBar effectsVolumeScrollBar;
+        private System.Windows.Forms.Label lblMusic;
+        private System.Windows.Forms.Label lblSoundEffects;
     }
 }
