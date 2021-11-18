@@ -54,9 +54,6 @@ namespace InformationAgeProject
 
 			//Loads initial progress cards into ProjectProgressCard textboxes
 			ProjectProgressCard1.Text = GameController.ProjProgDeck[GameController.turnCounter].Deck[0].displayCard();
-			ProjectProgressCard2.Text = GameController.ProjProgDeck[GameController.turnCounter].Deck[1].displayCard();
-			ProjectProgressCard3.Text = GameController.ProjProgDeck[GameController.turnCounter].Deck[2].displayCard();
-			ProjectProgressCard4.Text = GameController.ProjProgDeck[GameController.turnCounter].Deck[3].displayCard();
 			ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[GameController.turnCounter].Deck.Count + " cards remain";
 
 			//Loads initial feature cards into AdditionalFeatures textboxes
@@ -74,6 +71,17 @@ namespace InformationAgeProject
 
 			//Resets tool maker because developer was already added back to player at the end of previous round
 			txtToolMaker.Text = "0";
+
+			if (GameController.recruitmentOfficeFull == true)
+            {
+				btnSendDevs.Enabled = false;
+				btnRecallDevs.Enabled = false;
+            }
+			else
+            {
+				btnSendDevs.Enabled = true;
+				btnRecallDevs.Enabled = false;
+            }
 		}
 		#endregion
 
@@ -90,10 +98,12 @@ namespace InformationAgeProject
 			if (GameController.recruitmentOfficeFull == true)
             {
 				btnSendDevs.Enabled = false;
+				btnRecallDevs.Enabled = false;
             }
 			else
             {
 				btnSendDevs.Enabled = true;
+				btnRecallDevs.Enabled = false;
             }
 
 			//Re-Loads tool levels into toolSlot textboxes
@@ -451,7 +461,7 @@ namespace InformationAgeProject
 
 		#region Project Progress Cards
 		/// <summary>
-		/// Claims the first project progress card
+		/// Claims the a project progress card
 		/// </summary>
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
@@ -477,66 +487,6 @@ namespace InformationAgeProject
 				ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[GameController.turnCounter].Deck.Count + " cards remain";
 			}
 		}
-
-		/// <summary>
-		/// Claims the second project progress card
-		/// </summary>
-		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
-		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void ClaimProgressCard2_Click(object sender, EventArgs e)
-		{
-			int points = GameController.ClaimProgressCard();
-
-			if (points > 0)
-			{
-				//Syncs the purchased card ඞmong all the players 
-				for (int i = 0; i < GameController.playerForms.Length; i++)
-				{
-					GameController.playerForms[i].ClaimProgressCard2.Enabled = false;
-					GameController.playerForms[i].ProjectProgressCard2.Text = GameController.ProjProgDeck[GameController.turnCounter].Deck[1].displayCard( );
-				}
-			}
-		}
-
-		/// <summary>
-		/// Claims the third project progress card
-		/// </summary>
-		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
-		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void ClaimProgressCard3_Click(object sender, EventArgs e)
-		{
-			int points = GameController.ClaimProgressCard();
-
-			if (points > 0)
-			{
-				//Syncs the purchased card ඞmong all the players 
-				for (int i = 0; i < GameController.playerForms.Length; i++)
-				{
-					GameController.playerForms[i].ClaimProgressCard3.Enabled = false;
-					GameController.playerForms[i].ProjectProgressCard3.Text = GameController.ProjProgDeck[GameController.turnCounter].Deck[2].displayCard( );
-				}
-			}
-		}
-
-		/// <summary>
-		/// Claims the fourth project progress card
-		/// </summary>
-		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
-		/// <param name="e">arguments for event (auto-generated, unused here)</param>
-		private void ClaimProgressCard4_Click(object sender, EventArgs e)
-		{
-			int points = GameController.ClaimProgressCard();
-
-			if (points > 0)
-			{
-				//Syncs the purchased card ඞmong all the players 
-				for (int i = 0; i < GameController.playerForms.Length; i++)
-				{
-					GameController.playerForms[i].ClaimProgressCard4.Enabled = false;
-					GameController.playerForms[i].ProjectProgressCard4.Text = GameController.ProjProgDeck[GameController.turnCounter].Deck[3].displayCard( );
-				}
-			}
-		}
 		#endregion
 
 		#region Additional Project Features Cards
@@ -558,7 +508,7 @@ namespace InformationAgeProject
 				{
 					GameController.playerForms[i].ClaimFeaturesCard1.Enabled = false;
 
-					if (GameController.ProjFeatDeck.Deck.Count < 1)
+					if (GameController.ProjFeatDeck.AvailableCount() < 1)
 					{
 						GameController.playerForms[i].AdditionalFeaturesTextBox1.Text = "All available cards have been purchased.";
 					}
@@ -588,7 +538,7 @@ namespace InformationAgeProject
 				{
 					GameController.playerForms[i].ClaimFeaturesCard2.Enabled = false;
 
-					if (GameController.ProjFeatDeck.Deck.Count < 2)
+					if (GameController.ProjFeatDeck.AvailableCount() < 2)
 					{
 						GameController.playerForms[i].AdditionalFeaturesTextBox2.Text = "All available cards have been purchased.";
 					}
@@ -618,7 +568,7 @@ namespace InformationAgeProject
 				{
 					GameController.playerForms[i].ClaimFeaturesCard3.Enabled = false;
 
-					if (GameController.ProjFeatDeck.Deck.Count < 3)
+					if (GameController.ProjFeatDeck.AvailableCount() < 3)
 					{
 						GameController.playerForms[i].AdditionalFeaturesTextBox3.Text = "All available cards have been purchased.";
 					}
@@ -648,7 +598,7 @@ namespace InformationAgeProject
 				{
 					GameController.playerForms[i].ClaimFeaturesCard4.Enabled = false;
 
-					if (GameController.ProjFeatDeck.Deck.Count < 4)
+					if (GameController.ProjFeatDeck.AvailableCount() < 4)
 					{
 						GameController.playerForms[i].AdditionalFeaturesTextBox4.Text = "All available cards have been purchased.";
 					}

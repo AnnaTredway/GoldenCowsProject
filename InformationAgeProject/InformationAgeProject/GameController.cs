@@ -290,9 +290,6 @@ namespace InformationAgeProject
 			{
 				playerList[turnCounter].Inventory.ProjectProgressCards.Add(ProjProgDeck[turnCounter].Deck[0]);
 
-
-				//ProjProgDeck[turnCounter].Deck[0].blnSold = true; // ???
-				//ProjProgDeck[turnCounter].Deck[0].strCard = "Card claimed by\r\n" + playerList[turnCounter].TeamName; // ???
 				ProjProgDeck[turnCounter].Deck.RemoveAt(0);
 
 				playerForms[turnCounter].inventoryBox.Text = playerList[turnCounter].Inventory.printResources();
@@ -304,7 +301,7 @@ namespace InformationAgeProject
 		}
 		#endregion
 
-		#region Claim Project Feature Card		
+		#region Claim Project Feature Card
 		/// <summary>
 		/// Claims a feature card.
 		/// </summary>
@@ -349,20 +346,44 @@ namespace InformationAgeProject
 			}
 			return null;
 		}
+		#endregion
 
+		#region Remove Claimed Project Feature Cards
 		/// <summary>
 		/// Removes any claimed cards at the deck.
 		/// </summary>
 		public static void removeClaimedFeatureCards()
 		{
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < ProjFeatDeck.Deck.Count; i++)
 			{
 				if (ProjFeatDeck.Deck[i].blnSold == true)
 				{
 					ProjFeatDeck.Deck.RemoveAt(i);
+					i = -1;
 				}
+			}
+
+			if (ProjFeatDeck.Deck.Count >= 4)
+			{
+				for (int i = 0; i < playerForms.Length; i++)
+				{
+					playerForms[i].AdditionalFeaturesTextBox1.Text = ProjFeatDeck.Deck[0].displayCard();
+					playerForms[i].ClaimFeaturesCard1.Enabled = true;
+					playerForms[i].AdditionalFeaturesTextBox2.Text = ProjFeatDeck.Deck[1].displayCard();
+					playerForms[i].ClaimFeaturesCard2.Enabled = true;
+					playerForms[i].AdditionalFeaturesTextBox3.Text = ProjFeatDeck.Deck[2].displayCard();
+					playerForms[i].ClaimFeaturesCard3.Enabled = true;
+					playerForms[i].AdditionalFeaturesTextBox4.Text = ProjFeatDeck.Deck[3].displayCard();
+					playerForms[i].ClaimFeaturesCard4.Enabled = true;
+				}
+			}
+			else
+			{
+				// The game should end and final score should be tallied
+				MessageBox.Show("The game should end");
 
 			}
+
 		}
         #endregion
 
@@ -529,6 +550,8 @@ namespace InformationAgeProject
 
 				recruitmentOfficeFull = false;
 			}
+
+			removeClaimedFeatureCards();
 
 			//Resets turn counter and increases the round counter
 			turnCounter = 0;

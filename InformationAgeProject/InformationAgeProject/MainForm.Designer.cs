@@ -78,13 +78,7 @@ namespace InformationAgeProject
             this.lblInventory = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.ProjectProgressCard1 = new System.Windows.Forms.TextBox();
-            this.ProjectProgressCard2 = new System.Windows.Forms.TextBox();
-            this.ProjectProgressCard3 = new System.Windows.Forms.TextBox();
-            this.ProjectProgressCard4 = new System.Windows.Forms.TextBox();
             this.ClaimProgressCard1 = new System.Windows.Forms.Button();
-            this.ClaimProgressCard2 = new System.Windows.Forms.Button();
-            this.ClaimProgressCard3 = new System.Windows.Forms.Button();
-            this.ClaimProgressCard4 = new System.Windows.Forms.Button();
             this.toolSlot1 = new System.Windows.Forms.TextBox();
             this.toolSlot2 = new System.Windows.Forms.TextBox();
             this.toolSlot3 = new System.Windows.Forms.TextBox();
@@ -550,45 +544,6 @@ namespace InformationAgeProject
             this.ProjectProgressCard1.Size = new System.Drawing.Size(130, 129);
             this.ProjectProgressCard1.TabIndex = 39;
             // 
-            // ProjectProgressCard2
-            // 
-            this.ProjectProgressCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ProjectProgressCard2.BackColor = System.Drawing.Color.White;
-            this.ProjectProgressCard2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectProgressCard2.Location = new System.Drawing.Point(148, 516);
-            this.ProjectProgressCard2.Multiline = true;
-            this.ProjectProgressCard2.Name = "ProjectProgressCard2";
-            this.ProjectProgressCard2.ReadOnly = true;
-            this.ProjectProgressCard2.Size = new System.Drawing.Size(130, 129);
-            this.ProjectProgressCard2.TabIndex = 40;
-            this.ProjectProgressCard2.Visible = false;
-            // 
-            // ProjectProgressCard3
-            // 
-            this.ProjectProgressCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ProjectProgressCard3.BackColor = System.Drawing.Color.White;
-            this.ProjectProgressCard3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectProgressCard3.Location = new System.Drawing.Point(284, 516);
-            this.ProjectProgressCard3.Multiline = true;
-            this.ProjectProgressCard3.Name = "ProjectProgressCard3";
-            this.ProjectProgressCard3.ReadOnly = true;
-            this.ProjectProgressCard3.Size = new System.Drawing.Size(130, 129);
-            this.ProjectProgressCard3.TabIndex = 41;
-            this.ProjectProgressCard3.Visible = false;
-            // 
-            // ProjectProgressCard4
-            // 
-            this.ProjectProgressCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ProjectProgressCard4.BackColor = System.Drawing.Color.White;
-            this.ProjectProgressCard4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectProgressCard4.Location = new System.Drawing.Point(420, 516);
-            this.ProjectProgressCard4.Multiline = true;
-            this.ProjectProgressCard4.Name = "ProjectProgressCard4";
-            this.ProjectProgressCard4.ReadOnly = true;
-            this.ProjectProgressCard4.Size = new System.Drawing.Size(130, 129);
-            this.ProjectProgressCard4.TabIndex = 42;
-            this.ProjectProgressCard4.Visible = false;
-            // 
             // ClaimProgressCard1
             // 
             this.ClaimProgressCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -604,57 +559,6 @@ namespace InformationAgeProject
             this.ClaimProgressCard1.Text = "Claim Card";
             this.ClaimProgressCard1.UseVisualStyleBackColor = false;
             this.ClaimProgressCard1.Click += new System.EventHandler(this.ClaimProgressCard1_Click);
-            // 
-            // ClaimProgressCard2
-            // 
-            this.ClaimProgressCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimProgressCard2.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
-            this.ClaimProgressCard2.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ClaimProgressCard2.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ClaimProgressCard2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClaimProgressCard2.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ClaimProgressCard2.Location = new System.Drawing.Point(179, 651);
-            this.ClaimProgressCard2.Name = "ClaimProgressCard2";
-            this.ClaimProgressCard2.Size = new System.Drawing.Size(75, 23);
-            this.ClaimProgressCard2.TabIndex = 44;
-            this.ClaimProgressCard2.Text = "Claim Card";
-            this.ClaimProgressCard2.UseVisualStyleBackColor = false;
-            this.ClaimProgressCard2.Visible = false;
-            this.ClaimProgressCard2.Click += new System.EventHandler(this.ClaimProgressCard2_Click);
-            // 
-            // ClaimProgressCard3
-            // 
-            this.ClaimProgressCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimProgressCard3.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
-            this.ClaimProgressCard3.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ClaimProgressCard3.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ClaimProgressCard3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClaimProgressCard3.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ClaimProgressCard3.Location = new System.Drawing.Point(313, 651);
-            this.ClaimProgressCard3.Name = "ClaimProgressCard3";
-            this.ClaimProgressCard3.Size = new System.Drawing.Size(75, 23);
-            this.ClaimProgressCard3.TabIndex = 45;
-            this.ClaimProgressCard3.Text = "Claim Card";
-            this.ClaimProgressCard3.UseVisualStyleBackColor = false;
-            this.ClaimProgressCard3.Visible = false;
-            this.ClaimProgressCard3.Click += new System.EventHandler(this.ClaimProgressCard3_Click);
-            // 
-            // ClaimProgressCard4
-            // 
-            this.ClaimProgressCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ClaimProgressCard4.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
-            this.ClaimProgressCard4.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ClaimProgressCard4.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ClaimProgressCard4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClaimProgressCard4.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ClaimProgressCard4.Location = new System.Drawing.Point(448, 651);
-            this.ClaimProgressCard4.Name = "ClaimProgressCard4";
-            this.ClaimProgressCard4.Size = new System.Drawing.Size(75, 23);
-            this.ClaimProgressCard4.TabIndex = 46;
-            this.ClaimProgressCard4.Text = "Claim Card";
-            this.ClaimProgressCard4.UseVisualStyleBackColor = false;
-            this.ClaimProgressCard4.Visible = false;
-            this.ClaimProgressCard4.Click += new System.EventHandler(this.ClaimProgressCard4_Click);
             // 
             // toolSlot1
             // 
@@ -1083,12 +987,6 @@ namespace InformationAgeProject
             this.Controls.Add(this.toolSlot3);
             this.Controls.Add(this.toolSlot2);
             this.Controls.Add(this.toolSlot1);
-            this.Controls.Add(this.ClaimProgressCard4);
-            this.Controls.Add(this.ClaimProgressCard3);
-            this.Controls.Add(this.ClaimProgressCard2);
-            this.Controls.Add(this.ProjectProgressCard4);
-            this.Controls.Add(this.ProjectProgressCard3);
-            this.Controls.Add(this.ProjectProgressCard2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.scoreBox);
             this.Controls.Add(this.inventoryBox);
@@ -1163,13 +1061,7 @@ namespace InformationAgeProject
         private System.Windows.Forms.Label lblInventory;
         private System.Windows.Forms.Label lblScore;
         public System.Windows.Forms.TextBox ProjectProgressCard1;
-        public System.Windows.Forms.TextBox ProjectProgressCard2;
-        public System.Windows.Forms.TextBox ProjectProgressCard3;
-        public System.Windows.Forms.TextBox ProjectProgressCard4;
         public System.Windows.Forms.Button ClaimProgressCard1;
-        public System.Windows.Forms.Button ClaimProgressCard2;
-        public System.Windows.Forms.Button ClaimProgressCard3;
-        public System.Windows.Forms.Button ClaimProgressCard4;
         public System.Windows.Forms.TextBox toolSlot1;
         public System.Windows.Forms.TextBox toolSlot2;
         public System.Windows.Forms.TextBox toolSlot3;
