@@ -29,15 +29,16 @@ namespace InformationAgeProject
 	/// </summary>
 	public class GameController
 	{
-		public static int turnCounter = 0;		//Counts what turn currently being done within a single round
-		public static int roundCounter = 1;		//Counts how many rounds are in game and stores current round
+		public static int turnCounter = 0;			//Counts what turn currently being done within a single round
+		public static int roundCounter = 1;			//Counts how many rounds are in game and stores current round
 
 		public static bool toolMakerFull = false;   //Player array index who has the tool at the tool maker
-		public static int playerAtToolMaker = -1;	//Array of index of player that has developer at tool maker
+		public static int playerAtToolMaker = -1;   //Array of index of player that has developer at tool maker
 
-		public static MainMenu mainMenu;		//MainMenu instance that opens when opening game
-		public static Player[] playerList;		//Array of players for game
-		public static MainForm[] playerForms;	//Array of MainForms to be used by players
+		public static Timer loadingTimer;			//Timer to elapse for 9.5 seconds for loading initial sounds
+		public static MainMenu mainMenu;			//MainMenu instance that opens when opening game
+		public static Player[] playerList;			//Array of players for game
+		public static MainForm[] playerForms;		//Array of MainForms to be used by players
 
 		public static ProjectProgressDeck[] ProjProgDeck { get; set; }
 		public static AdditionalProjectFeaturesDeck ProjFeatDeck { get; set; }
@@ -64,11 +65,11 @@ namespace InformationAgeProject
 			//Opens all sound files before game opens and then starts music
 			SoundController.openAllSounds();
 
-			//Gives time for sound to open
-			System.Threading.Thread.Sleep(8500);
-
-			//Plays great music upon startup
-			SoundController.playMusic();
+			//Timer to elapse for 9.5 seconds for loading initial sounds
+			loadingTimer = new Timer();
+			loadingTimer.Tick += c_OnLoadingTimerEnd;
+			loadingTimer.Interval = 9500;
+			loadingTimer.Enabled = true;
 
 			//Opens application to main menu
 			mainMenu = new MainMenu();
@@ -636,6 +637,20 @@ namespace InformationAgeProject
 
 		}//end quitGame()
 		#endregion
+
+		/// <summary>
+		/// Event Handler for handling when loadingTimer ends
+		/// </summary>
+		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+		/// <param name="e">arguments for event (auto-generated, unused here)</param>
+		/// private static void TimerEventProcessor(Object myObject,
+		private static void c_OnLoadingTimerEnd(Object source, EventArgs e)
+		{
+			//Plays great music upon startup after backgroundworker finishes
+			SoundController.playMusic();
+			mainMenu.showMainMenuScreenControls();
+			loadingTimer.Dispose();
+		}
 
 	}
 }

@@ -124,6 +124,7 @@ namespace InformationAgeProject
         /// <param name="e"></param>
         private void RefreshButton_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
             StatsForm_Load(sender, e);
         }
     }

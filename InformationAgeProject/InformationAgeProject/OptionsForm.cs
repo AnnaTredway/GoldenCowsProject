@@ -46,8 +46,9 @@ namespace InformationAgeProject
                 control.Visible = false;
             }
 
-            effectsVolumeScrollBar.Value = (int)(SoundController.buttonPlayer.Volume * 100);
-            musicVolumeScrollBar.Value = (int)(SoundController.musicPlayer.Volume * 100);
+            //Sets volume sliders to current global property value
+            effectsVolumeScrollBar.Value = Properties.Settings.Default.EffectsVolume;
+            musicVolumeScrollBar.Value = Properties.Settings.Default.MusicVolume;
 
             //Sets every control on main options screen to visible
             lblOptions.Visible = true;
@@ -197,6 +198,8 @@ namespace InformationAgeProject
         private void effectsVolumeScrollBar_Scroll(object sender, EventArgs e)
         {
             SoundController.buttonPlayer.Volume = (double)effectsVolumeScrollBar.Value / 100;
+            Properties.Settings.Default.EffectsVolume = effectsVolumeScrollBar.Value;
+            Properties.Settings.Default.Save();
         }
 
         /// <summary>
@@ -207,6 +210,8 @@ namespace InformationAgeProject
         private void musicVolumeScrollBar_Scroll(object sender, EventArgs e)
         {
             SoundController.musicPlayer.Volume = (double)musicVolumeScrollBar.Value / 100;
+            Properties.Settings.Default.MusicVolume = musicVolumeScrollBar.Value;
+            Properties.Settings.Default.Save();
         }
         #endregion
 
@@ -237,12 +242,16 @@ namespace InformationAgeProject
         {
             SoundController.playButtonClick();
 
-            //Resets Volume sliders back to what they were on startup
-            effectsVolumeScrollBar.Value = 50;
-            SoundController.buttonPlayer.Volume = (double)effectsVolumeScrollBar.Value / 100;
+            //Resets Volume sliders and global variables back to what they were on first-time startup
+            Properties.Settings.Default.EffectsVolume = 50;
+            effectsVolumeScrollBar.Value = Properties.Settings.Default.EffectsVolume;
+            SoundController.buttonPlayer.Volume = (double)Properties.Settings.Default.EffectsVolume / 100;
+            Properties.Settings.Default.Save();
 
-            musicVolumeScrollBar.Value = 30;
+            Properties.Settings.Default.MusicVolume = 25;
+            musicVolumeScrollBar.Value = Properties.Settings.Default.MusicVolume;
             SoundController.musicPlayer.Volume = (double)musicVolumeScrollBar.Value / 100;
+            Properties.Settings.Default.Save();
         }
         #endregion
 

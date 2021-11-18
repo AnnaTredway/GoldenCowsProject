@@ -59,6 +59,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnReset_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			//Clears all list boxes before resetting them
 			foreach (ListBox listBox in Controls.OfType<ListBox>())
 			{
@@ -80,6 +82,8 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnDone_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
+
 			finalToolValues[0] = GameController.calcToolLevelsFromList(backlogListBox);
 			finalToolValues[1] = GameController.calcToolLevelsFromList(lowListBox);
 			finalToolValues[2] = GameController.calcToolLevelsFromList(medListBox);

@@ -124,6 +124,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void okButton_Click(object sender, EventArgs e)
 		{
+			SoundController.playButtonClick();
 			Close();
 		}
 	}

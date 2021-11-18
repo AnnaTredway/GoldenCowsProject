@@ -47,6 +47,22 @@ namespace InformationAgeProject
 				control.Visible = false;
 			}
 
+			//Sets loading text to visible
+			lblLoading.Visible = true;
+		}
+
+		#region showMainMenuScreenControls() Method
+		/// <summary>
+		/// Method for only showing controls on the main menu screen
+		/// </summary>
+		public void showMainMenuScreenControls()
+		{
+			//Sets every control on the form to invisible
+			foreach (Control control in Controls)
+			{
+				control.Visible = false;
+			}
+
 			//Sets every control on the main menu screen to visible
 			lblTitle.Visible = true;
 			btnPlayGame.Visible = true;
@@ -54,6 +70,7 @@ namespace InformationAgeProject
 			btnInstructions.Visible = true;
 			btnQuit.Visible = true;
 		}
+		#endregion
 
 		#region MainMenu Buttons
 		/// <summary>
@@ -254,6 +271,7 @@ namespace InformationAgeProject
 			}
 		}
 		#endregion
+
 
 	}
 }

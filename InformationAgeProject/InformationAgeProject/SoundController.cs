@@ -29,12 +29,14 @@ namespace InformationAgeProject
 		//Random object for choosing next soundtrack
 		public static Random random = new Random();
 
-		//MediaPlayers for music and sounds
-		public static MediaPlayer musicPlayer;
+		//MediaPlayers for sounds and music
 		public static MediaPlayer buttonPlayer;
+		public static MediaPlayer musicPlayer;
 
-		//String for storing location of "Sounds" folder
-		private static string filePath;
+		private static string filePath;					//String for storing location of "Sounds" folder
+		private static string currentMusicPath = "";    //Current file path of music playing Set to empty for first comparison in playMusic()
+		private static int numTracks = 2;				//Number of music tracks currently in program
+		private static Uri[] musicUriArray;				//Storage array of Uri's to use in musicPlayer
 
 		#region SoundController Constructor
 		/// <summary>
@@ -43,7 +45,7 @@ namespace InformationAgeProject
 		private SoundController() { }
 		#endregion
 
-		#region openAllSounds() & setSoundsPath() Methods
+		#region openAllSounds() Method
 		/// <summary>
 		/// Method for opening all sounds in game before game starts to prevent lag
 		/// </summary>
@@ -56,25 +58,34 @@ namespace InformationAgeProject
 			buttonPlayer = new MediaPlayer();
 			musicPlayer = new MediaPlayer();
 
-			//Adds event handlers to media players that require it
-			musicPlayer.MediaEnded += new EventHandler(c_MusicMediaEnded);
-
-			//Open relative location of sound effect files for later use
+			//Open relative location of button sound effect file for later use
 			buttonPlayer.Open(new Uri(filePath + "\\Effects\\minecraftclick.wav"));
 
-			//Open relative location of music files for later use
-			musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
+			//Fills Uri array of music tracks
+			musicUriArray = fillMusicUriArray(numTracks);
 
-			buttonPlayer.Volume = 0.5;
-			musicPlayer.Volume = 0.3;
+			//Open relative location of music files for later use from musicUriArray
+			foreach (Uri musicUri in musicUriArray)
+            {
+				musicPlayer.Open(musicUri);
+			}
+
+			//Adds event handlers to music player to be able to play more than one track
+			musicPlayer.MediaEnded += new EventHandler(c_MusicMediaEnded);
+
+			//Sets volume of each MediaPlayer to respective global property
+			buttonPlayer.Volume = (double)Properties.Settings.Default.EffectsVolume / 100;
+			musicPlayer.Volume = (double)Properties.Settings.Default.MusicVolume / 100;
 
 		}
+		#endregion
 
+		#region setSoundsPath() Method
 		/// <summary>
 		/// Method for getting filepath of "Sounds" folder
 		/// </summary>
 		/// <returns>Filepath of "Sounds" folder within program</returns>
-		public static string getSoundsPath()
+		private static string getSoundsPath()
 		{
 			string soundsPath;
 
@@ -87,6 +98,23 @@ namespace InformationAgeProject
 			soundsPath += "\\Sounds";
 
 			return soundsPath;
+		}
+		#endregion
+
+		#region fillMusicUriArray() Method
+		/// <summary>
+		/// Method for filling a Uri array of music tracks
+		/// </summary>
+		/// <returns>Filled Uri array of music trakcs</returns>
+		private static Uri[] fillMusicUriArray(int arraySize)
+		{
+			Uri[] uriArray = new Uri[arraySize];
+
+			//Open relative location of music files and puts them in uriArray (This has to be hard-coded currently)
+			uriArray[0] = new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav");
+			uriArray[1] = new Uri(filePath + "\\Music\\NokiaEspionagePTRK.wav");
+
+			return uriArray;
 		}
 		#endregion
 
@@ -109,34 +137,32 @@ namespace InformationAgeProject
 		/// </summary>
 		public static void playMusic()
 		{
-			//Selects next song to play randomly after previous one ends
-			//(Currently only has 1 track to play and may play same track in a row even if more tracks are added)
-			switch (random.Next(4))
+			bool newTrackPlayed = false;
+			int randomVal;
+
+			//Stays in while loop until new track has been played
+			while (newTrackPlayed == false)
 			{
-				case 0:
-					musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
-					musicPlayer.Play();
-					break;
+				//Selects next song to play randomly after previous one ends, but not the same one twice in a row
+				randomVal = random.Next(numTracks);
 
-				case 1:
-					musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
-					musicPlayer.Play();
-					break;
+				//If the stored current song path is not the same as the next songs's path, load and play it
+				//Else, restart while loop and hope for random number that doesn't land on same array index
+				if (currentMusicPath != musicUriArray[randomVal].AbsoluteUri)
+				{
+					currentMusicPath = musicUriArray[randomVal].AbsoluteUri;    //Set currentMusicPath to new path for future comparison
 
-				case 2:
-					musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
+					musicPlayer.Open(musicUriArray[randomVal]);
 					musicPlayer.Play();
-					break;
 
-				case 3:
-					musicPlayer.Open(new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav"));
-					musicPlayer.Play();
-					break;
+					newTrackPlayed = true; //Set to true to get out of while loop if new track is played
+				}
+
+				
 			}
 
 		}
 		#endregion
-
 
 		/// <summary>
 		/// Event Handler for handling when musicPlayer media ends

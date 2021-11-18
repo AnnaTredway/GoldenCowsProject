@@ -186,6 +186,7 @@
     <Content Include="GameIcons\moobloom.png" />
     <Content Include="GameIcons\redbed.png" />
     <Content Include="Sounds\Music\NeverGonnaGiveYouUp.wav" />
+    <Content Include="Sounds\Music\NokiaEspionagePTRK.wav" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

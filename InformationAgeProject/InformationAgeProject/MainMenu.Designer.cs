@@ -53,6 +53,7 @@
             this.btnLoadGame = new System.Windows.Forms.Button();
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.btnInstructions = new System.Windows.Forms.Button();
+            this.lblLoading = new System.Windows.Forms.Label();
             this.pnlTeamNames.SuspendLayout();
             this.pnlSelectPlayers.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,7 @@
             this.btnPlayGame.TabIndex = 0;
             this.btnPlayGame.Text = "Play";
             this.btnPlayGame.UseVisualStyleBackColor = false;
+            this.btnPlayGame.Visible = false;
             this.btnPlayGame.Click += new System.EventHandler(this.btnPlayGame_Click);
             // 
             // lblTitle
@@ -86,6 +88,7 @@
             this.lblTitle.Size = new System.Drawing.Size(326, 51);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Information Age";
+            this.lblTitle.Visible = false;
             // 
             // btnOptions
             // 
@@ -99,9 +102,10 @@
             this.btnOptions.Location = new System.Drawing.Point(300, 223);
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.Size = new System.Drawing.Size(200, 40);
-            this.btnOptions.TabIndex = 2;
+            this.btnOptions.TabIndex = 1;
             this.btnOptions.Text = "Options";
             this.btnOptions.UseVisualStyleBackColor = false;
+            this.btnOptions.Visible = false;
             this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
             // btnQuit
@@ -119,6 +123,7 @@
             this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Quit";
             this.btnQuit.UseVisualStyleBackColor = false;
+            this.btnQuit.Visible = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // radio2Players
@@ -398,10 +403,24 @@
             this.btnInstructions.Location = new System.Drawing.Point(300, 269);
             this.btnInstructions.Name = "btnInstructions";
             this.btnInstructions.Size = new System.Drawing.Size(200, 40);
-            this.btnInstructions.TabIndex = 24;
+            this.btnInstructions.TabIndex = 2;
             this.btnInstructions.Text = "Instructions";
             this.btnInstructions.UseVisualStyleBackColor = false;
+            this.btnInstructions.Visible = false;
             this.btnInstructions.Click += new System.EventHandler(this.btnInstructions_Click);
+            // 
+            // lblLoading
+            // 
+            this.lblLoading.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.lblLoading.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
+            this.lblLoading.Location = new System.Drawing.Point(237, 187);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(326, 76);
+            this.lblLoading.TabIndex = 25;
+            this.lblLoading.Text = "Loading...";
             // 
             // MainMenu
             // 
@@ -419,8 +438,9 @@
             this.Controls.Add(this.btnPlayGame);
             this.Controls.Add(this.btnLoadGame);
             this.Controls.Add(this.btnNewGame);
-            this.Controls.Add(this.pnlTeamNames);
             this.Controls.Add(this.pnlSelectPlayers);
+            this.Controls.Add(this.pnlTeamNames);
+            this.Controls.Add(this.lblLoading);
             this.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "FormsBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -464,5 +484,6 @@
         private System.Windows.Forms.Button btnLoadGame;
         private System.Windows.Forms.Button btnBackToMainMenu;
         private System.Windows.Forms.Button btnInstructions;
+        private System.Windows.Forms.Label lblLoading;
     }
 }
