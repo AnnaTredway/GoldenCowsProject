@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("InformationAgeProject")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This is a game named 'Information Age' based on the board game 'Stone Age'.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Golden Cows")]
 [assembly: AssemblyProduct("Information Age")]

@@ -139,10 +139,6 @@ namespace InformationAgeProject
 				txtBacklog.Text = Convert.ToString(Int32.Parse(txtBacklog.Text) + 1);
 
 			}
-			else
-			{
-				//Do nothing
-			}
 		}
 
 		/// <summary>
@@ -165,10 +161,6 @@ namespace InformationAgeProject
 				player.Developers++;
 				txtDevelopers.Text = Convert.ToString(player.Developers);
 
-			}
-			else
-			{
-				//Do nothing
 			}
 		}
 
@@ -193,10 +185,6 @@ namespace InformationAgeProject
 				txtLow.Text = Convert.ToString(Int32.Parse(txtLow.Text) + 1);
 
 			}
-			else
-			{
-				//Do nothing
-			}
 		}
 
 		/// <summary>
@@ -219,10 +207,6 @@ namespace InformationAgeProject
 				player.Developers++;
 				txtDevelopers.Text = Convert.ToString(player.Developers);
 
-			}
-			else
-			{
-				//Do nothing
 			}
 		}
 
@@ -247,10 +231,6 @@ namespace InformationAgeProject
 				txtMed.Text = Convert.ToString(Int32.Parse(txtMed.Text) + 1);
 
 			}
-			else
-			{
-				//Do nothing
-			}
 		}
 
 		/// <summary>
@@ -273,10 +253,6 @@ namespace InformationAgeProject
 				player.Developers++;
 				txtDevelopers.Text = Convert.ToString(player.Developers);
 
-			}
-			else
-			{
-				//Do nothing
 			}
 		}
 
@@ -301,10 +277,6 @@ namespace InformationAgeProject
 				txtHigh.Text = Convert.ToString(Int32.Parse(txtHigh.Text) + 1);
 
 			}
-			else
-			{
-				//Do nothing
-			}
 		}
 
 		/// <summary>
@@ -327,10 +299,6 @@ namespace InformationAgeProject
 				player.Developers++;
 				txtDevelopers.Text = Convert.ToString(player.Developers);
 
-			}
-			else
-			{
-				//Do nothing
 			}
 		}
 		#endregion
@@ -378,8 +346,16 @@ namespace InformationAgeProject
 				Scoring score = new Scoring(player.Inventory);
 				scoreBox.Text = score.calculateScore();
 
-				//Sets btnDoTasks to disabled so player cant do tasks again in same turn
-				btnDoTasks.Enabled = false;
+				//Sets btnDoTasks and developer on task buttons to disabled so player cant do tasks again in same turn
+				this.btnDoTasks.Enabled = false;
+				this.btnAddBacklog.Enabled = false;
+				this.btnSubtBacklog.Enabled = false;
+				this.btnAddLow.Enabled = false;
+				this.btnSubtLow.Enabled = false;
+				this.btnAddMed.Enabled = false;
+				this.btnSubtMed.Enabled = false;
+				this.btnAddHigh.Enabled = false;
+				this.btnSubtHigh.Enabled = false;
 			}
 		}
 		#endregion
@@ -398,33 +374,41 @@ namespace InformationAgeProject
 			//Else, do nothing
 			if (player.Developers > 0 && Int32.Parse(txtToolMaker.Text) < 1)
 			{
-				//If any player has not put a developer at the tool maker, add a developer to the tool maker
-				//Else, show error stating that another player already has a developer at the tool maker
-				if (GameController.toolMakerFull == false)
-			{
+				//If the last tool slot does not have the highest tool level, put a developer on the tool maker
+				//Else, show error message
+				if (Int32.Parse(toolSlot3.Text) != 4)
+				{
+					//If any player has not put a developer at the tool maker, add a developer to the tool maker
+					//Else, show error stating that another player already has a developer at the tool maker
+					if (GameController.toolMakerFull == false)
+					{
 
-					//Subtract 1 developer from current player's developer count and show in text box
-					player.Developers--;
-					txtDevelopers.Text = Convert.ToString(player.Developers);
+						//Subtract 1 developer from current player's developer count and show in text box
+						player.Developers--;
+						txtDevelopers.Text = Convert.ToString(player.Developers);
 
-					//Add 1 developer to tool maker count and show in text box
-					txtToolMaker.Text = Convert.ToString(1);
+						//Add 1 developer to tool maker count and show in text box
+						txtToolMaker.Text = Convert.ToString(1);
 
-					//Sets storage integer showing which player has a developer at the tool maker equal to the index of the player at the tool maker
-					GameController.playerAtToolMaker = player.PlayerNum;
-					GameController.toolMakerFull = true;
+						//Sets storage integer showing which player has a developer at the tool maker equal to the index of the player at the tool maker
+						GameController.playerAtToolMaker = player.PlayerNum;
+						GameController.toolMakerFull = true;
+					}
+					else
+					{
+						MessageBox.Show("Another player already has a developer at the tool maker."
+						, "Cannot Assign Developer To Tool Maker"
+						, MessageBoxButtons.OK
+						, MessageBoxIcon.Error);
+					} 
 				}
 				else
-				{
-					MessageBox.Show("Another player already has a developer at the tool maker."
-					, "Cannot Assign Developer To Tool Maker"
+                {
+					MessageBox.Show("You cannot acquire anymore tools because all three tools in your inventory are at max level."
+					, "Cannot Acquire More Tools"
 					, MessageBoxButtons.OK
 					, MessageBoxIcon.Error);
 				}
-			}
-			else
-			{
-				//Do nothing
 			}
 		}
 
@@ -452,9 +436,59 @@ namespace InformationAgeProject
 				GameController.playerAtToolMaker = -1;
 				GameController.toolMakerFull = false;
 			}
+		}
+		#endregion
+
+		#region Recruitment Office Buttons and Textboxes
+		/// <summary>
+		/// Sends two developers from the player's count of available devs.
+		/// The two devs, as well as one additional dev, are returned to the player at the round's end.
+		/// Only one player can use the recruitment office per round.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnSendDevs_Click(object sender, EventArgs e)
+		{
+			SoundController.playButtonClick();
+
+			//If the player has at least two developers
+			if (player.Developers >= 2 & GameController.recruitmentOfficeFull == false)
+			{
+				btnSendDevs.Enabled = false;
+				lblRecruitStatus.Text = $"Recruitment Status:\n-----------------------" +
+					$"\nOccupied with 2 developers from Team:" +
+					$"\n{player.TeamName}";
+
+				player.Developers = player.Developers - 2;
+				txtDevelopers.Text = Convert.ToString(player.Developers);
+				btnRecallDevs.Enabled = true;
+				GameController.recruitmentOfficeFull = true;
+				GameController.playerAtRecruitmentOffice = GameController.turnCounter;
+			}
 			else
 			{
-				//Do nothing
+				//throw an error message stating that you must have at least 2 devs
+			}
+		}
+
+		/// <summary>
+		/// If the current player has just just assigned two developers to the recruitment office,
+		/// pressing the recall button will remove the two devs and add them back to the player's
+		/// available developers count
+		/// </summary>
+		private void btnRecallDevs_Click(object sender, EventArgs e)
+		{
+			SoundController.playButtonClick();
+
+			player.Developers = player.Developers + 2;
+			txtDevelopers.Text = Convert.ToString(player.Developers);
+			lblRecruitStatus.Text = "";
+			btnRecallDevs.Enabled = false;
+
+			if (player.Developers >= 2)
+			{
+				btnSendDevs.Enabled = true;
+				GameController.recruitmentOfficeFull = false;
 			}
 		}
 		#endregion
@@ -621,8 +655,16 @@ namespace InformationAgeProject
 		{
 			SoundController.playButtonClick();
 
-			//Re-enables do task button for next time current player has a turn
+			//Re-enables do task button and developers on tasks buttons for next time current player has a turn
 			this.btnDoTasks.Enabled = true;
+			this.btnAddBacklog.Enabled = true;
+			this.btnSubtBacklog.Enabled = true;
+			this.btnAddLow.Enabled = true;
+			this.btnSubtLow.Enabled = true;
+			this.btnAddMed.Enabled = true;
+			this.btnSubtMed.Enabled = true;
+			this.btnAddHigh.Enabled = true;
+			this.btnSubtHigh.Enabled = true;
 
 			//Ends current player's turn and goes to next player's turn
 			GameController.endTurn();
@@ -707,58 +749,7 @@ namespace InformationAgeProject
 			//Opens AboutBox with information about the game
 			GameController.openAboutBox();
 		}
-		#endregion
+        #endregion
 
-		/// <summary>
-		/// Sends two developers from the player's count of available devs.
-		/// The two devs, as well as one additional dev, are returned to the player at the round's end.
-		/// Only one player can use the recruitment office per round.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void btnSendDevs_Click(object sender, EventArgs e)
-		{
-			SoundController.playButtonClick();
-
-			//If the player has at least two developers
-			if (player.Developers >= 2 & GameController.recruitmentOfficeFull == false)
-			{
-				btnSendDevs.Enabled = false;
-				lblRecruitStatus.Text = $"Recruitment Status:\n-----------------------" +
-					$"\nOccupied with 2 developers from Team:" +
-					$"\n{player.TeamName}";
-
-				player.Developers = player.Developers - 2;
-				txtDevelopers.Text = Convert.ToString(player.Developers);
-				btnRecallDevs.Enabled = true;
-				GameController.recruitmentOfficeFull = true;
-				GameController.playerAtRecruitmentOffice = GameController.turnCounter;
-			}
-			else
-			{
-				//throw an error message stating that you must have at least 2 devs
-			}
-		}
-
-		/// <summary>
-		/// If the current player has just just assigned two developers to the recruitment office,
-		/// pressing the recall button will remove the two devs and add them back to the player's
-		/// available developers count
-		/// </summary>
-		private void btnRecallDevs_Click(object sender, EventArgs e)
-		{
-			SoundController.playButtonClick();
-
-			player.Developers = player.Developers + 2;
-			txtDevelopers.Text = Convert.ToString(player.Developers);
-			lblRecruitStatus.Text = "";
-			btnRecallDevs.Enabled = false;
-
-			if (player.Developers >= 2)
-			{
-				btnSendDevs.Enabled = true;
-				GameController.recruitmentOfficeFull = false;
-			}
-		}
-    }
+	}
 }
