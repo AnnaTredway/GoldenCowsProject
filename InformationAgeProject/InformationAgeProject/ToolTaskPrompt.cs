@@ -45,6 +45,35 @@ namespace InformationAgeProject
 			medTextBox.Text = Convert.ToString(diceVals[2]);
 			highTextBox.Text = Convert.ToString(diceVals[3]);
 
+			//Disables lists that have corresponding dice return values above them equal to 0
+			//Backlog text box and list box
+			if(diceVals[0] == 0)
+            {
+				this.backlogListBox.Enabled = false;
+				this.backlogListBox.BackColor = Color.Gray;
+            }
+
+			//Low-priority text box and list box
+			if (diceVals[1] == 0)
+			{
+				this.lowListBox.Enabled = false;
+				this.lowListBox.BackColor = Color.Gray;
+			}
+
+			//Med-priority text box and list box
+			if (diceVals[2] == 0)
+			{
+				this.medListBox.Enabled = false;
+				this.medListBox.BackColor = Color.Gray;
+			}
+
+			//High-priority text box and list box
+			if (diceVals[3] == 0)
+			{
+				this.highListBox.Enabled = false;
+				this.highListBox.BackColor = Color.Gray;
+			}
+
 			//Sets initial list of tools and their corresponding levels
 			toolListBox.Items.Add(("Tool 1: Level " + toolLevelList[0]));
 			toolListBox.Items.Add(("Tool 2: Level " + toolLevelList[1]));
