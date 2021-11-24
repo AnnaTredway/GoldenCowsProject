@@ -36,9 +36,9 @@ namespace InformationAgeProject
 		{
 			InitializeComponent();
 
-			//Assigns player and corresponding team name to this MainForm instance
+			//Assigns player, player number, and corresponding team name to this MainForm instance
 			this.player = player;
-			this.Text = "Information Age | Team: " + player.TeamName;
+			this.Text = $"Information Age | Player: {player.PlayerNum + 1} | Team: {player.TeamName}";
 		}
 
 		#region MainForm_Load()
@@ -85,6 +85,7 @@ namespace InformationAgeProject
 		}
 		#endregion
 
+		//Regular Methods
 		#region Reload()
 		/// <summary>
 		/// Method for reloading some parts of main forms when new round begins
@@ -117,6 +118,32 @@ namespace InformationAgeProject
 		}
 		#endregion
 
+		#region SendDevsBackFromTasks()
+		/// <summary>
+		/// Method for sending all developers back to developer pool from tasks area
+		/// </summary>
+		public void SendDevsBackFromTasks()
+		{
+			//Adds developers from tasks area back to player's free developer pool
+			int leftoverDevelopers = player.Developers;
+			player.Developers = leftoverDevelopers
+								+ int.Parse(txtBacklog.Text)
+								+ int.Parse(txtLow.Text)
+								+ int.Parse(txtMed.Text)
+								+ int.Parse(txtHigh.Text);
+
+			//Shows all developers from tasks area returned to developer pool
+			txtDevelopers.Text = Convert.ToString(player.Developers);
+
+			//Resets developer counts on each task/resource
+			txtBacklog.Text = "0";
+			txtLow.Text = "0";
+			txtMed.Text = "0";
+			txtHigh.Text = "0";
+		}
+		#endregion
+
+		//Form Controls Methods and Events
 		#region Task Adding/Subtracting Buttons
 		/// <summary>
 		/// Event Handler for button to add developer to backlog task/resource category if any are available
@@ -324,21 +351,6 @@ namespace InformationAgeProject
 			//Returns developers to developer pool and disables "DoTasks" button if task calculation was successful
 			if (GameController.calcTasks(player, devCounts) == true)
 			{
-				//Adds developers back to player's free developer pool and show in text box
-				int leftoverDevelopers = player.Developers;
-				player.Developers = leftoverDevelopers
-									+ int.Parse(txtBacklog.Text)
-									+ int.Parse(txtLow.Text)
-									+ int.Parse(txtMed.Text)
-									+ int.Parse(txtHigh.Text);
-				txtDevelopers.Text = Convert.ToString(player.Developers);
-
-				//Resets developer counts on each task/resource
-				txtBacklog.Text = "0";
-				txtLow.Text = "0";
-				txtMed.Text = "0";
-				txtHigh.Text = "0";
-
 				//Print out current inventory text to inventoryBox
 				inventoryBox.Text = player.Inventory.printResources();
 
@@ -665,6 +677,9 @@ namespace InformationAgeProject
 			this.btnSubtMed.Enabled = true;
 			this.btnAddHigh.Enabled = true;
 			this.btnSubtHigh.Enabled = true;
+
+			//Sends all developers from tasks area back to developer pool
+			SendDevsBackFromTasks();
 
 			//Ends current player's turn and goes to next player's turn
 			GameController.endTurn();

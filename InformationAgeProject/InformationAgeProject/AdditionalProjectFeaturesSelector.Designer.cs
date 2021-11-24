@@ -36,7 +36,7 @@ namespace InformationAgeProject
             this.MedPriorityCheckList = new System.Windows.Forms.CheckedListBox();
             this.HighPrioroityCheckList = new System.Windows.Forms.CheckedListBox();
             this.SelectButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.APFSCancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TitleLable
@@ -98,20 +98,20 @@ namespace InformationAgeProject
             this.SelectButton.UseVisualStyleBackColor = false;
             this.SelectButton.Click += new System.EventHandler(this.SelectButton_Click);
             // 
-            // CancelButton
+            // APFSCancelButton
             // 
-            this.CancelButton.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
-            this.CancelButton.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CancelButton.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButton.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.CancelButton.Location = new System.Drawing.Point(10, 188);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(103, 23);
-            this.CancelButton.TabIndex = 6;
-            this.CancelButton.Text = "Cancel Selection";
-            this.CancelButton.UseVisualStyleBackColor = false;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.APFSCancelButton.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.APFSCancelButton.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.APFSCancelButton.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.APFSCancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.APFSCancelButton.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
+            this.APFSCancelButton.Location = new System.Drawing.Point(10, 188);
+            this.APFSCancelButton.Name = "APFSCancelButton";
+            this.APFSCancelButton.Size = new System.Drawing.Size(103, 23);
+            this.APFSCancelButton.TabIndex = 6;
+            this.APFSCancelButton.Text = "Cancel Selection";
+            this.APFSCancelButton.UseVisualStyleBackColor = false;
+            this.APFSCancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // AdditionalProjectFeaturesSelector
             // 
@@ -120,7 +120,7 @@ namespace InformationAgeProject
             this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(559, 222);
             this.ControlBox = false;
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.APFSCancelButton);
             this.Controls.Add(this.SelectButton);
             this.Controls.Add(this.HighPrioroityCheckList);
             this.Controls.Add(this.MedPriorityCheckList);
@@ -145,6 +145,6 @@ namespace InformationAgeProject
         private System.Windows.Forms.CheckedListBox MedPriorityCheckList;
         private System.Windows.Forms.CheckedListBox HighPrioroityCheckList;
         private System.Windows.Forms.Button SelectButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button APFSCancelButton;
     }
 }
