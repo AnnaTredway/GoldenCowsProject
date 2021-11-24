@@ -111,8 +111,9 @@ namespace InformationAgeProject
 			Uri[] uriArray = new Uri[arraySize];
 
 			//Open relative location of music files and puts them in uriArray (This has to be hard-coded currently)
-			uriArray[0] = new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav");
-			uriArray[1] = new Uri(filePath + "\\Music\\NokiaEspionagePTRK.wav");
+
+			uriArray[0] = new Uri(filePath + "\\Music\\NeverGonnaGiveYouUp.wav");	//Source: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+			uriArray[1] = new Uri(filePath + "\\Music\\NokiaEspionagePTRK.wav");    //Source: https://www.youtube.com/watch?v=K_4ZoMp0Rpo
 
 			return uriArray;
 		}
@@ -164,6 +165,8 @@ namespace InformationAgeProject
 		}
 		#endregion
 
+		//Event Handlers
+		#region c_MusicMediaEnded() Event
 		/// <summary>
 		/// Event Handler for handling when musicPlayer media ends
 		/// </summary>
@@ -174,5 +177,6 @@ namespace InformationAgeProject
 			//Starts next track
 			playMusic();
 		}
+		#endregion
 	}
 }

@@ -32,8 +32,11 @@ namespace InformationAgeProject
 		public static int turnCounter = 0;			//Counts what turn currently being done within a single round
 		public static int roundCounter = 1;			//Counts how many rounds are in game and stores current round
 
-		public static bool toolMakerFull = false;   //Player array index who has the tool at the tool maker
-		public static int playerAtToolMaker = -1;   //Array of index of player that has developer at tool maker
+		public static bool toolMakerFull = false;   //Shows whether or not the tool maker is currently occupied by a developer
+		public static int playerAtToolMaker = -1;   //Array index of player that has developer at tool maker
+
+		public static bool recruitmentOfficeFull = false;   //Shows whether or not the recruitment office is currently occupied by a developer
+		public static int playerAtRecruitmentOffice = -1;   //Array index of player that has developer at recruitment office
 
 		public static Timer loadingTimer;			//Timer to elapse for 9.5 seconds for loading initial sounds
 		public static MainMenu mainMenu;			//MainMenu instance that opens when opening game
@@ -42,9 +45,6 @@ namespace InformationAgeProject
 
 		public static ProjectProgressDeck[] ProjProgDeck { get; set; }
 		public static AdditionalProjectFeaturesDeck ProjFeatDeck { get; set; }
-
-		public static bool recruitmentOfficeFull = false;
-		public static int playerAtRecruitmentOffice = 0;
 
 		#region GameController Constructor
 		/// <summary>
@@ -542,13 +542,17 @@ namespace InformationAgeProject
 				//Create new recruitment office object, with the current number of the player's developers
 				int teamTotal = playerList[playerAtRecruitmentOffice].TeamCount;
 				RecruitmentOffice recruitmentOffice = new RecruitmentOffice(teamTotal);
+
 				//Recruit a new developer
 				int newTotalDevs = recruitmentOffice.RecruitNewDev();
+
 				//Add the new dev to player's total team count
 				playerList[playerAtRecruitmentOffice].TeamCount = newTotalDevs;
 				playerList[playerAtRecruitmentOffice].Developers = newTotalDevs;
 
+				//Resets values for next round
 				recruitmentOfficeFull = false;
+				playerAtRecruitmentOffice = -1;
 			}
 
 			removeClaimedFeatureCards();
@@ -661,6 +665,8 @@ namespace InformationAgeProject
 		}//end quitGame()
 		#endregion
 
+		//Event Handlers
+		#region c_OnLoadingTimerEnd() Event
 		/// <summary>
 		/// Event Handler for handling when loadingTimer ends
 		/// </summary>
@@ -674,6 +680,6 @@ namespace InformationAgeProject
 			mainMenu.showMainMenuScreenControls();
 			loadingTimer.Dispose();
 		}
-
+		#endregion
 	}
 }
