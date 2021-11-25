@@ -776,5 +776,17 @@ namespace InformationAgeProject
 		}
         #endregion
 
-	}
+        #region Form Closing
+        /// <summary>
+        /// Handles the FormClosing event of the MainForm control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosingEventArgs"/> instance containing the event data.</param>
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+			e.Cancel = true; // Prevents the window form instantly closing
+			btnQuitToMenuMenuItem_Click(sender, e);
+		}
+        #endregion
+    }
 }
