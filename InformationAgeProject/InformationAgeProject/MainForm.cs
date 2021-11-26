@@ -665,24 +665,34 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnEndTurn_Click(object sender, EventArgs e)
 		{
+			DialogResult DLResult = DialogResult.None;	// Stores the selected result form the player
+
 			SoundController.playButtonClick();
 
-			//Re-enables do task button and developers on tasks buttons for next time current player has a turn
-			this.btnDoTasks.Enabled = true;
-			this.btnAddBacklog.Enabled = true;
-			this.btnSubtBacklog.Enabled = true;
-			this.btnAddLow.Enabled = true;
-			this.btnSubtLow.Enabled = true;
-			this.btnAddMed.Enabled = true;
-			this.btnSubtMed.Enabled = true;
-			this.btnAddHigh.Enabled = true;
-			this.btnSubtHigh.Enabled = true;
+			if (btnDoTasks.Enabled == true)
+            {
+				DLResult = MessageBox.Show("You still have the ability to \"Do Tasks\" are you sure you want to skip your turn?", "Skip turn?", MessageBoxButtons.YesNo);
+			}
 
-			//Sends all developers from tasks area back to developer pool
-			SendDevsBackFromTasks();
+            if (btnDoTasks.Enabled == false || DLResult == DialogResult.Yes)
+            {
+                //Re-enables do task button and developers on tasks buttons for next time current player has a turn
+                this.btnDoTasks.Enabled = true;
+                this.btnAddBacklog.Enabled = true;
+                this.btnSubtBacklog.Enabled = true;
+                this.btnAddLow.Enabled = true;
+                this.btnSubtLow.Enabled = true;
+                this.btnAddMed.Enabled = true;
+                this.btnSubtMed.Enabled = true;
+                this.btnAddHigh.Enabled = true;
+                this.btnSubtHigh.Enabled = true;
 
-			//Ends current player's turn and goes to next player's turn
-			GameController.endTurn();
+                //Sends all developers from tasks area back to developer pool
+                SendDevsBackFromTasks();
+
+                //Ends current player's turn and goes to next player's turn
+                GameController.endTurn(); 
+            }
 		}
 		#endregion
 
@@ -766,5 +776,17 @@ namespace InformationAgeProject
 		}
         #endregion
 
-	}
+        #region Form Closing
+        /// <summary>
+        /// Handles the FormClosing event of the MainForm control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosingEventArgs"/> instance containing the event data.</param>
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+			e.Cancel = true; // Prevents the window form instantly closing
+			btnQuitToMenuMenuItem_Click(sender, e);
+		}
+        #endregion
+    }
 }
