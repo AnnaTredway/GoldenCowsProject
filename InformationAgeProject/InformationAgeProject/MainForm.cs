@@ -30,7 +30,7 @@ namespace InformationAgeProject
 	public partial class MainForm : Form
 	{
 		//Player to be used in this MainForm instance
-		Player player;
+		readonly Player player;
 
 		public MainForm(Player player)
 		{
@@ -72,16 +72,8 @@ namespace InformationAgeProject
 			//Resets tool maker because developer was already added back to player at the end of previous round
 			txtToolMaker.Text = "0";
 
-			if (GameController.recruitmentOfficeFull == true)
-            {
-				btnSendDevs.Enabled = false;
-				btnRecallDevs.Enabled = false;
-            }
-			else
-            {
-				btnSendDevs.Enabled = true;
-				btnRecallDevs.Enabled = false;
-            }
+			//Sets btnRecallDevs to default false status
+			btnRecallDevs.Enabled = false;
 		}
 		#endregion
 
@@ -390,8 +382,8 @@ namespace InformationAgeProject
 				//Else, show error message
 				if (Int32.Parse(toolSlot3.Text) != 4)
 				{
-					//If any player has not put a developer at the tool maker, add a developer to the tool maker
-					//Else, show error stating that another player already has a developer at the tool maker
+					//If any other player has not put a developer at the tool maker, add a developer to the tool maker
+					//Else, show error message
 					if (GameController.toolMakerFull == false)
 					{
 
@@ -408,7 +400,7 @@ namespace InformationAgeProject
 					}
 					else
 					{
-						MessageBox.Show("Another player already has a developer at the tool maker."
+						MessageBox.Show("Another player already has a developer at the Tool Maker."
 						, "Cannot Assign Developer To Tool Maker"
 						, MessageBoxButtons.OK
 						, MessageBoxIcon.Error);
@@ -463,23 +455,45 @@ namespace InformationAgeProject
 		{
 			SoundController.playButtonClick();
 
-			//If the player has at least two developers
-			if (player.Developers >= 2 & GameController.recruitmentOfficeFull == false)
+			//If the player has at least two developers, go to next check
+			if (player.Developers >= 2)
 			{
-				btnSendDevs.Enabled = false;
-				lblRecruitStatus.Text = $"Recruitment Status:\n-----------------------" +
-					$"\nOccupied with 2 developers from Team:" +
-					$"\n{player.TeamName}";
+				//If the current player does not have the maximum number of 20 developers, go to next check
+				//Else, show error message
+				if (player.TeamCount < 20)
+				{
+					//If the recruitment office is not full, put developers at the recruitment office
+					//Else, show error message
+					if (GameController.recruitmentOfficeFull == false)
+					{
+						lblRecruitStatus.Text = $"Recruitment Status:\n-----------------------" +
+							$"\nOccupied with 2 developers from Team:" +
+							$"\n{player.TeamName}";
 
-				player.Developers = player.Developers - 2;
-				txtDevelopers.Text = Convert.ToString(player.Developers);
-				btnRecallDevs.Enabled = true;
-				GameController.recruitmentOfficeFull = true;
-				GameController.playerAtRecruitmentOffice = GameController.turnCounter;
-			}
-			else
-			{
-				//throw an error message stating that you must have at least 2 devs
+						player.Developers -= 2;
+						txtDevelopers.Text = Convert.ToString(player.Developers);
+
+						btnSendDevs.Enabled = false;
+						btnRecallDevs.Enabled = true;
+
+						GameController.playerAtRecruitmentOffice = player.PlayerNum;
+						GameController.recruitmentOfficeFull = true;
+					}
+					else
+					{
+						MessageBox.Show("Another player already has developers at the Recruitment Office."
+						, "Cannot Assign Developer To Recruitment Office"
+						, MessageBoxButtons.OK
+						, MessageBoxIcon.Error);
+					}
+				}
+                else
+                {
+					MessageBox.Show("You cannot acquire anymore developers because you already have a maximum of 20 developers."
+					, "Cannot Acquire More Developers"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+				}
 			}
 		}
 
@@ -492,7 +506,7 @@ namespace InformationAgeProject
 		{
 			SoundController.playButtonClick();
 
-			player.Developers = player.Developers + 2;
+			player.Developers += 2;
 			txtDevelopers.Text = Convert.ToString(player.Developers);
 			lblRecruitStatus.Text = "";
 			btnRecallDevs.Enabled = false;
@@ -724,8 +738,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnQuitToMenuMenuItem_Click(object sender, EventArgs e)
 		{
-			//Opens QuitToMenuForm to prompt user to quit game to main menu or not
-			GameController.openQuitToMenuForm();
+			new QuitToMenuForm().Show();
 		}
 
 		/// <summary>
@@ -735,8 +748,7 @@ namespace InformationAgeProject
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void btnQuitToDesktopMenuItem_Click(object sender, EventArgs e)
 		{
-			//Opens QuitForm to prompt user to quit game entirely or not
-			GameController.openQuitForm();
+			new QuitForm().Show();
 		}
 		#endregion
 
@@ -748,8 +760,7 @@ namespace InformationAgeProject
 		/// <param name="e"></param>
 		private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			StatsForm stats = new StatsForm( );
-			stats.Show( );
+			new StatsForm().Show();
 		}
 
 		/// <summary>
@@ -760,19 +771,17 @@ namespace InformationAgeProject
 		/// <param name="e"></param>
 		private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			//Opens game instructions
 			GameController.openInstructions();
 		}
 
 		/// <summary>
-		/// Event Handler for dropdown menu button to open "about" windows form
+		/// Event Handler for dropdown menu button to open AboutBox with information about the game
 		/// </summary>
 		/// <param name="sender">object that raised the event (auto-generated, unused here)</param>
 		/// <param name="e">arguments for event (auto-generated, unused here)</param>
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			//Opens AboutBox with information about the game
-			GameController.openAboutBox();
+			new AboutBox().Show();
 		}
         #endregion
 
