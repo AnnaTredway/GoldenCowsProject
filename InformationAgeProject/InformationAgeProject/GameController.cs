@@ -78,7 +78,7 @@ namespace InformationAgeProject
 		}//end openGame()
 		#endregion
 
-		//Game functionality methods regions
+		//Game functionality method regions
 		#region startGame() Method
 		/// <summary>
 		/// Method for starting game with set number of players to open set number of MainForms for each player
@@ -128,10 +128,13 @@ namespace InformationAgeProject
 			//Activates players, sets their team names, sets their player numbers, and instantiates their MainForms
 			for (int i = 0; i < playerCount; i++)
 			{
-				playerList[i] = new Player();
-				playerList[i].TeamName = teamNames[i];
-				playerList[i].PlayerNum = i;
-				playerForms[i] = new MainForm(playerList[i]);
+                playerList[i] = new Player
+                {
+                    TeamName = teamNames[i],
+                    PlayerNum = i
+                };
+
+                playerForms[i] = new MainForm(playerList[i]);
 			}
 
 			//Shows first player form for first turn within first round
@@ -574,7 +577,7 @@ namespace InformationAgeProject
 		}//end endRound()
 		#endregion
 
-		//Switching to different windows/forms methods regions
+		//Switching to different windows/forms or exiting game method regions
 		#region openInstructions() Method
 		/// <summary>
 		/// Method for opening game instructions
@@ -597,32 +600,6 @@ namespace InformationAgeProject
 		}//end openInstructions()
 		#endregion
 
-		#region openAboutBox() Method
-		/// <summary>
-		/// Method for opening about information within AboutBox for game
-		/// </summary>
-		public static void openAboutBox()
-		{
-			//Opens new AboutBox window for About information
-			AboutBox aboutBox = new AboutBox();
-			aboutBox.Show();
-
-		}//end openAboutBox()
-		#endregion
-
-		#region openQuitToMenuForm() Method
-		/// <summary>
-		/// Method for opening QuitToMenuForm to prompt user to quit game to main menu
-		/// </summary>
-		public static void openQuitToMenuForm()
-		{
-			//Opens new QuitToMenuForm window for prompting user if they want to exit application
-			QuitToMenuForm quitToMenuForm = new QuitToMenuForm();
-			quitToMenuForm.Show();
-
-		}//end openQuitToMenuForm()
-		#endregion
-
 		#region quitToMainMenu() Method
 		/// <summary>
 		/// Method for quitting game to go back to main menu
@@ -639,19 +616,6 @@ namespace InformationAgeProject
 			mainMenu.Show();
 
 		}//end quitToMainMenu()
-		#endregion
-
-		#region openQuitForm() Method
-		/// <summary>
-		/// Method for opening QuitForm to prompt user to quit game entirely or not
-		/// </summary>
-		public static void openQuitForm()
-		{
-			//Opens new QuitForm window for prompting user if they want to exit application
-			QuitForm quitForm = new QuitForm();
-			quitForm.Show();
-
-		}//end openQuitForm()
 		#endregion
 
 		#region quitGame() Method

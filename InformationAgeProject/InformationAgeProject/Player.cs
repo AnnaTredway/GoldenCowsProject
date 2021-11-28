@@ -69,7 +69,7 @@ namespace InformationAgeProject
                 if (_teamcount < 20)
                 {
                     // Increase the total of TeamCount by one
-                    _teamcount = _teamcount + 1;
+                    _teamcount++;
                 }
                 // Else the value of TeamCount has already reached twenty
                 else

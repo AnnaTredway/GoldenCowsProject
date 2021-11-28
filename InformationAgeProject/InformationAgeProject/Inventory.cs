@@ -140,14 +140,14 @@ namespace InformationAgeProject
 		/// <returns>Returns a string to printout the current players resource count.</returns>
 		public string printResources()
 		{
-			string strResult = "--------------------------------------------------------\n" +
-							  resourceManager.getResourceName(0) + ": " + resourceManager.getBacklogAmount( ) + "\n" +
-							  resourceManager.getResourceName(1) + ": " + resourceManager.getLowPriorityAmount( ) + "\n" +
-							  resourceManager.getResourceName(2) + ": " + resourceManager.getMediumPriorityAmount( ) + "\n" +
-							  resourceManager.getResourceName(3) + ": " + resourceManager.getHighPriorityAmount( ) + "\n" +
-							  "ProjectProgressCards" + ": " + ProjectProgressCards.Count + "\n" +
-							  "ProjectFeatureCards" + ":  " + AdditionalProjectFeaturesCards.Count + "\n" +
-							  "--------------------------------------------------------";
+			string strResult = $"--------------------------------------------------------\n" +
+							   $"{resourceManager.getResourceName(0)}: {resourceManager.getBacklogAmount()}\n" +
+							   $"{resourceManager.getResourceName(1)}: {resourceManager.getLowPriorityAmount()}\n" +
+							   $"{resourceManager.getResourceName(2)}: {resourceManager.getMediumPriorityAmount()}\n" +
+							   $"{resourceManager.getResourceName(3)}: {resourceManager.getHighPriorityAmount()}\n" +
+							   $"ProjectProgressCards:  {ProjectProgressCards.Count}\n" +
+							   $"ProjectFeatureCards:   {AdditionalProjectFeaturesCards.Count}\n" +
+							   $"--------------------------------------------------------";
 			return strResult;
 		}
 		#endregion

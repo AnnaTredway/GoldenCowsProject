@@ -27,7 +27,7 @@ namespace InformationAgeProject
     public class Scoring
     {
         //Inventory object
-        private Inventory inventory = new Inventory();
+        private readonly Inventory inventory = new Inventory();
         
         /// <summary>
         /// Parameterized constructor for scoring
@@ -65,7 +65,7 @@ namespace InformationAgeProject
             {
                 foreach (ProjectProgress p in inventory.ProjectProgressCards)
                 {
-                    total =  total + p.iPointValue;
+                    total += p.iPointValue;
                 }
             }
 
@@ -83,12 +83,13 @@ namespace InformationAgeProject
             total += backLog + low + medium + high;
 
             //Return a formatted string that accounts for all scoring components
-            return $"Score:\n" +
-                $"Back Log Tasks: {backLog}\n" +
-                $"Low Priority Tasks: {low}\n" +
-                $"Medium Priority Tasks: {medium}\n" +
-                $"High Priority Tasks: {high}\n" +
-                $"Total: {total}";
+            return $"--------------------------------------------------------\n" +
+                   $"Back Log Tasks: {backLog}\n" +
+                   $"Low Priority Tasks: {low}\n" +
+                   $"Medium Priority Tasks: {medium}\n" +
+                   $"High Priority Tasks: {high}\n" +
+                   $"--------------------------------------------------------\n" +
+                   $"Total: {total}";
         }
     }
 }
