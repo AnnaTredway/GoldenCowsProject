@@ -29,14 +29,14 @@ namespace InformationAgeProject
 	/// </summary>
 	public class GameController
 	{
-		public static int turnCounter = 0;			//Counts what turn currently being done within a single round
-		public static int roundCounter = 1;			//Counts how many rounds are in game and stores current round
+		public static int turnCounter ;				//Counts what turn currently being done within a single round
+		public static int roundCounter;				//Counts how many rounds are in game and stores current round
 
-		public static bool toolMakerFull = false;   //Shows whether or not the tool maker is currently occupied by a developer
-		public static int playerAtToolMaker = -1;   //Array index of player that has developer at tool maker
+		public static bool toolMakerFull;			//Shows whether or not the tool maker is currently occupied by a developer
+		public static int playerAtToolMaker;		//Array index of player that has developer at tool maker
 
-		public static bool recruitmentOfficeFull = false;   //Shows whether or not the recruitment office is currently occupied by a developer
-		public static int playerAtRecruitmentOffice = -1;   //Array index of player that has developer at recruitment office
+		public static bool recruitmentOfficeFull;	//Shows whether or not the recruitment office is currently occupied by a developer
+		public static int playerAtRecruitmentOffice;//Array index of player that has developer at recruitment office
 
 		public static Timer loadingTimer;			//Timer to elapse for 9.5 seconds for loading initial sounds
 		public static MainMenu mainMenu;			//MainMenu instance that opens when opening game
@@ -78,6 +78,23 @@ namespace InformationAgeProject
 		}//end openGame()
 		#endregion
 
+		#region setDefaultParameters() Method
+		/// <summary>
+		/// Method for setting default values/parameters within GameController for next game instance
+		/// </summary>
+		public static void setDefaultParameters()
+		{
+			//Sets default values
+			turnCounter = 0;
+			roundCounter = 1;
+			toolMakerFull = false;
+			playerAtToolMaker = -1;
+			recruitmentOfficeFull = false;
+			playerAtRecruitmentOffice = -1;
+
+		}//end setDefaultParameters()
+		#endregion
+
 		//Game functionality method regions
 		#region startGame() Method
 		/// <summary>
@@ -88,6 +105,9 @@ namespace InformationAgeProject
 		/// <returns>Bool of whether or not the main menu should be invisible for starting game</returns>
 		public static bool startGame(int playerCount, string[] teamNames)
 		{
+			//Sets default values for all of the parameters
+			setDefaultParameters();
+
 			//Checks if number of players is between 2 and 4
 			//Ends method immediately if there are not at least 2 players or more than 4 players
 			if (playerCount < 2 || playerCount > 4)
@@ -624,7 +644,7 @@ namespace InformationAgeProject
 		/// </summary>
 		public static void quitGame()
 		{
-			Application.Exit();
+			Environment.Exit(0);
 
 		}//end quitGame()
 		#endregion
