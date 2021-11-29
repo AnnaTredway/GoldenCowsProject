@@ -29,7 +29,7 @@ namespace InformationAgeProject
 	/// </summary>
 	public class GameController
 	{
-		public static int turnCounter ;				//Counts what turn currently being done within a single round
+		public static int turnCounter;				//Counts what turn currently being done within a single round
 		public static int roundCounter;				//Counts how many rounds are in game and stores current round
 
 		public static bool toolMakerFull;			//Shows whether or not the tool maker is currently occupied by a developer
