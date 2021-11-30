@@ -14,13 +14,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Media;
 using System.Windows.Media;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InformationAgeProject
 {
@@ -35,7 +30,7 @@ namespace InformationAgeProject
 
         private static string filePath;                 //String for storing location of "Sounds" folder
         private static string currentMusicPath = "";    //Current file path of music playing Set to empty for first comparison in playMusic()
-        private static int numTracks = 3;               //Number of music tracks currently in program
+        private static readonly int numTracks = 3;      //Number of music tracks currently in program
         private static Uri[] musicUriArray;             //Storage array of Uri's to use in musicPlayer
 
         #region SoundController Constructor

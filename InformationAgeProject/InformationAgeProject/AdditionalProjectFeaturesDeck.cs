@@ -12,11 +12,9 @@
 //	Copyright:         Golden Cows Team, 2021
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InformationAgeProject
 {
@@ -26,7 +24,7 @@ namespace InformationAgeProject
     [Serializable]
     public class AdditionalProjectFeaturesDeck
     {
-        private static Random rNum = new Random();                                           // Used to shuffle the deck
+        private static readonly Random rNum = new Random();                                           // Used to shuffle the deck
         public List<AdditionalProjectFeatures> Deck = new List<AdditionalProjectFeatures>(); // Creates a deck of 36 Project Features cards
 
         /// <summary>

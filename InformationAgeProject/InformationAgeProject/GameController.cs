@@ -563,8 +563,10 @@ namespace InformationAgeProject
             else
             {
                 //Declare the form representing the end of game screen
-                EndGame endGame = new EndGame();
-                endGame.Visible = true;
+                EndGame endGame = new EndGame
+                {
+                    Visible = true
+                };
 
                 //List of scoring objects
                 List<Scoring> finalScores = new List<Scoring>();
@@ -577,8 +579,10 @@ namespace InformationAgeProject
                  **/
                 foreach (Player player in playerList)
                 {
-                    Scoring scoring = new Scoring(player.Inventory);
-                    scoring.AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player);
+                    Scoring scoring = new Scoring(player.Inventory)
+                    {
+                        AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player)
+                    };
                     scoring.calculateScore();
                     scoring.Total += scoring.AdditionalProjectFeaturesCards;
                     finalScores.Add(scoring);
@@ -659,8 +663,10 @@ namespace InformationAgeProject
             else
             {
                 //Declare the form representing the end of game screen
-                EndGame endGame = new EndGame();
-                endGame.Visible = true;
+                EndGame endGame = new EndGame
+                {
+                    Visible = true
+                };
 
                 //List of scoring objects
                 List<Scoring> finalScores = new List<Scoring>();
@@ -673,8 +679,10 @@ namespace InformationAgeProject
                  **/
                 foreach (Player player in playerList)
                 {
-                    Scoring scoring = new Scoring(player.Inventory);
-                    scoring.AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player);
+                    Scoring scoring = new Scoring(player.Inventory)
+                    {
+                        AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player)
+                    };
                     scoring.calculateScore();
                     scoring.Total += scoring.AdditionalProjectFeaturesCards;
                     finalScores.Add(scoring);

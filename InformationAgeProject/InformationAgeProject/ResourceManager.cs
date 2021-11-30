@@ -12,11 +12,8 @@
 //	Copyright:         Golden Cows Team, 2021
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /// <summary>
 /// Contains the classes within the Information Age project 
@@ -30,7 +27,7 @@ namespace InformationAgeProject
     public class ResourceManager
     {
         //Holds the 4 different types of resources
-        private Resource[] gameResources = new Resource[4];
+        private readonly Resource[] gameResources = new Resource[4];
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ResourceManager"/> class.
