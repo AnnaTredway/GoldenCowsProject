@@ -116,7 +116,7 @@ namespace InformationAgeProject
         public void increaseToolLevel()
         {
             //Resets levelCounter if it goes higher than 2 (the max index level in tool inventory)
-            if(levelCounter >= 3)
+            if (levelCounter >= 3)
             {
                 levelCounter = 0;
             }

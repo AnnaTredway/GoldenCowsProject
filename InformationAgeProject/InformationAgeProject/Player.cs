@@ -87,7 +87,7 @@ namespace InformationAgeProject
         public Inventory Inventory
         {
             // Return the current state of the inventory
-            get { return _inventory;  }
+            get { return _inventory; }
 
             // Set the value for Inventory
             set { _inventory = value; }

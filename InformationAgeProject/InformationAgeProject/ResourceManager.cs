@@ -35,7 +35,7 @@ namespace InformationAgeProject
         /// <summary>
         /// Initializes a new instance of the <see cref="ResourceManager"/> class.
         /// </summary>
-        public ResourceManager( )
+        public ResourceManager()
         {
             this.gameResources[0] = new Resource("Backlog", ResourceType.BACKLOG);
             this.gameResources[1] = new Resource("Low Priority", ResourceType.LOWPRIORITY);
@@ -96,7 +96,7 @@ namespace InformationAgeProject
         /// Gets the resource amount for the current resource.
         /// </summary>
         /// <returns>The amount in Backlog</returns>
-        public int getBacklogAmount( )
+        public int getBacklogAmount()
         {
             return this.gameResources[0].resourceAmount;
         }
@@ -105,7 +105,7 @@ namespace InformationAgeProject
         /// Gets the resource amount for the current resource.
         /// </summary>
         /// <returns>The amount in low priority</returns>
-        public int getLowPriorityAmount( )
+        public int getLowPriorityAmount()
         {
             return this.gameResources[1].resourceAmount;
         }
@@ -114,7 +114,7 @@ namespace InformationAgeProject
         /// Gets the resource amount for the current resource.
         /// </summary>
         /// <returns>The amount in medium priority</returns>
-        public int getMediumPriorityAmount( )
+        public int getMediumPriorityAmount()
         {
             return this.gameResources[2].resourceAmount;
         }
@@ -123,7 +123,7 @@ namespace InformationAgeProject
         /// Gets the resource amount for the current resource.
         /// </summary>
         /// <returns>The amount in high priority</returns>
-        public int getHighPriorityAmount( )
+        public int getHighPriorityAmount()
         {
             return this.gameResources[3].resourceAmount;
         }

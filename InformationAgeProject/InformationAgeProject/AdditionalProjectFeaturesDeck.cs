@@ -26,30 +26,30 @@ namespace InformationAgeProject
     [Serializable]
     public class AdditionalProjectFeaturesDeck
     {
-        private static Random rNum = new Random( );                                           // Used to shuffle the deck
-        public List<AdditionalProjectFeatures> Deck = new List<AdditionalProjectFeatures>( ); // Creates a deck of 36 Project Features cards
+        private static Random rNum = new Random();                                           // Used to shuffle the deck
+        public List<AdditionalProjectFeatures> Deck = new List<AdditionalProjectFeatures>(); // Creates a deck of 36 Project Features cards
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalProjectFeaturesDeck"/> class.
         /// </summary>
-        public AdditionalProjectFeaturesDeck( )
+        public AdditionalProjectFeaturesDeck()
         {
             for (int i = 0; i < 22; i++)
             {
-                Deck.Add(new AdditionalProjectFeatures( ));
+                Deck.Add(new AdditionalProjectFeatures());
             }// end for (int i = 0; i < 22; i++)
             for (int i = 0; i < 14; i++)
             {
                 Deck.Add(new AdditionalProjectFeatures(rNum.Next(2) + 1));
             }// end for (int i = 0; i < 14; i++)
 
-            Shuffle( );
+            Shuffle();
         }// end AdditionalProjectFeaturesDeck( )
 
         /// <summary>
         /// Shuffles a deck of project progress cards
         /// </summary>
-        public void Shuffle( )
+        public void Shuffle()
         {
             int iRandom;                 // Stores a number generated from rNum
             AdditionalProjectFeatures swap;        // Temporary stores a card so it can be swapped
@@ -66,7 +66,7 @@ namespace InformationAgeProject
         /// Counts the number of cards not sold yet.
         /// </summary>
         /// <returns>The number of cards not sold</returns>
-        public int AvailableCount( )
+        public int AvailableCount()
         {
             int iNotSold = Deck.Count;
 

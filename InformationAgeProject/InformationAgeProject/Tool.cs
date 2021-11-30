@@ -35,7 +35,7 @@ namespace InformationAgeProject
         /// Initializes a new instance of the <see cref="Tool"/> class.
         /// </summary>
         public Tool()
-        {   
+        {
             //New tool with no parameters is set to level 0
             this.toolLevel = 0;
             this.type = ToolType.LEVEL0;

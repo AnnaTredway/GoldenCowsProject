@@ -34,22 +34,22 @@ namespace InformationAgeProject
         /// <summary>
         /// Creates a new deck of cards and shuffles them.
         /// </summary>
-        public ProjectProgressDeck( )
+        public ProjectProgressDeck()
         {
             for (int i = 0; i < 7; i++)
             {
                 Deck.Add(new ProjectProgress());
             }// end for (int i = 0; i < Deck.Length; i++)
 
-            Shuffle( );
+            Shuffle();
         }// end ProjectProgressDeck( )
 
         /// <summary>
         /// Shuffles a deck of project progress cards
         /// </summary>
-        public void Shuffle( )
+        public void Shuffle()
         {
-            Random rNum = new Random( ); // Used to shuffle the deck
+            Random rNum = new Random(); // Used to shuffle the deck
             int iRandom;                 // Stores a number generated from rNum
             ProjectProgress swap;        // Temporary stores a card so it can be swapped
             for (int i = 0; i < Deck.Count; i++)

@@ -23,135 +23,135 @@ using System.Xml.Serialization;
 
 namespace InformationAgeProject
 {
-	/// <summary>
-	/// GameController class for methods and controls the windows forms of the program
-	/// </summary>
-	public class GameController
-	{
-		  //Timer and MainMenu instance for initial game startup
-		  public static Timer loadingTimer;           //Timer to elapse for 9.5 seconds for loading initial sounds
-		  public static MainMenu mainMenu;            //MainMenu instance that opens when opening game
+    /// <summary>
+    /// GameController class for methods and controls the windows forms of the program
+    /// </summary>
+    public class GameController
+    {
+        //Timer and MainMenu instance for initial game startup
+        public static Timer loadingTimer;           //Timer to elapse for 9.5 seconds for loading initial sounds
+        public static MainMenu mainMenu;            //MainMenu instance that opens when opening game
 
-      //Variables used within an actual game instance
-      public static int turnCounter;				//Counts what turn currently being done within a single round
-      public static int roundCounter;				//Counts how many rounds are in game and stores current round
+        //Variables used within an actual game instance
+        public static int turnCounter;              //Counts what turn currently being done within a single round
+        public static int roundCounter;             //Counts how many rounds are in game and stores current round
 
-      public static bool toolMakerFull;			//Shows whether or not the tool maker is currently occupied by a developer
-      public static int playerAtToolMaker;		//Array index of player that has developer at tool maker
+        public static bool toolMakerFull;           //Shows whether or not the tool maker is currently occupied by a developer
+        public static int playerAtToolMaker;        //Array index of player that has developer at tool maker
 
-      public static bool recruitmentOfficeFull;	//Shows whether or not the recruitment office is currently occupied by a developer
-      public static int playerAtRecruitmentOffice;//Array index of player that has developer at recruitment office
+        public static bool recruitmentOfficeFull;   //Shows whether or not the recruitment office is currently occupied by a developer
+        public static int playerAtRecruitmentOffice;//Array index of player that has developer at recruitment office
 
-      public static Player[] playerList;			//Array of players for game
-      public static MainForm[] playerForms;		//Array of MainForms to be used by players
+        public static Player[] playerList;          //Array of players for game
+        public static MainForm[] playerForms;       //Array of MainForms to be used by players
 
-      public static ProjectProgressDeck[] ProjProgDeck { get; set; }
-      public static AdditionalProjectFeaturesDeck ProjFeatDeck { get; set; }
-    
-      public static bool gameOver = false;
+        public static ProjectProgressDeck[] ProjProgDeck { get; set; }
+        public static AdditionalProjectFeaturesDeck ProjFeatDeck { get; set; }
 
-      #region GameController Constructor
-      /// <summary>
-      /// Private Constructor for GameController 
-      /// </summary>
-      private GameController() { }
-      #endregion
+        public static bool gameOver = false;
 
-      #region openGame() Method
-      /// <summary>
-      /// Method for opening game to main menu on startup
-      /// </summary>
-      public static void openGame()
-      {
-          Application.EnableVisualStyles();
-          Application.SetCompatibleTextRenderingDefault(false);
+        #region GameController Constructor
+        /// <summary>
+        /// Private Constructor for GameController 
+        /// </summary>
+        private GameController() { }
+        #endregion
 
-          //Opens all sound files before game opens and then starts music
-          SoundController.openAllSounds();
+        #region openGame() Method
+        /// <summary>
+        /// Method for opening game to main menu on startup
+        /// </summary>
+        public static void openGame()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-          //Timer to elapse for 9.5 seconds for loading initial sounds
-          loadingTimer = new Timer();
-          loadingTimer.Tick += c_OnLoadingTimerEnd;
-          loadingTimer.Interval = 9500;
-          loadingTimer.Enabled = true;
+            //Opens all sound files before game opens and then starts music
+            SoundController.openAllSounds();
 
-          //Opens application to main menu
-          mainMenu = new MainMenu();
-          Application.Run(mainMenu);
+            //Timer to elapse for 9.5 seconds for loading initial sounds
+            loadingTimer = new Timer();
+            loadingTimer.Tick += c_OnLoadingTimerEnd;
+            loadingTimer.Interval = 9500;
+            loadingTimer.Enabled = true;
 
-      }//end openGame()
-      #endregion
+            //Opens application to main menu
+            mainMenu = new MainMenu();
+            Application.Run(mainMenu);
 
-      #region setDefaultParameters() Method
-      /// <summary>
-      /// Method for setting default values/parameters within GameController for next game instance
-      /// </summary>
-      public static void setDefaultParameters()
-      {
-          //Sets default values
-          turnCounter = 0;
-          roundCounter = 1;
-          toolMakerFull = false;
-          playerAtToolMaker = -1;
-          recruitmentOfficeFull = false;
-          playerAtRecruitmentOffice = -1;
+        }//end openGame()
+        #endregion
 
-      }//end setDefaultParameters()
-      #endregion
+        #region setDefaultParameters() Method
+        /// <summary>
+        /// Method for setting default values/parameters within GameController for next game instance
+        /// </summary>
+        public static void setDefaultParameters()
+        {
+            //Sets default values
+            turnCounter = 0;
+            roundCounter = 1;
+            toolMakerFull = false;
+            playerAtToolMaker = -1;
+            recruitmentOfficeFull = false;
+            playerAtRecruitmentOffice = -1;
 
-      //Game functionality method regions
-      #region startGame() Method
-      /// <summary>
-      /// Method for starting game with set number of players to open set number of MainForms for each player
-      /// </summary>
-      /// <param name="playerCount">Number of players to start game with</param>
-      /// <param name="teamNames">Team names of each player</param>
-      /// <returns>Bool of whether or not the main menu should be invisible for starting game</returns>
-      public static bool startGame(int playerCount, string[] teamNames)
-      {
-          //Sets default values for all of the parameters
-          setDefaultParameters();
+        }//end setDefaultParameters()
+        #endregion
 
-          //Checks if number of players is between 2 and 4
-          //Ends method immediately if there are not at least 2 players or more than 4 players
-          if (playerCount < 2 || playerCount > 4)
-          {
-				      MessageBox.Show("Number of players cannot be less than 2 or more than 4."
-						          , "Invalid Number Of Players"
-						          , MessageBoxButtons.OK
-						          , MessageBoxIcon.Error);
+        //Game functionality method regions
+        #region startGame() Method
+        /// <summary>
+        /// Method for starting game with set number of players to open set number of MainForms for each player
+        /// </summary>
+        /// <param name="playerCount">Number of players to start game with</param>
+        /// <param name="teamNames">Team names of each player</param>
+        /// <returns>Bool of whether or not the main menu should be invisible for starting game</returns>
+        public static bool startGame(int playerCount, string[] teamNames)
+        {
+            //Sets default values for all of the parameters
+            setDefaultParameters();
 
-				      return false;//Main menu stays visible
-			    }
+            //Checks if number of players is between 2 and 4
+            //Ends method immediately if there are not at least 2 players or more than 4 players
+            if (playerCount < 2 || playerCount > 4)
+            {
+                MessageBox.Show("Number of players cannot be less than 2 or more than 4."
+                            , "Invalid Number Of Players"
+                            , MessageBoxButtons.OK
+                            , MessageBoxIcon.Error);
 
-          for (int i = 0; i < playerCount; i++)
-          {
-              if (string.IsNullOrWhiteSpace(teamNames[i]))
-              {
-                  MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected."
-                      , "Team Names Not Input"
-                      , MessageBoxButtons.OK
-                      , MessageBoxIcon.Error);
-                  return false;//Main menu stays visible
-              }
-			    }
+                return false;//Main menu stays visible
+            }
 
-          //Sets array index counts to playerCount number
-          playerList = new Player[playerCount];
-          playerForms = new MainForm[playerCount];
-          ProjProgDeck = new ProjectProgressDeck[playerCount];
+            for (int i = 0; i < playerCount; i++)
+            {
+                if (string.IsNullOrWhiteSpace(teamNames[i]))
+                {
+                    MessageBox.Show("You cannot start the game without typing in a team name each for the amount of players selected."
+                        , "Team Names Not Input"
+                        , MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+                    return false;//Main menu stays visible
+                }
+            }
 
-          //Creates new master card decks
-          for (int i = 0; i < ProjProgDeck.Length; i++)
-          {
-              ProjProgDeck[i] = new ProjectProgressDeck();
-          }
+            //Sets array index counts to playerCount number
+            playerList = new Player[playerCount];
+            playerForms = new MainForm[playerCount];
+            ProjProgDeck = new ProjectProgressDeck[playerCount];
 
-			    ProjFeatDeck = new AdditionalProjectFeaturesDeck();
+            //Creates new master card decks
+            for (int i = 0; i < ProjProgDeck.Length; i++)
+            {
+                ProjProgDeck[i] = new ProjectProgressDeck();
+            }
 
-          //Activates players, sets their team names, sets their player numbers, and instantiates their MainForms
-          for (int i = 0; i < playerCount; i++)
-          {
+            ProjFeatDeck = new AdditionalProjectFeaturesDeck();
+
+            //Activates players, sets their team names, sets their player numbers, and instantiates their MainForms
+            for (int i = 0; i < playerCount; i++)
+            {
                 playerList[i] = new Player
                 {
                     TeamName = teamNames[i],
@@ -593,11 +593,11 @@ namespace InformationAgeProject
                 //and winningPlayerNum accordingly
                 for (int i = 1; i <= finalScores.Count; i++)
                 {
-                   if(finalScores[i].Total > highestScore)
-                   {
+                    if (finalScores[i].Total > highestScore)
+                    {
                         highestScore = finalScores[i].Total;
                         winningPlayerNum = i;
-                   }
+                    }
                 }
 
                 //Set the end game form values to that of the winning player's stats
@@ -752,8 +752,8 @@ namespace InformationAgeProject
             XmlSerializer xs = new XmlSerializer(typeof(SaveLoadObject));
             using (StreamReader reader = new StreamReader(filePath))
             {
-              loadedSave = (SaveLoadObject)xs.Deserialize(reader);
-              reader.Dispose();	//Dispose reader to free save.xml
+                loadedSave = (SaveLoadObject)xs.Deserialize(reader);
+                reader.Dispose();	//Dispose reader to free save.xml
             }
 
             loadFromSaveLoadObject(loadedSave);
@@ -782,7 +782,7 @@ namespace InformationAgeProject
                                     ProjProgDeck,
                                     ProjFeatDeck);
 
-            return currentSave; 
+            return currentSave;
 
         }//end saveToSaveLoadObject()
         #endregion
@@ -807,21 +807,21 @@ namespace InformationAgeProject
             playerList = new Player[loadedSave.playerList.Length];
             for (int i = 0; i < loadedSave.playerList.Length; i++)
             {
-              playerList[i] = loadedSave.playerList[i].DeepClone();
+                playerList[i] = loadedSave.playerList[i].DeepClone();
             }
 
             //Creates new instances of MainForm that are identical to MainForm instances that were saved
             playerForms = new MainForm[loadedSave.mainFormValues.Length];
             for (int i = 0; i < loadedSave.mainFormValues.Length; i++)
             {
-              playerForms[i] = new MainForm(playerList[i],loadedSave.mainFormValues[i].DeepClone());
+                playerForms[i] = new MainForm(playerList[i], loadedSave.mainFormValues[i].DeepClone());
             }
 
             //Deep clones all ProjectProgressDeck objects within input array
             ProjProgDeck = new ProjectProgressDeck[loadedSave.ProjProgDeck.Length];
             for (int i = 0; i < loadedSave.ProjProgDeck.Length; i++)
             {
-              ProjProgDeck[i] = loadedSave.ProjProgDeck[i].DeepClone();
+                ProjProgDeck[i] = loadedSave.ProjProgDeck[i].DeepClone();
             }
 
             ProjFeatDeck = loadedSave.ProjFeatDeck.DeepClone();
@@ -861,7 +861,7 @@ namespace InformationAgeProject
             //Closes each mainform before going back to main menu
             foreach (MainForm form in playerForms)
             {
-              form.Dispose();
+                form.Dispose();
             }
 
             //Shows main menu
@@ -897,5 +897,5 @@ namespace InformationAgeProject
             loadingTimer.Dispose();
         }
         #endregion
-	}
+    }
 }

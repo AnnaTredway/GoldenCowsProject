@@ -62,9 +62,9 @@ namespace InformationAgeProject
         /// <summary>
 		/// Parameterized Constructor for MainFormValuesObject 
 		/// </summary>
-        public MainFormValuesObject(string toolMakerText, 
+        public MainFormValuesObject(string toolMakerText,
             string recruitmentOfficeText,
-            bool sendDevEnabled, 
+            bool sendDevEnabled,
             bool recallDevEnabled,
             string backlogText,
             string lowText,

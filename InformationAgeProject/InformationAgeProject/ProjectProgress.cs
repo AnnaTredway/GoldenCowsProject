@@ -30,24 +30,24 @@ namespace InformationAgeProject
     [Serializable]
     public class ProjectProgress
     {
-        private static Random rNum = new Random( ); // Used to select a random resource to use
+        private static Random rNum = new Random(); // Used to select a random resource to use
         public int iPointValue;                    // Stores the amount of points this card is worth
         public Boolean blnSold = false;
         public string strCard;
         private int iDifferentTypesNeeded;          // Stores the number of different resources types needed to purchase this card (used for advance cards)
-        private List<Resource> ResourceCost = new List<Resource>( ); // Stores the resources need to purchase this card
+        private List<Resource> ResourceCost = new List<Resource>(); // Stores the resources need to purchase this card
 
         /// <summary>
         /// Creates a basic card with a random with a value of 10-16 and a cost of 3 random resources.
         /// </summary>
-        public ProjectProgress( )
+        public ProjectProgress()
         {
-            
+
             this.iPointValue = rNum.Next(6) + 10;
             this.ResourceCost.Add(new Resource(rNum.Next(4)));
             this.ResourceCost.Add(new Resource(rNum.Next(4)));
             this.ResourceCost.Add(new Resource(rNum.Next(4)));
-            generateCardDescription( );
+            generateCardDescription();
         }// end ProjectProgress( )
 
         /// <summary>
@@ -62,32 +62,32 @@ namespace InformationAgeProject
                 this.ResourceCost.Add(new Resource());
             }
             this.iDifferentTypesNeeded = resourceTypeNeeded;
-            generateCardDescription( );
+            generateCardDescription();
         }// end ProjectProgress(int resourceAmountNeeded, int resourceTypeNeeded)
 
         /// <summary>
         /// Generates the card description.
         /// </summary>
-        public void generateCardDescription( )
+        public void generateCardDescription()
         {
-            StringBuilder card = new StringBuilder( );
+            StringBuilder card = new StringBuilder();
             card.Append("----------------\r\n");
             card.Append("- Value:       -\r\n");
-            card.Append("- " + this.iPointValue.ToString( ).PadLeft(12) + " -\r\n");
+            card.Append("- " + this.iPointValue.ToString().PadLeft(12) + " -\r\n");
             card.Append("- Cost:        -\r\n");
             for (int i = 0; i < ResourceCost.Count; i++)
             {
                 card.Append("- " + this.ResourceCost[i].resourceName.PadLeft(12) + " -\r\n");
             }
             card.Append("----------------");
-            strCard = card.ToString( );
+            strCard = card.ToString();
         }// end generateCardDescription( )
 
         /// <summary>
         /// Displays the card.
         /// </summary>
         /// <returns>sting that contains the card's info</returns>
-        public string displayCard( )
+        public string displayCard()
         {
             return strCard;
         }
@@ -102,10 +102,10 @@ namespace InformationAgeProject
             bool enoughResources = true;                                // checks if the player has enough has enough resources to purchase the card
             int iPoints = 0;                                            // the points won from the card
             int[] iPlayer = new int[4];                                 // Gets the current resources form the player
-            iPlayer[0] = playersResources.getBacklogAmount( );
-            iPlayer[1] = playersResources.getLowPriorityAmount( );
-            iPlayer[2] = playersResources.getMediumPriorityAmount( );
-            iPlayer[3] = playersResources.getHighPriorityAmount( );
+            iPlayer[0] = playersResources.getBacklogAmount();
+            iPlayer[1] = playersResources.getLowPriorityAmount();
+            iPlayer[2] = playersResources.getMediumPriorityAmount();
+            iPlayer[3] = playersResources.getHighPriorityAmount();
 
             if (this.ResourceCost.Count == 3)
             {
