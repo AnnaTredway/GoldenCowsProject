@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace InformationAgeTests
 {
@@ -93,6 +94,67 @@ namespace InformationAgeTests
             {
                 Assert.AreEqual(5, player1.TeamCount);
             }
+        }
+
+        [TestMethod]
+        //Arrange
+        [DataRow(true, new int[4] { 1, 1, 1, 1 }, true)]
+        [DataRow(false, new int[4] { 1, 1, 1, 1 }, false)]
+        [DataRow(true, new int[4] { 0, 0, 0, 0 }, false)]
+        /// <param name="testPlayer">Whether player object to be tested is new Player(true) or is null(false)</param>
+        /// <param name="devCounts">Number of devcounts for each task/resource to be tested</param>
+        /// <param name="expected">Success expected of test</param>
+        public void calcTasksTest(bool testPlayer, int[] devCounts, bool expected)
+        {
+            Player player;
+
+            //Makes player a new Player or null based on if testPlayer is true or false
+            if (testPlayer == true)
+            {
+                player = new Player();
+            }
+            else
+            {
+                player = null;
+
+            }
+
+            //Act
+            bool actual = GameController.calcTasks(player, devCounts);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        //Arrange
+        [DataRow(true, 6)]
+        [DataRow(false, -1)]
+        /// <param name="testListBox">Whether listBox object to be tested is new ListBox(true) or is null(false)</param>
+        /// <param name="expected">Expected int value to be returned by calcToolLevelsFromList()</param>
+        public void calcToolLevelsFromListTest(bool testListBox, int expected)
+        {
+            ListBox listBox;
+
+            //Makes listBox a new ListBox or null based on if testListBox is true or false
+            if (testListBox == true)
+            {
+                //Add 3 level 2 tools to listBox
+                listBox = new ListBox();
+                listBox.Items.Add(2);
+                listBox.Items.Add(2);
+                listBox.Items.Add(2);
+            }
+            else
+            {
+                listBox = null;
+            }
+
+            //Act
+            int actual = GameController.calcToolLevelsFromList(listBox);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
