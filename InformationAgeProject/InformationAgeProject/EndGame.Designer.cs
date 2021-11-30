@@ -1,0 +1,100 @@
+﻿
+namespace InformationAgeProject
+{
+    partial class EndGame
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.txtWinningPlayer = new System.Windows.Forms.TextBox();
+            this.txtHighestScore = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // txtWinningPlayer
+            // 
+            this.txtWinningPlayer.Location = new System.Drawing.Point(134, 68);
+            this.txtWinningPlayer.Multiline = true;
+            this.txtWinningPlayer.Name = "txtWinningPlayer";
+            this.txtWinningPlayer.Size = new System.Drawing.Size(300, 50);
+            this.txtWinningPlayer.TabIndex = 0;
+            this.txtWinningPlayer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtHighestScore
+            // 
+            this.txtHighestScore.Location = new System.Drawing.Point(180, 185);
+            this.txtHighestScore.Multiline = true;
+            this.txtHighestScore.Name = "txtHighestScore";
+            this.txtHighestScore.Size = new System.Drawing.Size(200, 50);
+            this.txtHighestScore.TabIndex = 1;
+            this.txtHighestScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(202, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Winning Player:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(223, 147);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "-- Score --";
+            // 
+            // EndGame
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(595, 267);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtHighestScore);
+            this.Controls.Add(this.txtWinningPlayer);
+            this.Name = "EndGame";
+            this.Text = "Winning Player";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        public System.Windows.Forms.TextBox txtWinningPlayer;
+        public System.Windows.Forms.TextBox txtHighestScore;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+    }
+}

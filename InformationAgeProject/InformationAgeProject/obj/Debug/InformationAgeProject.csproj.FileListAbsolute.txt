@@ -71,3 +71,4 @@ C:\Users\tnbra\Desktop\GoldenCowsProject\InformationAgeProject\InformationAgePro
 C:\Users\tnbra\Desktop\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.csproj.CoreCompileInputs.cache
 C:\Users\tnbra\Desktop\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.exe
 C:\Users\tnbra\Desktop\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.pdb
+C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.EndGame.resources
