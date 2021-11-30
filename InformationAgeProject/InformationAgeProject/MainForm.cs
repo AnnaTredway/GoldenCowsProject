@@ -27,7 +27,6 @@ using System.Windows.Forms;
 
 namespace InformationAgeProject
 {
-    [Serializable]
     public partial class MainForm : Form
     {
         //Player to be used in this MainForm instance

@@ -61,6 +61,12 @@
       <DependentUpon>AdditionalProjectFeaturesSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="AdditionalProjectFeaturesDeck.cs" />
+    <Compile Include="EasterEggImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EasterEggImageForm.Designer.cs">
+      <DependentUpon>EasterEggImageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="MainFormValuesObject.cs" />
     <Compile Include="SaveLoadObject.cs" />
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="AdditionalProjectFeaturesSelector.resx">
       <DependentUpon>AdditionalProjectFeaturesSelector.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EasterEggImageForm.resx">
+      <DependentUpon>EasterEggImageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EndGame.resx">
       <DependentUpon>EndGame.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\InstructionSet.txt" />
+    <Content Include="GameImages\KirbyPeterGriffin.png" />
     <Content Include="Sounds\Effects\minecraftclick.wav" />
     <Content Include="GameIcons\anvil.png" />
     <Content Include="GameIcons\diamondpickaxe.png" />
@@ -199,6 +209,7 @@
     <Content Include="GameIcons\moobloom.ico" />
     <Content Include="GameIcons\moobloom.png" />
     <Content Include="GameIcons\redbed.png" />
+    <Content Include="Sounds\Music\DepecheMode-JustCan%27tGetEnough%28MIDI%29.wav" />
     <Content Include="Sounds\Music\NeverGonnaGiveYouUp.wav" />
     <Content Include="Sounds\Music\NokiaEspionagePTRK.wav" />
   </ItemGroup>

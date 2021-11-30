@@ -710,12 +710,7 @@ namespace InformationAgeProject
         /// </summary>
         public static void saveGame()
         {
-            //Get the current directory
-            string filePath = Directory.GetCurrentDirectory();
-
-            //Move up two parent directories
-            filePath = Directory.GetParent(filePath).FullName;
-            filePath = Directory.GetParent(filePath).FullName;
+            string filePath = ExtensionMethods.getProgramFilePath();
 
             //Append the location of testsave.xml to filePath
             filePath += "\\Saves\\save.xml";
@@ -737,12 +732,7 @@ namespace InformationAgeProject
         /// </summary>
         public static void loadGame()
         {
-            //Get the current directory
-            string filePath = Directory.GetCurrentDirectory();
-
-            //Move up two parent directories
-            filePath = Directory.GetParent(filePath).FullName;
-            filePath = Directory.GetParent(filePath).FullName;
+            string filePath = ExtensionMethods.getProgramFilePath();
 
             //Append the location of testsave.xml to filePath
             filePath += "\\Saves\\save.xml";
@@ -836,12 +826,7 @@ namespace InformationAgeProject
         /// </summary>
         public static void openInstructions()
         {
-            //Get the current directory
-            string filePath = Directory.GetCurrentDirectory();
-
-            //Move up two parent directories
-            filePath = Directory.GetParent(filePath).FullName;
-            filePath = Directory.GetParent(filePath).FullName;
+            string filePath = ExtensionMethods.getProgramFilePath();
 
             //Append the location of InstructionSet.txt to filePath
             filePath += "\\Files\\InstructionSet.txt";

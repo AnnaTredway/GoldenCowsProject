@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,6 +70,7 @@ namespace InformationAgeProject
             btnOptions.Visible = true;
             btnInstructions.Visible = true;
             btnQuit.Visible = true;
+            btnEasterEgg1.Visible = true;
         }
         #endregion
 
@@ -134,6 +136,19 @@ namespace InformationAgeProject
             //Opens QuitForm to prompt user to quit game or not
             GameController.quitGame();
         }
+
+        /// <summary>
+        /// Event Handler for button to open first easter egg in game
+        /// </summary>
+        /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
+        /// <param name="e">arguments for event (auto-generated, unused here)</param>
+        private void btnEasterEgg1_Click(object sender, EventArgs e)
+        {
+            string filePath = ExtensionMethods.getProgramFilePath();
+            filePath += "\\GameImages\\KirbyPeterGriffin.png";
+
+            new EasterEggImageForm(Image.FromFile(filePath), "Kirby Peter Griffin").Show();
+        }
         #endregion
 
         #region New Game or Load Game Screen
@@ -195,6 +210,7 @@ namespace InformationAgeProject
             btnOptions.Visible = true;
             btnInstructions.Visible = true;
             btnQuit.Visible = true;
+            btnEasterEgg1.Visible = true;
 
             //Sets window text to signify main menu screen
             this.Text = "Information Age - Main Menu";
@@ -272,8 +288,7 @@ namespace InformationAgeProject
                     , MessageBoxIcon.Error);
             }
         }
+
         #endregion
-
-
     }
 }
