@@ -12,11 +12,10 @@
 //	Copyright:         Golden Cows Team, 2021
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InformationAgeProject
@@ -27,9 +26,9 @@ namespace InformationAgeProject
     [Serializable]
     public class AdditionalProjectFeatures
     {
-        private static Random rNum = new Random();
-        private Boolean blnDiceRollRequired = false;
-        private List<ResourceType> listResourceAwared = new List<ResourceType>();
+        private static readonly Random rNum = new Random();
+        private readonly Boolean blnDiceRollRequired = false;
+        private readonly List<ResourceType> listResourceAwared = new List<ResourceType>();
         public List<AdditionalProjectFeaturesType> listTypeAwared = new List<AdditionalProjectFeaturesType>();
         public Boolean blnSold = false;
         public string strCard;

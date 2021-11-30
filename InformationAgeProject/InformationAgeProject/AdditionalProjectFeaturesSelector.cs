@@ -12,14 +12,9 @@
 //	Copyright:         Golden Cows Team, 2021
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InformationAgeProject
@@ -30,8 +25,8 @@ namespace InformationAgeProject
     /// <seealso cref="System.Windows.Forms.Form" />
     partial class AdditionalProjectFeaturesSelector : Form
     {
-        private int iCardCost;                                                    // The cost of claiming a card 
-        private List<ResourceType> listPlayersChoice = new List<ResourceType>(); // The list of resources a player currently has
+        private readonly int iCardCost;                                                    // The cost of claiming a card 
+        private readonly List<ResourceType> listPlayersChoice = new List<ResourceType>(); // The list of resources a player currently has
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalProjectFeaturesSelector"/> class.

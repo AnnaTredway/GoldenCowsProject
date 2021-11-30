@@ -563,8 +563,10 @@ namespace InformationAgeProject
             else
             {
                 //Declare the form representing the end of game screen
-                EndGame endGame = new EndGame();
-                endGame.Visible = true;
+                EndGame endGame = new EndGame
+                {
+                    Visible = true
+                };
 
                 //List of scoring objects
                 List<Scoring> finalScores = new List<Scoring>();
@@ -577,8 +579,10 @@ namespace InformationAgeProject
                  **/
                 foreach (Player player in playerList)
                 {
-                    Scoring scoring = new Scoring(player.Inventory);
-                    scoring.AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player);
+                    Scoring scoring = new Scoring(player.Inventory)
+                    {
+                        AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player)
+                    };
                     scoring.calculateScore();
                     scoring.Total += scoring.AdditionalProjectFeaturesCards;
                     finalScores.Add(scoring);
@@ -659,8 +663,10 @@ namespace InformationAgeProject
             else
             {
                 //Declare the form representing the end of game screen
-                EndGame endGame = new EndGame();
-                endGame.Visible = true;
+                EndGame endGame = new EndGame
+                {
+                    Visible = true
+                };
 
                 //List of scoring objects
                 List<Scoring> finalScores = new List<Scoring>();
@@ -673,8 +679,10 @@ namespace InformationAgeProject
                  **/
                 foreach (Player player in playerList)
                 {
-                    Scoring scoring = new Scoring(player.Inventory);
-                    scoring.AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player);
+                    Scoring scoring = new Scoring(player.Inventory)
+                    {
+                        AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player)
+                    };
                     scoring.calculateScore();
                     scoring.Total += scoring.AdditionalProjectFeaturesCards;
                     finalScores.Add(scoring);
@@ -710,12 +718,7 @@ namespace InformationAgeProject
         /// </summary>
         public static void saveGame()
         {
-            //Get the current directory
-            string filePath = Directory.GetCurrentDirectory();
-
-            //Move up two parent directories
-            filePath = Directory.GetParent(filePath).FullName;
-            filePath = Directory.GetParent(filePath).FullName;
+            string filePath = ExtensionMethods.getProgramFilePath();
 
             //Append the location of testsave.xml to filePath
             filePath += "\\Saves\\save.xml";
@@ -737,12 +740,7 @@ namespace InformationAgeProject
         /// </summary>
         public static void loadGame()
         {
-            //Get the current directory
-            string filePath = Directory.GetCurrentDirectory();
-
-            //Move up two parent directories
-            filePath = Directory.GetParent(filePath).FullName;
-            filePath = Directory.GetParent(filePath).FullName;
+            string filePath = ExtensionMethods.getProgramFilePath();
 
             //Append the location of testsave.xml to filePath
             filePath += "\\Saves\\save.xml";
@@ -836,12 +834,7 @@ namespace InformationAgeProject
         /// </summary>
         public static void openInstructions()
         {
-            //Get the current directory
-            string filePath = Directory.GetCurrentDirectory();
-
-            //Move up two parent directories
-            filePath = Directory.GetParent(filePath).FullName;
-            filePath = Directory.GetParent(filePath).FullName;
+            string filePath = ExtensionMethods.getProgramFilePath();
 
             //Append the location of InstructionSet.txt to filePath
             filePath += "\\Files\\InstructionSet.txt";

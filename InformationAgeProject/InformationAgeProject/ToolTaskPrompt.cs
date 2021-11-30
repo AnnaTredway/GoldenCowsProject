@@ -14,22 +14,17 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InformationAgeProject
 {
     public partial class ToolTaskPrompt : Form
     {
-        private object draggedItem;         //Item currently being dragged between list boxes by mouse cursor
-        private int[] currentToolLevels;    //Array of current tool values of current player for the tool prompt
-        public int[] finalToolValues;       //Array of final calculated tool values from each of the 4 lists
+        private object draggedItem;                 //Item currently being dragged between list boxes by mouse cursor
+        private readonly int[] currentToolLevels;   //Array of current tool values of current player for the tool prompt
+        public int[] finalToolValues;               //Array of final calculated tool values from each of the 4 lists
 
         public ToolTaskPrompt(int[] toolLevelList, int[] diceVals)
         {

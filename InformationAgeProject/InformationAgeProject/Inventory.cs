@@ -15,9 +15,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InformationAgeProject
@@ -29,8 +26,8 @@ namespace InformationAgeProject
     public class Inventory
     {
         //Manager classes to be used in Inventory
-        private ResourceManager resourceManager;
-        private ToolManager toolManager;
+        private readonly ResourceManager resourceManager;
+        private readonly ToolManager toolManager;
 
         /// <summary>
         /// Constructor for Inventory 

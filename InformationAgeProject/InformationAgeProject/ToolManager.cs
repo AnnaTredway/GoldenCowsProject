@@ -14,10 +14,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InformationAgeProject
 {
@@ -28,7 +24,7 @@ namespace InformationAgeProject
     public class ToolManager
     {
         //Tool array for current player, one slot in array for each slot on board for current player
-        private Tool[] toolList = new Tool[3];
+        private readonly Tool[] toolList = new Tool[3];
 
         //Counter for adding level to each tool in correct order when new tool is acquired
         int levelCounter;

@@ -14,20 +14,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InformationAgeProject
 {
-    [Serializable]
     public partial class MainForm : Form
     {
         //Player to be used in this MainForm instance
@@ -105,6 +95,18 @@ namespace InformationAgeProject
             toolSlot1.Text = toolLevelList[0].ToString();
             toolSlot2.Text = toolLevelList[1].ToString();
             toolSlot3.Text = toolLevelList[2].ToString();
+
+            //If there is a developer at the tool maker, reset it back to zero because developer will be added back at a later time
+            if (txtToolMaker.Text == "1")
+            {
+                txtToolMaker.Text = "0";
+            }
+
+            //If the send devs button is enabled, disable the recall devs button
+            if (btnSendDevs.Enabled == true)
+            {
+                btnRecallDevs.Enabled = false;
+            }
         }
         #endregion
 
@@ -759,15 +761,6 @@ namespace InformationAgeProject
 
                 //Sends all developers from tasks area back to developer pool
                 SendDevsBackFromTasks();
-
-                //If there is a developer at the tool maker, reset it back to zero because developer will be added back at a later time
-                if (txtToolMaker.Text == "1")
-                {
-                    txtToolMaker.Text = "0";
-                }
-
-                //Sets btnRecallDevs to default false status for next turn
-                btnRecallDevs.Enabled = false;
 
                 //Ends current player's turn and goes to next player's turn
                 GameController.endTurn();

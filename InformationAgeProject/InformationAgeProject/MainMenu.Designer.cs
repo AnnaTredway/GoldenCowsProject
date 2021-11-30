@@ -54,6 +54,7 @@
             this.btnBackToMainMenu = new System.Windows.Forms.Button();
             this.btnInstructions = new System.Windows.Forms.Button();
             this.lblLoading = new System.Windows.Forms.Label();
+            this.btnEasterEgg1 = new System.Windows.Forms.Button();
             this.pnlTeamNames.SuspendLayout();
             this.pnlSelectPlayers.SuspendLayout();
             this.SuspendLayout();
@@ -422,12 +423,31 @@
             this.lblLoading.TabIndex = 25;
             this.lblLoading.Text = "Loading...";
             // 
+            // btnEasterEgg1
+            // 
+            this.btnEasterEgg1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEasterEgg1.BackColor = global::InformationAgeProject.Properties.Settings.Default.ButtonBackgroundColor;
+            this.btnEasterEgg1.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnEasterEgg1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.btnEasterEgg1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEasterEgg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEasterEgg1.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
+            this.btnEasterEgg1.Location = new System.Drawing.Point(12, 433);
+            this.btnEasterEgg1.Name = "btnEasterEgg1";
+            this.btnEasterEgg1.Size = new System.Drawing.Size(5, 5);
+            this.btnEasterEgg1.TabIndex = 26;
+            this.btnEasterEgg1.Text = "Back";
+            this.btnEasterEgg1.UseVisualStyleBackColor = false;
+            this.btnEasterEgg1.Visible = false;
+            this.btnEasterEgg1.Click += new System.EventHandler(this.btnEasterEgg1_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = global::InformationAgeProject.Properties.Settings.Default.FormsBackgroundColor;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEasterEgg1);
             this.Controls.Add(this.btnInstructions);
             this.Controls.Add(this.btnBackToMainMenu);
             this.Controls.Add(this.btnBack1);
@@ -485,5 +505,6 @@
         private System.Windows.Forms.Button btnBackToMainMenu;
         private System.Windows.Forms.Button btnInstructions;
         private System.Windows.Forms.Label lblLoading;
+        private System.Windows.Forms.Button btnEasterEgg1;
     }
 }

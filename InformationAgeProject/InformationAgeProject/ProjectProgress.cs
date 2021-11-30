@@ -12,11 +12,10 @@
 //	Copyright:         Golden Cows Team, 2021
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /// <summary>
@@ -30,12 +29,12 @@ namespace InformationAgeProject
     [Serializable]
     public class ProjectProgress
     {
-        private static Random rNum = new Random(); // Used to select a random resource to use
-        public int iPointValue;                    // Stores the amount of points this card is worth
+        private static readonly Random rNum = new Random(); // Used to select a random resource to use
+        public int iPointValue;                             // Stores the amount of points this card is worth
         public Boolean blnSold = false;
         public string strCard;
-        private int iDifferentTypesNeeded;          // Stores the number of different resources types needed to purchase this card (used for advance cards)
-        private List<Resource> ResourceCost = new List<Resource>(); // Stores the resources need to purchase this card
+        private readonly int iDifferentTypesNeeded;         // Stores the number of different resources types needed to purchase this card (used for advance cards)
+        private readonly List<Resource> ResourceCost = new List<Resource>(); // Stores the resources need to purchase this card
 
         /// <summary>
         /// Creates a basic card with a random with a value of 10-16 and a cost of 3 random resources.
