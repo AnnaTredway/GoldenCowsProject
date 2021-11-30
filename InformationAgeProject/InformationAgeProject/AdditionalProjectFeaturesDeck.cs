@@ -23,6 +23,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Creates a deck of Additional Project Features
     /// </summary>
+    [Serializable]
     public class AdditionalProjectFeaturesDeck
     {
         private static Random rNum = new Random( );                                           // Used to shuffle the deck

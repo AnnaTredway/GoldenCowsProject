@@ -26,6 +26,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Creates a resource
     /// </summary>
+    [Serializable]
     class Resource
     {
         public string resourceName; // Stores the name of the resource

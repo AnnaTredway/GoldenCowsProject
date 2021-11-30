@@ -27,10 +27,16 @@ using System.Windows.Forms;
 
 namespace InformationAgeProject
 {
+	[Serializable]
 	public partial class MainForm : Form
 	{
 		//Player to be used in this MainForm instance
 		readonly Player player;
+
+		/// <summary>
+		/// Private Constructor for MainForm needed for serialization
+		/// </summary>
+		private MainForm() { }
 
 		public MainForm(Player player)
 		{
@@ -39,6 +45,37 @@ namespace InformationAgeProject
 			//Assigns player, player number, and corresponding team name to this MainForm instance
 			this.player = player;
 			this.Text = $"Information Age | Player: {player.PlayerNum + 1} | Team: {player.TeamName}";
+		}
+
+		public MainForm(Player player, MainFormValuesObject valuesObject)
+		{
+			InitializeComponent();
+
+			//Assigns player, player number, and corresponding team name to this MainForm instance
+			this.player = player;
+			this.Text = $"Information Age | Player: {player.PlayerNum + 1} | Team: {player.TeamName}";
+
+			//Assigns all pertinent values to the MainForm from stored MainFormValuesObject
+			txtToolMaker.Text = valuesObject.toolMakerText;
+			lblRecruitStatus.Text = valuesObject.recruitmentOfficeText;
+			btnSendDevs.Enabled = valuesObject.sendDevEnabled;
+			btnRecallDevs.Enabled = valuesObject.recallDevEnabled;
+			txtBacklog.Text = valuesObject.backlogText;
+			txtLow.Text = valuesObject.lowText;
+			txtMed.Text = valuesObject.medText;
+			txtHigh.Text = valuesObject.highText;
+			btnAddBacklog.Enabled = valuesObject.backlogAddEnabled;
+			btnSubtBacklog.Enabled = valuesObject.backlogSubEnabled;
+			btnAddLow.Enabled = valuesObject.lowAddEnabled;
+			btnSubtLow.Enabled = valuesObject.lowSubEnabled;
+			btnAddMed.Enabled = valuesObject.medAddEnabled;
+			btnSubtMed.Enabled = valuesObject.medSubEnabled;
+			btnAddHigh.Enabled = valuesObject.highAddEnabled;
+			btnSubtHigh.Enabled = valuesObject.highSubEnabled;
+			btnDoTasks.Enabled = valuesObject.doTasksEnabled;
+			inventoryBox.Text = valuesObject.inventoryText;
+			scoreBox.Text = valuesObject.scoreText;
+
 		}
 
 		#region MainForm_Load()
@@ -67,13 +104,7 @@ namespace InformationAgeProject
 			int[] toolLevelList = player.Inventory.getToolLevelList();
 			toolSlot1.Text = toolLevelList[0].ToString();
 			toolSlot2.Text = toolLevelList[1].ToString();
-			toolSlot3.Text = toolLevelList[2].ToString();
-
-			//Resets tool maker because developer was already added back to player at the end of previous round
-			txtToolMaker.Text = "0";
-
-			//Sets btnRecallDevs to default false status
-			btnRecallDevs.Enabled = false;
+			toolSlot3.Text = toolLevelList[2].ToString();           
 		}
 		#endregion
 
@@ -104,9 +135,6 @@ namespace InformationAgeProject
 			toolSlot1.Text = toolLevelList[0].ToString();
 			toolSlot2.Text = toolLevelList[1].ToString();
 			toolSlot3.Text = toolLevelList[2].ToString();
-
-			//Resets tool maker because developer was already added back to player at the end of previous round
-			txtToolMaker.Text = "0";
 		}
 		#endregion
 
@@ -132,6 +160,34 @@ namespace InformationAgeProject
 			txtLow.Text = "0";
 			txtMed.Text = "0";
 			txtHigh.Text = "0";
+		}
+		#endregion
+
+		#region StoreMainFormValuesInObject()
+		/// <summary>
+		/// Method for saving all pertinent values within a MainForm to a MainFormValuesObject		
+		/// </summary>
+		public MainFormValuesObject StoreMainFormValuesInObject()
+		{
+			return new MainFormValuesObject(txtToolMaker.Text,
+				lblRecruitStatus.Text,
+				btnSendDevs.Enabled,
+				btnRecallDevs.Enabled,
+				txtBacklog.Text,
+				txtLow.Text,
+				txtMed.Text,
+				txtHigh.Text,
+				btnAddBacklog.Enabled,
+				btnSubtBacklog.Enabled,
+				btnAddLow.Enabled,
+				btnSubtLow.Enabled,
+				btnAddMed.Enabled,
+				btnSubtMed.Enabled,
+				btnAddHigh.Enabled,
+				btnSubtHigh.Enabled,
+				btnDoTasks.Enabled,
+				inventoryBox.Text,
+				scoreBox.Text);
 		}
 		#endregion
 
@@ -704,8 +760,17 @@ namespace InformationAgeProject
                 //Sends all developers from tasks area back to developer pool
                 SendDevsBackFromTasks();
 
-                //Ends current player's turn and goes to next player's turn
-                GameController.endTurn(); 
+				//If there is a developer at the tool maker, reset it back to zero because developer will be added back at a later time
+				if(txtToolMaker.Text == "1")
+                {
+					txtToolMaker.Text = "0";
+				}
+
+				//Sets btnRecallDevs to default false status for next turn
+				btnRecallDevs.Enabled = false;
+
+				//Ends current player's turn and goes to next player's turn
+				GameController.endTurn(); 
             }
 		}
 		#endregion
@@ -718,7 +783,7 @@ namespace InformationAgeProject
 		/// <param name="e"></param>
 		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-
+			GameController.saveGame();
 		}
 
 		/// <summary>

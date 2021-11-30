@@ -26,6 +26,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Manages the different resources you can obtain through the game.
     /// </summary>
+    [Serializable]
     public class ResourceManager
     {
         //Holds the 4 different types of resources

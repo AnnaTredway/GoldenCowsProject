@@ -24,6 +24,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Our games version of civilization cards
     /// </summary>
+    [Serializable]
     public class AdditionalProjectFeatures
     {
         private static Random rNum = new Random( );

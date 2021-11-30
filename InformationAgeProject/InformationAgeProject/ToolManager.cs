@@ -24,6 +24,7 @@ namespace InformationAgeProject
     /// <summary>
     /// ToolManager class for managing tools in program
     /// </summary>
+    [Serializable]
     public class ToolManager
     {
         //Tool array for current player, one slot in array for each slot on board for current player

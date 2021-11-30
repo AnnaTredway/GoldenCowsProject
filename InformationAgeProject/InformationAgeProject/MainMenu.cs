@@ -170,6 +170,8 @@ namespace InformationAgeProject
 		private void btnLoadGame_Click(object sender, EventArgs e)
 		{
 			SoundController.playButtonClick();
+
+			GameController.loadGame();
 		}
 
 		/// <summary>

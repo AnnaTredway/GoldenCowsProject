@@ -25,6 +25,7 @@ namespace InformationAgeProject
 	/// <summary>
 	/// Inventory class for interacting with ResourceManger
 	/// </summary>
+	[Serializable]
 	public class Inventory
 	{
 		//Manager classes to be used in Inventory

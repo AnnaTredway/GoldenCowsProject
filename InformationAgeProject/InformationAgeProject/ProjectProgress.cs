@@ -27,6 +27,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Information Age's building cards
     /// </summary>
+    [Serializable]
     public class ProjectProgress
     {
         private static Random rNum = new Random( ); // Used to select a random resource to use
