@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SaveLoadObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <turnCounter>0</turnCounter>
+  <roundCounter>5</roundCounter>
+  <toolMakerFull>false</toolMakerFull>
+  <playerAtToolMaker>-1</playerAtToolMaker>
+  <recruitmentOfficeFull>false</recruitmentOfficeFull>
+  <playerAtRecruitmentOffice>-1</playerAtRecruitmentOffice>
+  <playerList>
+    <Player>
+      <TeamCount>7</TeamCount>
+      <Inventory>
+        <ProjectProgressCards>
+          <ProjectProgress>
+            <iPointValue>10</iPointValue>
+            <blnSold>false</blnSold>
+            <strCard>----------------
+- Value:       -
+-           10 -
+- Cost:        -
+-  LOWPRIORITY -
+- HIGHPRIORITY -
+-  MEDPRIORITY -
+----------------</strCard>
+          </ProjectProgress>
+        </ProjectProgressCards>
+        <AdditionalProjectFeaturesCards>
+          <AdditionalProjectFeatures>
+            <listTypeAwared>
+              <AdditionalProjectFeaturesType>art</AdditionalProjectFeaturesType>
+            </listTypeAwared>
+            <blnSold>true</blnSold>
+            <strCard>Card claimed by
+Ford</strCard>
+          </AdditionalProjectFeatures>
+        </AdditionalProjectFeaturesCards>
+      </Inventory>
+      <Developers>7</Developers>
+      <PlayerNum>0</PlayerNum>
+      <TeamName>Ford</TeamName>
+    </Player>
+    <Player>
+      <TeamCount>5</TeamCount>
+      <Inventory>
+        <ProjectProgressCards />
+        <AdditionalProjectFeaturesCards />
+      </Inventory>
+      <Developers>5</Developers>
+      <PlayerNum>1</PlayerNum>
+      <TeamName>Edsel</TeamName>
+    </Player>
+    <Player>
+      <TeamCount>5</TeamCount>
+      <Inventory>
+        <ProjectProgressCards />
+        <AdditionalProjectFeaturesCards />
+      </Inventory>
+      <Developers>5</Developers>
+      <PlayerNum>2</PlayerNum>
+      <TeamName>Mercury</TeamName>
+    </Player>
+    <Player>
+      <TeamCount>5</TeamCount>
+      <Inventory>
+        <ProjectProgressCards />
+        <AdditionalProjectFeaturesCards>
+          <AdditionalProjectFeatures>
+            <listTypeAwared>
+              <AdditionalProjectFeaturesType>hut_builder</AdditionalProjectFeaturesType>
+            </listTypeAwared>
+            <blnSold>true</blnSold>
+            <strCard>Card claimed by
+Lincoln</strCard>
+          </AdditionalProjectFeatures>
+        </AdditionalProjectFeaturesCards>
+      </Inventory>
+      <Developers>5</Developers>
+      <PlayerNum>3</PlayerNum>
+      <TeamName>Lincoln</TeamName>
+    </Player>
+  </playerList>
+  <mainFormValues>
+    <MainFormValuesObject>
+      <toolMakerText>0</toolMakerText>
+      <recruitmentOfficeText />
+      <sendDevEnabled>true</sendDevEnabled>
+      <recallDevEnabled>false</recallDevEnabled>
+      <backlogText>0</backlogText>
+      <lowText>0</lowText>
+      <medText>0</medText>
+      <highText>0</highText>
+      <backlogAddEnabled>true</backlogAddEnabled>
+      <backlogSubEnabled>true</backlogSubEnabled>
+      <lowAddEnabled>true</lowAddEnabled>
+      <lowSubEnabled>true</lowSubEnabled>
+      <medAddEnabled>true</medAddEnabled>
+      <medSubEnabled>true</medSubEnabled>
+      <highAddEnabled>true</highAddEnabled>
+      <highSubEnabled>true</highSubEnabled>
+      <doTasksEnabled>true</doTasksEnabled>
+      <inventoryText>--------------------------------------------------------
+Backlog: 0
+Low Priority: 1
+Medium Priority: 0
+High Priority: 0
+ProjectProgressCards:  1
+ProjectFeatureCards:   1
+--------------------------------------------------------</inventoryText>
+      <scoreText>--------------------------------------------------------
+Back Log Tasks: 0
+Low Priority Tasks: 2
+Medium Priority Tasks: 0
+High Priority Tasks: 0
+--------------------------------------------------------
+Total: 12</scoreText>
+    </MainFormValuesObject>
+    <MainFormValuesObject>
+      <toolMakerText>0</toolMakerText>
+      <recruitmentOfficeText />
+      <sendDevEnabled>true</sendDevEnabled>
+      <recallDevEnabled>false</recallDevEnabled>
+      <backlogText>0</backlogText>
+      <lowText>0</lowText>
+      <medText>0</medText>
+      <highText>0</highText>
+      <backlogAddEnabled>true</backlogAddEnabled>
+      <backlogSubEnabled>true</backlogSubEnabled>
+      <lowAddEnabled>true</lowAddEnabled>
+      <lowSubEnabled>true</lowSubEnabled>
+      <medAddEnabled>true</medAddEnabled>
+      <medSubEnabled>true</medSubEnabled>
+      <highAddEnabled>true</highAddEnabled>
+      <highSubEnabled>true</highSubEnabled>
+      <doTasksEnabled>true</doTasksEnabled>
+      <inventoryText>--------------------------------------------------------
+Backlog: 2
+Low Priority: 4
+Medium Priority: 0
+High Priority: 0
+ProjectProgressCards:  0
+ProjectFeatureCards:   0
+--------------------------------------------------------</inventoryText>
+      <scoreText>--------------------------------------------------------
+Back Log Tasks: 2
+Low Priority Tasks: 8
+Medium Priority Tasks: 0
+High Priority Tasks: 0
+--------------------------------------------------------
+Total: 10</scoreText>
+    </MainFormValuesObject>
+    <MainFormValuesObject>
+      <toolMakerText>0</toolMakerText>
+      <recruitmentOfficeText />
+      <sendDevEnabled>true</sendDevEnabled>
+      <recallDevEnabled>false</recallDevEnabled>
+      <backlogText>0</backlogText>
+      <lowText>0</lowText>
+      <medText>0</medText>
+      <highText>0</highText>
+      <backlogAddEnabled>true</backlogAddEnabled>
+      <backlogSubEnabled>true</backlogSubEnabled>
+      <lowAddEnabled>true</lowAddEnabled>
+      <lowSubEnabled>true</lowSubEnabled>
+      <medAddEnabled>true</medAddEnabled>
+      <medSubEnabled>true</medSubEnabled>
+      <highAddEnabled>true</highAddEnabled>
+      <highSubEnabled>true</highSubEnabled>
+      <doTasksEnabled>true</doTasksEnabled>
+      <inventoryText>--------------------------------------------------------
+Backlog: 0
+Low Priority: 2
+Medium Priority: 3
+High Priority: 0
+ProjectProgressCards:  0
+ProjectFeatureCards:   0
+--------------------------------------------------------</inventoryText>
+      <scoreText>--------------------------------------------------------
+Back Log Tasks: 0
+Low Priority Tasks: 4
+Medium Priority Tasks: 9
+High Priority Tasks: 0
+--------------------------------------------------------
+Total: 13</scoreText>
+    </MainFormValuesObject>
+    <MainFormValuesObject>
+      <toolMakerText>0</toolMakerText>
+      <recruitmentOfficeText />
+      <sendDevEnabled>true</sendDevEnabled>
+      <recallDevEnabled>false</recallDevEnabled>
+      <backlogText>0</backlogText>
+      <lowText>0</lowText>
+      <medText>0</medText>
+      <highText>0</highText>
+      <backlogAddEnabled>true</backlogAddEnabled>
+      <backlogSubEnabled>true</backlogSubEnabled>
+      <lowAddEnabled>true</lowAddEnabled>
+      <lowSubEnabled>true</lowSubEnabled>
+      <medAddEnabled>true</medAddEnabled>
+      <medSubEnabled>true</medSubEnabled>
+      <highAddEnabled>true</highAddEnabled>
+      <highSubEnabled>true</highSubEnabled>
+      <doTasksEnabled>true</doTasksEnabled>
+      <inventoryText>--------------------------------------------------------
+Backlog: 0
+Low Priority: 4
+Medium Priority: 0
+High Priority: 3
+ProjectProgressCards:  0
+ProjectFeatureCards:   1
+--------------------------------------------------------</inventoryText>
+      <scoreText>--------------------------------------------------------
+Back Log Tasks: 0
+Low Priority Tasks: 8
+Medium Priority Tasks: 0
+High Priority Tasks: 12
+--------------------------------------------------------
+Total: 20</scoreText>
+    </MainFormValuesObject>
+  </mainFormValues>
+  <ProjProgDeck>
+    <ProjectProgressDeck>
+      <Deck>
+        <ProjectProgress>
+          <iPointValue>12</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           12 -
+- Cost:        -
+-      BACKLOG -
+- HIGHPRIORITY -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>10</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           10 -
+- Cost:        -
+-  MEDPRIORITY -
+-  LOWPRIORITY -
+- HIGHPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>10</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           10 -
+- Cost:        -
+-  MEDPRIORITY -
+- HIGHPRIORITY -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>10</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           10 -
+- Cost:        -
+-      BACKLOG -
+-  LOWPRIORITY -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>11</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           11 -
+- Cost:        -
+-  MEDPRIORITY -
+-      BACKLOG -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>10</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           10 -
+- Cost:        -
+-      BACKLOG -
+-  MEDPRIORITY -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+      </Deck>
+    </ProjectProgressDeck>
+    <ProjectProgressDeck>
+      <Deck>
+        <ProjectProgress>
+          <iPointValue>15</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           15 -
+- Cost:        -
+- HIGHPRIORITY -
+-      BACKLOG -
+-  MEDPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>11</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           11 -
+- Cost:        -
+- HIGHPRIORITY -
+- HIGHPRIORITY -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>15</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           15 -
+- Cost:        -
+- HIGHPRIORITY -
+- HIGHPRIORITY -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>15</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           15 -
+- Cost:        -
+- HIGHPRIORITY -
+-  LOWPRIORITY -
+- HIGHPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>15</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           15 -
+- Cost:        -
+-  LOWPRIORITY -
+-      BACKLOG -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>13</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           13 -
+- Cost:        -
+- HIGHPRIORITY -
+-  MEDPRIORITY -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>12</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           12 -
+- Cost:        -
+-  LOWPRIORITY -
+-      BACKLOG -
+-  MEDPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+      </Deck>
+    </ProjectProgressDeck>
+    <ProjectProgressDeck>
+      <Deck>
+        <ProjectProgress>
+          <iPointValue>12</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           12 -
+- Cost:        -
+-  MEDPRIORITY -
+-      BACKLOG -
+-  LOWPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>13</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           13 -
+- Cost:        -
+-  MEDPRIORITY -
+-      BACKLOG -
+-  LOWPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>12</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           12 -
+- Cost:        -
+-      BACKLOG -
+-  LOWPRIORITY -
+- HIGHPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>12</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           12 -
+- Cost:        -
+-  LOWPRIORITY -
+- HIGHPRIORITY -
+- HIGHPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>11</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           11 -
+- Cost:        -
+-  LOWPRIORITY -
+-      BACKLOG -
+-  LOWPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>12</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           12 -
+- Cost:        -
+-  MEDPRIORITY -
+-      BACKLOG -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>11</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           11 -
+- Cost:        -
+-  LOWPRIORITY -
+-      BACKLOG -
+-  MEDPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+      </Deck>
+    </ProjectProgressDeck>
+    <ProjectProgressDeck>
+      <Deck>
+        <ProjectProgress>
+          <iPointValue>12</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           12 -
+- Cost:        -
+-  LOWPRIORITY -
+-      BACKLOG -
+-  MEDPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>14</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           14 -
+- Cost:        -
+- HIGHPRIORITY -
+- HIGHPRIORITY -
+-  LOWPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>14</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           14 -
+- Cost:        -
+-  LOWPRIORITY -
+- HIGHPRIORITY -
+-      BACKLOG -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>13</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           13 -
+- Cost:        -
+- HIGHPRIORITY -
+-  LOWPRIORITY -
+-  MEDPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>12</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           12 -
+- Cost:        -
+- HIGHPRIORITY -
+-  LOWPRIORITY -
+-  MEDPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>13</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           13 -
+- Cost:        -
+- HIGHPRIORITY -
+-  MEDPRIORITY -
+-  MEDPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+        <ProjectProgress>
+          <iPointValue>11</iPointValue>
+          <blnSold>false</blnSold>
+          <strCard>----------------
+- Value:       -
+-           11 -
+- Cost:        -
+-  LOWPRIORITY -
+-  LOWPRIORITY -
+-  MEDPRIORITY -
+----------------</strCard>
+        </ProjectProgress>
+      </Deck>
+    </ProjectProgressDeck>
+  </ProjProgDeck>
+  <ProjFeatDeck>
+    <Deck>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>hut_builder</AdditionalProjectFeaturesType>
+          <AdditionalProjectFeaturesType>hut_builder</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+- Item:        -
+-  hut_builder -
+-  hut_builder -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>music</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+- Item:        -
+-        music -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>shamen</AdditionalProjectFeaturesType>
+          <AdditionalProjectFeaturesType>shamen</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+-  MEDPRIORITY -
+- Item:        -
+-       shamen -
+-       shamen -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>weaving</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+-  LOWPRIORITY -
+- Item:        -
+-      weaving -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>hut_builder</AdditionalProjectFeaturesType>
+          <AdditionalProjectFeaturesType>hut_builder</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  LOWPRIORITY -
+-  LOWPRIORITY -
+- Item:        -
+-  hut_builder -
+-  hut_builder -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>music</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+-  MEDPRIORITY -
+- Item:        -
+-        music -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>pottery</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+-  MEDPRIORITY -
+- Item:        -
+-      pottery -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>pottery</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+- Item:        -
+-      pottery -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>art</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+-  MEDPRIORITY -
+- Item:        -
+-          art -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>medicine</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+- Item:        -
+-     medicine -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>transport</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+- HIGHPRIORITY -
+- Item:        -
+-    transport -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>art</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+-  MEDPRIORITY -
+- Item:        -
+-          art -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>art</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+- HIGHPRIORITY -
+- Item:        -
+-          art -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>writing</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  LOWPRIORITY -
+- Item:        -
+-      writing -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>medicine</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  LOWPRIORITY -
+- Item:        -
+-     medicine -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>transport</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+-  MEDPRIORITY -
+- Item:        -
+-    transport -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>pottery</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+- HIGHPRIORITY -
+- HIGHPRIORITY -
+- Item:        -
+-      pottery -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>pottery</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-         Tool -
+- Item:        -
+-      pottery -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>tool_maker</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+-  MEDPRIORITY -
+- Item:        -
+-   tool_maker -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>music</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-      BACKLOG -
+- Item:        -
+-        music -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>tool_maker</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+-  LOWPRIORITY -
+- Item:        -
+-   tool_maker -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>medicine</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  LOWPRIORITY -
+- Item:        -
+-     medicine -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>pottery</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+-  MEDPRIORITY -
+- Item:        -
+-      pottery -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>weaving</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+-  MEDPRIORITY -
+- Item:        -
+-      weaving -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>shamen</AdditionalProjectFeaturesType>
+          <AdditionalProjectFeaturesType>shamen</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+-  MEDPRIORITY -
+- Item:        -
+-       shamen -
+-       shamen -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>tool_maker</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-         Tool -
+- Item:        -
+-   tool_maker -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>art</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-         Tool -
+- Item:        -
+-          art -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>pottery</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+- HIGHPRIORITY -
+- Item:        -
+-      pottery -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>hut_builder</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  LOWPRIORITY -
+- Item:        -
+-  hut_builder -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>art</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  earn 1-6 of -
+-  LOWPRIORITY -
+- Item:        -
+-          art -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>medicine</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+- Item:        -
+-     medicine -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>hut_builder</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  LOWPRIORITY -
+- Item:        -
+-  hut_builder -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>pottery</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-  MEDPRIORITY -
+- Item:        -
+-      pottery -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+      <AdditionalProjectFeatures>
+        <listTypeAwared>
+          <AdditionalProjectFeaturesType>writing</AdditionalProjectFeaturesType>
+        </listTypeAwared>
+        <blnSold>false</blnSold>
+        <strCard>----------------
+- Reward:      -
+-         Tool -
+- Item:        -
+-      writing -
+----------------</strCard>
+      </AdditionalProjectFeatures>
+    </Deck>
+  </ProjFeatDeck>
+</SaveLoadObject>
