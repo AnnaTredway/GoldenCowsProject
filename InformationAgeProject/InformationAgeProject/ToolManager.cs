@@ -24,6 +24,7 @@ namespace InformationAgeProject
     /// <summary>
     /// ToolManager class for managing tools in program
     /// </summary>
+    [Serializable]
     public class ToolManager
     {
         //Tool array for current player, one slot in array for each slot on board for current player
@@ -115,7 +116,7 @@ namespace InformationAgeProject
         public void increaseToolLevel()
         {
             //Resets levelCounter if it goes higher than 2 (the max index level in tool inventory)
-            if(levelCounter >= 3)
+            if (levelCounter >= 3)
             {
                 levelCounter = 0;
             }

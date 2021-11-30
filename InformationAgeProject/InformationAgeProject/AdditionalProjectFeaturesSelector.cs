@@ -31,7 +31,7 @@ namespace InformationAgeProject
     partial class AdditionalProjectFeaturesSelector : Form
     {
         private int iCardCost;                                                    // The cost of claiming a card 
-        private List<ResourceType> listPlayersChoice = new List<ResourceType>( ); // The list of resources a player currently has
+        private List<ResourceType> listPlayersChoice = new List<ResourceType>(); // The list of resources a player currently has
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalProjectFeaturesSelector"/> class.
@@ -40,7 +40,7 @@ namespace InformationAgeProject
         /// <param name="iPlayer">The i player.</param>
         public AdditionalProjectFeaturesSelector(int cardCost, int[] iPlayer)
         {
-            InitializeComponent( );
+            InitializeComponent();
 
             this.iCardCost = cardCost;
 
@@ -100,7 +100,7 @@ namespace InformationAgeProject
                 {
                     listPlayersChoice.Add(ResourceType.HIGHPRIORITY);
                 }
-                this.Close( );
+                this.Close();
             }
             else if (iTotalSelected > iCardCost)
             {
@@ -116,14 +116,14 @@ namespace InformationAgeProject
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Error);
             }
-            
+
         }
 
         /// <summary>
         /// Gets the selected resources.
         /// </summary>
         /// <returns>Returns the players selection of resources</returns>
-        public ResourceType[] getSelectedResources( )
+        public ResourceType[] getSelectedResources()
         {
             return listPlayersChoice.ToArray();
         }

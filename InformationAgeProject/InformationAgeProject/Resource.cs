@@ -26,6 +26,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Creates a resource
     /// </summary>
+    [Serializable]
     class Resource
     {
         public string resourceName; // Stores the name of the resource
@@ -35,7 +36,7 @@ namespace InformationAgeProject
         /// <summary>
         /// Initializes a new instance of the <see cref="Resource"/> class.
         /// </summary>
-        public Resource( )
+        public Resource()
         {
             this.resourceName = "Any";
             this.resourceAmount = 0;
@@ -51,14 +52,14 @@ namespace InformationAgeProject
         {
             this.resourceName = resourceName;
             this.resourceAmount = 0;
-            this.type = type; 
+            this.type = type;
         }// end Resource(string resourceName)
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Resource"/> class.
         /// </summary>
         /// <param name="randomType">A random number.</param>
-        public Resource (int randomType)
+        public Resource(int randomType)
         {
             var temp = (ResourceType)randomType;
             this.resourceName = temp.ToString();

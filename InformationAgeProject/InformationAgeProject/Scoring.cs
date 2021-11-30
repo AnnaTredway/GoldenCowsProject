@@ -28,7 +28,7 @@ namespace InformationAgeProject
     {
         //Inventory object
         private readonly Inventory inventory = new Inventory();
-        
+
         /// <summary>
         /// Parameterized constructor for scoring
         /// </summary>
@@ -105,7 +105,7 @@ namespace InformationAgeProject
                     ProjectProgressCards += p.iPointValue;
                 }
             }
-            
+
             Total += Backlog + Low + Medium + High + ProjectProgressCards;
 
             //Return a formatted string that accounts for all scoring components

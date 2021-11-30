@@ -19,6 +19,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace InformationAgeProject
 {
@@ -27,6 +28,11 @@ namespace InformationAgeProject
     /// </summary>
     public class GameController
     {
+        //Timer and MainMenu instance for initial game startup
+        public static Timer loadingTimer;           //Timer to elapse for 9.5 seconds for loading initial sounds
+        public static MainMenu mainMenu;            //MainMenu instance that opens when opening game
+
+        //Variables used within an actual game instance
         public static int turnCounter;              //Counts what turn currently being done within a single round
         public static int roundCounter;             //Counts how many rounds are in game and stores current round
 
@@ -36,8 +42,6 @@ namespace InformationAgeProject
         public static bool recruitmentOfficeFull;   //Shows whether or not the recruitment office is currently occupied by a developer
         public static int playerAtRecruitmentOffice;//Array index of player that has developer at recruitment office
 
-        public static Timer loadingTimer;           //Timer to elapse for 9.5 seconds for loading initial sounds
-        public static MainMenu mainMenu;            //MainMenu instance that opens when opening game
         public static Player[] playerList;          //Array of players for game
         public static MainForm[] playerForms;       //Array of MainForms to be used by players
 
@@ -113,9 +117,9 @@ namespace InformationAgeProject
             if (playerCount < 2 || playerCount > 4)
             {
                 MessageBox.Show("Number of players cannot be less than 2 or more than 4."
-                        , "Invalid Number Of Players"
-                        , MessageBoxButtons.OK
-                        , MessageBoxIcon.Error);
+                            , "Invalid Number Of Players"
+                            , MessageBoxButtons.OK
+                            , MessageBoxIcon.Error);
 
                 return false;//Main menu stays visible
             }
@@ -589,11 +593,11 @@ namespace InformationAgeProject
                 //and winningPlayerNum accordingly
                 for (int i = 1; i <= finalScores.Count; i++)
                 {
-                   if(finalScores[i].Total > highestScore)
-                   {
+                    if (finalScores[i].Total > highestScore)
+                    {
                         highestScore = finalScores[i].Total;
                         winningPlayerNum = i;
-                   }
+                    }
                 }
 
                 //Set the end game form values to that of the winning player's stats
@@ -697,6 +701,132 @@ namespace InformationAgeProject
                 endGame.txtHighestScore.Text = $"{highestScore}";
             }
         }//end endRound()
+        #endregion
+
+        //Saving and Loading methods regions
+        #region saveGame() Method
+        /// <summary>
+        /// Method for saving a game to XML file
+        /// </summary>
+        public static void saveGame()
+        {
+            //Get the current directory
+            string filePath = Directory.GetCurrentDirectory();
+
+            //Move up two parent directories
+            filePath = Directory.GetParent(filePath).FullName;
+            filePath = Directory.GetParent(filePath).FullName;
+
+            //Append the location of testsave.xml to filePath
+            filePath += "\\Saves\\save.xml";
+
+            //Save SaveLoadObject to a XML file
+            SaveLoadObject currentSave = saveToSaveLoadObject();
+            XmlSerializer serializer = new XmlSerializer(typeof(SaveLoadObject));
+            TextWriter writer = new StreamWriter(filePath);
+            serializer.Serialize(writer, currentSave);
+
+            writer.Dispose();	//Dispose writer to free save.xml
+
+        }//end saveGame()
+        #endregion
+
+        #region loadGame() Method
+        /// <summary>
+        /// Method for loading a game from XML file
+        /// </summary>
+        public static void loadGame()
+        {
+            //Get the current directory
+            string filePath = Directory.GetCurrentDirectory();
+
+            //Move up two parent directories
+            filePath = Directory.GetParent(filePath).FullName;
+            filePath = Directory.GetParent(filePath).FullName;
+
+            //Append the location of testsave.xml to filePath
+            filePath += "\\Saves\\save.xml";
+
+            //Load save file into SaveLoadObject
+            SaveLoadObject loadedSave;
+            XmlSerializer xs = new XmlSerializer(typeof(SaveLoadObject));
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                loadedSave = (SaveLoadObject)xs.Deserialize(reader);
+                reader.Dispose();	//Dispose reader to free save.xml
+            }
+
+            loadFromSaveLoadObject(loadedSave);
+            playerForms[turnCounter].Show();
+
+
+        }//end loadGame()
+        #endregion
+
+        #region saveToSaveLoadObject() Method
+        /// <summary>
+        /// Method for copying all values within static GameController to a SaveLoadObject
+        /// </summary>
+        /// <returns>SaveLoadObject that all pertinent values from static GameController was saved to</returns>
+        public static SaveLoadObject saveToSaveLoadObject()
+        {
+
+            SaveLoadObject currentSave = new SaveLoadObject(turnCounter,
+                                    roundCounter,
+                                    toolMakerFull,
+                                    playerAtToolMaker,
+                                    recruitmentOfficeFull,
+                                    playerAtRecruitmentOffice,
+                                    playerList,
+                                    playerForms,
+                                    ProjProgDeck,
+                                    ProjFeatDeck);
+
+            return currentSave;
+
+        }//end saveToSaveLoadObject()
+        #endregion
+
+        #region loadFromSaveLoadObject() Method
+        /// <summary>
+        /// Method for copying all values within a SaveLoadObject to the static GameController
+        /// </summary>
+        /// <param name="loadedSave">SaveLoadObject to copy values of to static GameController</param>
+        public static void loadFromSaveLoadObject(SaveLoadObject loadedSave)
+        {
+            turnCounter = loadedSave.turnCounter;
+            roundCounter = loadedSave.roundCounter;
+
+            toolMakerFull = loadedSave.toolMakerFull;
+            playerAtToolMaker = loadedSave.playerAtToolMaker;
+
+            recruitmentOfficeFull = loadedSave.recruitmentOfficeFull;
+            playerAtRecruitmentOffice = loadedSave.playerAtRecruitmentOffice;
+
+            //Deep clones all Player objects within input array
+            playerList = new Player[loadedSave.playerList.Length];
+            for (int i = 0; i < loadedSave.playerList.Length; i++)
+            {
+                playerList[i] = loadedSave.playerList[i].DeepClone();
+            }
+
+            //Creates new instances of MainForm that are identical to MainForm instances that were saved
+            playerForms = new MainForm[loadedSave.mainFormValues.Length];
+            for (int i = 0; i < loadedSave.mainFormValues.Length; i++)
+            {
+                playerForms[i] = new MainForm(playerList[i], loadedSave.mainFormValues[i].DeepClone());
+            }
+
+            //Deep clones all ProjectProgressDeck objects within input array
+            ProjProgDeck = new ProjectProgressDeck[loadedSave.ProjProgDeck.Length];
+            for (int i = 0; i < loadedSave.ProjProgDeck.Length; i++)
+            {
+                ProjProgDeck[i] = loadedSave.ProjProgDeck[i].DeepClone();
+            }
+
+            ProjFeatDeck = loadedSave.ProjFeatDeck.DeepClone();
+
+        }//end loadFromSaveLoadObject()
         #endregion
 
         //Switching to different windows/forms or exiting game method regions

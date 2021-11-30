@@ -24,6 +24,7 @@ namespace InformationAgeProject
     /// <summary>
     /// Player class hosts methods and properties for managing a single player's team
     /// </summary>
+    [Serializable]
     public class Player
     {
         // Private Inventory objects for use by Inventory property of this class
@@ -86,7 +87,7 @@ namespace InformationAgeProject
         public Inventory Inventory
         {
             // Return the current state of the inventory
-            get { return _inventory;  }
+            get { return _inventory; }
 
             // Set the value for Inventory
             set { _inventory = value; }

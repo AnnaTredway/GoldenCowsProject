@@ -24,19 +24,20 @@ namespace InformationAgeProject
     /// <summary>
     /// Our games version of civilization cards
     /// </summary>
+    [Serializable]
     public class AdditionalProjectFeatures
     {
-        private static Random rNum = new Random( );
+        private static Random rNum = new Random();
         private Boolean blnDiceRollRequired = false;
-        private List<ResourceType> listResourceAwared = new List<ResourceType>( );
-        public List<AdditionalProjectFeaturesType> listTypeAwared = new List<AdditionalProjectFeaturesType>( );
+        private List<ResourceType> listResourceAwared = new List<ResourceType>();
+        public List<AdditionalProjectFeaturesType> listTypeAwared = new List<AdditionalProjectFeaturesType>();
         public Boolean blnSold = false;
         public string strCard;
 
         /// <summary>
         /// Creates a card that awards the player a random resource and item
         /// </summary>
-        public AdditionalProjectFeatures ( )
+        public AdditionalProjectFeatures()
         {
             this.listResourceAwared.Add((ResourceType)(rNum.Next(4)));
             this.listTypeAwared.Add((AdditionalProjectFeaturesType)rNum.Next(11));
@@ -50,14 +51,14 @@ namespace InformationAgeProject
                 this.listTypeAwared.Add(listTypeAwared[0]);
             }
 
-            generateCard( );
+            generateCard();
         }
 
         /// <summary>
         /// Creates a card that awards the player a random resource and item 
         /// </summary>
         /// <param name="choice">Creates a different card based on the choice</param>
-        public AdditionalProjectFeatures (int choice)
+        public AdditionalProjectFeatures(int choice)
         {
             if (choice == 1)
             {
@@ -80,7 +81,7 @@ namespace InformationAgeProject
                 }
             }
 
-            generateCard( );
+            generateCard();
         }
 
         /// <summary>
@@ -91,21 +92,21 @@ namespace InformationAgeProject
         /// <returns></returns>
         public AdditionalProjectFeaturesType[] claimCard(int cardCost, Inventory playerInventory)
         {
-            ResourceManager playerResources = playerInventory.ReturnResourceManager( );
+            ResourceManager playerResources = playerInventory.ReturnResourceManager();
             ResourceType[] listPlayersChoice;
             int[] iPlayer = new int[4];                                 // Gets the current resources form the player
-            iPlayer[0] = playerResources.getBacklogAmount( );
-            iPlayer[1] = playerResources.getLowPriorityAmount( );
-            iPlayer[2] = playerResources.getMediumPriorityAmount( );
-            iPlayer[3] = playerResources.getHighPriorityAmount( );
+            iPlayer[0] = playerResources.getBacklogAmount();
+            iPlayer[1] = playerResources.getLowPriorityAmount();
+            iPlayer[2] = playerResources.getMediumPriorityAmount();
+            iPlayer[3] = playerResources.getHighPriorityAmount();
             int iTotalResources = iPlayer[0] + iPlayer[1] + iPlayer[2] + iPlayer[3];
             if (iTotalResources >= cardCost)
             {
                 //Prompts the user to select what resources they want to spend 
                 AdditionalProjectFeaturesSelector form = new AdditionalProjectFeaturesSelector(cardCost, iPlayer);
-                form.ShowDialog( );
+                form.ShowDialog();
                 listPlayersChoice = form.getSelectedResources();
-                form.Dispose( );
+                form.Dispose();
 
                 if (listPlayersChoice.Length > 0)
                 {
@@ -188,7 +189,7 @@ namespace InformationAgeProject
                     {
                         playerInventory.addTool();
                     }
-                    return listTypeAwared.ToArray(); 
+                    return listTypeAwared.ToArray();
                 }
             }
             else
@@ -204,9 +205,9 @@ namespace InformationAgeProject
         /// <summary>
         /// generates the cards description.
         /// </summary>
-        public void generateCard( )
+        public void generateCard()
         {
-            StringBuilder card = new StringBuilder( );
+            StringBuilder card = new StringBuilder();
             card.Append("----------------\r\n");
             card.Append("- Reward:      -\r\n");
             if (listResourceAwared.Count > 0)
@@ -214,17 +215,17 @@ namespace InformationAgeProject
                 if (blnDiceRollRequired == true)
                 {
                     card.Append("- " + "earn 1-6 of".PadLeft(12) + " -\r\n");
-                    card.Append("- " + this.listResourceAwared[0].ToString( ).PadLeft(12) + " -\r\n");
+                    card.Append("- " + this.listResourceAwared[0].ToString().PadLeft(12) + " -\r\n");
                 }
                 else
                 {
                     for (int i = 0; i < listResourceAwared.Count; i++)
                     {
-                        card.Append("- " + this.listResourceAwared[i].ToString( ).PadLeft(12) + " -\r\n");
-                    } 
+                        card.Append("- " + this.listResourceAwared[i].ToString().PadLeft(12) + " -\r\n");
+                    }
                 }
             }
-            else 
+            else
             {
                 card.Append("- " + "Tool".PadLeft(12) + " -\r\n");
             }
@@ -234,14 +235,14 @@ namespace InformationAgeProject
                 card.Append("- " + this.listTypeAwared[i].ToString().PadLeft(12) + " -\r\n");
             }
             card.Append("----------------");
-            strCard = card.ToString( );
+            strCard = card.ToString();
         }
 
         /// <summary>
         /// Displays the card.
         /// </summary>
         /// <returns>The string that represents the card</returns>
-        public string displayCard( )
+        public string displayCard()
         {
             return strCard;
         }

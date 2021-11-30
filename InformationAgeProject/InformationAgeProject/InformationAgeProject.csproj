@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -59,6 +61,9 @@
       <DependentUpon>AdditionalProjectFeaturesSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="AdditionalProjectFeaturesDeck.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="MainFormValuesObject.cs" />
+    <Compile Include="SaveLoadObject.cs" />
     <Compile Include="EndGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +202,8 @@
     <Content Include="Sounds\Music\NeverGonnaGiveYouUp.wav" />
     <Content Include="Sounds\Music\NokiaEspionagePTRK.wav" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Saves\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

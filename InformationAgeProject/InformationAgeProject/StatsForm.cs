@@ -32,9 +32,9 @@ namespace InformationAgeProject
         /// <summary>
         /// Initializes a new StatesForm
         /// </summary>
-        public StatsForm( )
+        public StatsForm()
         {
-            InitializeComponent( );
+            InitializeComponent();
         }
 
         /// <summary>
@@ -48,18 +48,18 @@ namespace InformationAgeProject
             int[] toolLevelList;
             if (GameController.playerList.Length == 4)
             {
-                Player4GroupBox.Text = "Player 4: "+ GameController.playerList[3].TeamName;
-                P4InventoryBox.Text = GameController.playerList[3].Inventory.printResources( );
+                Player4GroupBox.Text = "Player 4: " + GameController.playerList[3].TeamName;
+                P4InventoryBox.Text = GameController.playerList[3].Inventory.printResources();
                 score = new Scoring(GameController.playerList[3].Inventory);
-                P4ScoreBox.Text = score.calculateScore( );
+                P4ScoreBox.Text = score.calculateScore();
                 P4ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[3].Deck.Count + " cards remain";
-                P4ProjectProgressCard1.Text = GameController.ProjProgDeck[3].Deck[0].displayCard( );
-                P4TxtDevelopers.Text = GameController.playerList[3].Developers.ToString( );
+                P4ProjectProgressCard1.Text = GameController.ProjProgDeck[3].Deck[0].displayCard();
+                P4TxtDevelopers.Text = GameController.playerList[3].Developers.ToString();
 
-                toolLevelList = GameController.playerList[3].Inventory.getToolLevelList( );
-                P4ToolSlot1.Text = toolLevelList[0].ToString( );
-                P4ToolSlot2.Text = toolLevelList[1].ToString( );
-                P4ToolSlot3.Text = toolLevelList[2].ToString( );
+                toolLevelList = GameController.playerList[3].Inventory.getToolLevelList();
+                P4ToolSlot1.Text = toolLevelList[0].ToString();
+                P4ToolSlot2.Text = toolLevelList[1].ToString();
+                P4ToolSlot3.Text = toolLevelList[2].ToString();
             }
             else
             {
@@ -69,17 +69,17 @@ namespace InformationAgeProject
             if (GameController.playerList.Length >= 3)
             {
                 Player3GroupBox.Text = "Player 3: " + GameController.playerList[2].TeamName;
-                P3InventoryBox.Text = GameController.playerList[2].Inventory.printResources( );
+                P3InventoryBox.Text = GameController.playerList[2].Inventory.printResources();
                 score = new Scoring(GameController.playerList[2].Inventory);
-                P3ScoreBox.Text = score.calculateScore( );
+                P3ScoreBox.Text = score.calculateScore();
                 P3ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[2].Deck.Count + " cards remain";
-                P3ProjectProgressCard1.Text = GameController.ProjProgDeck[2].Deck[0].displayCard( );
-                P3TxtDevelopers.Text = GameController.playerList[2].Developers.ToString( );
+                P3ProjectProgressCard1.Text = GameController.ProjProgDeck[2].Deck[0].displayCard();
+                P3TxtDevelopers.Text = GameController.playerList[2].Developers.ToString();
 
-                toolLevelList = GameController.playerList[2].Inventory.getToolLevelList( );
-                P3ToolSlot1.Text = toolLevelList[0].ToString( );
-                P3ToolSlot2.Text = toolLevelList[1].ToString( );
-                P3ToolSlot3.Text = toolLevelList[2].ToString( );
+                toolLevelList = GameController.playerList[2].Inventory.getToolLevelList();
+                P3ToolSlot1.Text = toolLevelList[0].ToString();
+                P3ToolSlot2.Text = toolLevelList[1].ToString();
+                P3ToolSlot3.Text = toolLevelList[2].ToString();
             }
             else
             {
@@ -88,32 +88,32 @@ namespace InformationAgeProject
 
             // Adds all the elements to the second player
             Player2GroupBox.Text = "Player 2: " + GameController.playerList[1].TeamName;
-            P2InventoryBox.Text = GameController.playerList[1].Inventory.printResources( );
+            P2InventoryBox.Text = GameController.playerList[1].Inventory.printResources();
             score = new Scoring(GameController.playerList[1].Inventory);
-            P2ScoreBox.Text = score.calculateScore( );
+            P2ScoreBox.Text = score.calculateScore();
             P2ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[1].Deck.Count + " cards remain";
-            P2ProjectProgressCard1.Text = GameController.ProjProgDeck[1].Deck[0].displayCard( );
-            P2TxtDevelopers.Text = GameController.playerList[1].Developers.ToString( );
+            P2ProjectProgressCard1.Text = GameController.ProjProgDeck[1].Deck[0].displayCard();
+            P2TxtDevelopers.Text = GameController.playerList[1].Developers.ToString();
 
-            toolLevelList = GameController.playerList[1].Inventory.getToolLevelList( );
-            P2ToolSlot1.Text = toolLevelList[0].ToString( );
-            P2ToolSlot2.Text = toolLevelList[1].ToString( );
-            P2ToolSlot3.Text = toolLevelList[2].ToString( );
+            toolLevelList = GameController.playerList[1].Inventory.getToolLevelList();
+            P2ToolSlot1.Text = toolLevelList[0].ToString();
+            P2ToolSlot2.Text = toolLevelList[1].ToString();
+            P2ToolSlot3.Text = toolLevelList[2].ToString();
 
 
             // Adds all the elements to the first player
             Player1GroupBox.Text = "Player 1: " + GameController.playerList[0].TeamName;
-            P1InventoryBox.Text = GameController.playerList[0].Inventory.printResources( );
+            P1InventoryBox.Text = GameController.playerList[0].Inventory.printResources();
             score = new Scoring(GameController.playerList[0].Inventory);
-            P1ScoreBox.Text = score.calculateScore( );
+            P1ScoreBox.Text = score.calculateScore();
             P1ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[0].Deck.Count + " cards remain";
-            P1ProjectProgressCard1.Text = GameController.ProjProgDeck[0].Deck[0].displayCard( );
-            P1TxtDevelopers.Text = GameController.playerList[0].Developers.ToString( );
+            P1ProjectProgressCard1.Text = GameController.ProjProgDeck[0].Deck[0].displayCard();
+            P1TxtDevelopers.Text = GameController.playerList[0].Developers.ToString();
 
-            toolLevelList = GameController.playerList[0].Inventory.getToolLevelList( );
-            P1ToolSlot1.Text = toolLevelList[0].ToString( );
-            P1ToolSlot2.Text = toolLevelList[1].ToString( );
-            P1ToolSlot3.Text = toolLevelList[2].ToString( );
+            toolLevelList = GameController.playerList[0].Inventory.getToolLevelList();
+            P1ToolSlot1.Text = toolLevelList[0].ToString();
+            P1ToolSlot2.Text = toolLevelList[1].ToString();
+            P1ToolSlot3.Text = toolLevelList[2].ToString();
 
         }
 
