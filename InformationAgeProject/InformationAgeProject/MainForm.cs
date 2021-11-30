@@ -102,6 +102,7 @@ namespace InformationAgeProject
                 txtToolMaker.Text = "0";
             }
 
+            //If the send devs button is enabled, disable the recall devs button
             if (btnSendDevs.Enabled == true)
             {
                 btnRecallDevs.Enabled = false;
