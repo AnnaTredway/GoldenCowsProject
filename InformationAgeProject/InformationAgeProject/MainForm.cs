@@ -524,9 +524,12 @@ namespace InformationAgeProject
                     //Else, show error message
                     if (GameController.recruitmentOfficeFull == false)
                     {
-                        lblRecruitStatus.Text = $"Recruitment Status:\n-----------------------" +
-                            $"\nOccupied with 2 developers from Team:" +
-                            $"\n{player.TeamName}";
+                        for (int i = 0; i < GameController.playerForms.Length; i++)
+                        {
+                            GameController.playerForms[i].lblRecruitStatus.Text = $"Recruitment Status:\n-----------------------" +
+                                            $"\nOccupied with 2 developers from Team:" +
+                                            $"\n{player.TeamName}"; 
+                        }
 
                         player.Developers -= 2;
                         txtDevelopers.Text = Convert.ToString(player.Developers);
@@ -794,7 +797,7 @@ namespace InformationAgeProject
         /// </summary>
         /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
-        private void btnQuitToMenuMenuItem_Click(object sender, EventArgs e)
+        public static void btnQuitToMenuMenuItem_Click(object sender, EventArgs e)
         {
             new QuitToMenuForm().Show();
         }
@@ -843,6 +846,26 @@ namespace InformationAgeProject
         }
         #endregion
 
+        #region Dev Tools
+        /// <summary>
+        /// Adds a large amount of resources to the current player, used for testing purposes.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void devToolsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            player.Inventory.addToBacklog(99);
+            player.Inventory.addToLowPriority(99);
+            player.Inventory.addToMediumPriority(99);
+            player.Inventory.addToHighPriority(99);
+
+            inventoryBox.Text = player.Inventory.printResources();
+
+            Scoring score = new Scoring(player.Inventory);
+            scoreBox.Text = score.calculateScore();
+        }
+        #endregion
+
         #region Form Closing
         /// <summary>
         /// Handles the FormClosing event of the MainForm control.
@@ -854,6 +877,6 @@ namespace InformationAgeProject
             e.Cancel = true; // Prevents the window form instantly closing
             btnQuitToMenuMenuItem_Click(sender, e);
         }
-        #endregion
+        #endregion 
     }
 }

@@ -47,7 +47,14 @@ namespace InformationAgeProject
                 score = new Scoring(GameController.playerList[3].Inventory);
                 P4ScoreBox.Text = score.calculateScore();
                 P4ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[3].Deck.Count + " cards remain";
-                P4ProjectProgressCard1.Text = GameController.ProjProgDeck[3].Deck[0].displayCard();
+                try
+                {
+                    P4ProjectProgressCard1.Text = GameController.ProjProgDeck[3].Deck[0].displayCard();
+                }
+                catch (Exception)
+                {
+                    P4ProjectProgressCard1.Text = "This player has purchased all available cards";
+                }
                 P4TxtDevelopers.Text = GameController.playerList[3].Developers.ToString();
 
                 toolLevelList = GameController.playerList[3].Inventory.getToolLevelList();
@@ -67,7 +74,14 @@ namespace InformationAgeProject
                 score = new Scoring(GameController.playerList[2].Inventory);
                 P3ScoreBox.Text = score.calculateScore();
                 P3ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[2].Deck.Count + " cards remain";
-                P3ProjectProgressCard1.Text = GameController.ProjProgDeck[2].Deck[0].displayCard();
+                try
+                {
+                    P3ProjectProgressCard1.Text = GameController.ProjProgDeck[2].Deck[0].displayCard();
+                }
+                catch (Exception)
+                {
+                    P3ProjectProgressCard1.Text = "This player has purchased all available cards";
+                }
                 P3TxtDevelopers.Text = GameController.playerList[2].Developers.ToString();
 
                 toolLevelList = GameController.playerList[2].Inventory.getToolLevelList();
@@ -86,7 +100,14 @@ namespace InformationAgeProject
             score = new Scoring(GameController.playerList[1].Inventory);
             P2ScoreBox.Text = score.calculateScore();
             P2ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[1].Deck.Count + " cards remain";
-            P2ProjectProgressCard1.Text = GameController.ProjProgDeck[1].Deck[0].displayCard();
+            try
+            {
+                P2ProjectProgressCard1.Text = GameController.ProjProgDeck[1].Deck[0].displayCard();
+            }
+            catch (Exception)
+            {
+                P2ProjectProgressCard1.Text = "This player has purchased all available cards";
+            }
             P2TxtDevelopers.Text = GameController.playerList[1].Developers.ToString();
 
             toolLevelList = GameController.playerList[1].Inventory.getToolLevelList();
@@ -101,7 +122,14 @@ namespace InformationAgeProject
             score = new Scoring(GameController.playerList[0].Inventory);
             P1ScoreBox.Text = score.calculateScore();
             P1ProjectProgressCardsGroupBox.Text = "Project Progress Cards: " + GameController.ProjProgDeck[0].Deck.Count + " cards remain";
-            P1ProjectProgressCard1.Text = GameController.ProjProgDeck[0].Deck[0].displayCard();
+            try
+            {
+                P1ProjectProgressCard1.Text = GameController.ProjProgDeck[0].Deck[0].displayCard();
+            }
+            catch (Exception)
+            {
+                P1ProjectProgressCard1.Text = "This player has purchased all available cards";
+            }
             P1TxtDevelopers.Text = GameController.playerList[0].Developers.ToString();
 
             toolLevelList = GameController.playerList[0].Inventory.getToolLevelList();

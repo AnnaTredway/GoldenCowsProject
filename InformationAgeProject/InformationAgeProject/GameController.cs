@@ -406,9 +406,7 @@ namespace InformationAgeProject
             }
             else
             {
-                // The game should end and final score should be tallied
-                MessageBox.Show("The game should end");
-
+                gameOver = true;
             }
 
         }
@@ -534,79 +532,26 @@ namespace InformationAgeProject
         {
             //Check if the current player has emptied their project progress cards deck,
             //and set the gameOver boolean value to true to if so
-            if (ProjProgDeck[turnCounter].Deck.Count() == 0)
+            if (ProjProgDeck[turnCounter].Deck.Count == 0)
             {
                 gameOver = true;
             }
 
-            //If all four project features card slots cannot be filled at the beginning of the following player's turn,
-            //end the game immediately and proceed with final scoring
-            if (ProjFeatDeck.AvailableCount() >= 4)
+            //Current form is set to invisible so it is not in the way of the next player
+            playerForms[turnCounter].Visible = false;
+
+            //Turn counter goes up by one to move on to next player
+            turnCounter++;
+
+            try
             {
-                //Current form is set to invisible so it is not in the way of the next player
-                playerForms[turnCounter].Visible = false;
-
-                //Turn counter goes up by one to move on to next player
-                turnCounter++;
-
-                try
-                {
-                    //If there is a player form at the turnCounter index, go to that form
-                    playerForms[turnCounter].Visible = true;
-                }
-                catch
-                {
-                    //If there is not a player form at the next turnCounter index, end round and go to next one
-                    endRound();
-                }
+                //If there is a player form at the turnCounter index, go to that form
+                playerForms[turnCounter].Visible = true;
             }
-            else
+            catch
             {
-                //Declare the form representing the end of game screen
-                EndGame endGame = new EndGame
-                {
-                    Visible = true
-                };
-
-                //List of scoring objects
-                List<Scoring> finalScores = new List<Scoring>();
-
-                /**
-                 * For each player in the game, create a new scoring object,
-                 * and add it to the list of scoring objects.
-                 * Each player score will calculate the current total score,
-                 * and then add the values of their additional project features cards to their total points. 
-                 **/
-                foreach (Player player in playerList)
-                {
-                    Scoring scoring = new Scoring(player.Inventory)
-                    {
-                        AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player)
-                    };
-                    scoring.calculateScore();
-                    scoring.Total += scoring.AdditionalProjectFeaturesCards;
-                    finalScores.Add(scoring);
-                }
-
-                //Player 1's total final score
-                int highestScore = finalScores[0].Total;
-                //Number of winning player
-                int winningPlayerNum = 1;
-
-                //Loop through the remaining players, and replace highestScore,
-                //and winningPlayerNum accordingly
-                for (int i = 1; i <= finalScores.Count; i++)
-                {
-                    if (finalScores[i].Total > highestScore)
-                    {
-                        highestScore = finalScores[i].Total;
-                        winningPlayerNum = i;
-                    }
-                }
-
-                //Set the end game form values to that of the winning player's stats
-                endGame.txtWinningPlayer.Text = $"{playerList[winningPlayerNum].TeamName}";
-                endGame.txtHighestScore.Text = $"{highestScore}";
+                //If there is not a player form at the next turnCounter index, end round and go to next one
+                endRound();
             }
         }//end endTurn()
         #endregion
@@ -617,6 +562,9 @@ namespace InformationAgeProject
         /// </summary>
         public static void endRound()
         {
+
+            removeClaimedFeatureCards();
+
             //Continue with the next round if gameOver is set to false
             if (gameOver == false)
             {
@@ -644,8 +592,6 @@ namespace InformationAgeProject
                     playerAtRecruitmentOffice = -1;
                 }
 
-                removeClaimedFeatureCards();
-
                 //Resets turn counter and increases the round counter
                 turnCounter = 0;
                 roundCounter++;
@@ -662,53 +608,98 @@ namespace InformationAgeProject
             //Else end the game and display the endGame form
             else
             {
-                //Declare the form representing the end of game screen
-                EndGame endGame = new EndGame
-                {
-                    Visible = true
-                };
-
-                //List of scoring objects
-                List<Scoring> finalScores = new List<Scoring>();
-
-                /**
-                 * For each player in the game, create a new scoring object,
-                 * and add it to the list of scoring objects.
-                 * Each player score will calculate the current total score,
-                 * and then add the values of their additional project features cards to their total points. 
-                 **/
-                foreach (Player player in playerList)
-                {
-                    Scoring scoring = new Scoring(player.Inventory)
-                    {
-                        AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player)
-                    };
-                    scoring.calculateScore();
-                    scoring.Total += scoring.AdditionalProjectFeaturesCards;
-                    finalScores.Add(scoring);
-                }
-
-                //Player 1's total final score
-                int highestScore = finalScores[0].Total;
-                //Number of winning player
-                int winningPlayerNum = 1;
-
-                //Loop through the remaining players, and replace highestScore,
-                //and winningPlayerNum accordingly
-                for (int i = 1; i <= finalScores.Count; i++)
-                {
-                    if (finalScores[i].Total > highestScore)
-                    {
-                        highestScore = finalScores[i].Total;
-                        winningPlayerNum = i;
-                    }
-                }
-
-                //Set the end game form values to that of the winning player's stats
-                endGame.txtWinningPlayer.Text = $"{playerList[winningPlayerNum].TeamName}";
-                endGame.txtHighestScore.Text = $"{highestScore}";
+                EndGame();
             }
         }//end endRound()
+        #endregion
+
+        #region End Game        
+        /// <summary>
+        /// Ends the game.
+        /// </summary>
+        public static void EndGame( )
+        {
+            gameOver = false; // resets the game status
+            // Disposes of all the player screens 
+            for (int i = 0; i < playerForms.Length; i++)
+            {
+                playerForms[0].Dispose();
+            }
+
+            //Declare the form representing the end of game screen
+            EndGame endGame = new EndGame
+            {
+                Visible = true
+            };
+
+            //List of scoring objects
+            List<Scoring> finalScores = new List<Scoring>();
+            List<Player> tiedPlayers = new List<Player>();
+
+            /**
+             * For each player in the game, create a new scoring object,
+             * and add it to the list of scoring objects.
+             * Each player score will calculate the current total score,
+             * and then add the values of their additional project features cards to their total points. 
+             **/
+            foreach (Player player in playerList)
+            {
+                Scoring scoring = new Scoring(player.Inventory)
+                {
+                    AdditionalProjectFeaturesCards = calculateFeatureCardPoints(player)
+                };
+                scoring.calculateScore();
+                scoring.Total += scoring.AdditionalProjectFeaturesCards;
+                finalScores.Add(scoring);
+            }
+
+            //Player 1's total final score
+            int highestScore = finalScores[0].Total;
+            //Number of winning player
+            int winningPlayerNum = 0;
+
+            tiedPlayers.Add(playerList[0]);
+
+            //Loop through the remaining players, and replace highestScore,
+            //and winningPlayerNum accordingly
+            for (int i = 1; i < finalScores.Count; i++)
+            {
+                if (finalScores[i].Total > highestScore)
+                {
+                    highestScore = finalScores[i].Total;
+                    tiedPlayers.Clear();                // Clears any tied players because there is a new high score
+                    tiedPlayers.Add(playerList[i]);
+                    winningPlayerNum = i;
+                }
+                else if (finalScores[i].Total == highestScore)
+                {
+                    tiedPlayers.Add(playerList[i]);
+                }
+            }
+
+            if (tiedPlayers.Count == 1)
+            {
+                //Set the end game form values to that of the winning player's stats
+                endGame.txtWinningPlayer.Text = $"{playerList[winningPlayerNum].TeamName}";
+                endGame.txtHighestScore.Text = $"{highestScore}"; 
+            }
+            else
+            {
+                //Set the end game form values to that of the winning players stats
+                for (int i = 0; i < tiedPlayers.Count; i++)
+                {
+                    if (i != tiedPlayers.Count - 1)
+                    {
+                        endGame.txtWinningPlayer.Text += tiedPlayers[i].TeamName + " & ";
+                    }
+                    else
+                    {
+                        endGame.txtWinningPlayer.Text += tiedPlayers[i].TeamName;
+                    }
+                }
+                endGame.txtHighestScore.Text = $"{highestScore}";
+            }
+        }
         #endregion
 
         //Saving and Loading methods regions
