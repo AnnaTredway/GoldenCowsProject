@@ -74,3 +74,5 @@ C:\Users\tnbra\Desktop\GoldenCowsProject\InformationAgeProject\InformationAgePro
 C:\Users\annah\Documents\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.EndGame.resources
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.EasterEggImageForm.resources
 C:\Users\storm.LAPTOP-VUPILJ1S\Documents\GitHub\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.EndGame.resources
+C:\Users\tnbra\Desktop\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.EasterEggImageForm.resources
+C:\Users\tnbra\Desktop\GoldenCowsProject\InformationAgeProject\InformationAgeProject\obj\Debug\InformationAgeProject.EndGame.resources
