@@ -46,26 +46,7 @@ namespace InformationAgeProject
             this.Text = $"Information Age | Player: {player.PlayerNum + 1} | Team: {player.TeamName}";
 
             //Assigns all pertinent values to the MainForm from stored MainFormValuesObject
-            txtToolMaker.Text = valuesObject.toolMakerText;
-            lblRecruitStatus.Text = valuesObject.recruitmentOfficeText;
-            btnSendDevs.Enabled = valuesObject.sendDevEnabled;
-            btnRecallDevs.Enabled = valuesObject.recallDevEnabled;
-            txtBacklog.Text = valuesObject.backlogText;
-            txtLow.Text = valuesObject.lowText;
-            txtMed.Text = valuesObject.medText;
-            txtHigh.Text = valuesObject.highText;
-            btnAddBacklog.Enabled = valuesObject.backlogAddEnabled;
-            btnSubtBacklog.Enabled = valuesObject.backlogSubEnabled;
-            btnAddLow.Enabled = valuesObject.lowAddEnabled;
-            btnSubtLow.Enabled = valuesObject.lowSubEnabled;
-            btnAddMed.Enabled = valuesObject.medAddEnabled;
-            btnSubtMed.Enabled = valuesObject.medSubEnabled;
-            btnAddHigh.Enabled = valuesObject.highAddEnabled;
-            btnSubtHigh.Enabled = valuesObject.highSubEnabled;
-            btnDoTasks.Enabled = valuesObject.doTasksEnabled;
-            inventoryBox.Text = valuesObject.inventoryText;
-            scoreBox.Text = valuesObject.scoreText;
-
+            LoadMainFormValuesFromObject(valuesObject);
         }
 
         #region MainForm_Load()
@@ -169,6 +150,7 @@ namespace InformationAgeProject
         /// <summary>
         /// Method for saving all pertinent values within a MainForm to a MainFormValuesObject		
         /// </summary>
+        ///  <returns>MainFormValuesObject of pertinent MainForm values</returns>
         public MainFormValuesObject StoreMainFormValuesInObject()
         {
             return new MainFormValuesObject(txtToolMaker.Text,
@@ -190,6 +172,36 @@ namespace InformationAgeProject
                 btnDoTasks.Enabled,
                 inventoryBox.Text,
                 scoreBox.Text);
+        }
+        #endregion
+
+        #region LoadMainFormValuesFromObject()
+        /// <summary>
+        /// Method for load all pertinent values within a MainForm into current MainForm instance	
+        /// </summary>
+        /// <param name="valuesObject">MainFormValuesObject of pertinent values to load into current MainForm instance</param>
+        public void LoadMainFormValuesFromObject(MainFormValuesObject valuesObject)
+        {
+            //Assigns all pertinent values to the MainForm from stored MainFormValuesObject
+            txtToolMaker.Text = valuesObject.toolMakerText;
+            lblRecruitStatus.Text = valuesObject.recruitmentOfficeText;
+            btnSendDevs.Enabled = valuesObject.sendDevEnabled;
+            btnRecallDevs.Enabled = valuesObject.recallDevEnabled;
+            txtBacklog.Text = valuesObject.backlogText;
+            txtLow.Text = valuesObject.lowText;
+            txtMed.Text = valuesObject.medText;
+            txtHigh.Text = valuesObject.highText;
+            btnAddBacklog.Enabled = valuesObject.backlogAddEnabled;
+            btnSubtBacklog.Enabled = valuesObject.backlogSubEnabled;
+            btnAddLow.Enabled = valuesObject.lowAddEnabled;
+            btnSubtLow.Enabled = valuesObject.lowSubEnabled;
+            btnAddMed.Enabled = valuesObject.medAddEnabled;
+            btnSubtMed.Enabled = valuesObject.medSubEnabled;
+            btnAddHigh.Enabled = valuesObject.highAddEnabled;
+            btnSubtHigh.Enabled = valuesObject.highSubEnabled;
+            btnDoTasks.Enabled = valuesObject.doTasksEnabled;
+            inventoryBox.Text = valuesObject.inventoryText;
+            scoreBox.Text = valuesObject.scoreText;
         }
         #endregion
 
@@ -792,12 +804,13 @@ namespace InformationAgeProject
         {
             new OptionsForm().Show();
         }
+
         /// <summary>
         /// Event Handler for dropdown menu button to quit to main menu
         /// </summary>
         /// <param name="sender">object that raised the event (auto-generated, unused here)</param>
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
-        public static void btnQuitToMenuMenuItem_Click(object sender, EventArgs e)
+        private void btnQuitToMenuMenuItem_Click_1(object sender, EventArgs e)
         {
             new QuitToMenuForm().Show();
         }
@@ -875,8 +888,8 @@ namespace InformationAgeProject
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true; // Prevents the window form instantly closing
-            btnQuitToMenuMenuItem_Click(sender, e);
+            btnQuitToMenuMenuItem_Click_1(sender, e);
         }
-        #endregion 
+        #endregion
     }
 }

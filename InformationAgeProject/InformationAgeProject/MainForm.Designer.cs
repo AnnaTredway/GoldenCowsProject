@@ -76,6 +76,7 @@ namespace InformationAgeProject
             this.statisticsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblInventory = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.ProjectProgressCard1 = new System.Windows.Forms.TextBox();
@@ -109,7 +110,6 @@ namespace InformationAgeProject
             this.btnRecallDevs = new System.Windows.Forms.Button();
             this.lblRecruitStatus = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.devToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolMakerPictureBox)).BeginInit();
@@ -249,7 +249,7 @@ namespace InformationAgeProject
             this.btnAddMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMed.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.btnAddMed.Location = new System.Drawing.Point(1092, 70);
+            this.btnAddMed.Location = new System.Drawing.Point(1092, 73);
             this.btnAddMed.Name = "btnAddMed";
             this.btnAddMed.Size = new System.Drawing.Size(25, 25);
             this.btnAddMed.TabIndex = 16;
@@ -267,7 +267,7 @@ namespace InformationAgeProject
             this.btnSubtMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubtMed.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.btnSubtMed.Location = new System.Drawing.Point(1092, 101);
+            this.btnSubtMed.Location = new System.Drawing.Point(1092, 102);
             this.btnSubtMed.Name = "btnSubtMed";
             this.btnSubtMed.Size = new System.Drawing.Size(25, 25);
             this.btnSubtMed.TabIndex = 17;
@@ -321,7 +321,7 @@ namespace InformationAgeProject
             this.btnDoTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoTasks.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.btnDoTasks.Location = new System.Drawing.Point(872, 148);
+            this.btnDoTasks.Location = new System.Drawing.Point(872, 142);
             this.btnDoTasks.Name = "btnDoTasks";
             this.btnDoTasks.Size = new System.Drawing.Size(381, 33);
             this.btnDoTasks.TabIndex = 26;
@@ -334,7 +334,7 @@ namespace InformationAgeProject
             this.txtBacklog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBacklog.BackColor = System.Drawing.Color.White;
             this.txtBacklog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBacklog.Location = new System.Drawing.Point(872, 73);
+            this.txtBacklog.Location = new System.Drawing.Point(872, 75);
             this.txtBacklog.Name = "txtBacklog";
             this.txtBacklog.ReadOnly = true;
             this.txtBacklog.Size = new System.Drawing.Size(25, 23);
@@ -348,7 +348,7 @@ namespace InformationAgeProject
             this.txtLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLow.BackColor = System.Drawing.Color.White;
             this.txtLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLow.Location = new System.Drawing.Point(966, 73);
+            this.txtLow.Location = new System.Drawing.Point(966, 75);
             this.txtLow.Name = "txtLow";
             this.txtLow.ReadOnly = true;
             this.txtLow.Size = new System.Drawing.Size(25, 23);
@@ -362,7 +362,7 @@ namespace InformationAgeProject
             this.txtMed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMed.BackColor = System.Drawing.Color.White;
             this.txtMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMed.Location = new System.Drawing.Point(1061, 72);
+            this.txtMed.Location = new System.Drawing.Point(1061, 75);
             this.txtMed.Name = "txtMed";
             this.txtMed.ReadOnly = true;
             this.txtMed.Size = new System.Drawing.Size(25, 23);
@@ -376,7 +376,7 @@ namespace InformationAgeProject
             this.txtHigh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHigh.BackColor = System.Drawing.Color.White;
             this.txtHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHigh.Location = new System.Drawing.Point(1156, 73);
+            this.txtHigh.Location = new System.Drawing.Point(1156, 75);
             this.txtHigh.Name = "txtHigh";
             this.txtHigh.ReadOnly = true;
             this.txtHigh.Size = new System.Drawing.Size(25, 23);
@@ -408,7 +408,7 @@ namespace InformationAgeProject
             this.inventoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inventoryBox.BackColor = System.Drawing.Color.White;
             this.inventoryBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inventoryBox.Location = new System.Drawing.Point(872, 213);
+            this.inventoryBox.Location = new System.Drawing.Point(872, 207);
             this.inventoryBox.Name = "inventoryBox";
             this.inventoryBox.ReadOnly = true;
             this.inventoryBox.Size = new System.Drawing.Size(381, 105);
@@ -420,10 +420,10 @@ namespace InformationAgeProject
             this.scoreBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreBox.BackColor = System.Drawing.Color.White;
             this.scoreBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.scoreBox.Location = new System.Drawing.Point(872, 351);
+            this.scoreBox.Location = new System.Drawing.Point(872, 345);
             this.scoreBox.Name = "scoreBox";
             this.scoreBox.ReadOnly = true;
-            this.scoreBox.Size = new System.Drawing.Size(381, 96);
+            this.scoreBox.Size = new System.Drawing.Size(381, 106);
             this.scoreBox.TabIndex = 34;
             this.scoreBox.Text = "";
             // 
@@ -455,14 +455,14 @@ namespace InformationAgeProject
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
@@ -471,12 +471,12 @@ namespace InformationAgeProject
             this.btnQuitToMenuMenuItem.Name = "btnQuitToMenuMenuItem";
             this.btnQuitToMenuMenuItem.Size = new System.Drawing.Size(180, 22);
             this.btnQuitToMenuMenuItem.Text = "Quit to Menu";
-            this.btnQuitToMenuMenuItem.Click += new System.EventHandler(MainForm.btnQuitToMenuMenuItem_Click);
+            this.btnQuitToMenuMenuItem.Click += new System.EventHandler(this.btnQuitToMenuMenuItem_Click_1);
             // 
             // btnQuitToDesktopMenuItem
             // 
             this.btnQuitToDesktopMenuItem.Name = "btnQuitToDesktopMenuItem";
-            this.btnQuitToDesktopMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.btnQuitToDesktopMenuItem.Size = new System.Drawing.Size(163, 22);
             this.btnQuitToDesktopMenuItem.Text = "Quit to Desktop";
             this.btnQuitToDesktopMenuItem.Click += new System.EventHandler(this.btnQuitToDesktopMenuItem_Click);
             // 
@@ -495,23 +495,30 @@ namespace InformationAgeProject
             // statisticsToolStripMenuItem1
             // 
             this.statisticsToolStripMenuItem1.Name = "statisticsToolStripMenuItem1";
-            this.statisticsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.statisticsToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.statisticsToolStripMenuItem1.Text = "Statistics";
             this.statisticsToolStripMenuItem1.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
             // 
             // instructionsToolStripMenuItem
             // 
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.instructionsToolStripMenuItem.Text = "Instructions";
             this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // devToolsToolStripMenuItem
+            // 
+            this.devToolsToolStripMenuItem.Name = "devToolsToolStripMenuItem";
+            this.devToolsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.devToolsToolStripMenuItem.Text = "Dev Tools";
+            this.devToolsToolStripMenuItem.Click += new System.EventHandler(this.devToolsToolStripMenuItem_Click);
             // 
             // lblInventory
             // 
@@ -520,7 +527,7 @@ namespace InformationAgeProject
             this.lblInventory.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInventory.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
-            this.lblInventory.Location = new System.Drawing.Point(872, 184);
+            this.lblInventory.Location = new System.Drawing.Point(872, 178);
             this.lblInventory.Name = "lblInventory";
             this.lblInventory.Size = new System.Drawing.Size(381, 35);
             this.lblInventory.TabIndex = 37;
@@ -534,7 +541,7 @@ namespace InformationAgeProject
             this.lblScore.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
-            this.lblScore.Location = new System.Drawing.Point(872, 321);
+            this.lblScore.Location = new System.Drawing.Point(872, 315);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(381, 36);
             this.lblScore.TabIndex = 38;
@@ -966,13 +973,6 @@ namespace InformationAgeProject
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 81;
             this.pictureBox2.TabStop = false;
-            // 
-            // devToolsToolStripMenuItem
-            // 
-            this.devToolsToolStripMenuItem.Name = "devToolsToolStripMenuItem";
-            this.devToolsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.devToolsToolStripMenuItem.Text = "Dev Tools";
-            this.devToolsToolStripMenuItem.Click += new System.EventHandler(this.devToolsToolStripMenuItem_Click);
             // 
             // MainForm
             // 

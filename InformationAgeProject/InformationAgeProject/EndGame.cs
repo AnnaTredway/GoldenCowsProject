@@ -12,14 +12,8 @@
 //	Copyright:         Golden Cows Team, 2021
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InformationAgeProject
@@ -56,6 +50,7 @@ namespace InformationAgeProject
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void ReturnToMenuButton_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
             GameController.quitToMainMenu();
             this.Dispose();
         }
@@ -67,6 +62,7 @@ namespace InformationAgeProject
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void ExitGameButton_Click(object sender, EventArgs e)
         {
+            SoundController.playButtonClick();
             GameController.quitGame();
         }
     }

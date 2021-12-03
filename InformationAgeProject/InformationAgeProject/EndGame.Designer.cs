@@ -29,6 +29,7 @@ namespace InformationAgeProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EndGame));
             this.txtWinningPlayer = new System.Windows.Forms.TextBox();
             this.txtHighestScore = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,19 +40,21 @@ namespace InformationAgeProject
             // 
             // txtWinningPlayer
             // 
+            this.txtWinningPlayer.BackColor = System.Drawing.Color.White;
             this.txtWinningPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWinningPlayer.Location = new System.Drawing.Point(90, 68);
+            this.txtWinningPlayer.Location = new System.Drawing.Point(97, 68);
             this.txtWinningPlayer.Multiline = true;
             this.txtWinningPlayer.Name = "txtWinningPlayer";
             this.txtWinningPlayer.ReadOnly = true;
-            this.txtWinningPlayer.Size = new System.Drawing.Size(400, 50);
+            this.txtWinningPlayer.Size = new System.Drawing.Size(400, 60);
             this.txtWinningPlayer.TabIndex = 0;
             this.txtWinningPlayer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtHighestScore
             // 
+            this.txtHighestScore.BackColor = System.Drawing.Color.White;
             this.txtHighestScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHighestScore.Location = new System.Drawing.Point(180, 185);
+            this.txtHighestScore.Location = new System.Drawing.Point(197, 185);
             this.txtHighestScore.Multiline = true;
             this.txtHighestScore.Name = "txtHighestScore";
             this.txtHighestScore.ReadOnly = true;
@@ -65,11 +68,11 @@ namespace InformationAgeProject
             this.label1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
-            this.label1.Location = new System.Drawing.Point(202, 29);
+            this.label1.Location = new System.Drawing.Point(212, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 25);
+            this.label1.Size = new System.Drawing.Size(171, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Winning Player:";
+            this.label1.Text = "Winning Player";
             // 
             // label2
             // 
@@ -77,7 +80,7 @@ namespace InformationAgeProject
             this.label2.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
-            this.label2.Location = new System.Drawing.Point(223, 147);
+            this.label2.Location = new System.Drawing.Point(238, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 25);
             this.label2.TabIndex = 3;
@@ -89,10 +92,11 @@ namespace InformationAgeProject
             this.ReturnToMenuButton.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ReturnToMenuButton.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ReturnToMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReturnToMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturnToMenuButton.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ReturnToMenuButton.Location = new System.Drawing.Point(12, 257);
+            this.ReturnToMenuButton.Location = new System.Drawing.Point(12, 248);
             this.ReturnToMenuButton.Name = "ReturnToMenuButton";
-            this.ReturnToMenuButton.Size = new System.Drawing.Size(96, 23);
+            this.ReturnToMenuButton.Size = new System.Drawing.Size(128, 32);
             this.ReturnToMenuButton.TabIndex = 4;
             this.ReturnToMenuButton.Text = "Return to Menu";
             this.ReturnToMenuButton.UseVisualStyleBackColor = false;
@@ -104,10 +108,11 @@ namespace InformationAgeProject
             this.ExitGameButton.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ExitGameButton.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "ButtonTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ExitGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitGameButton.ForeColor = global::InformationAgeProject.Properties.Settings.Default.ButtonTextColor;
-            this.ExitGameButton.Location = new System.Drawing.Point(508, 257);
+            this.ExitGameButton.Location = new System.Drawing.Point(455, 248);
             this.ExitGameButton.Name = "ExitGameButton";
-            this.ExitGameButton.Size = new System.Drawing.Size(75, 23);
+            this.ExitGameButton.Size = new System.Drawing.Size(128, 32);
             this.ExitGameButton.TabIndex = 5;
             this.ExitGameButton.Text = "Exit Game";
             this.ExitGameButton.UseVisualStyleBackColor = false;
@@ -126,6 +131,9 @@ namespace InformationAgeProject
             this.Controls.Add(this.txtHighestScore);
             this.Controls.Add(this.txtWinningPlayer);
             this.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::InformationAgeProject.Properties.Settings.Default, "FormsBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::InformationAgeProject.Properties.Settings.Default, "FormsTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ForeColor = global::InformationAgeProject.Properties.Settings.Default.FormsTextColor;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EndGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Winning Player";
