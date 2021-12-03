@@ -680,7 +680,7 @@ namespace InformationAgeProject
             if (tiedPlayers.Count == 1)
             {
                 //Set the end game form values to that of the winning player's stats
-                endGame.txtWinningPlayer.Text = $"{playerList[winningPlayerNum].TeamName}";
+                endGame.txtWinningPlayer.Text = $"Player: {playerList[winningPlayerNum].PlayerNum + 1} \r\nTeam: {playerList[winningPlayerNum].TeamName}";
                 endGame.txtHighestScore.Text = $"{highestScore}"; 
             }
             else
